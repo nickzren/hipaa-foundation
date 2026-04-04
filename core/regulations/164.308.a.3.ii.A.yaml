@@ -1,0 +1,76 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(3)(ii)(A)"
+title: "Authorization and/or supervision"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.308(a)(3)"
+addressable_assessment_guidance: |
+  Assess whether authorization and/or supervision procedures are reasonable
+  and appropriate given the entity's risk analysis, workforce size and
+  structure, and the sensitivity of the ePHI accessible to workforce members.
+  Document the disposition: implemented, alternative, documented_exception,
+  or not_evidenced.
+authoritative_text: |
+  Implement procedures for the authorization and/or supervision of workforce members who work with electronic protected health information or in locations where it might be accessed.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have procedures for authorizing and supervising
+    workforce members who work with ePHI or in areas where ePHI might be
+    accessed. As an addressable specification, the entity must assess whether
+    it is reasonable and appropriate to implement and, if not, document why
+    and what alternative measures are in place.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You should have procedures for authorizing which workforce members can
+    work with ePHI and for supervising their access. If full implementation
+    is not reasonable and appropriate for your situation, document your
+    rationale and any alternative measures.
+  intent: >
+    Ensure that workforce members are authorized before accessing ePHI and
+    that their access is appropriately supervised. Prevent unauthorized
+    access through oversight and formal authorization processes.
+  applicability: >
+    Addressable for all covered entities and business associates. The entity
+    must evaluate whether implementation is reasonable and appropriate based
+    on its risk analysis and operational context.
+  common_gaps:
+    - No formal authorization process for ePHI access.
+    - Authorization decisions are not documented.
+    - Supervision of ePHI access is informal or absent.
+    - No addressable specification assessment was performed.
+    - Alternative measures are not documented when the specification is not fully implemented.
+  remediation_suggestions:
+    - Implement a formal process for authorizing workforce access to ePHI.
+    - Document authorization decisions and maintain records.
+    - Establish supervision procedures appropriate to the workforce and ePHI sensitivity.
+    - If not fully implementing, document the rationale and alternative measures.
+    - Link authorization procedures to the information access management standard.
+evidence_expectations:
+  in_repo:
+    - Authorization procedure documentation.
+    - Addressable specification assessment documentation.
+  external:
+    - Access authorization records.
+    - Supervision logs or oversight records.
+    - Addressable specification disposition documentation.
+  review_questions:
+    - Are there procedures for authorizing workforce access to ePHI?
+    - Is workforce access to ePHI supervised?
+    - Has the entity assessed whether this specification is reasonable and appropriate?
+    - If not fully implemented, is the rationale and any alternative documented?
+related_requirements:
+  - "164.308(a)(3)"
+  - "164.308(a)(4)"
+  - "164.312(a)(1)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(3)(ii)(A)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,83 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(6)(ii)"
+title: "Response and reporting"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.308(a)(6)"
+authoritative_text: |
+  Identify and respond to suspected or known security incidents; mitigate, to the extent practicable, harmful effects of security incidents that are known to the covered entity or business associate; and document security incidents and their outcomes.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have procedures that cover the full incident
+    response lifecycle: identification, response, mitigation, and
+    documentation. The documentation requirement extends to both the
+    incident itself and its outcome. OCR has emphasized that entities must
+    address both successful and attempted security incidents, though the
+    depth of response and documentation may differ based on the nature and
+    severity of the incident.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    When you suspect or know about a security incident, you must identify it,
+    respond to it, mitigate the harmful effects as much as possible, and
+    document both the incident and its outcome.
+  intent: >
+    Ensure that security incidents are handled through a structured process
+    that minimizes harm and produces documentation for analysis, reporting,
+    and improvement.
+  applicability: >
+    Required for all covered entities and business associates. This is not
+    an addressable specification — response and reporting procedures must
+    be implemented.
+  common_gaps:
+    - No documented incident response procedure.
+    - Incidents are responded to ad hoc without a structured process.
+    - Documentation of incidents is incomplete or absent.
+    - Mitigation steps are not documented.
+    - Incident outcomes are not tracked or analyzed.
+    - No coordination between security incident response and breach notification.
+    - Attempted incidents are ignored entirely.
+    - No post-incident analysis or lessons learned.
+  remediation_suggestions:
+    - Implement a documented incident response procedure covering identification, response, mitigation, and documentation.
+    - Define escalation paths and response team roles.
+    - Document all security incidents including the nature of the incident, response actions, mitigation steps, and outcome.
+    - Track and analyze incident trends over time.
+    - Coordinate incident response with breach notification procedures.
+    - Conduct post-incident reviews and incorporate lessons learned.
+    - Address both successful and attempted incidents in the procedure.
+evidence_expectations:
+  in_repo:
+    - Incident response procedure document.
+    - Incident documentation template or format.
+    - Escalation and notification procedures.
+  external:
+    - Completed incident reports.
+    - Evidence of mitigation actions taken.
+    - Post-incident review records.
+    - Incident trend analysis or metrics.
+    - Breach notification records (where incidents rise to breach level).
+  review_questions:
+    - Are there documented procedures for identifying, responding to, mitigating, and documenting security incidents?
+    - Are security incidents documented including their outcomes?
+    - Are mitigation steps taken and documented for known incidents?
+    - Are both successful and attempted incidents addressed?
+    - Is there a post-incident review process?
+related_requirements:
+  - "164.308(a)(6)"
+  - "164.308(a)(1)(ii)(D)"
+  - "164.312(b)"
+  - "164.410"
+  - "164.412"
+  - "164.414"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(6)(ii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,63 @@
+---
+schema_version: v1
+id: entity-and-applicability
+title: Entity and Applicability
+rule_family: general
+lifecycle_phase:
+  - triage
+  - assessment
+review_questions:
+  - Is the entity a covered entity, business associate, BA subcontractor, or not regulated?
+  - Does the entity handle PHI or ePHI?
+  - Which HIPAA rules apply to the entity and this system?
+deep_assessment_probes:
+  - Is hybrid entity designation relevant and properly scoped?
+  - Does the entity type determination affect downstream domain applicability?
+  - Is Part 162 applicability relevant and properly gated?
+expected_evidence:
+  in_repo:
+    - data models showing health information fields
+    - system scope documentation
+    - HIPAA-related configuration
+  external:
+    - executed BAAs
+    - legal entity classification
+    - hybrid entity designation records
+common_gaps:
+  - Entity type is assumed but never formally determined.
+  - BAA is referenced but not executed or not available.
+  - Hybrid entity designation is missing when multiple lines of business exist.
+cross_links:
+  - organizational-requirements
+  - privacy-uses-and-disclosures
+regulation_ids:
+  - "160.103"
+  - "164.104"
+  - "164.105"
+  - "164.304"
+  - "164.306"
+regulation_files:
+  standards:
+    - core/regulations/160.103.yaml
+    - core/regulations/164.104.yaml
+    - core/regulations/164.105.yaml
+    - core/regulations/164.304.yaml
+    - core/regulations/164.306.yaml
+  implementation_specifications: []
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Assuming a system handles PHI because it handles health-adjacent data."
+    - "Entity type assumed but never formally determined from evidence."
+    - "Hybrid entity designation missing when multiple lines of business exist."
+  escalation_triggers:
+    - "Entity type cannot be determined and no BAA or scope documentation exists."
+    - "System clearly handles PHI but entity claims not-regulated status."
+  repo_only_notes: |
+    Entity type determination often requires organizational evidence (executed
+    BAAs, legal entity classification, hybrid entity designation records). On
+    repo-only evidence, data models showing health information fields, system
+    scope documentation, and HIPAA-related configuration are the strongest
+    signals. Entity type that cannot be determined from the reviewed corpus
+    is an evidence gap, not a control gap. Inferable but undocumented entity
+    type reflects incomplete governance, not absence of the entity relationship.
+status: draft

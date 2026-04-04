@@ -1,0 +1,80 @@
+---
+schema_version: v1
+id: technical-safeguards
+title: Technical Safeguards
+rule_family: security_rule
+lifecycle_phase:
+  - assessment
+  - operation
+review_questions:
+  - Are access controls implemented with unique user identification?
+  - Is ePHI encrypted in transit and at rest?
+  - Are audit controls in place to record and examine ePHI access?
+deep_assessment_probes:
+  - Does automatic logoff apply to all systems accessing ePHI?
+  - Are integrity controls in place to prevent unauthorized alteration of ePHI?
+  - Is person or entity authentication implemented for ePHI access?
+expected_evidence:
+  in_repo:
+    - authentication implementation
+    - access control logic
+    - encryption configuration
+    - audit logging code
+    - session management
+  external:
+    - penetration test results
+    - encryption key management evidence
+    - audit log review records
+common_gaps:
+  - Encryption at rest not implemented or not documented.
+  - Audit logs exist but are never reviewed.
+  - Automatic logoff not configured for all ePHI access points.
+cross_links:
+  - risk-analysis-and-management
+  - administrative-safeguards
+  - physical-safeguards
+regulation_ids:
+  - "164.312(a)(1)"
+  - "164.312(a)(2)(i)"
+  - "164.312(a)(2)(ii)"
+  - "164.312(a)(2)(iii)"
+  - "164.312(a)(2)(iv)"
+  - "164.312(b)"
+  - "164.312(c)(1)"
+  - "164.312(c)(2)"
+  - "164.312(d)"
+  - "164.312(e)(1)"
+  - "164.312(e)(2)(i)"
+  - "164.312(e)(2)(ii)"
+regulation_files:
+  standards:
+    - core/regulations/164.312.a.1.yaml
+    - core/regulations/164.312.b.yaml
+    - core/regulations/164.312.c.1.yaml
+    - core/regulations/164.312.d.yaml
+    - core/regulations/164.312.e.1.yaml
+  implementation_specifications:
+    - core/regulations/164.312.a.2.i.yaml
+    - core/regulations/164.312.a.2.ii.yaml
+    - core/regulations/164.312.a.2.iii.yaml
+    - core/regulations/164.312.a.2.iv.yaml
+    - core/regulations/164.312.c.2.yaml
+    - core/regulations/164.312.e.2.i.yaml
+    - core/regulations/164.312.e.2.ii.yaml
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Treating TLS in transit as complete encryption coverage when data at rest is unencrypted."
+    - "Assuming cloud provider controls fully satisfy entity-level technical safeguard obligations."
+    - "Audit logs exist but are never reviewed."
+  escalation_triggers:
+    - "No audit logging implementation found in code or infrastructure."
+    - "Authentication bypassed for internal services accessing ePHI."
+    - "No encryption at rest and no documented addressable-spec disposition."
+  repo_only_notes: |
+    Technical safeguards are often the strongest evidence in repo-only reviews.
+    Authentication, access control logic, encryption configuration, and audit
+    logging are directly observable in code and infrastructure. Encryption
+    disposition (164.312(a)(2)(iv) and 164.312(e)(2)(ii)) is addressable —
+    document the disposition. Audit log review records and penetration test
+    results are the most common items requiring external evidence.
+status: draft

@@ -1,0 +1,129 @@
+---
+schema_version: v1
+guidance_id: hipaa-ocr-enforcement-posture-v1
+title: "HHS/OCR HIPAA Enforcement Posture and Interpretive Context"
+authority: "HHS / Office for Civil Rights"
+type: guidance_summary
+status: current
+summary: |
+  Key OCR enforcement positions relevant to HIPAA assessments. These positions
+  reflect public guidance documents and enforcement patterns. They are not
+  binding rules but inform how OCR evaluates compliance.
+positions:
+  - id: addressable-spec-framework
+    topic: "Addressable implementation specifications"
+    position: |
+      Addressable does not mean optional. Covered entities and business associates
+      must assess each addressable specification, and either implement it, implement
+      an equivalent alternative measure, or document why it is not reasonable and
+      appropriate. A documented exception with risk analysis basis is compliant.
+    cfr_reference: "45 CFR 164.306(d)"
+  - id: risk-analysis-foundation
+    topic: "Risk analysis as Security Rule foundation"
+    position: |
+      OCR consistently identifies risk analysis as the foundation of the Security Rule.
+      An accurate and thorough risk analysis is the first step toward compliance.
+      Most OCR enforcement actions cite risk analysis failures. The risk analysis must
+      be organization-wide, cover all ePHI, and be updated when the environment changes.
+    cfr_reference: "45 CFR 164.308(a)(1)(ii)(A)"
+  - id: encryption-safe-harbor
+    topic: "Encryption safe harbor for breach notification"
+    position: |
+      Unsecured PHI triggers breach notification obligations. PHI is considered
+      secured (and exempt from breach notification) if it is encrypted consistent
+      with NIST guidance or destroyed per NIST SP 800-88. Encryption to the
+      specified standard renders breach notification inapplicable for the
+      encrypted data, though the covered entity must still assess whether
+      the encryption key was also compromised.
+    cfr_reference: "45 CFR 164.402; HHS Guidance on Securing PHI"
+  - id: minimum-necessary-standard
+    topic: "Minimum necessary standard"
+    position: |
+      Covered entities and business associates must make reasonable efforts to
+      limit PHI use, disclosure, and requests to the minimum necessary to
+      accomplish the intended purpose. This does not apply to disclosures to
+      or requests by a health care provider for treatment, disclosures to the
+      individual, disclosures pursuant to an authorization, disclosures to HHS,
+      or uses or disclosures required by law. Role-based access controls are a
+      common technical implementation.
+    cfr_reference: "45 CFR 164.502(b); 45 CFR 164.514(d)"
+  - id: business-associate-obligations
+    topic: "Business associate obligations post-HITECH"
+    position: |
+      Since the 2013 Omnibus Rule, business associates are directly liable for
+      compliance with the Security Rule, certain Privacy Rule provisions, and
+      breach notification. A BAA must be in place, but the BAA alone does not
+      transfer liability. BAs must independently comply with applicable standards
+      and implementation specifications. Subcontractors who handle PHI on behalf
+      of a BA are also business associates and require their own BAAs.
+    cfr_reference: "45 CFR 164.308(b); 45 CFR 164.314(a); 45 CFR 164.502(e)"
+  - id: breach-notification-risk-assessment
+    topic: "Breach notification risk assessment"
+    position: |
+      Following an impermissible use or disclosure, the covered entity must
+      conduct a risk assessment considering four factors: (1) nature and extent
+      of PHI involved, (2) the unauthorized person who used or received the PHI,
+      (3) whether the PHI was actually acquired or viewed, and (4) the extent to
+      which the risk to the PHI has been mitigated. Unless the entity demonstrates
+      a low probability that the PHI has been compromised, breach notification is
+      required. The previous harm standard was replaced by this risk assessment
+      standard in the 2013 Omnibus Rule.
+    cfr_reference: "45 CFR 164.402"
+  - id: de-identification-standards
+    topic: "De-identification standards"
+    position: |
+      PHI may be de-identified by either the Expert Determination method
+      (a qualified statistical or scientific expert determines the risk of
+      identification is very small) or the Safe Harbor method (18 specified
+      identifiers are removed and the entity has no actual knowledge that
+      residual information could identify an individual). De-identified data
+      is not PHI and is not subject to HIPAA. However, re-identification
+      codes must be protected and not derived from underlying PHI.
+    cfr_reference: "45 CFR 164.514(a); 45 CFR 164.514(b)"
+  - id: individual-right-of-access
+    topic: "Individual right of access"
+    position: |
+      Individuals have the right to access their PHI in a designated record set,
+      including in electronic form if maintained electronically. The covered entity
+      must provide access in the form and format requested if readily producible,
+      or in a mutually agreed alternative. OCR has made right of access a
+      priority enforcement area. Unreasonable barriers, excessive fees, or
+      untimely responses are common enforcement targets.
+    cfr_reference: "45 CFR 164.524"
+  - id: security-rule-flexibility
+    topic: "Security Rule flexibility of approach"
+    position: |
+      The Security Rule is designed to be technology-neutral and scalable. Covered
+      entities and business associates must consider their size, complexity, and
+      capabilities; their technical infrastructure, hardware, and software security
+      capabilities; the costs of security measures; and the probability and
+      criticality of potential risks to ePHI. This flexibility does not excuse
+      noncompliance but acknowledges that appropriate safeguards vary by entity.
+    cfr_reference: "45 CFR 164.306(b)"
+assessment_implications:
+  - Always begin with entity type and applicability triage before selecting control domains.
+  - Do not treat addressable specifications as optional or as automatic gaps.
+  - Risk analysis failures are the most common OCR enforcement finding. Prioritize accordingly.
+  - On repo-only evidence, organizational controls (privacy notices, BAAs, training records) are
+    typically Not assessed or Partial, not Gap.
+  - Encryption safe harbor is relevant to breach notification scope, not just technical safeguards.
+  - Business associates have direct liability. Do not assume the CE's BAA covers all BA obligations.
+source_documents:
+  - title: "HHS HIPAA for Professionals"
+    url: "https://www.hhs.gov/hipaa/for-professionals/"
+  - title: "OCR Guidance on Risk Analysis"
+    url: "https://www.hhs.gov/hipaa/for-professionals/security/guidance/guidance-risk-analysis/index.html"
+  - title: "HHS Breach Notification Rule Guidance"
+    url: "https://www.hhs.gov/hipaa/for-professionals/breach-notification/index.html"
+  - title: "HHS Guidance on De-identification"
+    url: "https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html"
+  - title: "OCR Right of Access Initiative"
+    url: "https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/agreements/index.html"
+  - title: "HHS Guidance Regarding Methods for De-identification of PHI"
+    url: "https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html"
+  - title: "NIST SP 800-111 Guide to Storage Encryption Technologies"
+    url: "https://csrc.nist.gov/publications/detail/sp/800-111/final"
+notes: |
+  This file summarizes public OCR guidance positions. It is not a substitute for
+  reading the full guidance documents. Positions may be updated as OCR issues
+  new guidance.

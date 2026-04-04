@@ -1,0 +1,81 @@
+---
+schema_version: v1
+regulation_id: "164.308(b)(1)"
+title: "Business associate contracts and other arrangements"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  A covered entity may permit a business associate to create, receive, maintain, or transmit electronic protected health information on the covered entity's behalf only if the covered entity obtains satisfactory assurances, in accordance with § 164.314(a), that the business associate will appropriately safeguard the information.
+  A covered entity is not required to obtain such satisfactory assurances from a business associate that is a subcontractor.
+ocr_guidance:
+  summary: >
+    OCR expects covered entities to have written business associate agreements
+    (BAAs) with all business associates who create, receive, maintain, or
+    transmit ePHI on their behalf. Since the HITECH Act, business associates
+    are directly liable for Security Rule compliance, but covered entities
+    must still obtain satisfactory assurances. OCR has imposed significant
+    penalties for failure to execute BAAs. The single implementation
+    specification (written contract or other arrangement) is required.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    If someone else handles ePHI on your behalf, you must get satisfactory
+    assurances — typically via a written Business Associate Agreement — that
+    they will protect it appropriately. This extends to subcontractors of
+    your business associates.
+  intent: >
+    Extend Security Rule protections to ePHI that is handled by third parties.
+    Ensure that the chain of custody for ePHI includes contractual security
+    obligations at every link.
+  applicability: >
+    Applies to covered entities with respect to their business associates.
+    Also applies to business associates with respect to their subcontractors.
+    Post-HITECH, business associates are directly subject to the Security
+    Rule, but the contractual assurance requirement remains.
+  common_gaps:
+    - BAAs are missing for one or more business associates.
+    - BAAs exist but do not include required Security Rule provisions.
+    - The entity has not identified all business associates who handle ePHI.
+    - BAAs are outdated and do not reflect HITECH Act amendments.
+    - No process for monitoring business associate compliance.
+    - Subcontractor agreements do not flow down security requirements.
+  remediation_suggestions:
+    - Maintain a complete inventory of all business associates who handle ePHI.
+    - Execute BAAs with all identified business associates before ePHI is shared.
+    - Ensure BAAs include all required provisions from 164.314(a).
+    - Update BAAs to reflect HITECH Act requirements.
+    - Establish a process for periodic review and monitoring of business associate compliance.
+evidence_expectations:
+  in_repo:
+    - Business associate management policy.
+    - Template BAA or BAA checklist.
+    - Business associate inventory.
+  external:
+    - Executed BAAs with all business associates.
+    - Business associate inventory with status tracking.
+    - Evidence of due diligence on business associate security practices.
+    - Subcontractor agreement records.
+  review_questions:
+    - Has the entity identified all business associates who handle ePHI?
+    - Are BAAs executed with all identified business associates?
+    - Do BAAs include all required Security Rule and HITECH provisions?
+    - Is there a process for monitoring business associate compliance?
+    - Do business associates flow down requirements to subcontractors?
+related_requirements:
+  - "164.308(b)(2)"
+  - "164.308(b)(3)"
+  - "164.314(a)"
+  - "164.314(a)(1)"
+  - "164.314(a)(2)"
+  - "164.502(e)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(b)(1)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,40 @@
+---
+schema_version: v1
+inventory_id: hipaa-domain-inventory-v1
+domains:
+  - id: entity-and-applicability
+    title: Entity and Applicability
+    file: core/domains/entity-and-applicability.yaml
+  - id: risk-analysis-and-management
+    title: Risk Analysis and Management
+    file: core/domains/risk-analysis-and-management.yaml
+  - id: privacy-uses-and-disclosures
+    title: Privacy Uses and Disclosures
+    file: core/domains/privacy-uses-and-disclosures.yaml
+  - id: minimum-necessary
+    title: Minimum Necessary
+    file: core/domains/minimum-necessary.yaml
+  - id: individual-rights
+    title: Individual Rights
+    file: core/domains/individual-rights.yaml
+  - id: administrative-safeguards
+    title: Administrative Safeguards
+    file: core/domains/administrative-safeguards.yaml
+  - id: physical-safeguards
+    title: Physical Safeguards
+    file: core/domains/physical-safeguards.yaml
+  - id: technical-safeguards
+    title: Technical Safeguards
+    file: core/domains/technical-safeguards.yaml
+  - id: organizational-requirements
+    title: Organizational Requirements
+    file: core/domains/organizational-requirements.yaml
+  - id: breach-notification
+    title: Breach Notification
+    file: core/domains/breach-notification.yaml
+  - id: policies-procedures-documentation
+    title: Policies, Procedures, and Documentation
+    file: core/domains/policies-procedures-documentation.yaml
+  - id: training-and-sanctions
+    title: Training and Sanctions
+    file: core/domains/training-and-sanctions.yaml

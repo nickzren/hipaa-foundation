@@ -1,0 +1,63 @@
+---
+schema_version: v1
+regulation_id: "164.310(a)(2)(i)"
+title: "Contingency Operations"
+rule_family: security_rule
+safeguard_type: physical
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.310(a)(1)"
+addressable_assessment_guidance: |
+  Assess whether the entity has determined the need for physical access procedures
+  supporting contingency operations (disaster recovery, emergency mode) based on
+  its risk analysis. If so, evaluate whether implemented procedures are reasonable
+  and appropriate. Document the disposition: implemented, alternative,
+  documented_exception, or not_evidenced.
+authoritative_text: |
+  Establish (and implement as needed) procedures that allow facility access in
+  support of restoration of lost data under the disaster recovery plan and
+  emergency mode operations plan in the event of an emergency.
+ocr_guidance:
+  summary: "Entities should have procedures to enable facility access for personnel responsible for restoring data or operating in emergency mode during a disaster or emergency."
+  source_document: "HIPAA Security Series: Security Standards - Physical Safeguards"
+repo_interpretation:
+  plain_english_summary: "When disaster strikes, the right people need to get into facilities to restore data and systems. Have a plan for granting emergency physical access."
+  intent: "Ensure that physical access controls do not prevent authorized personnel from executing disaster recovery and emergency operations when normal access mechanisms may be unavailable."
+  applicability: "Facilities housing ePHI systems that are part of the entity's disaster recovery or emergency mode operations plans. Includes primary data centers, backup sites, and any facility needed during recovery."
+  common_gaps:
+    - "Disaster recovery plan does not address physical access"
+    - "Emergency access key/badge procedures not documented"
+    - "No after-hours or off-site access procedures for recovery personnel"
+    - "Contingency access not tested during DR exercises"
+    - "Cloud-only entities have not assessed whether physical contingency access is relevant"
+  remediation_suggestions:
+    - "Add physical access provisions to the disaster recovery plan"
+    - "Document emergency key, badge, or code procedures for recovery personnel"
+    - "Define a process for granting temporary facility access during emergencies"
+    - "Include physical access testing in DR tabletop or live exercises"
+    - "If cloud-only, document the risk-based rationale for any exclusion"
+evidence_expectations:
+  in_repo:
+    - "Disaster recovery plan with physical access provisions"
+    - "Emergency facility access procedure"
+  external:
+    - "Emergency contact and access credential distribution list"
+    - "DR exercise reports showing physical access testing"
+    - "After-hours access logs from past incidents"
+  review_questions:
+    - "Does the disaster recovery plan address how personnel gain physical facility access during an emergency?"
+    - "Are emergency access credentials (keys, badges, codes) pre-positioned and tested?"
+    - "Has contingency physical access been exercised in a drill?"
+related_requirements:
+  - "164.310(a)(1)"
+  - "164.308(a)(7)(i)"
+  - "164.308(a)(7)(ii)(B)"
+  - "164.308(a)(7)(ii)(C)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.310(a)(2)(i)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.310"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

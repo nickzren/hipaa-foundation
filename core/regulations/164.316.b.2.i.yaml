@@ -1,0 +1,68 @@
+---
+schema_version: v1
+regulation_id: "164.316(b)(2)(i)"
+title: "Time limit"
+rule_family: security_rule
+safeguard_type: policies_and_documentation
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.316(b)(1)"
+authoritative_text: |
+  Retain the documentation required by paragraph (b)(1) of this section
+  for 6 years from the date of its creation or the date when it last was
+  in effect, whichever is later.
+ocr_guidance:
+  summary: >
+    OCR enforces the 6-year retention requirement strictly. Documentation
+    must be retained from the later of its creation date or the date it
+    was last in effect. This means superseded policies must be retained
+    for 6 years from when they were replaced, not from when they were
+    originally created.
+  source_document: "HIPAA Security Rule, 45 CFR Part 164 Subpart C"
+repo_interpretation:
+  plain_english_summary: >
+    All Security Rule documentation must be retained for at least 6 years
+    from creation or from the date it was last in effect, whichever is
+    later. This applies to policies, procedures, and records of required
+    activities and assessments.
+  intent: >
+    Ensure that compliance documentation is available for a sufficient
+    period to support OCR investigations, audits, and organizational
+    continuity.
+  applicability: >
+    Applies to all documentation required by the Security Rule, including
+    policies, procedures, risk analyses, addressable specification
+    decisions, incident records, and any other required written records.
+  common_gaps:
+    - No formal retention schedule for Security Rule documentation.
+    - Superseded policies are deleted when replaced rather than retained.
+    - Retention period calculated from creation date only, not from last-in-effect date.
+    - Electronic documentation stored without retention controls.
+  remediation_suggestions:
+    - Establish a retention schedule that tracks both creation and last-in-effect dates.
+    - Implement retention controls (archival, versioning) for all Security Rule documentation.
+    - Include superseded documents in retention tracking.
+evidence_expectations:
+  in_repo:
+    - Git history or version control preserving prior versions of documentation.
+    - Retention policy configuration or references.
+  external:
+    - Document retention schedule covering Security Rule documentation.
+    - Evidence that superseded documents are retained.
+    - Archival system or process for long-term document retention.
+  review_questions:
+    - Is there a retention schedule that covers all Security Rule documentation?
+    - Are superseded policies retained for 6 years from their last-in-effect date?
+    - Can the organization produce documentation from at least 6 years ago?
+related_requirements:
+  - "164.316(b)(1)"
+  - "164.316(b)(2)(ii)"
+  - "164.316(b)(2)(iii)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.316(b)(2)(i)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.316"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

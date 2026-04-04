@@ -1,0 +1,82 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(4)(ii)(C)"
+title: "Access establishment and modification"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.308(a)(4)"
+addressable_assessment_guidance: |
+  Assess whether access establishment and modification procedures are
+  reasonable and appropriate given the entity's risk analysis, workforce
+  dynamics, system complexity, and the sensitivity of the ePHI involved.
+  Document the disposition: implemented, alternative, documented_exception,
+  or not_evidenced.
+authoritative_text: |
+  Implement policies and procedures that, based upon the covered entity's or the business associate's access authorization policies, establish, document, review, and modify a user's right of access to a workstation, transaction, program, or process.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have procedures for establishing, documenting,
+    reviewing, and modifying user access rights based on the entity's access
+    authorization policies. This covers the operational implementation of
+    access decisions — the "how" that follows the "who and why" of access
+    authorization. As an addressable specification, the entity must assess
+    reasonableness and document its decision.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You should have procedures for setting up, documenting, reviewing, and
+    changing user access to ePHI systems. This is the operational process
+    that implements your access authorization decisions.
+  intent: >
+    Ensure that access authorization decisions are translated into actual
+    system access rights, that access rights are documented, and that they
+    are reviewed and modified as needed over time.
+  applicability: >
+    Addressable for all covered entities and business associates. The
+    formality of the procedures should match the complexity of the entity's
+    systems and the dynamics of its workforce.
+  common_gaps:
+    - No formal process for establishing or modifying user access.
+    - Access rights are set up but not documented.
+    - Access rights are not reviewed periodically for continued appropriateness.
+    - No process for modifying access when roles change.
+    - Access rights are established but not based on access authorization decisions.
+    - No addressable specification assessment was performed.
+  remediation_suggestions:
+    - Implement procedures for establishing access based on authorization decisions.
+    - Document all access rights and their basis.
+    - Conduct periodic access reviews to verify continued appropriateness.
+    - Define a process for modifying access when roles or responsibilities change.
+    - Link access establishment to the access authorization policy.
+    - If not fully implementing, document the rationale and alternative measures.
+evidence_expectations:
+  in_repo:
+    - Access establishment and modification procedures.
+    - Periodic access review procedure.
+    - Addressable specification assessment documentation.
+  external:
+    - User access provisioning records.
+    - Access modification records.
+    - Periodic access review results.
+    - Evidence linking access rights to authorization decisions.
+  review_questions:
+    - Are there procedures for establishing and modifying user access to ePHI?
+    - Are access rights documented?
+    - Are access rights reviewed periodically?
+    - Is there a process for modifying access when roles change?
+    - Has the entity assessed whether this specification is reasonable and appropriate?
+related_requirements:
+  - "164.308(a)(4)"
+  - "164.308(a)(4)(ii)(B)"
+  - "164.308(a)(3)"
+  - "164.312(a)(1)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(4)(ii)(C)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

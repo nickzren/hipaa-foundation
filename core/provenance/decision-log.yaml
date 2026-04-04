@@ -1,0 +1,53 @@
+---
+schema_version: v1
+log_id: hipaa-foundation-decision-log-v1
+purpose: |
+  Lightweight history for major repository-shaping decisions.
+entries:
+  - id: decision-001
+    date: '2026-04-01'
+    topic: launch-scope
+    decision: Focus v1 on OCR-enforced HIPAA (Parts 160 and 164).
+    rationale: OCR enforcement covers Privacy Rule, Security Rule, and Breach Notification Rule. Part 162 is CMS-enforced and a moving target.
+    approved_by: repository-maintainer
+    status: active
+
+  - id: decision-002
+    date: '2026-04-01'
+    topic: part-162-gating
+    decision: Include Part 162 in applicability triage but gate it from v1 assessment.
+    rationale: CMS finalized the claims attachments / electronic signatures rule on March 20, 2026 (effective May 26, 2026, compliance 24 months later). Part 162 is too unstable for v1 deep assessment.
+    approved_by: repository-maintainer
+    status: active
+
+  - id: decision-003
+    date: '2026-04-01'
+    topic: addressable-spec-design
+    decision: Make the addressable/required distinction structural in the rubric and output template.
+    rationale: The most common HIPAA assessment error is treating addressable specs as deficient when a documented exception exists. Structural handling prevents this overcall.
+    approved_by: repository-maintainer
+    status: active
+
+  - id: decision-004
+    date: '2026-04-01'
+    topic: hybrid-entity-split
+    decision: Track hybrid entity status as a separate field from covered entity type.
+    rationale: A hybrid entity is not a fourth covered-entity class. It is a CE that designates health care components under section 164.105. The designation affects scope, not entity type.
+    approved_by: repository-maintainer
+    status: active
+
+  - id: decision-005
+    date: '2026-04-01'
+    topic: repo-only-realism
+    decision: Enforce a repo-only realism rule for organizational HIPAA controls.
+    rationale: Many HIPAA obligations (NPPs, BAAs, training records, breach workflows) live outside code repositories. Absence from a repo is not automatically a gap.
+    approved_by: repository-maintainer
+    status: active
+
+  - id: decision-006
+    date: '2026-04-03'
+    topic: upstream-citation-anomaly-164-308-b-4
+    decision: Preserve the `164.308(b)(4)` citation in `164.314(a)(2)(iii)` as published and treat it as an upstream citation anomaly, not a repo defect.
+    rationale: The current eCFR text for `164.314(a)(2)(iii)` still references `164.308(b)(4)`. The repository records the published citation as-is and relies on the decision log to explain the anomaly instead of silently rewriting the legal text.
+    approved_by: repository-maintainer
+    status: active

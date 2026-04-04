@@ -1,0 +1,127 @@
+---
+schema_version: v1
+regulation_id: "164.504"
+title: "Uses and disclosures: organizational requirements"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  A covered entity is not in compliance with the Privacy Rule if the covered
+  entity knew of a pattern of activity or practice of a business associate
+  that constituted a material breach or violation of the business
+  associate's obligation under the contract or other arrangement, unless the
+  covered entity took reasonable steps to cure the breach or end the
+  violation and, if such steps were unsuccessful, terminated the contract or
+  arrangement.
+
+  Business associate contracts: A covered entity may permit a business
+  associate to create, receive, maintain, or transmit protected health
+  information on the covered entity's behalf to the extent necessary to
+  carry out the business associate's obligations, provided the covered
+  entity obtains satisfactory assurances that the business associate will
+  appropriately safeguard the information. The contract must:
+  (i) Establish the permitted and required uses and disclosures of PHI by
+      the business associate;
+  (ii) Provide that the business associate will not use or further disclose
+       the information other than as permitted or required by the contract
+       or as required by law;
+  (iii) Require the business associate to use appropriate safeguards and
+        comply with the Security Rule with respect to electronic PHI;
+  (iv) Require reporting of any use or disclosure not provided for by the
+       contract, including breaches of unsecured PHI;
+  (v) Require that the business associate ensure any subcontractors that
+      create, receive, maintain, or transmit PHI agree to the same
+      restrictions and conditions;
+  (vi) Require the business associate to make available PHI in accordance
+       with §164.524 (access rights);
+  (vii) Require the business associate to make PHI available for amendment
+        and incorporate amendments per §164.526;
+  (viii) Require the business associate to make information available for
+         accounting of disclosures per §164.528;
+  (ix) Require the business associate to make its internal practices,
+       books, and records available to the Secretary for determining
+       compliance;
+  (x) At termination, require return or destruction of PHI, if feasible.
+
+  Requirements for group health plans: A group health plan that provides
+  health benefits solely through an insurance contract is not subject to
+  the Privacy Rule requirements except for the plan sponsor certification
+  requirement and the restriction on use of genetic information for
+  underwriting purposes. Group health plans that are self-administered
+  must comply with all applicable requirements.
+
+  Hybrid entities: A covered entity that is a hybrid entity must designate
+  the components that perform covered functions as health care components.
+  The covered entity must ensure that the health care component does not
+  disclose PHI to another component of the entity in circumstances where
+  the Privacy Rule would prohibit such disclosure.
+ocr_guidance:
+  summary: >
+    Section 164.504 is the Privacy Rule counterpart to the Security Rule's
+    §164.314. It establishes business associate contract requirements and
+    organizational structure rules (hybrid entities, affiliated covered
+    entities, group health plans). OCR has taken enforcement action for
+    impermissible disclosures where BAAs were missing or deficient.
+  source_document: "HHS Guidance on Business Associate Contracts"
+repo_interpretation:
+  plain_english_summary: >
+    This section requires covered entities to have proper business associate
+    agreements with any entity that handles PHI on their behalf. BAAs must
+    include specific provisions for safeguarding PHI, limiting uses and
+    disclosures, supporting individual rights, and breach reporting. It also
+    addresses hybrid entities (organizations where only part of the entity
+    is a covered entity) and group health plan requirements.
+  intent: >
+    Ensure that PHI protections extend to business associates through
+    enforceable contractual requirements, and that complex organizational
+    structures (hybrid entities, affiliated entities, group health plans)
+    have clear boundaries for Privacy Rule obligations.
+  applicability: >
+    Applies to every covered entity that engages business associates, and
+    to business associates that engage subcontractors. Also applies to
+    hybrid entities and group health plans.
+  common_gaps:
+    - BAAs missing required Privacy Rule provisions (especially individual rights flow-down).
+    - BAAs do not address subcontractor requirements.
+    - Hybrid entity designation not documented, leading to unclear PHI boundaries.
+    - No process to monitor business associate compliance or address known violations.
+    - BAAs not updated after the HITECH Act and Omnibus Rule changes.
+  remediation_suggestions:
+    - Audit all BAAs against the §164.504 required provisions checklist.
+    - Ensure BAAs include subcontractor flow-down requirements.
+    - Establish a business associate monitoring program.
+    - Document hybrid entity designations and health care component boundaries.
+    - Maintain a BAA inventory with execution dates and renewal schedules.
+evidence_expectations:
+  in_repo:
+    - System boundary documentation identifying business associate integration points.
+    - Data flow diagrams showing PHI flows to/from business associates.
+    - Configuration showing technical boundaries between organizational components (hybrid entities).
+  external:
+    - Executed business associate agreements with all required provisions.
+    - BAA inventory and tracking system.
+    - Hybrid entity designation documentation.
+    - Business associate monitoring procedures and evidence.
+    - Subcontractor BAAs (for business associates).
+  review_questions:
+    - Does every entity that handles PHI on behalf of the covered entity have a compliant BAA?
+    - Do BAAs include all provisions required by §164.504(e)?
+    - Is there a process for monitoring BA compliance and addressing violations?
+    - If a hybrid entity, are health care component boundaries clearly designated?
+related_requirements:
+  - "164.502"
+  - "164.524"
+  - "164.526"
+  - "164.528"
+  - "164.530"
+  - "164.410"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.504"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.504"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

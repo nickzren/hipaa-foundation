@@ -1,0 +1,64 @@
+---
+schema_version: v1
+regulation_id: "164.310(d)(2)(iii)"
+title: "Accountability"
+rule_family: security_rule
+safeguard_type: physical
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.310(d)(1)"
+addressable_assessment_guidance: |
+  Assess whether the entity has evaluated the need to track hardware and
+  media movements based on its risk analysis. If so, evaluate whether the
+  tracking mechanisms are reasonable and appropriate given the volume and
+  sensitivity of devices. Document the disposition: implemented, alternative,
+  documented_exception, or not_evidenced.
+authoritative_text: |
+  Maintain a record of the movements of hardware and electronic media and any
+  person responsible therefore.
+ocr_guidance:
+  summary: "Entities should maintain records tracking the movement of hardware and electronic media containing ePHI and the persons responsible for those movements."
+  source_document: "HIPAA Security Series: Security Standards - Physical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Keep a log of where hardware and media containing ePHI go and who is responsible for them at each step — check-out, transfer, shipment, return."
+  intent: "Establish an auditable chain of custody for ePHI-bearing devices and media, enabling the entity to determine who had possession at any point in time."
+  applicability: "All hardware and electronic media containing ePHI that is moved within or between facilities, shipped, checked out, or transferred between personnel."
+  common_gaps:
+    - "No asset tracking or chain-of-custody log"
+    - "Laptops and portable media not tracked when taken off-site"
+    - "Equipment transfers between departments not logged"
+    - "Shipping of media or devices not documented with responsible parties"
+    - "Virtual asset movements (VM migrations) not tracked"
+  remediation_suggestions:
+    - "Implement an asset tracking system with check-in/check-out logging"
+    - "Require sign-out and return documentation for portable devices and media"
+    - "Log all inter-facility or inter-department hardware transfers"
+    - "Record shipping and receiving details with responsible parties"
+    - "Consider whether virtual asset movement tracking is warranted by risk analysis"
+evidence_expectations:
+  in_repo:
+    - "Asset accountability and tracking policy"
+    - "Chain-of-custody procedure for hardware and media"
+  external:
+    - "Asset tracking system records"
+    - "Check-out/check-in logs"
+    - "Shipping and receiving logs with responsible parties"
+    - "Hardware and media inventory with custodian assignments"
+  review_questions:
+    - "Is there a system for tracking hardware and media movements?"
+    - "Are responsible persons recorded for each movement?"
+    - "How are portable devices tracked when taken off-site?"
+    - "Can the entity reconstruct who had custody of a device at a given time?"
+related_requirements:
+  - "164.310(d)(1)"
+  - "164.310(d)(2)(i)"
+  - "164.310(d)(2)(ii)"
+  - "164.308(a)(1)(ii)(D)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.310(d)(2)(iii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.310"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

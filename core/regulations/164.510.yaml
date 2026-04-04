@@ -1,0 +1,125 @@
+---
+schema_version: v1
+regulation_id: "164.510"
+title: "Uses and disclosures requiring an opportunity for the individual to agree or to object"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard: Use and disclosure for facility directories.
+  (1) A covered health care provider may use the following PHI to maintain
+  a facility directory and may disclose such information to persons who ask
+  for the individual by name:
+  (i) The individual's name;
+  (ii) The individual's location in the facility;
+  (iii) The individual's condition described in general terms; and
+  (iv) The individual's religious affiliation.
+
+  (2) The covered health care provider must inform the individual of the
+  PHI that it may include in a directory and the persons to whom it may
+  disclose such information, and must provide the individual with the
+  opportunity to restrict or prohibit some or all of the uses or
+  disclosures permitted.
+
+  (3) A covered health care provider may use or disclose for directory
+  purposes such information when the individual is incapacitated, if the
+  disclosure is consistent with any prior expressed preference of the
+  individual and is in the best interest of the individual as determined
+  by the covered health care provider in the exercise of professional
+  judgment.
+
+  (b) Standard: Uses and disclosures for involvement in the individual's
+  care and notification purposes.
+  (1) A covered entity may disclose to a family member, other relative,
+  close personal friend, or any other person identified by the individual,
+  the PHI directly relevant to such person's involvement with the
+  individual's care or payment related to the individual's health care.
+
+  (2) A covered entity may use or disclose PHI to notify, or assist in
+  the notification of, a family member, a personal representative, or
+  another person responsible for the care of the individual, of the
+  individual's location, general condition, or death.
+
+  (3) A covered entity may use or disclose PHI to an authorized public
+  or private entity to assist in disaster relief efforts.
+
+  The covered entity must provide the individual with an opportunity to
+  agree or object to the disclosure. If the individual is incapacitated
+  or not available, the covered entity may make the disclosure if, in the
+  exercise of professional judgment, it determines that the disclosure is
+  in the best interests of the individual.
+ocr_guidance:
+  summary: >
+    Section 164.510 permits certain uses and disclosures when the
+    individual is given an opportunity to informally agree or object,
+    without requiring a formal written authorization. This covers facility
+    directories and involvement of family/friends in care. OCR has
+    provided guidance emphasizing that these permissions are particularly
+    relevant in emergency and disaster situations where individuals may
+    be incapacitated.
+  source_document: "HHS Guidance on Facility Directories and Involvement in Care"
+repo_interpretation:
+  plain_english_summary: >
+    Covered entities may share limited PHI in two contexts without written
+    authorization, as long as the individual is given an informal
+    opportunity to agree or object: (1) facility directories (name,
+    location, general condition, religious affiliation), and (2) disclosure
+    to family members, friends, or others involved in the individual's
+    care or payment. When the individual is incapacitated, the provider
+    may use professional judgment to determine whether disclosure is in
+    the individual's best interest.
+  intent: >
+    Allow practical, compassionate sharing of information for care
+    coordination with family and friends, and for facility directories,
+    without the burden of formal authorization, while still respecting
+    individual preferences through an informal agree-or-object mechanism.
+  applicability: >
+    Primarily applies to covered health care providers with direct patient
+    interactions. Relevant for hospital information systems, patient
+    registration systems, facility directories, and care coordination
+    tools. Less directly relevant for health plans or clearinghouses
+    except in payment-related family communications.
+  common_gaps:
+    - No mechanism to capture or record the individual's agreement or objection preference.
+    - Facility directory disclosures made without informing the individual of the right to restrict.
+    - No professional judgment documentation process for incapacitated individuals.
+    - System does not support restricting directory information at the individual level.
+    - Disaster relief disclosures made without appropriate safeguards.
+  remediation_suggestions:
+    - Implement a preference capture mechanism for facility directory opt-in/opt-out.
+    - Document the agree-or-object process in patient registration workflows.
+    - Create a professional judgment documentation template for incapacitated patient disclosures.
+    - Ensure facility directory systems support individual-level restrictions.
+    - Establish procedures for disaster relief disclosures with appropriate documentation.
+evidence_expectations:
+  in_repo:
+    - Facility directory functionality with individual restriction support.
+    - Patient preference capture in registration or intake workflows.
+    - Care team or family member designation features.
+  external:
+    - Facility directory policies and procedures.
+    - Patient registration forms with directory preference options.
+    - Professional judgment documentation templates.
+    - Disaster relief disclosure procedures.
+    - Training materials on agree-or-object requirements.
+  review_questions:
+    - Does the system support capturing the individual's agree-or-object preference?
+    - Can individuals restrict facility directory information?
+    - Is there a process for professional judgment documentation when individuals are incapacitated?
+    - Are disclosures to family/friends limited to information directly relevant to their involvement?
+related_requirements:
+  - "164.502"
+  - "164.508"
+  - "164.512"
+  - "164.522"
+  - "164.520"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.510"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.510"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

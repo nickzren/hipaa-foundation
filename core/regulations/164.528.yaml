@@ -1,0 +1,138 @@
+---
+schema_version: v1
+regulation_id: "164.528"
+title: "Accounting of disclosures of protected health information"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard: Right to an accounting of disclosures.
+  An individual has a right to receive an accounting of disclosures of
+  protected health information made by a covered entity in the six years
+  prior to the date on which the accounting is requested, except for
+  disclosures:
+  (1) To carry out treatment, payment, and health care operations as
+      provided in §164.506;
+  (2) To individuals of PHI about them as provided in §164.502;
+  (3) Incident to a use or disclosure otherwise permitted or required by
+      this subpart;
+  (4) Pursuant to an authorization as provided in §164.508;
+  (5) For the facility's directory or to persons involved in the
+      individual's care or for other notification purposes as provided in
+      §164.510;
+  (6) For national security or intelligence purposes as provided in
+      §164.512(k)(2);
+  (7) To correctional institutions or law enforcement officials as
+      provided in §164.512(k)(5);
+  (8) As part of a limited data set in accordance with §164.514(e); or
+  (9) That occurred prior to the compliance date for the covered entity.
+
+  (b) Implementation specifications: Content of the accounting.
+  The accounting must include, for each disclosure:
+  (1) The date of the disclosure;
+  (2) The name of the entity or person who received the PHI and, if known,
+      the address of such entity or person;
+  (3) A brief description of the PHI disclosed; and
+  (4) A brief statement of the purpose of the disclosure that reasonably
+      informs the individual of the basis for the disclosure, or a copy
+      of a written request for disclosure.
+
+  For multiple disclosures to the same person or entity for a single
+  purpose, the accounting may provide the required information for the
+  first disclosure and the frequency, periodicity, or number of
+  disclosures made during the accounting period and the date of the last
+  disclosure.
+
+  (c) The covered entity must act on the request no later than 60 days
+  after receipt, with one possible 30-day extension. The first accounting
+  in any 12-month period must be provided without charge. A reasonable
+  cost-based fee may be charged for subsequent requests.
+
+  (d) The covered entity must document and retain the information required
+  to be included in an accounting for six years from the date of the
+  last disclosure for which an accounting is required.
+ocr_guidance:
+  summary: >
+    Section 164.528 requires covered entities to provide individuals with
+    an accounting of certain disclosures made in the prior six years.
+    Notably, TPO disclosures, disclosures to the individual, disclosures
+    pursuant to an authorization, and certain other categories are exempt
+    from the accounting requirement. OCR has noted that the HITECH Act
+    directed HHS to expand the accounting right to include TPO disclosures
+    made through an electronic health record, though the final rule for
+    this expansion has not been finalized.
+  source_document: "HHS Guidance on Accounting of Disclosures"
+repo_interpretation:
+  plain_english_summary: >
+    Individuals can request a list of certain disclosures of their PHI
+    made in the past six years. The accounting must include the date,
+    recipient, description of information, and purpose of each disclosure.
+    Key exclusions: TPO disclosures, disclosures to the individual,
+    authorized disclosures, facility directory disclosures, and certain
+    national security and law enforcement disclosures are not required in
+    the accounting. The first accounting in a 12-month period is free.
+    Covered entities must retain disclosure records for six years.
+  intent: >
+    Provide individuals with transparency into how their PHI has been
+    shared beyond routine care and operations, enabling them to detect
+    unauthorized or unexpected disclosures and hold covered entities
+    accountable.
+  applicability: >
+    Applies to all covered entities. Relevant for disclosure tracking
+    systems, audit logging infrastructure, health information exchanges,
+    public health reporting systems, and any system that makes
+    accountable disclosures (primarily §164.512 disclosures). Systems
+    must maintain disclosure records for six years.
+  common_gaps:
+    - No disclosure tracking system or log for accountable disclosures.
+    - Disclosure log does not capture all required elements (date, recipient, description, purpose).
+    - No process for responding to accounting of disclosures requests.
+    - Disclosure records not retained for six years.
+    - Cannot distinguish accountable disclosures from exempt ones (TPO, authorization-based).
+    - No mechanism to produce a formatted accounting report for the individual.
+    - Recurring disclosures to the same recipient not aggregated per the permitted method.
+  remediation_suggestions:
+    - Implement a disclosure tracking system that captures date, recipient, description, and purpose.
+    - Tag each disclosure with its legal basis to distinguish accountable from exempt disclosures.
+    - Build an accounting report generation capability.
+    - Ensure disclosure records are retained for at least six years.
+    - Create a request intake and fulfillment workflow for accounting requests.
+    - Implement the 60-day response timeline with extension tracking.
+    - Support aggregation of recurring disclosures to the same recipient.
+evidence_expectations:
+  in_repo:
+    - Disclosure logging or tracking implementation.
+    - Audit trail capturing disclosure events with required metadata.
+    - Accounting report generation functionality.
+    - Disclosure record retention configuration.
+  external:
+    - Disclosure tracking log or system.
+    - Accounting of disclosures request procedures.
+    - Accounting report template or format.
+    - Disclosure record retention policy (six-year requirement).
+    - Fee schedule for subsequent accounting requests.
+    - Training materials on accounting of disclosures.
+  review_questions:
+    - Is there a disclosure tracking system that captures all required elements?
+    - Can accountable disclosures be distinguished from exempt ones?
+    - Is there a process for responding to accounting of disclosures requests?
+    - Are disclosure records retained for six years?
+    - Can a formatted accounting report be produced for the individual?
+    - Is the 60-day response timeline enforced?
+related_requirements:
+  - "164.502"
+  - "164.504"
+  - "164.512"
+  - "164.514.e"
+  - "164.524"
+  - "164.530"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.528"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.528"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,69 @@
+---
+schema_version: v1
+regulation_id: "164.314(a)(1)"
+title: "Business associate contracts or other arrangements"
+rule_family: security_rule
+safeguard_type: organizational
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  The contract or other arrangement between the covered entity and its
+  business associate required by 164.308(b)(3) must meet the requirements
+  of paragraph (a)(2)(i), (a)(2)(ii), or (a)(2)(iii) of this section,
+  as applicable.
+ocr_guidance:
+  summary: >
+    OCR requires that covered entities have appropriate written
+    arrangements with business associates that meet the specific
+    requirements of 164.314(a)(2). The form of the arrangement depends
+    on the relationship (private-sector BAA, government memorandum of
+    understanding, or law/regulation). OCR enforcement actions frequently
+    cite missing or deficient BAAs.
+  source_document: "HIPAA Security Rule, 45 CFR Part 164 Subpart C"
+repo_interpretation:
+  plain_english_summary: >
+    Covered entities must have written contracts or other arrangements
+    with their business associates that satisfy the requirements of
+    164.314(a)(2). The specific form depends on the type of relationship.
+  intent: >
+    Ensure that the Security Rule's protections extend to business
+    associates through enforceable written agreements.
+  applicability: >
+    Applies whenever a covered entity engages a business associate that
+    creates, receives, maintains, or transmits ePHI on behalf of the
+    covered entity. Also applies to business associate subcontractor
+    relationships.
+  common_gaps:
+    - BAAs not in place for all business associate relationships.
+    - BAAs executed but missing required provisions.
+    - Subcontractor BAAs not established for downstream PHI handlers.
+  remediation_suggestions:
+    - Inventory all business associate relationships and verify BAA coverage.
+    - Review BAAs against 164.314(a)(2)(i) required provisions.
+    - Extend BAA requirements to subcontractor relationships.
+evidence_expectations:
+  in_repo:
+    - References to business associate relationships in architecture or integration documentation.
+    - Subcontractor or vendor integration boundaries.
+  external:
+    - Executed BAAs with all business associates.
+    - Business associate inventory or tracking system.
+    - BAA compliance monitoring records.
+  review_questions:
+    - Are BAAs in place for all business associate relationships?
+    - Do BAAs contain all required provisions per 164.314(a)(2)?
+    - Are subcontractor BAAs in place for downstream PHI handlers?
+related_requirements:
+  - "164.308(b)(3)"
+  - "164.314(a)(2)(i)"
+  - "164.314(a)(2)(ii)"
+  - "164.314(a)(2)(iii)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.314(a)(1)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.314"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

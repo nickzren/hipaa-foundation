@@ -1,0 +1,20 @@
+---
+schema_version: v1
+policy_id: hipaa-foundation-content-policy-v1
+content_strategy: public-domain-plus-original
+repo_visibility: public
+allowed_audience:
+  - public
+licensed_source_present: 'no'
+source_licensing:
+  cfr_text: public_domain
+  original_content: MIT
+storage_constraints:
+  - CFR text is public domain and may be quoted.
+  - Original repo content (summaries, rubric, workflow, evidence map) is MIT-licensed.
+  - No licensed-source constraint applies to this repository.
+  - Do not include the HHS combined regulation text PDF (HHS labels it unofficial).
+verbatim_cfr_allowed: 'yes'
+approved_by: repository-maintainer
+decision_date: '2026-04-01'
+status: active

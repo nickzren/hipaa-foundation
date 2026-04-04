@@ -1,0 +1,62 @@
+---
+schema_version: v1
+rubric_id: hipaa-assessment-rubric-v1
+
+finding_states:
+  - state: Adequate
+    when: Required controls implemented, or addressable specs properly dispositioned with evidence.
+  - state: Partial
+    when: Controls exist but governance evidence is incomplete, or addressable disposition is undocumented.
+  - state: Gap
+    when: Required control is absent or materially insufficient, or addressable spec is affirmatively shown to have no implementation, no alternative, and no documented exception in a corpus that should contain that evidence.
+  - state: Not assessed
+    when: Evidence is outside the reviewed corpus.
+  - state: Not applicable
+    when: Standard or spec does not apply to the entity type or system scope.
+
+addressable_rules:
+  documented_exception_is_not_a_gap: true
+  alternative_with_documentation_is_adequate: true
+  not_evidenced_repo_only: |
+    When evidence_basis is repo-only and the risk analysis or addressable disposition
+    record is not found in the reviewed corpus, use Partial or Not assessed -- not Gap.
+    Use Gap only when the reviewed corpus affirmatively shows no risk analysis,
+    no disposition, and no compensating control exists. Absence of evidence in a
+    repo-only review is not the same as confirmed absence of the control.
+  not_evidenced_with_external_evidence: |
+    When evidence_basis includes external evidence and the risk analysis or
+    addressable disposition is still missing, Gap is appropriate if the external
+    evidence confirms no analysis or disposition exists.
+  not_evidenced_with_risk_analysis_supporting_exception: Adequate
+
+basis_types:
+  - missing_evidence
+  - observed_gap
+  - mixed
+
+severity_options:
+  - Critical
+  - Major
+  - Minor
+  - Observation
+
+repo_only_realism_rule: |
+  Many HIPAA obligations are process-heavy, not code-heavy. On repo-only evidence,
+  the following should typically be Not assessed or Partial, not Gap:
+  - notices of privacy practices
+  - authorizations
+  - accounting of disclosures
+  - sanctions policy execution evidence
+  - executed BAAs
+  - training completion records
+  - breach investigation and notification workflow execution evidence
+  Absence from a codebase is not automatically a gap. These are organizational
+  controls that live outside code repositories.
+
+domain_severity_anchors:
+  default_for_strong_technical_weak_governance: Minor
+  default_for_organizational_only: Observation
+  escalation_rule: |
+    Escalate only with explicit rationale tied to entity type, PHI scope,
+    risk analysis findings, or confirmed regulatory exposure. State the
+    escalation rationale if overriding the domain default.

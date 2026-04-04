@@ -1,0 +1,119 @@
+---
+schema_version: v1
+regulation_id: "164.502(b)"
+title: "Minimum necessary"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: "164.502"
+authoritative_text: |
+  (b) Standard: Minimum necessary.
+  (1) A covered entity or business associate must, when using or disclosing
+  protected health information or when requesting protected health
+  information from another covered entity or business associate, make
+  reasonable efforts to limit protected health information to the minimum
+  necessary to accomplish the intended purpose of the use, disclosure, or
+  request.
+
+  (2) This requirement does not apply to:
+  (i) Disclosures to or requests by a health care provider for treatment;
+  (ii) Uses or disclosures made to the individual as permitted under
+       §164.502(a)(1)(i) or required by §164.502(a)(2)(i);
+  (iii) Uses or disclosures made pursuant to a valid authorization under
+        §164.508;
+  (iv) Disclosures made to the Secretary in accordance with subpart C of
+       part 160 of this subchapter;
+  (v) Uses or disclosures that are required by law; and
+  (vi) Uses or disclosures that are required for compliance with the
+       applicable requirements of this subchapter.
+
+  The minimum necessary standard requires covered entities to evaluate
+  their practices and enhance safeguards as needed to limit unnecessary
+  or inappropriate access to and disclosure of protected health
+  information. For uses, the covered entity must identify those persons or
+  classes of persons in its workforce who need access to PHI and for each
+  such person or class, the category or categories of PHI to which access
+  is needed and any conditions appropriate to such access. For routine and
+  recurring disclosures, the entity must implement policies that limit the
+  PHI disclosed to the amount reasonably necessary to achieve the purpose
+  of the disclosure. For non-routine disclosures, criteria must be
+  developed and applied on a case-by-case basis.
+ocr_guidance:
+  summary: >
+    The minimum necessary standard is a core Privacy Rule principle. OCR
+    has emphasized that it applies to most uses and disclosures (with the
+    notable exception of treatment disclosures between providers). The
+    HITECH Act directed HHS to provide additional guidance on minimum
+    necessary and required covered entities to limit uses to a limited
+    data set or minimum necessary for certain purposes. OCR enforcement
+    actions have targeted entities that failed to limit workforce access
+    to the minimum necessary.
+  source_document: "HHS Guidance on Minimum Necessary"
+repo_interpretation:
+  plain_english_summary: >
+    When using, disclosing, or requesting PHI, covered entities and
+    business associates must make reasonable efforts to limit the
+    information to the minimum amount necessary for the purpose. Key
+    exceptions: treatment disclosures between providers, disclosures to
+    the individual, uses under a valid authorization, disclosures to HHS
+    for compliance, and disclosures required by law. For workforce access,
+    the entity must define who needs access to what categories of PHI.
+    For routine disclosures, standard protocols limit what is shared. For
+    non-routine disclosures, case-by-case criteria apply.
+  intent: >
+    Prevent unnecessary exposure of PHI by requiring that each use or
+    disclosure be limited in scope to what is actually needed for the
+    stated purpose. This limits the blast radius of any privacy incident
+    and reinforces the principle that PHI access should be purpose-limited.
+  applicability: >
+    Applies to all covered entities and business associates for all uses
+    and disclosures except the enumerated exceptions. Every system that
+    stores, processes, or transmits PHI must be evaluated for minimum
+    necessary compliance, particularly in how it exposes PHI to workforce
+    members and external recipients.
+  common_gaps:
+    - Workforce access is all-or-nothing without role-based PHI scoping.
+    - API responses return full PHI records when only a subset is needed.
+    - No distinction between routine and non-routine disclosures in the disclosure process.
+    - Minimum necessary policies exist but are not enforced technically.
+    - Query results include more PHI fields than necessary for the requesting purpose.
+    - No periodic review of workforce access against minimum necessary criteria.
+  remediation_suggestions:
+    - Implement role-based access controls that limit PHI access by job function.
+    - Design API responses to return only the PHI fields needed for each use case.
+    - Create routine disclosure protocols for common disclosure scenarios.
+    - Develop non-routine disclosure criteria and a case-by-case review process.
+    - Conduct periodic reviews of workforce access to verify minimum necessary compliance.
+    - Implement field-level access controls where technically feasible.
+evidence_expectations:
+  in_repo:
+    - Role-based access control configuration limiting PHI access by function.
+    - API or query designs that scope data to purpose-specific field sets.
+    - Data view definitions or projections that enforce minimum necessary.
+    - Configuration separating treatment data flows from payment/operations flows.
+  external:
+    - Minimum necessary policy defining workforce access categories.
+    - Role-to-PHI-category access matrix.
+    - Routine disclosure protocols for common disclosure scenarios.
+    - Non-routine disclosure criteria and review procedures.
+    - Periodic access review records.
+  review_questions:
+    - Does the system enforce minimum necessary through technical controls or rely on policy alone?
+    - Are workforce members limited to the PHI categories needed for their job functions?
+    - Do API responses or data exports include only the minimum necessary PHI?
+    - Are routine disclosures governed by standard protocols limiting PHI scope?
+    - Is there a process for non-routine disclosure review?
+related_requirements:
+  - "164.502"
+  - "164.506"
+  - "164.514.d"
+  - "164.530"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.502(b)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.502"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

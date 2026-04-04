@@ -1,0 +1,65 @@
+---
+schema_version: v1
+id: training-and-sanctions
+title: Training and Sanctions
+rule_family: both
+lifecycle_phase:
+  - assessment
+  - operation
+review_questions:
+  - Is security awareness training provided per 164.308(a)(5)?
+  - Is Privacy Rule training provided per 164.530(b)?
+  - Is there a sanctions policy for workforce members who violate policies?
+deep_assessment_probes:
+  - Is training tailored to workforce roles and responsibilities?
+  - Are training records maintained to demonstrate completion?
+  - Has the sanctions policy ever been applied, and is that documented?
+expected_evidence:
+  in_repo:
+    - role definitions and permission models implying training requirements
+    - onboarding or training automation
+  external:
+    - training completion records
+    - training program descriptions
+    - sanctions policy and enforcement evidence
+    - security awareness materials
+common_gaps:
+  - Training program exists in name but no completion records.
+  - Sanctions policy exists but no evidence of enforcement.
+  - Training not updated after significant policy or system changes.
+cross_links:
+  - administrative-safeguards
+  - policies-procedures-documentation
+regulation_ids:
+  - "164.308(a)(5)"
+  - "164.308(a)(5)(ii)(A)"
+  - "164.308(a)(5)(ii)(B)"
+  - "164.308(a)(5)(ii)(C)"
+  - "164.308(a)(5)(ii)(D)"
+  - "164.530"
+regulation_files:
+  standards:
+    - core/regulations/164.308.a.5.yaml
+    - core/regulations/164.530.yaml
+  implementation_specifications:
+    - core/regulations/164.308.a.5.ii.A.yaml
+    - core/regulations/164.308.a.5.ii.B.yaml
+    - core/regulations/164.308.a.5.ii.C.yaml
+    - core/regulations/164.308.a.5.ii.D.yaml
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Assuming role-based access implies training has occurred."
+    - "Training program exists in name but no completion records."
+    - "Sanctions policy exists but no evidence of enforcement."
+  escalation_triggers:
+    - "No security awareness training program exists."
+    - "No sanctions policy for HIPAA violations."
+  repo_only_notes: |
+    Training and sanctions are heavily organizational. Training completion
+    records, training program descriptions, sanctions enforcement evidence,
+    and security awareness materials are almost always external evidence.
+    On repo-only evidence, role definitions and permission models implying
+    training requirements, and onboarding automation, are the strongest
+    signals. This domain has very limited repo-observable evidence; most
+    controls live outside code repositories.
+status: draft

@@ -1,0 +1,146 @@
+---
+schema_version: v1
+regulation_id: "164.508"
+title: "Uses and disclosures for which an authorization is required"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard: Authorizations for uses and disclosures.
+  (1) A covered entity may not use or disclose protected health information
+  without an authorization that is valid under this section, except as
+  otherwise permitted or required by this subpart.
+
+  (2) Authorization required: psychotherapy notes. A covered entity must
+  obtain an authorization for any use or disclosure of psychotherapy notes,
+  except:
+  (i) To carry out treatment, payment, or health care operations by the
+      originator of the psychotherapy notes;
+  (ii) For the covered entity's own training programs;
+  (iii) To defend a legal action brought by the individual;
+  (iv) As required by the Secretary for compliance investigation;
+  (v) As required by law;
+  (vi) For health oversight activities regarding the originator;
+  (vii) To avert a serious threat to health or safety;
+  (viii) For lawful activities of coroners, medical examiners.
+
+  (3) Authorization required: marketing. A covered entity must obtain an
+  authorization for any use or disclosure of PHI for marketing, except for
+  face-to-face communications and promotional gifts of nominal value.
+  If the marketing involves financial remuneration to the covered entity
+  from a third party, the authorization must state that such remuneration
+  is involved.
+
+  (4) Authorization required: sale of PHI. A covered entity must obtain an
+  authorization for any disclosure of PHI that is a sale of PHI, except for
+  specified purposes (treatment, payment, public health, research, merger,
+  BA functions, individual request, required by law, and other limited
+  exceptions).
+
+  (b) Implementation specifications: General requirements for valid
+  authorizations.
+  A valid authorization must contain at least the following elements:
+  (i) A description of the information to be used or disclosed;
+  (ii) The name or class of persons authorized to make the use or
+       disclosure;
+  (iii) The name or class of persons to whom the disclosure may be made;
+  (iv) A description of each purpose of the use or disclosure;
+  (v) An expiration date or event;
+  (vi) Signature of the individual and date.
+
+  If signed by a personal representative, a description of that
+  representative's authority to act for the individual.
+
+  The authorization must include statements of the individual's right to
+  revoke, the ability or inability to condition treatment/payment on
+  authorization, and the potential for re-disclosure.
+
+  (c) Compound authorizations: An authorization may not be combined with
+  any other document to create a compound authorization, except for
+  specified research and health plan enrollment exceptions.
+
+  An authorization is not valid if: the expiration date has passed, it has
+  not been filled out completely, it is known to have been revoked, any
+  material information is known to be false, or it violates the compound
+  authorization or conditioning rules.
+ocr_guidance:
+  summary: >
+    Section 164.508 requires individual authorization for uses and
+    disclosures not otherwise permitted by the Privacy Rule. OCR has
+    issued significant penalties for impermissible uses without
+    authorization, particularly for marketing uses and disclosures of
+    psychotherapy notes. The Omnibus Rule added the sale-of-PHI
+    authorization requirement. Authorization forms must contain all
+    required core elements to be valid.
+  source_document: "HHS Guidance on Authorizations"
+repo_interpretation:
+  plain_english_summary: >
+    When PHI is used or disclosed for purposes not covered by TPO or other
+    Privacy Rule exceptions, the covered entity must get a valid written
+    authorization from the individual. Specific categories always require
+    authorization: psychotherapy notes, marketing, and sale of PHI.
+    Authorizations must contain specific required elements including
+    description of information, purpose, expiration, and signature.
+    Individuals have the right to revoke authorizations.
+  intent: >
+    Protect individual autonomy by requiring informed, written consent for
+    uses and disclosures that go beyond routine health care operations.
+    Provide especially strong protection for sensitive categories
+    (psychotherapy notes, marketing, sale of PHI).
+  applicability: >
+    Applies to any covered entity or business associate that uses or
+    discloses PHI for non-TPO purposes. Systems that support research,
+    marketing, fundraising beyond the operations exception, or any
+    sale of PHI must implement authorization workflows. Systems handling
+    psychotherapy notes must enforce the heightened authorization
+    requirement.
+  common_gaps:
+    - No authorization workflow for non-TPO uses and disclosures.
+    - Authorization forms missing required elements (expiration, revocation statement, re-disclosure notice).
+    - No mechanism to track authorization status or enforce revocations.
+    - Marketing communications sent using PHI without authorization.
+    - Psychotherapy notes not segregated from the general medical record with heightened authorization controls.
+    - Compound authorization violations (combining authorization with consent to treat).
+    - No audit trail for authorization-based disclosures.
+  remediation_suggestions:
+    - Implement an authorization management workflow with creation, tracking, revocation, and expiration.
+    - Validate authorization forms against the §164.508(c) required elements checklist.
+    - Segregate psychotherapy notes with separate access controls and authorization requirements.
+    - Implement marketing communication controls that verify authorization before sending.
+    - Maintain an authorization log linking each non-TPO disclosure to a valid authorization.
+    - Enforce compound authorization rules in form generation.
+evidence_expectations:
+  in_repo:
+    - Authorization workflow implementation (capture, storage, status tracking, revocation).
+    - Access controls enforcing authorization-based disclosure permissions.
+    - Psychotherapy notes segregation logic (if applicable).
+    - Marketing communication controls tied to authorization status.
+  external:
+    - Authorization form templates meeting §164.508(c) required elements.
+    - Authorization tracking logs.
+    - Revocation procedures and records.
+    - Policy distinguishing TPO uses from authorization-required uses.
+    - Training materials on authorization requirements.
+  review_questions:
+    - Are all non-TPO uses and disclosures covered by valid authorizations?
+    - Do authorization forms contain all required elements?
+    - Is there a mechanism to enforce authorization revocations?
+    - Are psychotherapy notes (if any) segregated with separate authorization controls?
+    - Could any data sharing pathway constitute a sale of PHI?
+related_requirements:
+  - "164.502"
+  - "164.506"
+  - "164.510"
+  - "164.512"
+  - "164.524"
+  - "164.530"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.508"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.508"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

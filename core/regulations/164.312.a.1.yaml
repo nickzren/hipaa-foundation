@@ -1,0 +1,64 @@
+---
+schema_version: v1
+regulation_id: "164.312(a)(1)"
+title: "Access Control"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement technical policies and procedures for electronic information
+  systems that maintain electronic protected health information to allow
+  access only to those persons or software programs that have been granted
+  access rights as specified in §164.308(a)(4).
+ocr_guidance:
+  summary: "Entities must implement technical access controls on information systems containing ePHI, limiting access to authorized persons and software programs consistent with the information access management standard."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Use technical mechanisms — not just policies — to ensure only authorized users and programs can access ePHI in your information systems."
+  intent: "Enforce the principle of least privilege at the technical layer, ensuring information systems restrict ePHI access to authorized users and software in accordance with the entity's access management policies."
+  applicability: "All electronic information systems that create, receive, maintain, or transmit ePHI — EHRs, databases, file servers, cloud applications, APIs, and internal tools."
+  common_gaps:
+    - "Shared or generic accounts used to access ePHI systems"
+    - "No role-based access control implemented in applications"
+    - "Service accounts with excessive privileges"
+    - "No periodic access review or recertification process"
+    - "API endpoints lacking authentication or authorization"
+  remediation_suggestions:
+    - "Implement role-based access control (RBAC) in all ePHI systems"
+    - "Eliminate shared and generic accounts"
+    - "Apply least-privilege principles to service accounts"
+    - "Conduct periodic access reviews and recertification"
+    - "Secure all API endpoints with authentication and authorization controls"
+evidence_expectations:
+  in_repo:
+    - "Access control policy for information systems"
+    - "RBAC model or access control matrix"
+    - "Application access control configuration documentation"
+  external:
+    - "Access provisioning and deprovisioning records"
+    - "Periodic access review reports"
+    - "System access control configuration exports"
+    - "Penetration test findings related to access control"
+  review_questions:
+    - "How does the system enforce access restrictions technically?"
+    - "Are all user accounts uniquely assigned?"
+    - "Is there a role-based access model, and is it enforced?"
+    - "How are access rights reviewed and recertified?"
+    - "Are API and service-to-service access controls in place?"
+related_requirements:
+  - "164.312(a)(2)(i)"
+  - "164.312(a)(2)(ii)"
+  - "164.312(a)(2)(iii)"
+  - "164.312(a)(2)(iv)"
+  - "164.308(a)(4)(i)"
+  - "164.312(d)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(a)(1)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

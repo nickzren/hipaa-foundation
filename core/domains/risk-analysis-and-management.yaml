@@ -1,0 +1,62 @@
+---
+schema_version: v1
+id: risk-analysis-and-management
+title: Risk Analysis and Management
+rule_family: security_rule
+lifecycle_phase:
+  - assessment
+  - operation
+review_questions:
+  - Has the entity conducted a risk analysis per 164.308(a)(1)(ii)(A)?
+  - Are risk management measures in place per 164.308(a)(1)(ii)(B)?
+  - Is there evidence of periodic risk analysis review?
+deep_assessment_probes:
+  - Does the risk analysis cover all ePHI the entity creates, receives, maintains, or transmits?
+  - Are addressable spec dispositions traceable to risk analysis findings?
+  - Is the risk analysis current or stale?
+expected_evidence:
+  in_repo:
+    - security controls that imply risk mitigation decisions
+    - encryption, access controls, monitoring
+  external:
+    - formal risk analysis document
+    - risk register or risk management plan
+    - periodic review evidence
+common_gaps:
+  - No formal risk analysis exists.
+  - Risk analysis covers only a subset of ePHI systems.
+  - Risk analysis has not been updated after significant changes.
+cross_links:
+  - administrative-safeguards
+  - technical-safeguards
+  - physical-safeguards
+regulation_ids:
+  - "164.308(a)(1)"
+  - "164.308(a)(1)(ii)(A)"
+  - "164.308(a)(1)(ii)(B)"
+  - "164.308(a)(1)(ii)(C)"
+  - "164.308(a)(1)(ii)(D)"
+regulation_files:
+  standards:
+    - core/regulations/164.308.a.1.yaml
+  implementation_specifications:
+    - core/regulations/164.308.a.1.ii.A.yaml
+    - core/regulations/164.308.a.1.ii.B.yaml
+    - core/regulations/164.308.a.1.ii.C.yaml
+    - core/regulations/164.308.a.1.ii.D.yaml
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Treating a vulnerability scan as a complete risk analysis."
+    - "Risk analysis covers only a subset of ePHI systems, not the full environment."
+    - "Risk analysis has not been updated after significant system or environmental changes."
+  escalation_triggers:
+    - "No formal risk analysis exists and external evidence confirms none was conducted."
+    - "Risk management measures are absent despite identified risks."
+  repo_only_notes: |
+    Risk analysis is a required implementation specification. However, the formal
+    risk analysis document is almost always organizational evidence outside a code
+    repository. Absence of a risk analysis from the repo is an evidence-basis
+    limitation, not confirmation that no analysis was conducted. Security controls
+    in code that imply risk mitigation decisions are supporting evidence, not the
+    analysis itself.
+status: draft

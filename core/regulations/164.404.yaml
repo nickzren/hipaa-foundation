@@ -1,0 +1,149 @@
+---
+schema_version: v1
+regulation_id: "164.404"
+title: "Notification to individuals"
+rule_family: breach_notification_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard.
+  (1) A covered entity must, following the discovery of a breach of
+  unsecured protected health information, notify each individual whose
+  unsecured protected health information has been, or is reasonably
+  believed by the covered entity to have been, accessed, acquired, used,
+  or disclosed as a result of such breach.
+
+  (2) A breach is treated as discovered by a covered entity as of the
+  first day on which such breach is known to the covered entity, or, by
+  exercising reasonable diligence, would have been known to the covered
+  entity. A covered entity is deemed to have knowledge of a breach if such
+  breach is known, or by exercising reasonable diligence would have been
+  known, to any person, other than the person committing the breach, who
+  is a workforce member or agent of the covered entity.
+
+  (b) Implementation specifications: Timeliness of notification.
+  A covered entity must provide the notification required by paragraph (a)
+  without unreasonable delay and in no case later than 60 calendar days
+  from the discovery of the breach.
+
+  (c) Implementation specifications: Content of notification.
+  The notification must include, to the extent possible:
+  (1) A brief description of what happened, including the date of the
+      breach and the date of the discovery of the breach, if known;
+  (2) A description of the types of unsecured PHI that were involved in
+      the breach (such as full name, Social Security number, date of
+      birth, home address, account number, diagnosis, disability code,
+      or other types of information);
+  (3) Any steps individuals should take to protect themselves from
+      potential harm resulting from the breach;
+  (4) A brief description of what the covered entity involved is doing
+      to investigate the breach, to mitigate harm to individuals, and to
+      protect against any further breaches; and
+  (5) Contact procedures for individuals to ask questions or learn
+      additional information, which must include a toll-free telephone
+      number, an e-mail address, website, or postal address.
+
+  (d) Implementation specifications: Methods of individual notification.
+  (1) Written notice: By first-class mail at the last known address of
+      the individual (or next of kin or personal representative if the
+      individual is deceased).
+  (2) If the covered entity knows the individual is deceased, the entity
+      must provide notice to the next of kin or personal representative.
+  (3) If there is insufficient or out-of-date contact information for
+      fewer than 10 individuals, the entity may provide substitute notice
+      by alternative form (telephone, other means). For 10 or more
+      individuals with insufficient contact information, substitute notice
+      must include a conspicuous posting on the entity's website for 90
+      days or notice in major print or broadcast media, and must include a
+      toll-free number active for at least 90 days.
+  (4) If there is urgency because of possible imminent misuse of unsecured
+      PHI, the covered entity may provide additional notice by telephone or
+      other means in addition to the written notice.
+ocr_guidance:
+  summary: >
+    Section 164.404 requires individual notification following a breach
+    of unsecured PHI. OCR has taken enforcement action for failure to
+    provide timely notification (within 60 days of discovery), inadequate
+    notification content, and failure to use appropriate notification
+    methods. The "discovery" date triggers the 60-day clock and is defined
+    broadly: knowledge of any workforce member or agent triggers discovery.
+    OCR has emphasized that the 60-day period is the outside limit, not
+    the target.
+  source_document: "HHS Breach Notification Rule Guidance"
+repo_interpretation:
+  plain_english_summary: >
+    When a breach of unsecured PHI is discovered, the covered entity must
+    notify every affected individual within 60 days. The notification must
+    describe what happened, what information was involved, what the
+    individual should do, what the entity is doing, and how to get more
+    information. Notification is by first-class mail, with substitute
+    notice provisions when contact information is insufficient. The
+    discovery clock starts when any workforce member or agent knows or
+    should have known about the breach.
+  intent: >
+    Ensure that individuals whose PHI has been compromised are promptly
+    informed so they can take steps to protect themselves from potential
+    harm, such as identity theft or financial fraud. Timely, complete
+    notification enables informed decision-making by affected individuals.
+  applicability: >
+    Applies to all covered entities. Relevant for incident response
+    systems, notification management systems, and communication
+    infrastructure. Systems must support breach discovery tracking,
+    notification generation, and delivery tracking within the 60-day
+    timeline.
+  common_gaps:
+    - No formal breach notification procedure or timeline tracking.
+    - Notification content incomplete (missing required elements).
+    - No process for substitute notice when contact information is insufficient.
+    - Discovery date not documented, making the 60-day timeline unverifiable.
+    - No mechanism to track notification delivery and receipt.
+    - Notification letters not reviewed for required content before sending.
+    - No toll-free number or website for individual inquiries.
+    - Deceased individual notification procedures not defined.
+  remediation_suggestions:
+    - Develop breach notification letter templates with all required content elements.
+    - Implement a breach timeline tracking workflow (discovery date, investigation dates, notification dates).
+    - Establish substitute notice procedures for insufficient contact information.
+    - Create a toll-free number or dedicated contact channel for breach inquiries.
+    - Implement notification delivery tracking.
+    - Define discovery date documentation procedures.
+    - Establish procedures for notifying next of kin for deceased individuals.
+    - Test notification procedures through tabletop exercises.
+evidence_expectations:
+  in_repo:
+    - Notification template generation or management.
+    - Breach timeline tracking workflow.
+    - Notification delivery tracking system.
+    - Contact information validation for notification purposes.
+  external:
+    - Breach notification letter templates.
+    - Breach notification procedures.
+    - Notification delivery records and tracking.
+    - Substitute notice procedures and evidence.
+    - Toll-free number or dedicated contact channel for inquiries.
+    - Incident response plan including breach notification workflow.
+    - Tabletop exercise or drill records.
+  review_questions:
+    - Is there a breach notification procedure with timeline tracking?
+    - Do notification letters contain all required content elements?
+    - Are notifications sent within 60 days of discovery?
+    - Is there a process for substitute notice when contact information is insufficient?
+    - Is the discovery date documented for each breach?
+    - Is there a toll-free number or contact channel for individual inquiries?
+related_requirements:
+  - "164.400"
+  - "164.402"
+  - "164.406"
+  - "164.408"
+  - "164.410"
+  - "164.414"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.404"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.404"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

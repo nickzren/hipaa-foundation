@@ -1,0 +1,85 @@
+---
+schema_version: v1
+regulation_id: "164.308(b)(3)"
+title: "Written contract or other arrangement"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.308(b)(1)"
+authoritative_text: |
+  Document the satisfactory assurances required by paragraph (b)(1) or (b)(2) of this section through a written contract or other arrangement with the business associate that meets the applicable requirements of § 164.314(a).
+ocr_guidance:
+  summary: >
+    OCR expects covered entities to document satisfactory assurances from
+    business associates through written contracts (BAAs) that meet the
+    requirements of 164.314(a). OCR has imposed significant civil money
+    penalties and resolution agreements for failure to execute BAAs. The
+    BAA must include all required provisions: permitted uses and
+    disclosures, safeguard requirements, reporting obligations, and
+    subcontractor flow-down. Government entities may use alternative
+    arrangements as specified in 164.314(a)(2).
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    The satisfactory assurances from your business associates must be
+    documented in a written contract — typically a Business Associate
+    Agreement (BAA). The BAA must contain specific required provisions
+    as defined in 164.314(a).
+  intent: >
+    Formalize the security obligations of business associates through
+    legally binding written agreements. Ensure that security requirements
+    are clearly communicated, enforceable, and consistent with regulatory
+    requirements.
+  applicability: >
+    Required for all covered entities with business associates. Also applies
+    to business associates with respect to their subcontractors. Government
+    entities may use memoranda of understanding or other alternative
+    arrangements as permitted by 164.314(a)(2).
+  common_gaps:
+    - BAAs are not executed with all business associates.
+    - BAAs exist but do not contain all required provisions under 164.314(a).
+    - BAAs are outdated and do not reflect HITECH Act amendments.
+    - BAAs do not address subcontractor flow-down requirements.
+    - No process for tracking BAA execution and renewal.
+    - BAAs do not address breach notification requirements.
+    - Entity relies on standard vendor terms of service without a compliant BAA.
+  remediation_suggestions:
+    - Execute BAAs with all business associates containing all provisions required by 164.314(a).
+    - Include provisions for permitted uses and disclosures, safeguards, reporting, and subcontractor requirements.
+    - Update BAAs to include HITECH Act and Omnibus Rule provisions.
+    - Implement a BAA tracking system to monitor execution, expiration, and renewal.
+    - Do not rely on standard terms of service as a substitute for a compliant BAA.
+    - Include breach notification provisions in BAAs.
+evidence_expectations:
+  in_repo:
+    - BAA template or standard form.
+    - BAA required provisions checklist.
+    - BAA tracking or inventory documentation.
+  external:
+    - Executed BAAs with all business associates.
+    - BAA inventory with execution dates and status.
+    - Evidence of BAA review and update process.
+    - Subcontractor BAAs (for business associates).
+  review_questions:
+    - Are written BAAs executed with all business associates?
+    - Do the BAAs contain all provisions required by 164.314(a)?
+    - Are BAAs current and reflective of HITECH Act and Omnibus Rule requirements?
+    - Is there a process for tracking BAA execution and renewal?
+    - Do BAAs address subcontractor flow-down?
+related_requirements:
+  - "164.308(b)(1)"
+  - "164.308(b)(2)"
+  - "164.314(a)"
+  - "164.314(a)(1)"
+  - "164.314(a)(2)"
+  - "164.502(e)"
+  - "164.504(e)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(b)(3)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,153 @@
+---
+schema_version: v1
+map_id: hipaa-evidence-map-v1
+evidence_classification_note: |
+  Placeholder folders and README files describing what evidence should exist
+  are not substantive evidence. Captured artifacts inside those folders —
+  such as BAA screenshots, signed-agreement PDFs, credential reports, or
+  attestation documents — are valid repo-managed evidence. Assess what they
+  show, noting limitations like staleness or screenshot-only status.
+sections:
+  entity-and-applicability:
+    look_for_in_code:
+      - PHI data models, health information fields, patient identifiers.
+    look_for_in_infrastructure:
+      - HIPAA-eligible cloud services, BAA-covered environments, compliance mode flags.
+    look_for_in_docs:
+      - Entity type determination, BA agreements, system scope statements, data flow diagrams.
+    look_for_in_external_evidence:
+      - Executed BAAs, legal entity classification, hybrid entity designation.
+    common_false_positives:
+      - Assuming a system handles PHI because it handles health-adjacent data.
+
+  risk-analysis-and-management:
+    look_for_in_code:
+      - Security controls that imply risk mitigation decisions.
+    look_for_in_infrastructure:
+      - Encryption, access controls, network segmentation, monitoring that reflect risk decisions.
+    look_for_in_docs:
+      - Risk analysis documents, risk register, threat assessments, vulnerability scans.
+    look_for_in_external_evidence:
+      - Formal risk analysis, risk management plan, periodic review evidence.
+    common_false_positives:
+      - Treating a vulnerability scan as a complete risk analysis.
+
+  privacy-uses-and-disclosures:
+    look_for_in_code:
+      - Data access patterns, disclosure endpoints, consent checks, minimum necessary filters.
+    look_for_in_infrastructure:
+      - Access logging, data sharing endpoints, API authorization for PHI access.
+    look_for_in_docs:
+      - Privacy policies, use and disclosure documentation, consent workflows.
+    look_for_in_external_evidence:
+      - Notice of Privacy Practices, authorization forms, use/disclosure logs.
+    common_false_positives:
+      - Treating a general privacy policy as a HIPAA-compliant NPP.
+
+  minimum-necessary:
+    look_for_in_code:
+      - Role-based data filtering, field-level access controls, query scoping.
+    look_for_in_infrastructure:
+      - Database views, API response filtering, role-based query restrictions.
+    look_for_in_docs:
+      - Minimum necessary policies, role-based access documentation.
+    look_for_in_external_evidence:
+      - Minimum necessary determination records, workforce access matrices.
+    common_false_positives:
+      - Assuming role-based access alone satisfies minimum necessary.
+
+  individual-rights:
+    look_for_in_code:
+      - Data export/access endpoints, amendment workflows, restriction flags, accounting of disclosures.
+    look_for_in_infrastructure:
+      - Patient portal infrastructure, data export pipelines, audit trails for access requests.
+    look_for_in_docs:
+      - Individual rights procedures, access request workflows, amendment processes.
+    look_for_in_external_evidence:
+      - Access request logs, amendment records, restriction agreements, accounting of disclosures.
+    common_false_positives:
+      - Treating database query capability as an individual rights access mechanism.
+
+  administrative-safeguards:
+    look_for_in_code:
+      - Workforce access provisioning, termination workflows, access review automation.
+    look_for_in_infrastructure:
+      - Identity management, access provisioning, session controls, incident response automation.
+    look_for_in_docs:
+      - Security management process, workforce security, information access management, contingency plan.
+    look_for_in_external_evidence:
+      - Security officer designation, workforce clearance procedures, contingency plan tests.
+    common_false_positives:
+      - Treating cloud IAM configuration as a complete administrative safeguard program.
+
+  physical-safeguards:
+    look_for_in_code:
+      - Device management, workstation configuration, media handling in deployment scripts.
+    look_for_in_infrastructure:
+      - Data center controls, facility access, workstation security, device encryption, media disposal.
+    look_for_in_docs:
+      - Facility security plan, workstation use policies, device and media controls.
+    look_for_in_external_evidence:
+      - Physical access logs, facility security assessments, media destruction certificates.
+    common_false_positives:
+      - Assuming cloud provider physical security fully satisfies CE physical safeguard obligations.
+
+  technical-safeguards:
+    look_for_in_code:
+      - Authentication, access control logic, encryption implementations, audit logging, session management.
+    look_for_in_infrastructure:
+      - TLS/encryption configuration, unique user IDs, automatic logoff, audit log infrastructure, integrity controls.
+    look_for_in_docs:
+      - Technical security architecture, encryption standards, access control documentation.
+    look_for_in_external_evidence:
+      - Penetration test results, encryption key management evidence, audit log review records.
+    common_false_positives:
+      - Treating TLS in transit as complete encryption coverage when data at rest is unencrypted.
+
+  organizational-requirements:
+    look_for_in_code:
+      - BAA-related configuration, subcontractor integration boundaries.
+    look_for_in_infrastructure:
+      - Network boundaries between entities, data sharing infrastructure, subcontractor access controls.
+    look_for_in_docs:
+      - BAA templates, subcontractor agreements, group health plan documentation.
+    look_for_in_external_evidence:
+      - Executed BAAs, subcontractor agreements, group health plan amendments.
+    common_false_positives:
+      - Treating a vendor contract as a BAA when it lacks required provisions.
+
+  breach-notification:
+    look_for_in_code:
+      - Breach detection logic, notification workflows, incident tracking.
+    look_for_in_infrastructure:
+      - Intrusion detection, anomaly monitoring, incident response automation, notification infrastructure.
+    look_for_in_docs:
+      - Breach notification procedures, risk assessment methodology for breach determination.
+    look_for_in_external_evidence:
+      - Breach investigation records, notification logs, HHS reporting evidence.
+    common_false_positives:
+      - Treating a general incident response plan as a HIPAA breach notification procedure.
+
+  policies-procedures-documentation:
+    look_for_in_code:
+      - Policy-as-code, configuration-driven compliance controls.
+    look_for_in_infrastructure:
+      - Policy enforcement points, configuration management, documentation systems.
+    look_for_in_docs:
+      - HIPAA policies and procedures, documentation retention evidence, change history.
+    look_for_in_external_evidence:
+      - Approved policy documents, retention schedules, periodic review evidence.
+    common_false_positives:
+      - Treating README files as formal HIPAA policies.
+
+  training-and-sanctions:
+    look_for_in_code:
+      - Role definitions, permission models that imply training requirements.
+    look_for_in_infrastructure:
+      - LMS integration, training tracking systems, workforce management automation.
+    look_for_in_docs:
+      - Training program descriptions, sanctions policy, security reminders.
+    look_for_in_external_evidence:
+      - Training completion records, sanctions enforcement evidence, security awareness materials.
+    common_false_positives:
+      - Assuming role-based access implies training has occurred.

@@ -1,0 +1,55 @@
+---
+schema_version: v1
+regulation_id: "164.310(d)(2)(ii)"
+title: "Media Re-use"
+rule_family: security_rule
+safeguard_type: physical
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.310(d)(1)"
+authoritative_text: |
+  Implement procedures for removal of electronic protected health information
+  from electronic media before the media are made available for re-use.
+ocr_guidance:
+  summary: "Before electronic media is reused, all ePHI must be removed from it using appropriate sanitization methods."
+  source_document: "HIPAA Security Series: Security Standards - Physical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Before reusing any electronic media (drives, tapes, USB sticks, etc.), completely remove all ePHI from it. A simple file delete is not enough — use proper sanitization."
+  intent: "Prevent ePHI exposure when electronic media is reassigned to a different user, department, or purpose by ensuring all prior ePHI is irrecoverably removed."
+  applicability: "Any electronic media that contained ePHI and is being repurposed rather than disposed of — hard drives, SSDs, USB drives, tapes, virtual volumes, and removable media."
+  common_gaps:
+    - "No documented media re-use sanitization procedure"
+    - "Reliance on simple format or file deletion rather than proper sanitization"
+    - "Re-used laptops reimaged without verifying data removal"
+    - "Virtual machine or cloud volume snapshots not sanitized before reallocation"
+    - "No verification step after sanitization"
+  remediation_suggestions:
+    - "Document a media re-use procedure specifying sanitization method per media type"
+    - "Use NIST SP 800-88 Clear or Purge methods appropriate to the media type"
+    - "Verify sanitization before releasing media for re-use (spot checks or automated verification)"
+    - "Include virtual and cloud storage in the re-use sanitization scope"
+    - "Log sanitization actions with date, method, and responsible person"
+evidence_expectations:
+  in_repo:
+    - "Media re-use sanitization procedure"
+    - "Sanitization method matrix by media type"
+  external:
+    - "Media sanitization logs"
+    - "Sanitization verification records"
+    - "Re-imaging or wiping tool validation records"
+  review_questions:
+    - "Is there a documented procedure for sanitizing media before re-use?"
+    - "What sanitization methods are used, and are they appropriate for the media type?"
+    - "Is sanitization verified before media is released for re-use?"
+    - "Are virtual and cloud storage volumes included in re-use sanitization?"
+related_requirements:
+  - "164.310(d)(1)"
+  - "164.310(d)(2)(i)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.310(d)(2)(ii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.310"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,75 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(3)"
+title: "Workforce security"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement policies and procedures to ensure that all members of its workforce have appropriate access to electronic protected health information, as provided under paragraph (a)(4) of this section, and to prevent those workforce members who do not have access under paragraph (a)(4) of this section from obtaining access to electronic protected health information.
+ocr_guidance:
+  summary: >
+    OCR expects entities to control workforce access to ePHI based on job
+    function and need. The standard encompasses the full employment lifecycle:
+    onboarding, role changes, and termination. All three implementation
+    specifications under this standard are addressable, meaning the entity
+    must assess whether each is reasonable and appropriate and document
+    the decision.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must control who in your workforce can access ePHI and make sure people
+    who should not have access cannot get it. This covers hiring, role changes,
+    and separation.
+  intent: >
+    Ensure that workforce access to ePHI is authorized, supervised, and
+    revoked appropriately throughout the employment lifecycle.
+  applicability: >
+    Applies to every covered entity and business associate with workforce
+    members who may access ePHI. "Workforce" includes employees, volunteers,
+    trainees, and others under the entity's direct control, whether or not
+    they are paid.
+  common_gaps:
+    - No formal process for authorizing workforce access to ePHI.
+    - Access provisioning is not tied to job role or function.
+    - No process for revoking access upon termination or role change.
+    - Workforce clearance procedures are informal or undocumented.
+    - Volunteers and trainees are excluded from access controls.
+  remediation_suggestions:
+    - Implement role-based access provisioning tied to job descriptions.
+    - Establish a documented onboarding process that includes access authorization.
+    - Create a termination checklist that includes ePHI access revocation.
+    - Include volunteers, trainees, and contractors in workforce access controls.
+    - Conduct periodic access reviews to verify continued appropriateness.
+evidence_expectations:
+  in_repo:
+    - Workforce security policy document.
+    - Role-based access matrix or access provisioning procedure.
+    - Termination or offboarding checklist.
+  external:
+    - HR onboarding and offboarding records.
+    - Access authorization approvals.
+    - Periodic access review results.
+    - Background check or clearance records.
+  review_questions:
+    - Is workforce access to ePHI based on documented role requirements?
+    - Is there a process for authorizing, modifying, and revoking access?
+    - Does the process cover the full workforce including volunteers and trainees?
+    - Are access decisions documented and retained?
+related_requirements:
+  - "164.308(a)(3)(ii)(A)"
+  - "164.308(a)(3)(ii)(B)"
+  - "164.308(a)(3)(ii)(C)"
+  - "164.308(a)(4)"
+  - "164.312(a)(1)"
+  - "164.312(d)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(3)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

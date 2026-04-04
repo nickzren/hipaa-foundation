@@ -1,0 +1,59 @@
+---
+schema_version: v1
+regulation_id: "164.312(d)"
+title: "Person or Entity Authentication"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement procedures to verify that a person or entity seeking access to
+  electronic protected health information is the one claimed.
+ocr_guidance:
+  summary: "Entities must implement authentication mechanisms to verify the identity of persons or entities requesting access to ePHI."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Before granting access to ePHI, verify that the person or system is who or what it claims to be. Use passwords, tokens, biometrics, certificates, or multi-factor authentication."
+  intent: "Prevent unauthorized access by confirming the identity of every user or entity before granting access to ePHI, as a prerequisite to authorization decisions."
+  applicability: "All access points to ePHI — user logins, API authentication, system-to-system communication, remote access, and any interface that provides access to ePHI."
+  common_gaps:
+    - "Weak password policies (short length, no complexity, no expiration)"
+    - "No multi-factor authentication for remote or privileged access"
+    - "Shared credentials used for system-to-system authentication"
+    - "API keys used without rotation or monitoring"
+    - "No authentication for internal service-to-service communication"
+  remediation_suggestions:
+    - "Implement multi-factor authentication for all remote access and privileged accounts"
+    - "Enforce strong password policies or adopt passwordless authentication"
+    - "Use unique credentials for each service-to-service connection"
+    - "Implement API authentication with token rotation and monitoring"
+    - "Consider certificate-based or mutual TLS authentication for system-to-system flows"
+evidence_expectations:
+  in_repo:
+    - "Authentication policy"
+    - "Password or credential management standard"
+    - "MFA deployment documentation"
+  external:
+    - "Identity provider (IdP) configuration"
+    - "MFA enrollment and usage reports"
+    - "Password policy enforcement configuration"
+    - "API authentication mechanism documentation"
+  review_questions:
+    - "What authentication mechanisms are used for ePHI system access?"
+    - "Is multi-factor authentication required for remote access?"
+    - "How are service accounts and API clients authenticated?"
+    - "Are there any shared or generic credentials in use?"
+    - "How are authentication credentials managed, rotated, and revoked?"
+related_requirements:
+  - "164.312(a)(1)"
+  - "164.312(a)(2)(i)"
+  - "164.308(a)(5)(ii)(D)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(d)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

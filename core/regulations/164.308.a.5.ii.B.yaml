@@ -1,0 +1,80 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(5)(ii)(B)"
+title: "Protection from malicious software"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.308(a)(5)"
+addressable_assessment_guidance: |
+  Assess whether procedures for guarding against, detecting, and reporting
+  malicious software are reasonable and appropriate given the entity's risk
+  analysis, technical environment, threat landscape, and the types of
+  systems handling ePHI. Document the disposition: implemented, alternative,
+  documented_exception, or not_evidenced.
+authoritative_text: |
+  Procedures for guarding against, detecting, and reporting malicious software.
+ocr_guidance:
+  summary: >
+    OCR expects entities to train workforce members on procedures for
+    guarding against, detecting, and reporting malicious software. While
+    technical anti-malware controls are addressed elsewhere in the Security
+    Rule, this specification focuses on workforce awareness — ensuring
+    people know how to avoid malware, recognize signs of infection, and
+    report incidents. As an addressable specification, the entity must
+    assess reasonableness and document its decision.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    Your workforce should be trained to guard against malicious software,
+    recognize signs of malware infection, and know how to report suspected
+    incidents. This is about the human element — awareness and procedures —
+    not just installing antivirus software.
+  intent: >
+    Reduce the risk of malware incidents by ensuring the workforce
+    understands how malicious software works, how to avoid it, and what to
+    do if they suspect an infection.
+  applicability: >
+    Addressable for all covered entities and business associates. Particularly
+    important for entities whose workforce members use email, web browsing,
+    portable media, or other vectors commonly exploited by malware.
+  common_gaps:
+    - Workforce has not been trained on malware threats and procedures.
+    - Training is limited to "don't click suspicious links" without addressing broader threats.
+    - No procedure for reporting suspected malware.
+    - Training does not cover current malware vectors (ransomware, supply chain attacks).
+    - No addressable specification assessment was performed.
+  remediation_suggestions:
+    - Train workforce members on malware threats, prevention, detection, and reporting.
+    - Address current threat vectors including phishing, ransomware, and social engineering.
+    - Establish clear procedures for reporting suspected malware.
+    - Update training content as the threat landscape evolves.
+    - If not fully implementing, document the rationale and alternative measures.
+evidence_expectations:
+  in_repo:
+    - Malicious software awareness training materials.
+    - Malware reporting procedures.
+    - Addressable specification assessment documentation.
+  external:
+    - Training completion records.
+    - Malware incident report records.
+    - Evidence of training content updates.
+  review_questions:
+    - Is the workforce trained on malware threats, prevention, detection, and reporting?
+    - Are malware reporting procedures defined and communicated?
+    - Does training address current threat vectors?
+    - Has the entity assessed whether this specification is reasonable and appropriate?
+related_requirements:
+  - "164.308(a)(5)"
+  - "164.308(a)(5)(ii)(A)"
+  - "164.308(a)(6)"
+  - "164.310(b)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(5)(ii)(B)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

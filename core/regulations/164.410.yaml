@@ -1,0 +1,124 @@
+---
+schema_version: v1
+regulation_id: "164.410"
+title: "Notification by a business associate"
+rule_family: breach_notification_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard.
+  (1) A business associate must, following the discovery of a breach of
+  unsecured protected health information, notify the covered entity of
+  such breach.
+
+  (2) A breach is treated as discovered by a business associate as of the
+  first day on which such breach is known to the business associate, or,
+  by exercising reasonable diligence, would have been known to the business
+  associate. A business associate is deemed to have knowledge of a breach
+  if the breach is known, or by exercising reasonable diligence would have
+  been known, to any person, other than the person committing the breach,
+  who is an employee, officer, or other agent of the business associate.
+
+  (b) Implementation specifications: Timeliness of notification.
+  A business associate must provide the notification required by paragraph
+  (a) without unreasonable delay and in no case later than 60 calendar
+  days from the discovery of the breach.
+
+  (c) Implementation specifications: Content of notification.
+  (1) The notification must include, to the extent possible, the
+  identification of each individual whose unsecured protected health
+  information has been, or is reasonably believed by the business associate
+  to have been, accessed, acquired, used, or disclosed during the breach.
+
+  (2) The notification must include any other available information that
+  the covered entity is required to include in notification to the
+  individual under §164.404(c).
+
+  The business associate does not directly notify affected individuals,
+  the media, or HHS — that responsibility falls on the covered entity.
+  However, the business associate's notification to the covered entity
+  must be sufficiently detailed and timely to enable the covered entity
+  to meet its own notification obligations.
+ocr_guidance:
+  summary: >
+    Section 164.410 requires business associates to notify their covered
+    entities of breaches of unsecured PHI. The BA must provide notification
+    within 60 days of discovery and must include sufficient information for
+    the covered entity to meet its notification obligations. OCR has
+    emphasized that the BA's 60-day window runs independently of the CE's
+    60-day window, but both parties should cooperate to ensure timely
+    notification to affected individuals. BAA provisions should specify
+    breach notification timelines and content requirements.
+  source_document: "HHS Breach Notification Rule Guidance"
+repo_interpretation:
+  plain_english_summary: >
+    Business associates must notify their covered entity when a breach
+    of unsecured PHI occurs, within 60 days of discovery. The notification
+    must identify affected individuals and include enough information for
+    the covered entity to fulfill its own notification duties. The BA does
+    not notify individuals, media, or HHS directly — the covered entity
+    handles that. The BAA should specify breach notification timelines and
+    content requirements to ensure smooth coordination.
+  intent: >
+    Ensure that covered entities learn about breaches at their business
+    associates quickly enough to meet their own notification obligations.
+    Create a clear chain of breach reporting from BA to CE to affected
+    individuals/media/HHS.
+  applicability: >
+    Applies to all business associates and their covered entities.
+    Relevant for incident response procedures, BAA provisions, and
+    inter-organizational communication workflows. Also applies to
+    subcontractors of business associates, who must notify their
+    upstream BA.
+  common_gaps:
+    - BAA does not specify breach notification timeline or content requirements beyond the regulatory minimum.
+    - BA has no incident response procedure that includes CE notification.
+    - BA notification to CE delayed beyond what allows the CE to meet its 60-day deadline.
+    - BA notification lacks sufficient detail for the CE to notify individuals.
+    - No established communication channel between BA and CE for breach reporting.
+    - Subcontractor-to-BA breach notification not addressed.
+    - No process for the CE to verify BA breach notifications and conduct its own risk assessment.
+  remediation_suggestions:
+    - Include specific breach notification timelines in BAAs (shorter than 60 days to preserve CE notification time).
+    - Establish a dedicated breach reporting communication channel between BA and CE.
+    - Develop BA incident response procedures that include CE notification steps.
+    - Define BA notification content requirements in the BAA.
+    - Address subcontractor breach notification in the BAA and subcontractor agreements.
+    - Create a CE intake process for receiving and evaluating BA breach notifications.
+    - Conduct joint breach notification exercises with key business associates.
+evidence_expectations:
+  in_repo:
+    - BA breach notification communication workflow.
+    - Incident response procedures including CE notification steps.
+    - Subcontractor breach notification handling.
+  external:
+    - BAA provisions specifying breach notification timelines and content.
+    - BA incident response procedures.
+    - CE intake procedures for BA breach notifications.
+    - Breach notification communication channels and contacts.
+    - Joint breach response exercise records.
+    - Subcontractor agreements with breach notification provisions.
+  review_questions:
+    - Do BAAs specify breach notification timelines shorter than 60 days?
+    - Does the BA have incident response procedures including CE notification?
+    - Is there a dedicated communication channel for breach reporting between BA and CE?
+    - Does the BA notification include sufficient detail for the CE to notify individuals?
+    - Are subcontractor breach notification obligations addressed?
+    - Has there been a joint breach notification exercise?
+related_requirements:
+  - "164.400"
+  - "164.402"
+  - "164.404"
+  - "164.408"
+  - "164.414"
+  - "164.504"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.410"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.410"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

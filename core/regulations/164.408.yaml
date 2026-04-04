@@ -1,0 +1,111 @@
+---
+schema_version: v1
+regulation_id: "164.408"
+title: "Notification to the Secretary"
+rule_family: breach_notification_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard. A covered entity must, following the discovery of a
+  breach of unsecured protected health information, notify the Secretary.
+
+  (b) Implementation specifications: Breaches involving 500 or more
+  individuals.
+  For breaches of unsecured protected health information involving 500
+  or more individuals, a covered entity must provide the notification
+  required by paragraph (a) contemporaneously with the notice required
+  by §164.404 and in the manner specified on the HHS website.
+
+  (c) Implementation specifications: Breaches involving fewer than 500
+  individuals.
+  For breaches of unsecured protected health information involving fewer
+  than 500 individuals, a covered entity must maintain a log or other
+  documentation of such breaches and, not later than 60 days after the
+  end of each calendar year, provide the notification required by
+  paragraph (a) for breaches discovered during the preceding calendar
+  year, in the manner specified on the HHS website.
+
+  The notification to the Secretary must be submitted through the HHS
+  breach notification portal. For breaches involving 500 or more
+  individuals, the information is posted publicly on the HHS Breach
+  Portal (commonly known as the "Wall of Shame").
+ocr_guidance:
+  summary: >
+    Section 164.408 requires notification to the Secretary (HHS) for all
+    breaches of unsecured PHI. Large breaches (500+ individuals) must be
+    reported to HHS at the same time as individual notification (within
+    60 days of discovery) and are posted on the public HHS Breach Portal.
+    Small breaches (fewer than 500 individuals) may be reported annually,
+    no later than 60 days after the end of the calendar year. All
+    reporting is through the HHS breach notification portal. OCR has
+    emphasized that the annual log for small breaches must be maintained
+    throughout the year.
+  source_document: "HHS Breach Notification Rule Guidance; HHS Breach Portal"
+repo_interpretation:
+  plain_english_summary: >
+    Every breach of unsecured PHI must be reported to HHS. For breaches
+    affecting 500 or more individuals, report to HHS within 60 days of
+    discovery (same timeline as individual notification) — these appear
+    on the public HHS Breach Portal. For breaches affecting fewer than
+    500 individuals, maintain a log throughout the year and submit all
+    smaller breaches annually within 60 days after calendar year end.
+    All submissions go through the HHS breach notification web portal.
+  intent: >
+    Ensure HHS has visibility into all breaches of unsecured PHI for
+    enforcement, trend analysis, and public transparency. The tiered
+    reporting (immediate for large breaches, annual for small) balances
+    urgency with administrative burden.
+  applicability: >
+    Applies to all covered entities. Relevant for incident management
+    systems, breach tracking logs, and annual reporting workflows.
+    Business associates report to their covered entities (per §164.410),
+    not directly to HHS.
+  common_gaps:
+    - No breach log maintained for sub-500 breaches.
+    - Annual HHS reporting for small breaches missed or late.
+    - Large breach HHS notification not submitted contemporaneously with individual notification.
+    - Breach portal submission not included in the incident response workflow.
+    - No process to prepare the annual small breach report.
+    - Breach count inaccurate (e.g., duplicates or undercounting).
+  remediation_suggestions:
+    - Implement a breach log that captures all breaches including sub-500.
+    - Calendar the annual HHS reporting deadline (60 days after calendar year end).
+    - Include HHS portal submission in the incident response workflow for large breaches.
+    - Develop an annual reporting workflow for small breaches.
+    - Maintain HHS portal submission credentials and access.
+    - Reconcile the breach log periodically to ensure accuracy.
+evidence_expectations:
+  in_repo:
+    - Breach tracking or incident management system.
+    - Breach log maintaining sub-500 breach records.
+    - HHS reporting workflow integration.
+  external:
+    - Breach log for all breaches.
+    - HHS portal submission records for large breaches.
+    - Annual small breach report submissions.
+    - HHS reporting procedures.
+    - Incident response plan including HHS notification steps.
+    - Calendar or tracking for annual reporting deadline.
+  review_questions:
+    - Is a breach log maintained for all breaches including those affecting fewer than 500 individuals?
+    - Are large breaches reported to HHS within 60 days of discovery?
+    - Is the annual small breach report submitted on time?
+    - Is HHS portal submission integrated into the incident response workflow?
+    - Are breach counts accurate and reconciled?
+related_requirements:
+  - "164.400"
+  - "164.402"
+  - "164.404"
+  - "164.406"
+  - "164.410"
+  - "164.414"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.408"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.408"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

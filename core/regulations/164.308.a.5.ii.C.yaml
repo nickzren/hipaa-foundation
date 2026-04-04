@@ -1,0 +1,81 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(5)(ii)(C)"
+title: "Log-in monitoring"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.308(a)(5)"
+addressable_assessment_guidance: |
+  Assess whether log-in monitoring procedures are reasonable and appropriate
+  given the entity's risk analysis, the number and type of systems containing
+  ePHI, the workforce size, and the entity's technical capabilities for
+  log-in monitoring. Document the disposition: implemented, alternative,
+  documented_exception, or not_evidenced.
+authoritative_text: |
+  Procedures for monitoring log-in attempts and reporting discrepancies.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have procedures for monitoring log-in attempts
+    and reporting discrepancies. This includes training workforce members
+    to recognize and report suspicious log-in activity, failed log-in
+    attempts, and unauthorized access attempts. As an addressable
+    specification, the entity must assess reasonableness and document
+    its decision.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You should have procedures for monitoring log-in attempts and ensuring
+    that discrepancies (such as repeated failed attempts or log-ins at
+    unusual times) are identified and reported. The workforce should know
+    what to look for and how to report it.
+  intent: >
+    Detect unauthorized access attempts through monitoring of log-in
+    activity. Ensure the workforce understands their role in identifying
+    and reporting suspicious access patterns.
+  applicability: >
+    Addressable for all covered entities and business associates. The
+    sophistication of monitoring should be proportional to the entity's
+    size, technical capabilities, and risk profile.
+  common_gaps:
+    - No procedures for monitoring log-in attempts.
+    - Log-in monitoring is entirely automated with no human review component.
+    - Workforce is not trained on reporting suspicious log-in activity.
+    - Failed log-in attempts are logged but not reviewed or acted upon.
+    - No defined thresholds or criteria for what constitutes a discrepancy.
+    - No addressable specification assessment was performed.
+  remediation_suggestions:
+    - Implement procedures for monitoring log-in attempts.
+    - Define criteria for discrepancies (failed attempts, unusual timing, unusual locations).
+    - Train workforce members to recognize and report suspicious log-in activity.
+    - Establish escalation procedures for identified discrepancies.
+    - If not fully implementing, document the rationale and alternative measures.
+evidence_expectations:
+  in_repo:
+    - Log-in monitoring procedure documentation.
+    - Discrepancy reporting criteria.
+    - Addressable specification assessment documentation.
+  external:
+    - Log-in monitoring reports or dashboard evidence.
+    - Evidence of discrepancy investigations.
+    - Training records for log-in monitoring procedures.
+  review_questions:
+    - Are log-in attempts monitored?
+    - Are discrepancies identified and reported?
+    - Are criteria for discrepancies defined?
+    - Is the workforce trained on reporting suspicious log-in activity?
+    - Has the entity assessed whether this specification is reasonable and appropriate?
+related_requirements:
+  - "164.308(a)(5)"
+  - "164.308(a)(1)(ii)(D)"
+  - "164.312(b)"
+  - "164.312(d)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(5)(ii)(C)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,67 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(2)"
+title: "Assigned security responsibility"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Identify the security official who is responsible for the development and implementation of the policies and procedures required by this subpart for the covered entity or business associate.
+ocr_guidance:
+  summary: >
+    OCR expects a single identified individual (by name or role) to be
+    designated as the security official. The designation must be documented.
+    OCR has cited entities that could not identify who held this responsibility
+    or where the designation was documented. This does not preclude delegation
+    of day-to-day tasks, but accountability must trace to one identified person.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must name one person as your HIPAA Security Official. That person is
+    accountable for developing and implementing your security policies and
+    procedures. You can delegate tasks, but the buck stops with this person.
+  intent: >
+    Ensure clear, single-point accountability for the Security Rule compliance
+    program. Prevent diffusion of responsibility across departments.
+  applicability: >
+    Applies to every covered entity and business associate. There are no
+    exceptions or addressable alternatives — this is a standalone required
+    standard.
+  common_gaps:
+    - No documented designation of a security official.
+    - The role is assigned to a committee or department rather than a named individual.
+    - The designated individual has left the organization and no successor was named.
+    - The designation exists but is not communicated to the workforce.
+    - The security official lacks authority or access to fulfill the role.
+  remediation_suggestions:
+    - Document the designation of a named individual as the HIPAA Security Official.
+    - Ensure the designation is current and updated when personnel change.
+    - Communicate the designation to the workforce so staff know who to contact.
+    - Ensure the security official has sufficient authority, access, and resources.
+evidence_expectations:
+  in_repo:
+    - Documented designation of the security official (policy, charter, or appointment letter).
+    - Organizational chart or role description showing the security official.
+  external:
+    - Board resolution or management memo appointing the security official.
+    - HR records confirming the individual's current employment and role.
+    - Communication records showing the designation was shared with the workforce.
+  review_questions:
+    - Can you identify by name the individual designated as the HIPAA Security Official?
+    - Is the designation documented and current?
+    - Does the security official have the authority and resources to fulfill the role?
+    - Is the workforce aware of who the security official is?
+related_requirements:
+  - "164.308(a)(1)"
+  - "164.530(a)(1)"
+  - "164.316(a)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(2)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

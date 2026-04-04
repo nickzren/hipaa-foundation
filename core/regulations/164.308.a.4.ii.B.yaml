@@ -1,0 +1,79 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(4)(ii)(B)"
+title: "Access authorization"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.308(a)(4)"
+addressable_assessment_guidance: |
+  Assess whether formal access authorization policies and procedures are
+  reasonable and appropriate given the entity's risk analysis, size,
+  complexity, workforce structure, and the sensitivity of the ePHI involved.
+  Document the disposition: implemented, alternative, documented_exception,
+  or not_evidenced.
+authoritative_text: |
+  Implement policies and procedures for granting access to electronic protected health information, for example, through access to a workstation, transaction, program, process, or other mechanism.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have formal policies and procedures that govern
+    how access to ePHI is granted. This covers access through any mechanism
+    including workstations, applications, transactions, and processes. As
+    an addressable specification, the entity must assess whether
+    implementation is reasonable and appropriate and document the decision.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You should have formal policies and procedures for granting access to
+    ePHI. This means defining who can approve access, what criteria are
+    used, and how access grants are documented.
+  intent: >
+    Ensure that access to ePHI is granted through a formal, documented
+    process based on defined criteria rather than ad hoc or informal
+    decisions.
+  applicability: >
+    Addressable for all covered entities and business associates. The
+    formality of the process should be proportional to the entity's size,
+    complexity, and the sensitivity of the ePHI involved.
+  common_gaps:
+    - No formal access authorization policy or procedure.
+    - Access is granted informally without documented approval.
+    - No defined criteria for access authorization decisions.
+    - Access authorization is not aligned with minimum necessary requirements.
+    - No approval workflow or accountability for access grants.
+    - No addressable specification assessment was performed.
+  remediation_suggestions:
+    - Implement a formal access authorization policy with defined criteria and approval workflow.
+    - Document access authorization decisions.
+    - Align access authorization with Privacy Rule minimum necessary requirements.
+    - Define roles authorized to approve access.
+    - If not fully implementing, document the rationale and alternative measures.
+evidence_expectations:
+  in_repo:
+    - Access authorization policy and procedures.
+    - Access approval workflow documentation.
+    - Addressable specification assessment documentation.
+  external:
+    - Access authorization request and approval records.
+    - Evidence of defined criteria for access decisions.
+    - Audit trail of access grants.
+  review_questions:
+    - Is there a formal policy for granting access to ePHI?
+    - Are access authorization decisions documented?
+    - Are there defined criteria and approval workflows for access grants?
+    - Is access authorization aligned with minimum necessary requirements?
+    - Has the entity assessed whether this specification is reasonable and appropriate?
+related_requirements:
+  - "164.308(a)(4)"
+  - "164.308(a)(3)"
+  - "164.312(a)(1)"
+  - "164.514(d)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(4)(ii)(B)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

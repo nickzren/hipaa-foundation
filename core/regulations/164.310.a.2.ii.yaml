@@ -1,0 +1,62 @@
+---
+schema_version: v1
+regulation_id: "164.310(a)(2)(ii)"
+title: "Facility Security Plan"
+rule_family: security_rule
+safeguard_type: physical
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.310(a)(1)"
+addressable_assessment_guidance: |
+  Assess whether the entity has evaluated the need for a facility security plan
+  based on its risk analysis. If so, evaluate whether the plan is reasonable and
+  appropriate given the entity's size, facilities, and risk profile. Document
+  the disposition: implemented, alternative, documented_exception, or not_evidenced.
+authoritative_text: |
+  Implement policies and procedures to safeguard the facility and the equipment
+  therein from unauthorized physical access, tampering, and theft.
+ocr_guidance:
+  summary: "Entities should have documented plans to protect their facilities and equipment from unauthorized access, tampering, and theft."
+  source_document: "HIPAA Security Series: Security Standards - Physical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Create a security plan for each facility that explains how you protect the building and its equipment from break-ins, tampering, and theft."
+  intent: "Provide a comprehensive physical security framework covering the facility perimeter, interior restricted areas, and equipment protection against unauthorized access and theft."
+  applicability: "All facilities owned, leased, or operated by the entity where ePHI is stored, processed, or transmitted. Includes offices, data centers, remote sites, and co-located spaces."
+  common_gaps:
+    - "No documented facility security plan"
+    - "Plan exists but does not cover all facilities"
+    - "Physical security measures not mapped to specific threats"
+    - "Leased or shared spaces not included in the plan"
+    - "Plan not reviewed or updated after facility changes"
+  remediation_suggestions:
+    - "Document a facility security plan per site or site class"
+    - "Include perimeter controls, access mechanisms, surveillance, and alarm systems"
+    - "Address shared or leased space responsibilities"
+    - "Schedule annual review and update after any facility change"
+    - "Map physical security controls to identified risks from the risk analysis"
+evidence_expectations:
+  in_repo:
+    - "Facility security plan document"
+    - "Site security assessment or risk treatment plan"
+  external:
+    - "Security system contracts (alarm, surveillance, guard service)"
+    - "Physical security audit or assessment reports"
+    - "Lease agreements with security provisions"
+    - "Insurance documentation covering theft and physical damage"
+  review_questions:
+    - "Is there a documented facility security plan covering all sites with ePHI?"
+    - "Does the plan address unauthorized access, tampering, and theft?"
+    - "How often is the facility security plan reviewed and updated?"
+    - "Are shared or leased facility security responsibilities defined?"
+related_requirements:
+  - "164.310(a)(1)"
+  - "164.310(a)(2)(iii)"
+  - "164.308(a)(1)(i)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.310(a)(2)(ii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.310"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

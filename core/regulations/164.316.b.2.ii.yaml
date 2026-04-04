@@ -1,0 +1,66 @@
+---
+schema_version: v1
+regulation_id: "164.316(b)(2)(ii)"
+title: "Availability"
+rule_family: security_rule
+safeguard_type: policies_and_documentation
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.316(b)(1)"
+authoritative_text: |
+  Make documentation available to those persons responsible for
+  implementing the procedures to which the documentation pertains.
+ocr_guidance:
+  summary: >
+    OCR expects that Security Rule documentation is accessible to the
+    workforce members who need it to perform their compliance
+    responsibilities. Documentation that exists but is not accessible
+    to those who implement the procedures does not satisfy this
+    requirement.
+  source_document: "HIPAA Security Rule, 45 CFR Part 164 Subpart C"
+repo_interpretation:
+  plain_english_summary: >
+    Security Rule policies, procedures, and related documentation must
+    be made available to the people responsible for implementing them.
+    Having documentation locked away or inaccessible to the relevant
+    workforce members does not satisfy this requirement.
+  intent: >
+    Ensure that security policies and procedures are operationally
+    useful by making them accessible to the people who must follow them.
+  applicability: >
+    Applies to all Security Rule documentation. Relevant workforce
+    members, security officers, and those with implementation
+    responsibilities must be able to access applicable documents.
+  common_gaps:
+    - Policies stored in a system that relevant workforce members cannot access.
+    - No distribution or notification process when policies are created or updated.
+    - Documentation exists but workforce is unaware of its location.
+  remediation_suggestions:
+    - Publish policies in a location accessible to all responsible workforce members.
+    - Implement a notification process for new or updated documentation.
+    - Maintain an index or portal for Security Rule documentation.
+evidence_expectations:
+  in_repo:
+    - Documentation published in accessible locations (wikis, shared repositories).
+    - Access controls that grant appropriate visibility to responsible parties.
+  external:
+    - Policy distribution records or acknowledgment logs.
+    - Documentation portal or intranet with appropriate access.
+    - Evidence that workforce members know where to find applicable documentation.
+  review_questions:
+    - Can responsible workforce members access the documentation they need?
+    - Is there a distribution or notification process for policy updates?
+    - Is there a central location or index where Security Rule documentation can be found?
+related_requirements:
+  - "164.316(b)(1)"
+  - "164.316(b)(2)(i)"
+  - "164.316(b)(2)(iii)"
+  - "164.308(a)(5)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.316(b)(2)(ii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.316"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

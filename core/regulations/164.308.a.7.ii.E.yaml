@@ -1,0 +1,84 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(7)(ii)(E)"
+title: "Applications and data criticality analysis"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.308(a)(7)"
+addressable_assessment_guidance: |
+  Assess whether an applications and data criticality analysis is reasonable
+  and appropriate given the entity's risk analysis, the number and diversity
+  of ePHI systems, and the entity's reliance on those systems for critical
+  operations. Document the disposition: implemented, alternative,
+  documented_exception, or not_evidenced.
+authoritative_text: |
+  Assess the relative criticality of specific applications and data in support of other contingency plan components.
+ocr_guidance:
+  summary: >
+    OCR expects entities to analyze which applications and data are most
+    critical to their operations, and to use this analysis to inform
+    contingency plan priorities. This analysis determines which systems
+    should be recovered first and informs backup frequency, recovery
+    objectives, and resource allocation. As an addressable specification,
+    the entity must assess reasonableness and document its decision.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You should analyze which of your applications and data are most critical
+    to operations and to ePHI protection. This analysis informs your
+    contingency planning priorities — what gets recovered first, what
+    needs the most frequent backups, and where to focus resources.
+  intent: >
+    Prioritize contingency planning efforts by identifying which applications
+    and data are most critical. Ensure that limited resources are directed
+    toward the systems and data that matter most.
+  applicability: >
+    Addressable for all covered entities and business associates. Most
+    valuable for entities with multiple ePHI systems where prioritization
+    is necessary for effective contingency planning.
+  common_gaps:
+    - No criticality analysis has been performed.
+    - All systems are treated equally without prioritization.
+    - Criticality analysis is informal and not documented.
+    - Analysis does not consider dependencies between systems.
+    - Analysis was performed once but not updated after system changes.
+    - No linkage between criticality analysis and contingency plan priorities.
+    - No addressable specification assessment was performed.
+  remediation_suggestions:
+    - Conduct a documented criticality analysis of all ePHI applications and data.
+    - Consider system dependencies, data sensitivity, and operational impact.
+    - Use the analysis to inform backup frequency, recovery priorities, and resource allocation.
+    - Update the analysis when systems, data, or business processes change.
+    - If not fully implementing, document the rationale and alternative measures.
+evidence_expectations:
+  in_repo:
+    - Applications and data criticality analysis document.
+    - Criticality ranking or classification scheme.
+    - Addressable specification assessment documentation.
+  external:
+    - Business impact analysis results.
+    - System dependency maps.
+    - Evidence that criticality rankings inform contingency plan priorities.
+  review_questions:
+    - Has an applications and data criticality analysis been performed?
+    - Does the analysis inform contingency plan priorities?
+    - Are system dependencies considered?
+    - Is the analysis current and reflective of the actual environment?
+    - Has the entity assessed whether this specification is reasonable and appropriate?
+related_requirements:
+  - "164.308(a)(7)"
+  - "164.308(a)(7)(ii)(A)"
+  - "164.308(a)(7)(ii)(B)"
+  - "164.308(a)(7)(ii)(C)"
+  - "164.308(a)(7)(ii)(D)"
+  - "164.308(a)(1)(ii)(A)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(7)(ii)(E)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

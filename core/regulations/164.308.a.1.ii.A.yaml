@@ -1,0 +1,82 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(1)(ii)(A)"
+title: "Risk analysis"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.308(a)(1)"
+authoritative_text: |
+  Conduct an accurate and thorough assessment of the potential risks and vulnerabilities to the confidentiality, integrity, and availability of electronic protected health information held by the covered entity or business associate.
+ocr_guidance:
+  summary: >
+    Risk analysis is the most frequently cited deficiency in OCR enforcement
+    actions and resolution agreements. OCR expects the risk analysis to be
+    comprehensive, covering all ePHI wherever it is created, received,
+    maintained, or transmitted. The analysis must identify and assess
+    reasonably anticipated threats and vulnerabilities and must be updated
+    regularly. OCR has published specific guidance on what constitutes a
+    sufficient risk analysis.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule (July 2010)"
+repo_interpretation:
+  plain_english_summary: >
+    You must conduct a thorough, documented assessment of risks and
+    vulnerabilities to ePHI. This is not optional, not a one-time exercise,
+    and not something a checklist alone can satisfy. It must cover all ePHI
+    in all locations and systems.
+  intent: >
+    Identify where ePHI lives, what could go wrong, and how likely and
+    impactful each risk is. The risk analysis is the foundation for all
+    other security decisions — without it, safeguard selection is guesswork.
+  applicability: >
+    Applies to every covered entity and business associate. Must cover all
+    ePHI in all forms and locations including workstations, portable devices,
+    networks, cloud systems, and paper-to-electronic conversion points.
+  common_gaps:
+    - No risk analysis has been conducted.
+    - Risk analysis is a checklist exercise that does not identify specific threats and vulnerabilities.
+    - Risk analysis does not cover all systems and locations where ePHI resides.
+    - Risk analysis was performed once and never updated.
+    - Risk analysis does not assess likelihood and impact of identified threats.
+    - Risk analysis was conducted by personnel without adequate knowledge of the environment.
+    - Portable devices, cloud systems, or remote access are excluded from scope.
+  remediation_suggestions:
+    - Conduct a comprehensive risk analysis covering all ePHI, all systems, and all locations.
+    - Identify and document all reasonably anticipated threats and vulnerabilities.
+    - Assess the likelihood and potential impact of each identified threat-vulnerability pair.
+    - Document the risk analysis methodology, scope, findings, and risk levels.
+    - Update the risk analysis when the environment changes and on a regular schedule.
+    - Ensure the risk analysis informs risk management decisions and safeguard selection.
+    - Retain risk analysis documentation for at least six years.
+evidence_expectations:
+  in_repo:
+    - Risk analysis methodology document.
+    - ePHI inventory or data flow diagram.
+    - Risk analysis report or findings.
+  external:
+    - Complete risk analysis documentation including scope, methodology, threats, vulnerabilities, likelihood, impact, and risk levels.
+    - Asset inventory identifying all systems that create, receive, maintain, or transmit ePHI.
+    - Evidence of periodic updates to the risk analysis.
+    - Risk analysis review and approval records.
+  review_questions:
+    - Has a comprehensive risk analysis been conducted?
+    - Does the risk analysis cover all ePHI in all systems and locations?
+    - Does it identify and assess reasonably anticipated threats and vulnerabilities?
+    - Does it assess both likelihood and impact?
+    - When was the risk analysis last updated?
+    - Does the risk analysis inform risk management decisions?
+related_requirements:
+  - "164.308(a)(1)"
+  - "164.308(a)(1)(ii)(B)"
+  - "164.308(a)(8)"
+  - "164.306(a)"
+  - "164.306(b)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(1)(ii)(A)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

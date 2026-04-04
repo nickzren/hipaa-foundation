@@ -1,0 +1,69 @@
+---
+schema_version: v1
+regulation_id: "164.316(b)(2)(iii)"
+title: "Updates"
+rule_family: security_rule
+safeguard_type: policies_and_documentation
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.316(b)(1)"
+authoritative_text: |
+  Review documentation periodically, and update as needed, in response
+  to environmental or operational changes affecting the security of the
+  electronic protected health information.
+ocr_guidance:
+  summary: >
+    OCR expects periodic review and update of Security Rule
+    documentation, particularly in response to changes in the
+    environment or operations that affect ePHI security. The regulation
+    does not specify a fixed review interval, but the review must be
+    reasonable and responsive to change.
+  source_document: "HIPAA Security Rule, 45 CFR Part 164 Subpart C"
+repo_interpretation:
+  plain_english_summary: >
+    Security Rule documentation must be reviewed periodically and
+    updated when environmental or operational changes affect the
+    security of ePHI. This includes changes in technology, workforce,
+    threats, business processes, or organizational structure.
+  intent: >
+    Keep security documentation current and aligned with the actual
+    operating environment so that policies and procedures remain
+    effective over time.
+  applicability: >
+    Applies to all Security Rule documentation. Triggers for review
+    include changes in technology, personnel, business processes,
+    threats, regulatory requirements, or organizational structure.
+  common_gaps:
+    - No defined review schedule or cycle for Security Rule documentation.
+    - Documentation not updated after significant environmental or operational changes.
+    - Review occurs on a calendar basis without considering triggering events.
+    - No tracking of review dates or responsible reviewers.
+  remediation_suggestions:
+    - Establish a periodic review schedule (e.g., annual) for all Security Rule documentation.
+    - Define trigger events that require out-of-cycle review and updates.
+    - Track review dates, reviewers, and changes made in a review log.
+evidence_expectations:
+  in_repo:
+    - Git history showing periodic updates to policy and procedure documents.
+    - Review tracking in issue trackers or change logs.
+  external:
+    - Documentation review schedule with assigned responsibilities.
+    - Review completion records with dates and outcomes.
+    - Change logs showing updates triggered by environmental or operational changes.
+  review_questions:
+    - Is there a defined review schedule for Security Rule documentation?
+    - Is there evidence of actual periodic reviews being performed?
+    - Are documentation updates triggered by environmental or operational changes?
+related_requirements:
+  - "164.316(b)(1)"
+  - "164.316(b)(2)(i)"
+  - "164.316(b)(2)(ii)"
+  - "164.306(e)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.316(b)(2)(iii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.316"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

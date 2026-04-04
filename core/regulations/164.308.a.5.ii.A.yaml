@@ -1,0 +1,79 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(5)(ii)(A)"
+title: "Security reminders"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.308(a)(5)"
+addressable_assessment_guidance: |
+  Assess whether periodic security reminders are reasonable and appropriate
+  given the entity's risk analysis, workforce size and distribution, the
+  threat landscape, and the frequency and types of security incidents
+  experienced. Document the disposition: implemented, alternative,
+  documented_exception, or not_evidenced.
+authoritative_text: |
+  Periodic security updates.
+ocr_guidance:
+  summary: >
+    OCR expects entities to provide periodic security reminders to the
+    workforce. These reminders should address current threats, policy
+    updates, and reinforcement of key security practices. The format and
+    frequency may vary, but they should be more than initial training —
+    they should be ongoing. As an addressable specification, the entity
+    must assess reasonableness and document its decision.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You should periodically remind your workforce about security practices,
+    current threats, and policy updates. This could be emails, newsletters,
+    posters, intranet posts, or brief refresher sessions — the format is
+    flexible but the activity should be ongoing.
+  intent: >
+    Maintain security awareness between formal training sessions. Keep the
+    workforce informed about evolving threats and reinforce key security
+    behaviors.
+  applicability: >
+    Addressable for all covered entities and business associates. The
+    format, frequency, and content of reminders should be appropriate to
+    the entity's threat environment and workforce.
+  common_gaps:
+    - No periodic security reminders are provided after initial training.
+    - Security reminders are generic and not tailored to current threats.
+    - No documentation of security reminders distributed.
+    - Reminders do not reach all workforce members.
+    - No addressable specification assessment was performed.
+  remediation_suggestions:
+    - Implement periodic security reminders addressing current threats and key practices.
+    - Tailor reminder content to the entity's specific risk environment.
+    - Use multiple channels to reach all workforce members.
+    - Document the reminders distributed and the distribution methods used.
+    - If not fully implementing, document the rationale and alternative measures.
+evidence_expectations:
+  in_repo:
+    - Security reminder program documentation.
+    - Addressable specification assessment documentation.
+  external:
+    - Copies of security reminders distributed.
+    - Distribution records showing workforce reach.
+    - Schedule or calendar of security reminders.
+  review_questions:
+    - Are periodic security reminders provided to the workforce?
+    - Do the reminders address current threats and relevant security practices?
+    - How frequently are reminders distributed?
+    - Do the reminders reach all workforce members?
+    - Has the entity assessed whether this specification is reasonable and appropriate?
+related_requirements:
+  - "164.308(a)(5)"
+  - "164.308(a)(5)(ii)(B)"
+  - "164.308(a)(5)(ii)(C)"
+  - "164.308(a)(5)(ii)(D)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(5)(ii)(A)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,135 @@
+---
+schema_version: v1
+regulation_id: "164.514(e)"
+title: "Limited data set"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (e) Standard: Limited data set.
+  (1) A covered entity may use or disclose a limited data set that meets
+  the requirements of paragraph (e)(2) of this section, if the covered
+  entity enters into a data use agreement with the limited data set
+  recipient, in accordance with paragraph (e)(4) of this section.
+
+  (2) A limited data set is protected health information that excludes the
+  following direct identifiers of the individual or of relatives,
+  employers, or household members of the individual:
+  (i) Names;
+  (ii) Postal address information, other than town or city, state, and
+       zip code;
+  (iii) Telephone numbers;
+  (iv) Fax numbers;
+  (v) Email addresses;
+  (vi) Social security numbers;
+  (vii) Medical record numbers;
+  (viii) Health plan beneficiary numbers;
+  (ix) Account numbers;
+  (x) Certificate/license numbers;
+  (xi) Vehicle identifiers and serial numbers, including license plate
+       numbers;
+  (xii) Device identifiers and serial numbers;
+  (xiii) Web Universal Resource Locators (URLs);
+  (xiv) Internet Protocol (IP) address numbers;
+  (xv) Biometric identifiers, including finger and voice prints;
+  (xvi) Full face photographic images and any comparable images.
+
+  (3) Permitted purposes for uses and disclosures. A covered entity may
+  use or disclose a limited data set only for the purposes of research,
+  public health, or health care operations.
+
+  (4) Data use agreement. A data use agreement must:
+  (i) Establish the permitted uses and disclosures of the limited data set;
+  (ii) Establish who is permitted to use or receive the limited data set;
+  (iii) Provide that the recipient will not use or further disclose the
+        information other than as permitted by the agreement or required
+        by law;
+  (iv) Provide that the recipient will use appropriate safeguards to
+       prevent use or disclosure not provided for in the agreement;
+  (v) Provide that the recipient will report to the covered entity any
+      use or disclosure not provided for in the agreement;
+  (vi) Provide that the recipient will ensure that any agents or
+       subcontractors agree to the same restrictions;
+  (vii) Provide that the recipient will not identify the information or
+        contact the individuals.
+
+  A limited data set retains dates (including dates of birth, admission,
+  discharge, and death), town/city, state, zip code, and ages, which are
+  excluded from de-identified data. It is still PHI and subject to the
+  data use agreement requirements.
+ocr_guidance:
+  summary: >
+    Section 164.514(e) defines limited data sets as a middle ground
+    between fully identified PHI and de-identified information. Limited
+    data sets remove direct identifiers but may retain dates, geographic
+    data at the city/state/zip level, and ages. They may only be used for
+    research, public health, or health care operations, and require a
+    data use agreement. A limited data set is still PHI.
+  source_document: "HHS Guidance on Limited Data Sets"
+repo_interpretation:
+  plain_english_summary: >
+    A limited data set strips direct identifiers (names, SSNs, medical
+    record numbers, etc.) but keeps dates, city/state/zip, and ages.
+    Unlike de-identified data, a limited data set is still PHI. It can
+    only be used for research, public health, or health care operations,
+    and requires a data use agreement (DUA) with the recipient that
+    restricts further use, requires safeguards, and prohibits
+    re-identification.
+  intent: >
+    Provide a practical mechanism for sharing health information for
+    research, public health, and operations purposes with fewer
+    identifiers than fully identified PHI, while maintaining protections
+    through the data use agreement framework.
+  applicability: >
+    Applies to covered entities and business associates that share PHI
+    subsets for research, public health reporting, or operations. Relevant
+    for data warehouse extractions, research collaborations, public health
+    registries, and quality reporting systems that need dates and
+    geographic data but not direct identifiers.
+  common_gaps:
+    - Limited data sets created without removing all required direct identifiers.
+    - No data use agreement in place with the recipient.
+    - DUAs missing required provisions (especially re-identification prohibition).
+    - Limited data sets used for purposes beyond research, public health, or operations.
+    - No distinction between limited data sets and de-identified data in the data governance framework.
+    - Limited data set production not automated or validated.
+  remediation_suggestions:
+    - Implement a limited data set extraction process that removes all 16 direct identifier categories.
+    - Develop a DUA template with all required §164.514(e)(4) provisions.
+    - Maintain a DUA inventory tracking all limited data set recipients.
+    - Validate limited data set outputs against the identifier removal checklist.
+    - Train workforce on the distinction between limited data sets and de-identified data.
+    - Restrict limited data set sharing to the three permitted purposes.
+evidence_expectations:
+  in_repo:
+    - Limited data set extraction logic or data transformation pipeline.
+    - Identifier removal configuration for limited data set production.
+    - Validation tests for limited data set completeness.
+  external:
+    - Data use agreement templates meeting §164.514(e)(4) requirements.
+    - Executed DUAs with limited data set recipients.
+    - DUA inventory and tracking.
+    - Policy defining limited data set creation and use procedures.
+    - Limited data set validation records.
+  review_questions:
+    - Are all 16 direct identifier categories removed from limited data sets?
+    - Is a DUA in place for every limited data set recipient?
+    - Do DUAs include all required provisions?
+    - Are limited data sets only used for research, public health, or operations?
+    - Is there a clear distinction between limited data sets and de-identified data?
+related_requirements:
+  - "164.514.a"
+  - "164.514.b"
+  - "164.502"
+  - "164.506"
+  - "164.512"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.514(e)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.514"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

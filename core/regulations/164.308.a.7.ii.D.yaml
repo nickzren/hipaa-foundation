@@ -1,0 +1,81 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(7)(ii)(D)"
+title: "Testing and revision procedures"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.308(a)(7)"
+addressable_assessment_guidance: |
+  Assess whether testing and revision procedures for the contingency plan
+  are reasonable and appropriate given the entity's risk analysis, the
+  complexity of its ePHI systems, the criticality of ePHI availability,
+  and the entity's resources. Document the disposition: implemented,
+  alternative, documented_exception, or not_evidenced.
+authoritative_text: |
+  Implement procedures for periodic testing and revision of contingency plans.
+ocr_guidance:
+  summary: >
+    OCR expects entities to periodically test their contingency plans and
+    revise them based on test results and environmental changes. A
+    contingency plan that has never been tested provides limited assurance.
+    As an addressable specification, the entity must assess whether testing
+    and revision procedures are reasonable and appropriate and document
+    the decision.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You should periodically test your contingency plan to make sure it
+    works, and revise it based on what you learn from testing and from
+    changes in your environment. An untested plan is an unverified plan.
+  intent: >
+    Verify that contingency plans are effective through periodic testing.
+    Ensure plans remain current through revision based on test results,
+    environmental changes, and lessons learned.
+  applicability: >
+    Addressable for all covered entities and business associates. The
+    frequency and rigor of testing should be proportional to the entity's
+    risk profile and the criticality of ePHI availability.
+  common_gaps:
+    - Contingency plans have never been tested.
+    - Testing is limited to tabletop exercises without any technical verification.
+    - Plans are not revised after testing or environmental changes.
+    - Test results are not documented.
+    - No defined testing schedule or triggers.
+    - No addressable specification assessment was performed.
+  remediation_suggestions:
+    - Establish a testing schedule (at least annually) for contingency plans.
+    - Include both tabletop exercises and technical recovery tests.
+    - Document test results including successes, failures, and lessons learned.
+    - Revise plans based on test results and environmental changes.
+    - If not fully implementing, document the rationale and alternative measures.
+evidence_expectations:
+  in_repo:
+    - Contingency plan testing procedures.
+    - Testing schedule documentation.
+    - Addressable specification assessment documentation.
+  external:
+    - Test execution records and results.
+    - Plan revision history.
+    - Lessons learned documentation.
+  review_questions:
+    - Are contingency plans tested periodically?
+    - What types of testing are performed (tabletop, functional, full-scale)?
+    - Are test results documented?
+    - Are plans revised based on test results?
+    - Has the entity assessed whether this specification is reasonable and appropriate?
+related_requirements:
+  - "164.308(a)(7)"
+  - "164.308(a)(7)(ii)(A)"
+  - "164.308(a)(7)(ii)(B)"
+  - "164.308(a)(7)(ii)(C)"
+  - "164.308(a)(7)(ii)(E)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(7)(ii)(D)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

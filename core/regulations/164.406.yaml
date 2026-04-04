@@ -1,0 +1,97 @@
+---
+schema_version: v1
+regulation_id: "164.406"
+title: "Notification to the media"
+rule_family: breach_notification_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard. For a breach of unsecured protected health information
+  involving more than 500 residents of a state or jurisdiction, a covered
+  entity must, following the discovery of the breach, notify prominent
+  media outlets serving the state or jurisdiction.
+
+  (b) Implementation specifications: Timeliness of notification.
+  A covered entity must provide the notification required by paragraph (a)
+  without unreasonable delay and in no case later than 60 calendar days
+  from the discovery of the breach.
+
+  (c) Implementation specifications: Content of notification.
+  The notification must meet the same content requirements as specified
+  in §164.404(c) for individual notification.
+ocr_guidance:
+  summary: >
+    Section 164.406 requires media notification for breaches affecting
+    more than 500 residents of a state or jurisdiction. This requirement
+    is in addition to individual notification. The same 60-day timeline
+    applies from the date of discovery. OCR has emphasized that the
+    500-person threshold is per state or jurisdiction, not per breach —
+    so a breach affecting 500+ people in a single state triggers media
+    notification even if the total is spread across states.
+  source_document: "HHS Breach Notification Rule Guidance"
+repo_interpretation:
+  plain_english_summary: >
+    If a breach affects more than 500 residents of any single state or
+    jurisdiction, the covered entity must notify prominent media outlets
+    serving that state or jurisdiction within 60 days of discovery. The
+    media notice must contain the same information as the individual
+    notification: what happened, what information was involved, what
+    individuals should do, what the entity is doing, and contact
+    information.
+  intent: >
+    Ensure broad public awareness when a large-scale breach occurs,
+    reaching individuals who may not receive direct notification and
+    creating public accountability for significant breaches.
+  applicability: >
+    Applies to covered entities experiencing breaches affecting 500 or
+    more residents of a state or jurisdiction. The threshold is assessed
+    per state, so a multi-state breach may trigger media notification in
+    some states but not others. Primarily relevant for larger
+    organizations, but any covered entity could be subject to this
+    requirement.
+  common_gaps:
+    - No procedure for determining when the 500-person per-state threshold is met.
+    - No pre-identified list of prominent media outlets by state.
+    - Media notification procedures not defined or tested.
+    - Media notification content not prepared in advance.
+    - Per-state resident count not tracked during breach investigations.
+    - Media notification not coordinated with individual notification and HHS notification timelines.
+  remediation_suggestions:
+    - Include media notification procedures in the breach response plan.
+    - Pre-identify prominent media outlets for relevant states/jurisdictions.
+    - Develop media notification templates mirroring the §164.404(c) content requirements.
+    - Implement per-state affected individual tracking during breach investigations.
+    - Coordinate media notification with communications and legal teams.
+    - Include media notification scenarios in tabletop exercises.
+evidence_expectations:
+  in_repo:
+    - Per-state affected individual counting capability.
+    - Media notification template generation.
+  external:
+    - Media notification procedures in the breach response plan.
+    - Pre-identified prominent media outlet list by state/jurisdiction.
+    - Media notification templates.
+    - Media notification records (for past breaches, if applicable).
+    - Communications team breach response procedures.
+  review_questions:
+    - Is there a process for determining when the 500-person per-state threshold is met?
+    - Are prominent media outlets pre-identified for relevant states?
+    - Are media notification templates prepared with required content?
+    - Is media notification coordinated with individual and HHS notification?
+    - Has media notification been included in breach response exercises?
+related_requirements:
+  - "164.400"
+  - "164.402"
+  - "164.404"
+  - "164.408"
+  - "164.414"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.406"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.406"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

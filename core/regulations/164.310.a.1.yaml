@@ -1,0 +1,61 @@
+---
+schema_version: v1
+regulation_id: "164.310(a)(1)"
+title: "Facility Access Controls"
+rule_family: security_rule
+safeguard_type: physical
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement policies and procedures to limit physical access to its electronic
+  information systems and the facility or facilities in which they are housed,
+  while ensuring that properly authorized access is allowed.
+ocr_guidance:
+  summary: "Covered entities and business associates must implement physical safeguards that limit access to facilities containing electronic protected health information (ePHI) while permitting authorized access."
+  source_document: "HIPAA Security Series: Security Standards - Physical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Control who can physically get into spaces where ePHI systems live. Lock doors, manage keys, and know who enters."
+  intent: "Prevent unauthorized physical access to systems that store, process, or transmit ePHI, while not impeding legitimate operational needs."
+  applicability: "Any facility housing servers, workstations, network equipment, or storage media that contain ePHI. Includes data centers, server rooms, offices, and cloud provider facilities under BAA."
+  common_gaps:
+    - "No formal facility access policy documented"
+    - "Server rooms accessible to all employees regardless of role"
+    - "No visitor escort or logging procedures"
+    - "Cloud hosting agreements lack physical security attestation"
+    - "Badge or key inventory not maintained"
+  remediation_suggestions:
+    - "Document a facility access control policy identifying restricted areas"
+    - "Implement badge/key access with role-based provisioning"
+    - "Maintain visitor logs and escort requirements for restricted areas"
+    - "Obtain SOC 2 or similar attestation from cloud/colo providers"
+    - "Conduct periodic physical security walk-throughs"
+evidence_expectations:
+  in_repo:
+    - "Facility access control policy document"
+    - "Restricted area designation list"
+    - "Cloud provider physical security attestation references"
+  external:
+    - "Badge/key access system records"
+    - "Visitor logs"
+    - "Data center SOC 2 Type II reports"
+    - "Physical security audit reports"
+  review_questions:
+    - "Which facilities house systems containing ePHI?"
+    - "How is physical access granted, reviewed, and revoked?"
+    - "Are cloud/colo providers contractually required to maintain physical security controls?"
+    - "When was the last physical security assessment conducted?"
+related_requirements:
+  - "164.310(a)(2)(i)"
+  - "164.310(a)(2)(ii)"
+  - "164.310(a)(2)(iii)"
+  - "164.310(a)(2)(iv)"
+  - "164.312(a)(1)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.310(a)(1)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.310"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

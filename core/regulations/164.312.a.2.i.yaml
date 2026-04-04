@@ -1,0 +1,58 @@
+---
+schema_version: v1
+regulation_id: "164.312(a)(2)(i)"
+title: "Unique User Identification"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.312(a)(1)"
+authoritative_text: |
+  Assign a unique name and/or number for identifying and tracking user identity.
+ocr_guidance:
+  summary: "Each user must be assigned a unique identifier so that their activity in ePHI systems can be individually tracked and attributed."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Every person who accesses ePHI systems must have their own unique user ID. No shared accounts, no anonymous access."
+  intent: "Enable individual accountability by ensuring every action in an ePHI system can be traced to a specific person through a unique identifier."
+  applicability: "All information systems that contain or provide access to ePHI. Applies to workforce members, contractors, and any human user of the system."
+  common_gaps:
+    - "Shared or group accounts used for ePHI system access"
+    - "Generic administrator accounts (admin, root) used by multiple people"
+    - "Application-level shared logins"
+    - "No naming convention for user IDs, leading to ambiguous identity"
+    - "Temporary or guest accounts not uniquely identified"
+  remediation_suggestions:
+    - "Assign a unique user ID to every individual with ePHI system access"
+    - "Eliminate shared and generic accounts for human users"
+    - "Implement a consistent user ID naming convention tied to identity records"
+    - "Use named administrator accounts instead of shared root/admin credentials"
+    - "Ensure temporary and contractor accounts are individually assigned"
+evidence_expectations:
+  in_repo:
+    - "User identification policy requiring unique IDs"
+    - "User ID naming convention standard"
+    - "Account provisioning procedure"
+  external:
+    - "User account listings from ePHI systems showing unique IDs"
+    - "Identity provider directory exports"
+    - "Shared account elimination audit results"
+    - "Account provisioning workflow records"
+  review_questions:
+    - "Does every user have a unique identifier in all ePHI systems?"
+    - "Are there any shared, group, or generic accounts in use?"
+    - "Can all system activity be attributed to an individual user?"
+    - "How are user IDs assigned and managed?"
+related_requirements:
+  - "164.312(a)(1)"
+  - "164.312(d)"
+  - "164.312(b)"
+  - "164.308(a)(4)(ii)(B)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(a)(2)(i)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

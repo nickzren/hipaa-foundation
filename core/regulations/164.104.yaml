@@ -1,0 +1,53 @@
+---
+schema_version: v1
+regulation_id: "164.104"
+title: "Applicability"
+rule_family: general
+safeguard_type: null
+standard_or_spec: framework
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Except as otherwise provided, the standards, requirements, and implementation specifications adopted under this part apply to the following entities:
+  
+  (1) A health plan.
+  
+  (2) A health care clearinghouse.
+  
+  (3) A health care provider who transmits any health information in electronic form in connection with a transaction covered by this subchapter.
+  
+  (b) Where provided, the standards, requirements, and implementation specifications adopted under this part apply to a business associate.
+ocr_guidance:
+  summary: "Establishes covered-entity applicability and makes business associates subject to standards, requirements, and implementation specifications only where Part 164 expressly provides."
+  source_document: "45 CFR Part 164, Subpart A"
+repo_interpretation:
+  plain_english_summary: "Determines which Part 164 rules and provisions apply to the assessed entity. Covered entities are directly in scope; business associates are in scope where Part 164 specifically says so."
+  intent: "Gate the assessment scope to only the rules that apply to the assessed entity."
+  applicability: "Read during triage to confirm which rules apply before selecting domains."
+  common_gaps:
+    - "Assuming all rules apply without confirming entity type."
+    - "Treating business associates as if the entire covered-entity Privacy Rule domain set applies automatically."
+    - "Failing to recognize that business associates have direct obligations only for specified HIPAA provisions."
+  remediation_suggestions:
+    - "Confirm entity type per 160.103 before determining rule applicability."
+    - "Map applicable rules to entity type and data classification."
+evidence_expectations:
+  in_repo: []
+  external:
+    - "Entity type determination documentation"
+    - "Rule applicability analysis"
+  review_questions:
+    - "Which HIPAA rules apply to this entity?"
+    - "Is the entity a covered entity, business associate, or BA subcontractor?"
+related_requirements:
+  - "160.103"
+  - "164.105"
+  - "164.306"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.104"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-A/section-164.104"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

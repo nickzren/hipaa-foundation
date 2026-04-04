@@ -1,0 +1,77 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(7)(ii)(C)"
+title: "Emergency mode operation plan"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.308(a)(7)"
+authoritative_text: |
+  Establish (and implement as needed) procedures to enable continuation of critical business processes for protection of the security of electronic protected health information while operating in emergency mode.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have procedures that enable critical business
+    processes to continue while operating in emergency mode. This is not
+    about full business continuity — it is specifically about protecting
+    ePHI security during emergency operations. The entity must identify
+    which processes are critical, how they will continue during emergencies,
+    and how ePHI will remain protected.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must have procedures for keeping critical business processes running
+    while in emergency mode, and those procedures must continue to protect
+    ePHI. When normal operations are disrupted, you need a plan for
+    operating securely in a degraded state.
+  intent: >
+    Ensure that ePHI remains protected even when the entity is operating
+    under emergency conditions. Balance the need for continued operations
+    with the need for security.
+  applicability: >
+    Required for all covered entities and business associates. The scope
+    of emergency mode planning should reflect the entity's critical business
+    processes and the systems that support them.
+  common_gaps:
+    - No emergency mode operation plan exists.
+    - Emergency mode procedures do not address ePHI security.
+    - Critical business processes are not identified.
+    - No criteria for entering and exiting emergency mode.
+    - Emergency mode procedures have never been tested.
+    - Degraded-mode security controls are not defined.
+    - The plan does not address how normal security controls change during emergencies.
+  remediation_suggestions:
+    - Identify critical business processes and the ePHI systems that support them.
+    - Define emergency mode entry and exit criteria.
+    - Document procedures for continuing critical processes while protecting ePHI.
+    - Define what security controls remain in effect and what compensating controls apply during emergencies.
+    - Test emergency mode procedures periodically.
+    - Coordinate with the disaster recovery plan and data backup plan.
+evidence_expectations:
+  in_repo:
+    - Emergency mode operation plan.
+    - Critical business process identification.
+    - Emergency mode security control documentation.
+  external:
+    - Emergency mode exercise or test records.
+    - Emergency mode activation and deactivation records.
+    - Evidence of coordination with disaster recovery and backup procedures.
+  review_questions:
+    - Is there a documented emergency mode operation plan?
+    - Are critical business processes identified?
+    - Does the plan address ePHI security during emergency operations?
+    - Are entry and exit criteria for emergency mode defined?
+    - Has the plan been tested?
+related_requirements:
+  - "164.308(a)(7)"
+  - "164.308(a)(7)(ii)(A)"
+  - "164.308(a)(7)(ii)(B)"
+  - "164.310(a)(2)(i)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(7)(ii)(C)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

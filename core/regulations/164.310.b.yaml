@@ -1,0 +1,59 @@
+---
+schema_version: v1
+regulation_id: "164.310(b)"
+title: "Workstation Use"
+rule_family: security_rule
+safeguard_type: physical
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement policies and procedures that specify the proper functions to be
+  performed, the manner in which those functions are to be performed, and the
+  physical attributes of the surroundings of a specific workstation or class
+  of workstation that can access electronic protected health information.
+ocr_guidance:
+  summary: "Entities must define how workstations are to be used and the physical environment in which they operate when ePHI is accessible."
+  source_document: "HIPAA Security Series: Security Standards - Physical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Define what each workstation (or class of workstation) is allowed to do with ePHI and what its physical setting must look like — screen positioning, location, permitted activities."
+  intent: "Ensure that workstations accessing ePHI are used appropriately and situated in environments that reduce the risk of unauthorized viewing or access."
+  applicability: "All workstations — desktops, laptops, tablets, mobile devices, kiosks — that access ePHI. Covers both on-site and remote/telework settings."
+  common_gaps:
+    - "No documented workstation use policy"
+    - "Remote work policies do not address physical workspace requirements"
+    - "No classification of workstation types and their permitted functions"
+    - "Shared workstations lack usage restrictions or session controls"
+    - "Screen positioning in public-facing areas not addressed"
+  remediation_suggestions:
+    - "Create a workstation use policy covering permissible functions and physical environment"
+    - "Classify workstations by role and define acceptable use per class"
+    - "Include remote/telework provisions addressing physical workspace security"
+    - "Require privacy screens on workstations in shared or public areas"
+    - "Define session timeout and lock requirements per workstation class"
+evidence_expectations:
+  in_repo:
+    - "Workstation use policy"
+    - "Workstation classification matrix"
+    - "Remote work / telework security policy"
+  external:
+    - "Workstation inventory with classification assignments"
+    - "Privacy screen deployment records"
+    - "Employee acknowledgment of workstation use policy"
+  review_questions:
+    - "Is there a documented policy defining how workstations accessing ePHI must be used?"
+    - "Does the policy address remote and mobile workstation use?"
+    - "Are workstations in public or shared areas configured to prevent unauthorized viewing?"
+    - "How are workstation use requirements communicated to the workforce?"
+related_requirements:
+  - "164.310(c)"
+  - "164.312(a)(1)"
+  - "164.312(a)(2)(iii)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.310(b)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.310"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

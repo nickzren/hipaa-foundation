@@ -1,0 +1,62 @@
+---
+schema_version: v1
+regulation_id: "164.312(b)"
+title: "Audit Controls"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement hardware, software, and/or procedural mechanisms that record and
+  examine activity in information systems that contain or use electronic
+  protected health information.
+ocr_guidance:
+  summary: "Entities must implement mechanisms to record and examine activity in systems containing ePHI, providing an audit trail for security-relevant events."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Log what happens in systems that hold ePHI — who accessed what, when, and what they did — and have a way to review those logs."
+  intent: "Provide accountability and detection capability by recording system activity, enabling the entity to identify unauthorized access, security incidents, and policy violations."
+  applicability: "All information systems that contain or use ePHI — EHRs, databases, operating systems, network devices, cloud platforms, and applications."
+  common_gaps:
+    - "Audit logging not enabled on all systems containing ePHI"
+    - "Logs generated but never reviewed or analyzed"
+    - "Insufficient log detail — missing user identity, action, or timestamp"
+    - "Log retention period too short for investigation needs"
+    - "No centralized log management or SIEM"
+    - "Cloud platform audit logs not collected or monitored"
+  remediation_suggestions:
+    - "Enable audit logging on all systems that contain or access ePHI"
+    - "Define minimum log content: user, action, resource, timestamp, success/failure"
+    - "Implement centralized log collection (SIEM or log aggregation platform)"
+    - "Establish log review procedures — automated alerting and periodic manual review"
+    - "Define and enforce log retention periods consistent with HIPAA requirements"
+    - "Include cloud platform activity logs in the audit scope"
+evidence_expectations:
+  in_repo:
+    - "Audit logging policy"
+    - "Log content and retention standards"
+    - "Log review procedures"
+  external:
+    - "SIEM or log management platform configuration"
+    - "Log review reports and alert investigation records"
+    - "System audit log configuration screenshots or exports"
+    - "Log retention compliance reports"
+  review_questions:
+    - "Are audit logs enabled on all ePHI-containing systems?"
+    - "What events are logged and what detail is captured?"
+    - "How are logs reviewed — manually, automated alerts, or both?"
+    - "What is the log retention period, and is it enforced?"
+    - "Are cloud platform activity logs collected and reviewed?"
+related_requirements:
+  - "164.312(a)(1)"
+  - "164.308(a)(1)(ii)(D)"
+  - "164.308(a)(5)(ii)(C)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(b)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

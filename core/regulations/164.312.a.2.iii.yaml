@@ -1,0 +1,64 @@
+---
+schema_version: v1
+regulation_id: "164.312(a)(2)(iii)"
+title: "Automatic Logoff"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.312(a)(1)"
+addressable_assessment_guidance: |
+  Assess whether the entity has evaluated the need for automatic logoff based
+  on its risk analysis, considering the environments in which ePHI is accessed.
+  If so, evaluate whether the configured timeout values and mechanisms are
+  reasonable and appropriate. Document the disposition: implemented, alternative,
+  documented_exception, or not_evidenced.
+authoritative_text: |
+  Implement electronic procedures that terminate an electronic session after
+  a predetermined time of inactivity.
+ocr_guidance:
+  summary: "Entities should implement automatic session termination after a period of inactivity to prevent unauthorized access through unattended sessions."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Automatically log users out or lock their sessions after a period of inactivity to prevent someone from walking up to an unattended screen and accessing ePHI."
+  intent: "Reduce the risk of unauthorized ePHI access through unattended active sessions by automatically terminating or locking sessions after inactivity."
+  applicability: "All systems and applications that provide access to ePHI — workstations, clinical applications, web portals, remote access sessions, and mobile applications."
+  common_gaps:
+    - "No automatic logoff or screen lock configured"
+    - "Timeout values excessively long (e.g., 60+ minutes)"
+    - "Application session timeout not implemented even when OS screen lock exists"
+    - "Remote access sessions not subject to inactivity timeout"
+    - "Clinical override of timeout without compensating controls"
+  remediation_suggestions:
+    - "Configure automatic session lock or logoff at the OS level (e.g., 15 minutes)"
+    - "Implement application-level session timeout for web and clinical applications"
+    - "Set timeout values appropriate to the environment and risk (shorter in shared/clinical areas)"
+    - "Apply inactivity timeout to remote access and VPN sessions"
+    - "If clinical workflow requires extended sessions, implement proximity-based locking or rapid re-authentication"
+evidence_expectations:
+  in_repo:
+    - "Session timeout policy with specified inactivity periods"
+    - "Automatic logoff configuration standard"
+  external:
+    - "GPO or MDM configuration showing screen lock settings"
+    - "Application session timeout configuration exports"
+    - "Remote access platform timeout settings"
+    - "Compliance scan results for session timeout"
+  review_questions:
+    - "Is automatic logoff or session lock configured on all systems accessing ePHI?"
+    - "What are the configured inactivity timeout values?"
+    - "Do application-level timeouts complement OS-level screen lock?"
+    - "Are timeout values risk-appropriate for different environments?"
+    - "If timeout is not implemented in certain areas, is there a documented risk-based rationale?"
+related_requirements:
+  - "164.312(a)(1)"
+  - "164.310(b)"
+  - "164.310(c)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(a)(2)(iii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

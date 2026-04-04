@@ -1,0 +1,84 @@
+---
+schema_version: v1
+id: physical-safeguards
+title: Physical Safeguards
+rule_family: security_rule
+lifecycle_phase:
+  - assessment
+  - operation
+review_questions:
+  - Are facility access controls in place for systems that store or process ePHI?
+  - Are workstation use and security policies implemented?
+  - Are device and media controls implemented for ePHI disposal and reuse?
+deep_assessment_probes:
+  - How does the entity handle physical access to data centers or server rooms?
+  - Are portable devices that access ePHI encrypted and managed?
+  - Is media destruction or sanitization documented?
+expected_evidence:
+  in_repo:
+    - device management scripts
+    - workstation configuration automation
+    - media handling in deployment or decommission scripts
+  external:
+    - facility security plan
+    - physical access logs
+    - media destruction certificates
+    - workstation use policies
+common_gaps:
+  - Cloud provider physical security assumed without documented shared responsibility.
+  - Portable device encryption not enforced.
+  - Media disposal not documented for decommissioned hardware.
+cross_links:
+  - technical-safeguards
+  - administrative-safeguards
+regulation_ids:
+  - "164.310(a)(1)"
+  - "164.310(a)(2)(i)"
+  - "164.310(a)(2)(ii)"
+  - "164.310(a)(2)(iii)"
+  - "164.310(a)(2)(iv)"
+  - "164.310(b)"
+  - "164.310(c)"
+  - "164.310(d)(1)"
+  - "164.310(d)(2)(i)"
+  - "164.310(d)(2)(ii)"
+  - "164.310(d)(2)(iii)"
+  - "164.310(d)(2)(iv)"
+regulation_files:
+  standards:
+    - core/regulations/164.310.a.1.yaml
+    - core/regulations/164.310.b.yaml
+    - core/regulations/164.310.c.yaml
+    - core/regulations/164.310.d.1.yaml
+  implementation_specifications:
+    - core/regulations/164.310.a.2.i.yaml
+    - core/regulations/164.310.a.2.ii.yaml
+    - core/regulations/164.310.a.2.iii.yaml
+    - core/regulations/164.310.a.2.iv.yaml
+    - core/regulations/164.310.d.2.i.yaml
+    - core/regulations/164.310.d.2.ii.yaml
+    - core/regulations/164.310.d.2.iii.yaml
+    - core/regulations/164.310.d.2.iv.yaml
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Assuming cloud provider physical security fully satisfies entity-level physical safeguard obligations."
+    - "Portable device encryption not enforced organization-wide."
+    - "Media disposal not documented for decommissioned hardware."
+  escalation_triggers:
+    - "No facility access controls and entity operates its own data center."
+    - "Portable devices with ePHI are unencrypted and unmanaged."
+  repo_only_notes: |
+    For cloud-hosted systems, physical safeguards shift significantly to the
+    provider. Note the shared responsibility model. Facility security plans,
+    physical access logs, and media destruction certificates are almost always
+    external evidence. On repo-only evidence, device management scripts and
+    workstation configuration automation are the strongest signals. Addressable
+    specs in physical safeguards still require documented disposition even when
+    cloud-hosted.
+
+    For cloud-only systems with no entity-operated facilities documented in
+    the corpus, Not assessed is often the appropriate default on repo-only
+    evidence. An AWS BAA or cloud-provider relationship artifact supports the
+    organizational-requirements domain, not the physical-safeguards domain.
+    Do not credit a cloud BAA as physical-safeguard evidence for 164.310.
+status: draft

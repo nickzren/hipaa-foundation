@@ -1,0 +1,66 @@
+---
+schema_version: v1
+regulation_id: "164.310(a)(2)(iii)"
+title: "Access Control and Validation Procedures"
+rule_family: security_rule
+safeguard_type: physical
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.310(a)(1)"
+addressable_assessment_guidance: |
+  Assess whether the entity has evaluated the need for procedures to control
+  and validate physical access based on its risk analysis. If so, evaluate
+  whether the procedures are reasonable and appropriate given the entity's
+  role-based access needs and facility layout. Document the disposition:
+  implemented, alternative, documented_exception, or not_evidenced.
+authoritative_text: |
+  Implement procedures to control and validate a person's access to facilities
+  based on their role or function, including visitor control, and control of
+  access to software programs for testing and revision.
+ocr_guidance:
+  summary: "Entities should implement role-based physical access validation, visitor management, and controlled access to systems used for software testing and revision."
+  source_document: "HIPAA Security Series: Security Standards - Physical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Verify that people entering facilities are authorized based on their role. Manage visitors. Control physical access to systems used for development and testing."
+  intent: "Ensure physical access is granted and validated based on job function, visitors are managed, and systems used for software testing or revision are physically protected."
+  applicability: "Facilities housing ePHI systems, development and test environments with ePHI or ePHI-derived data, and any areas where visitors may be present."
+  common_gaps:
+    - "Physical access not tied to role or function"
+    - "No visitor sign-in, badge, or escort procedure"
+    - "Development and test environments physically accessible to unauthorized staff"
+    - "Access validation not performed at restricted area boundaries"
+    - "Terminated employees retain physical access credentials"
+  remediation_suggestions:
+    - "Implement role-based physical access provisioning tied to HR onboarding"
+    - "Deploy visitor management — sign-in, badge issuance, escort requirements"
+    - "Physically separate or restrict access to development/test environments containing ePHI"
+    - "Validate access authorization at entry points (badge reader, guard check)"
+    - "Integrate physical access revocation into the termination process"
+evidence_expectations:
+  in_repo:
+    - "Role-based facility access matrix"
+    - "Visitor management policy"
+    - "Development/test environment physical access controls"
+  external:
+    - "Badge access provisioning and revocation records"
+    - "Visitor logs"
+    - "Access validation audit reports"
+    - "Termination checklists showing physical access revocation"
+  review_questions:
+    - "Is physical access granted based on role or function?"
+    - "How are visitors managed and escorted in areas with ePHI systems?"
+    - "Are development and test environments physically secured?"
+    - "How quickly is physical access revoked upon role change or termination?"
+related_requirements:
+  - "164.310(a)(1)"
+  - "164.310(a)(2)(ii)"
+  - "164.308(a)(3)(ii)(B)"
+  - "164.308(a)(3)(ii)(C)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.310(a)(2)(iii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.310"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,136 @@
+---
+schema_version: v1
+regulation_id: "164.414"
+title: "Administrative requirements and burden of proof"
+rule_family: breach_notification_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Administrative requirements. A covered entity is required to comply
+  with the administrative requirements of §164.530(b), (d), (e), (g),
+  (h), (i), and (j) with respect to the requirements of this subpart as
+  if such requirements were requirements of subpart E. Specifically:
+
+  (1) Training (§164.530(b)): Covered entities must train workforce
+  members on breach notification policies and procedures.
+
+  (2) Complaints (§164.530(d)): Covered entities must provide a process
+  for individuals to make complaints about breach notification.
+
+  (3) Sanctions (§164.530(e)): Covered entities must apply sanctions for
+  workforce members who fail to comply with breach notification
+  requirements.
+
+  (4) Non-retaliation (§164.530(g)): Covered entities may not retaliate
+  against individuals for exercising rights or participating in processes
+  under this subpart.
+
+  (5) Waiver prohibition (§164.530(h)): Covered entities may not require
+  individuals to waive their breach notification rights.
+
+  (6) Policies and procedures (§164.530(i)): Covered entities must
+  implement policies and procedures for breach notification compliance.
+
+  (7) Documentation (§164.530(j)): Covered entities must document
+  compliance with breach notification requirements and retain
+  documentation for six years.
+
+  (b) Burden of proof. In the event of a use or disclosure in violation
+  of subpart E, the covered entity or business associate, as applicable,
+  shall have the burden of demonstrating that all notifications were made
+  as required by this subpart or that the use or disclosure did not
+  constitute a breach, as defined at §164.402.
+
+  This means that the entity must retain sufficient documentation to
+  demonstrate either that proper notification was made or that a risk
+  assessment was performed concluding that the impermissible use or
+  disclosure did not rise to the level of a breach.
+ocr_guidance:
+  summary: >
+    Section 164.414 applies the Privacy Rule's administrative requirements
+    to the Breach Notification Rule and establishes the burden of proof.
+    OCR has emphasized the burden of proof provision: when an impermissible
+    use or disclosure occurs, the entity must be able to demonstrate either
+    that notification was provided or that a documented risk assessment
+    concluded the incident was not a breach. This effectively requires
+    entities to document their breach analysis for every incident, even
+    those determined not to be reportable breaches.
+  source_document: "HHS Breach Notification Rule Guidance"
+repo_interpretation:
+  plain_english_summary: >
+    The administrative requirements of the Privacy Rule (training,
+    complaints, sanctions, non-retaliation, waiver prohibition, policies/
+    procedures, and documentation) apply equally to the Breach
+    Notification Rule. Critically, the burden of proof is on the entity:
+    if an impermissible use or disclosure occurs, the entity must prove
+    either that proper notifications were made or that a risk assessment
+    determined no breach occurred. This means every incident must be
+    documented, even those ultimately classified as non-breaches.
+  intent: >
+    Ensure that breach notification compliance is supported by the same
+    administrative infrastructure as Privacy Rule compliance, and that
+    entities cannot avoid accountability by simply failing to document
+    incident investigations. The burden of proof provision creates a
+    strong incentive to document every incident thoroughly.
+  applicability: >
+    Applies to all covered entities and business associates. The burden
+    of proof provision affects how incident investigations are documented
+    and retained. Every privacy incident investigation must produce
+    documentation sufficient to demonstrate compliance with breach
+    notification requirements.
+  common_gaps:
+    - Incident investigations not documented sufficiently to meet the burden of proof.
+    - Non-breach determinations not supported by documented risk assessments.
+    - Breach notification training not provided to workforce.
+    - No complaint process specific to breach notification.
+    - Sanctions not applied for breach notification failures.
+    - Breach-related documentation not retained for six years.
+    - Breach notification policies and procedures not formalized.
+  remediation_suggestions:
+    - Develop incident investigation documentation standards that satisfy the burden of proof.
+    - Retain all breach risk assessments, including those concluding no breach occurred.
+    - Include breach notification in workforce privacy training.
+    - Establish a complaint intake process for breach notification concerns.
+    - Include breach notification violations in the sanctions policy.
+    - Implement six-year retention for all breach-related documentation.
+    - Formalize breach notification policies and procedures.
+    - Conduct periodic audits of incident documentation completeness.
+evidence_expectations:
+  in_repo:
+    - Incident investigation documentation templates.
+    - Breach risk assessment forms.
+    - Incident documentation retention configuration.
+  external:
+    - Breach notification policies and procedures.
+    - Breach notification training materials and completion records.
+    - Incident investigation records demonstrating the burden of proof.
+    - Non-breach determination documentation with risk assessments.
+    - Breach-related complaint handling procedures.
+    - Sanctions policy addressing breach notification failures.
+    - Six-year document retention evidence for breach records.
+  review_questions:
+    - Are incident investigations documented sufficiently to meet the burden of proof?
+    - Are non-breach determinations supported by documented risk assessments?
+    - Is breach notification included in workforce training?
+    - Is there a complaint process for breach notification concerns?
+    - Are breach-related documents retained for six years?
+    - Is there a sanctions policy for breach notification failures?
+related_requirements:
+  - "164.400"
+  - "164.402"
+  - "164.404"
+  - "164.406"
+  - "164.408"
+  - "164.410"
+  - "164.412"
+  - "164.530"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.414"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.414"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

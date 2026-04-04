@@ -1,0 +1,113 @@
+---
+schema_version: v1
+regulation_id: "164.514(a)"
+title: "De-identification of protected health information: standard"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard: De-identification of protected health information. Health
+  information that does not identify an individual and with respect to
+  which there is no reasonable basis to believe that the information can be
+  used to identify an individual is not individually identifiable health
+  information.
+
+  A covered entity may determine that health information is not
+  individually identifiable health information only if:
+  (1) A person with appropriate knowledge of and experience with generally
+  accepted statistical and scientific principles and methods for rendering
+  information not individually identifiable determines that the risk is
+  very small that the information could be used, alone or in combination
+  with other reasonably available information, by an anticipated recipient
+  to identify an individual who is a subject of the information, and
+  documents the methods and results of the analysis (Expert Determination,
+  §164.514(b)(1)); or
+  (2) The identifiers listed in §164.514(b)(2) are removed and the covered
+  entity has no actual knowledge that the remaining information could be
+  used to identify an individual (Safe Harbor, §164.514(b)(2)).
+
+  De-identified information is not protected health information and is not
+  subject to the Privacy Rule. A covered entity may assign a code or other
+  means of record identification to de-identified information, provided
+  the code is not derived from or related to information about the
+  individual, is not otherwise capable of being translated so as to
+  identify the individual, and the covered entity does not use or disclose
+  the code for any other purpose or disclose the mechanism for
+  re-identification.
+ocr_guidance:
+  summary: >
+    Section 164.514(a) establishes the standard for de-identification of
+    PHI. Once properly de-identified, information is no longer PHI and is
+    not subject to the Privacy Rule. OCR issued detailed guidance on
+    de-identification methods in 2012, covering both the Expert
+    Determination and Safe Harbor methods. OCR has emphasized that
+    de-identification is context-dependent and that advances in data
+    science may affect re-identification risk.
+  source_document: "HHS Guidance Regarding Methods for De-identification of PHI (2012)"
+repo_interpretation:
+  plain_english_summary: >
+    PHI can be de-identified through two methods, after which it is no
+    longer subject to the Privacy Rule. Expert Determination requires a
+    qualified expert to analyze and certify that re-identification risk
+    is very small. Safe Harbor requires removal of 18 specific identifier
+    types and no actual knowledge that re-identification is possible.
+    De-identified data may be re-coded, but the re-identification key
+    must be strictly controlled.
+  intent: >
+    Enable the use of health information for research, analytics, public
+    health, and other purposes without Privacy Rule restrictions, provided
+    that the information has been properly stripped of identifiability.
+    Provide two clear methods for achieving de-identification.
+  applicability: >
+    Applies to any covered entity or business associate that seeks to
+    use or share health information without Privacy Rule restrictions.
+    Critical for systems that produce analytics, research data sets,
+    population health reports, or de-identified data products. Also
+    relevant for systems that maintain re-identification keys.
+  common_gaps:
+    - De-identification claimed without following either the Expert Determination or Safe Harbor method.
+    - Safe Harbor applied but not all 18 identifier types removed.
+    - Re-identification keys stored without adequate protection.
+    - No documentation of the de-identification method used.
+    - De-identified data sets combined with other data in ways that enable re-identification.
+    - Expert Determination performed without a qualified expert or without documentation.
+  remediation_suggestions:
+    - Choose and document the de-identification method (Expert Determination or Safe Harbor).
+    - For Safe Harbor, implement automated checks for all 18 identifier types.
+    - Protect re-identification keys with access controls equivalent to PHI.
+    - Document expert qualifications and methodology for Expert Determination.
+    - Implement data governance controls preventing re-identification through data combination.
+    - Periodically reassess de-identification adequacy as data environments change.
+evidence_expectations:
+  in_repo:
+    - De-identification logic or data transformation pipelines.
+    - Safe Harbor identifier removal configurations or field lists.
+    - Re-identification key storage and access control configurations.
+    - Automated de-identification validation or testing.
+  external:
+    - De-identification policy specifying the method used.
+    - Expert Determination documentation (expert credentials, methodology, results).
+    - Safe Harbor compliance checklist for each de-identified data set.
+    - Re-identification key management procedures.
+    - Data use agreements for de-identified data recipients.
+  review_questions:
+    - Which de-identification method is used (Expert Determination or Safe Harbor)?
+    - For Safe Harbor, are all 18 identifier types addressed?
+    - Is the de-identification methodology documented?
+    - Are re-identification keys protected and access-controlled?
+    - Could de-identified data be combined with other available data to enable re-identification?
+related_requirements:
+  - "164.514.b"
+  - "164.514.e"
+  - "164.502"
+  - "164.502.b"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.514(a)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.514"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

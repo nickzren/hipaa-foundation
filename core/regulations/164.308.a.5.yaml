@@ -1,0 +1,76 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(5)"
+title: "Security awareness and training"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement a security awareness and training program for all members of its workforce (including management).
+ocr_guidance:
+  summary: >
+    OCR expects entities to provide security awareness and training to all
+    workforce members, including management, and to update training as the
+    security environment changes. All four implementation specifications under
+    this standard are addressable. OCR has frequently cited the absence of
+    security training as a contributing factor in breach investigations.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    Everyone in your workforce — including leadership — must receive security
+    awareness and training. The training must be relevant to their role and
+    updated as threats and systems change.
+  intent: >
+    Ensure that all workforce members understand their security responsibilities
+    and can recognize and respond to security threats. Human behavior is
+    the most common vector for security incidents.
+  applicability: >
+    Applies to every covered entity and business associate. All workforce
+    members must be included regardless of role, seniority, or employment type.
+  common_gaps:
+    - No security awareness and training program exists.
+    - Training is provided at onboarding but never refreshed.
+    - Management or leadership is excluded from training requirements.
+    - Training content is generic and not tailored to the entity's systems and risks.
+    - No records of training completion are maintained.
+    - Volunteers, trainees, and temporary workers are excluded.
+  remediation_suggestions:
+    - Implement a documented security awareness and training program.
+    - Include all workforce members including management and leadership.
+    - Provide initial training at onboarding and periodic refresher training.
+    - Tailor training content to the entity's specific risks, systems, and policies.
+    - Maintain records of training completion for all workforce members.
+    - Update training content when the security environment changes materially.
+evidence_expectations:
+  in_repo:
+    - Security awareness and training policy.
+    - Training curriculum or content outline.
+    - Training schedule or cadence documentation.
+  external:
+    - Training completion records for all workforce members.
+    - Training materials and content.
+    - Evidence of periodic updates to training content.
+    - Evidence that management participates in training.
+  review_questions:
+    - Does a documented security awareness and training program exist?
+    - Does training cover all workforce members including management?
+    - Is training provided at onboarding and refreshed periodically?
+    - Is training content updated when the risk environment changes?
+    - Are training completion records maintained?
+related_requirements:
+  - "164.308(a)(5)(ii)(A)"
+  - "164.308(a)(5)(ii)(B)"
+  - "164.308(a)(5)(ii)(C)"
+  - "164.308(a)(5)(ii)(D)"
+  - "164.308(a)(1)"
+  - "164.308(a)(3)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(5)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

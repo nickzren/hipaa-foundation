@@ -1,0 +1,75 @@
+---
+schema_version: v1
+id: breach-notification
+title: Breach Notification
+rule_family: breach_notification_rule
+lifecycle_phase:
+  - assessment
+  - operation
+review_questions:
+  - Is there a breach notification procedure per 164.400-164.414?
+  - Does the entity have a process for breach risk assessment?
+  - Are notification timelines and methods defined?
+deep_assessment_probes:
+  - Does the breach risk assessment follow the four-factor test in 164.402?
+  - Are BA breach notification obligations to the CE documented?
+  - Is there a process for maintaining a breach log for sub-500 breaches?
+expected_evidence:
+  in_repo:
+    - breach detection logic or alerting
+    - incident tracking configuration
+    - notification workflow automation
+  external:
+    - breach notification procedures
+    - breach investigation records
+    - HHS breach reporting evidence
+    - breach log
+common_gaps:
+  - No formal breach notification procedure.
+  - Breach risk assessment methodology not documented.
+  - Sub-500 breach log not maintained.
+cross_links:
+  - administrative-safeguards
+  - organizational-requirements
+regulation_ids:
+  - "164.400"
+  - "164.402"
+  - "164.404"
+  - "164.406"
+  - "164.408"
+  - "164.410"
+  - "164.412"
+  - "164.414"
+regulation_files:
+  standards:
+    - core/regulations/164.400.yaml
+    - core/regulations/164.402.yaml
+    - core/regulations/164.404.yaml
+    - core/regulations/164.406.yaml
+    - core/regulations/164.408.yaml
+    - core/regulations/164.410.yaml
+    - core/regulations/164.412.yaml
+    - core/regulations/164.414.yaml
+  implementation_specifications: []
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Treating a general incident response plan as a HIPAA breach notification procedure."
+    - "Breach risk assessment methodology not documented or not using the four-factor test."
+    - "Sub-500 breach log not maintained."
+  escalation_triggers:
+    - "No breach notification procedure exists in any form."
+    - "No process for the four-factor risk assessment required by 164.402."
+  repo_only_notes: |
+    Breach notification is heavily organizational. Breach notification procedures,
+    investigation records, HHS reporting evidence, and breach logs are almost
+    always external evidence. On repo-only evidence, breach detection logic,
+    incident tracking configuration, and notification workflow automation are the
+    strongest signals. Technical breach detection alone is weaker evidence than
+    technical detection combined with procedural documentation.
+
+    Breach-adjacent technical controls — such as monitoring alarms, incident
+    alerting, audit-failure detection and review paths, or anomaly escalation
+    workflows — are meaningful evidence that can justify a finding stronger
+    than Not assessed even when formal breach notification procedures are
+    absent from the corpus.
+status: draft

@@ -1,0 +1,175 @@
+---
+schema_version: v1
+regulation_id: "164.530"
+title: "Administrative requirements"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard: Personnel designations.
+  (1) A covered entity must designate a privacy official who is
+  responsible for the development and implementation of the policies and
+  procedures of the entity.
+  (2) A covered entity must designate a contact person or office who is
+  responsible for receiving complaints under this section and who is able
+  to provide further information about matters covered by the notice
+  required by §164.520.
+
+  (b) Standard: Training.
+  (1) A covered entity must train all members of its workforce on the
+  policies and procedures with respect to PHI as necessary and appropriate
+  for the members of the workforce to carry out their functions.
+  (2) A covered entity must provide training to each new member of the
+  workforce within a reasonable period of time after the person joins the
+  workforce.
+  (3) A covered entity must provide training to each member of the
+  workforce whose functions are affected by a material change in the
+  policies or procedures, within a reasonable period of time after the
+  material change becomes effective.
+
+  (c) Standard: Safeguards.
+  A covered entity must have in place appropriate administrative,
+  technical, and physical safeguards to protect the privacy of protected
+  health information.
+
+  (d) Standard: Complaints.
+  A covered entity must provide a process for individuals to make
+  complaints concerning the covered entity's policies and procedures or
+  its compliance with such policies and procedures or the requirements
+  of this subpart.
+
+  (e) Standard: Sanctions.
+  A covered entity must have and apply appropriate sanctions against
+  members of its workforce who fail to comply with the privacy policies
+  and procedures of the covered entity or the requirements of this subpart.
+
+  (f) Standard: Mitigation.
+  A covered entity must mitigate, to the extent practicable, any harmful
+  effect that is known to the covered entity of a use or disclosure of
+  protected health information in violation of its policies and procedures
+  or the requirements of this subpart by the covered entity or its
+  business associate.
+
+  (g) Standard: Retaliation.
+  A covered entity may not intimidate, threaten, coerce, discriminate
+  against, or take other retaliatory action against any individual for
+  the exercise by the individual of any right established, or for
+  participation in any process provided for, by this subpart, including
+  the filing of a complaint.
+
+  (h) Standard: Waiver of rights.
+  A covered entity may not require individuals to waive their rights under
+  this subpart as a condition of the provision of treatment, payment,
+  enrollment in a health plan, or eligibility for benefits.
+
+  (i) Standard: Policies and procedures.
+  A covered entity must implement policies and procedures with respect to
+  PHI that are designed to comply with the standards, implementation
+  specifications, or other requirements of this subpart. The entity must
+  change its policies and procedures as necessary and appropriate to
+  comply with changes in the law or regulation. Changes must be promptly
+  documented and implemented.
+
+  (j) Standard: Documentation.
+  (1) A covered entity must maintain the policies and procedures provided
+  for in paragraph (i) in written or electronic form.
+  (2) If a communication, statement, or designation is required to be in
+  writing, the covered entity must maintain such writing or an electronic
+  copy for a period of six years from the date of its creation or the
+  date when it last was in effect, whichever is later.
+ocr_guidance:
+  summary: >
+    Section 164.530 establishes the administrative infrastructure for
+    Privacy Rule compliance. OCR enforcement has frequently cited failures
+    in training, designation of a privacy official, sanctions, and
+    policies and procedures. OCR considers these foundational requirements
+    and expects all covered entities to have them in place. The six-year
+    documentation retention requirement is a minimum that may be exceeded
+    by state law. The anti-retaliation and waiver provisions protect
+    individuals who exercise their Privacy Rule rights.
+  source_document: "HHS Guidance on Administrative Requirements"
+repo_interpretation:
+  plain_english_summary: >
+    Covered entities must have foundational administrative infrastructure:
+    a designated privacy official, workforce training, privacy safeguards,
+    a complaint process, a sanctions policy, mitigation procedures for
+    harmful effects of impermissible disclosures, anti-retaliation
+    protections, a prohibition on requiring individuals to waive their
+    rights, documented policies and procedures, and six-year documentation
+    retention. These are the operational backbone of Privacy Rule
+    compliance.
+  intent: >
+    Ensure that Privacy Rule compliance is not just a matter of individual
+    provisions but is supported by an organizational infrastructure of
+    personnel, training, policies, procedures, accountability, and
+    documentation.
+  applicability: >
+    Applies to all covered entities. These requirements are organizational
+    in nature and largely external to any single system. However, systems
+    may support training tracking, complaint management, sanctions
+    tracking, policy documentation, and audit trails that demonstrate
+    compliance with these administrative requirements.
+  common_gaps:
+    - No designated privacy official or the designation is not documented.
+    - Privacy training not provided or not documented (especially for new workforce members).
+    - Training not updated after material policy changes.
+    - No complaint intake or tracking process.
+    - Sanctions policy not applied or not documented.
+    - No mitigation procedures for impermissible disclosures.
+    - Policies and procedures not documented in writing.
+    - Documentation not retained for six years.
+    - No anti-retaliation protections documented.
+  remediation_suggestions:
+    - Designate and document a privacy official and contact person.
+    - Implement a privacy training program with onboarding, refresher, and change-triggered components.
+    - Maintain training completion records.
+    - Establish a complaint intake and tracking process.
+    - Document and apply a sanctions policy with records of enforcement.
+    - Create mitigation procedures for impermissible disclosures.
+    - Maintain all privacy policies and procedures in written form.
+    - Implement six-year document retention.
+    - Document anti-retaliation protections in policy.
+evidence_expectations:
+  in_repo:
+    - Training module content or LMS integration.
+    - Complaint tracking workflow or system.
+    - Policy documentation framework or policy-as-code.
+    - Document retention configuration.
+  external:
+    - Privacy official designation documentation.
+    - Contact person designation.
+    - Training program description and materials.
+    - Training completion records.
+    - Complaint tracking log.
+    - Sanctions policy and enforcement records.
+    - Mitigation procedures.
+    - Anti-retaliation policy.
+    - Complete set of privacy policies and procedures.
+    - Documentation retention schedule and evidence.
+  review_questions:
+    - Is a privacy official designated and documented?
+    - Is privacy training provided to all workforce members and documented?
+    - Is there a complaint intake and tracking process?
+    - Is a sanctions policy in place and applied?
+    - Are mitigation procedures defined for impermissible disclosures?
+    - Are policies and procedures maintained in writing?
+    - Are documents retained for six years?
+    - Are anti-retaliation protections in place?
+related_requirements:
+  - "164.502"
+  - "164.504"
+  - "164.520"
+  - "164.522"
+  - "164.524"
+  - "164.526"
+  - "164.528"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.530"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.530"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

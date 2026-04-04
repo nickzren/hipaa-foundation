@@ -1,0 +1,73 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(1)(ii)(C)"
+title: "Sanction policy"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.308(a)(1)"
+authoritative_text: |
+  Apply appropriate sanctions against workforce members who fail to comply with the security policies and procedures of the covered entity or business associate.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have a documented sanction policy that applies
+    to workforce members who violate security policies and procedures. The
+    policy must describe the range of sanctions, be communicated to the
+    workforce, and be applied consistently. OCR has cited entities that lack
+    a sanction policy or that have a policy but have never enforced it.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must have a policy that defines consequences for workforce members
+    who violate your security policies. The sanctions must be appropriate to
+    the severity of the violation and applied consistently.
+  intent: >
+    Deter security policy violations by establishing clear, communicated
+    consequences. Ensure consistent enforcement so that security policies
+    are taken seriously.
+  applicability: >
+    Applies to every covered entity and business associate with workforce
+    members. Covers all members of the workforce including employees,
+    volunteers, trainees, and others under the entity's direct control.
+  common_gaps:
+    - No documented sanction policy exists.
+    - Sanction policy exists but has not been communicated to the workforce.
+    - Sanctions are not proportional to the severity of violations.
+    - The policy has never been enforced despite known violations.
+    - The policy does not cover all workforce members (e.g., excludes management).
+    - No documentation of sanction enforcement actions.
+  remediation_suggestions:
+    - Document a sanction policy that defines a range of consequences for security violations.
+    - Communicate the sanction policy to all workforce members.
+    - Ensure sanctions are proportional to the severity and nature of the violation.
+    - Apply the policy consistently across all workforce members regardless of role.
+    - Document enforcement actions (while respecting privacy of disciplinary records).
+    - Review and update the policy periodically.
+evidence_expectations:
+  in_repo:
+    - Documented sanction policy.
+    - Evidence of communication to the workforce.
+  external:
+    - Sanction policy acknowledgment records.
+    - Evidence of enforcement actions (appropriately redacted).
+    - HR records of disciplinary actions for security violations.
+    - Training records showing sanction policy was covered.
+  review_questions:
+    - Is there a documented sanction policy for security violations?
+    - Has the policy been communicated to all workforce members?
+    - Does the policy define a range of sanctions proportional to violation severity?
+    - Has the policy been enforced when violations have occurred?
+    - Does the policy apply to all workforce members including management?
+related_requirements:
+  - "164.308(a)(1)"
+  - "164.308(a)(5)"
+  - "164.530(e)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(1)(ii)(C)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

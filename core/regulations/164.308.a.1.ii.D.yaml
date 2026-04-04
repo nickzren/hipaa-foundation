@@ -1,0 +1,80 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(1)(ii)(D)"
+title: "Information system activity review"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.308(a)(1)"
+authoritative_text: |
+  Implement procedures to regularly review records of information system activity, such as audit logs, access reports, and security incident tracking reports.
+ocr_guidance:
+  summary: >
+    OCR expects entities to regularly review information system activity
+    records including audit logs, access reports, and security incident
+    tracking reports. The review must be regular and documented. OCR has
+    cited entities that generate audit logs but never review them, or that
+    have no process for reviewing system activity. The frequency of review
+    should be determined by the risk analysis.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must regularly review audit logs, access reports, and other records
+    of information system activity to detect security incidents and
+    unauthorized access. Generating logs is not enough — someone must
+    actually look at them.
+  intent: >
+    Detect unauthorized access, security incidents, and policy violations
+    through systematic review of information system activity records. This
+    is a detective control that supports the broader security management
+    process.
+  applicability: >
+    Applies to every covered entity and business associate. The scope and
+    frequency of review should be commensurate with the entity's risk
+    profile and the sensitivity of the ePHI involved.
+  common_gaps:
+    - Audit logs are generated but never reviewed.
+    - No defined process or schedule for reviewing system activity.
+    - Reviews are performed ad hoc rather than on a regular schedule.
+    - Review findings are not documented or acted upon.
+    - Not all relevant systems are included in the review scope.
+    - No defined criteria for what constitutes a finding or anomaly.
+    - Automated alerting exists but manual review is absent.
+  remediation_suggestions:
+    - Establish a documented procedure for regular review of information system activity.
+    - Define the scope of systems and log types to be reviewed.
+    - Set a review frequency commensurate with risk (daily, weekly, monthly).
+    - Define criteria for what constitutes a finding or anomaly requiring follow-up.
+    - Document review results and any follow-up actions taken.
+    - Consider automated monitoring tools to supplement manual review.
+    - Ensure review covers audit logs, access reports, and security incident reports.
+evidence_expectations:
+  in_repo:
+    - Information system activity review procedure.
+    - Review schedule and scope documentation.
+    - Criteria for findings and anomalies.
+  external:
+    - Completed review records with dates and reviewer identification.
+    - Sample audit logs demonstrating logging is active.
+    - Follow-up action records for identified anomalies.
+    - Evidence of automated monitoring or alerting (if implemented).
+  review_questions:
+    - Is there a documented process for regularly reviewing information system activity?
+    - Are audit logs, access reports, and incident reports included in the review scope?
+    - How frequently are reviews conducted?
+    - Are review findings documented and acted upon?
+    - Are all relevant systems included in the review scope?
+related_requirements:
+  - "164.308(a)(1)"
+  - "164.308(a)(6)"
+  - "164.312(b)"
+  - "164.312(d)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(1)(ii)(D)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

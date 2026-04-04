@@ -1,0 +1,65 @@
+---
+schema_version: v1
+regulation_id: "164.312(c)(2)"
+title: "Mechanism to Authenticate Electronic Protected Health Information"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.312(c)(1)"
+addressable_assessment_guidance: |
+  Assess whether the entity has evaluated the need for mechanisms to authenticate
+  (verify the integrity of) ePHI based on its risk analysis. If so, evaluate
+  whether the implemented mechanisms are reasonable and appropriate given the
+  data criticality and alteration risks. Document the disposition: implemented,
+  alternative, documented_exception, or not_evidenced.
+authoritative_text: |
+  Implement electronic mechanisms to corroborate that electronic protected
+  health information has not been altered or destroyed in an unauthorized manner.
+ocr_guidance:
+  summary: "Entities should implement mechanisms such as checksums, digital signatures, or message authentication codes to verify that ePHI has not been improperly altered or destroyed."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Use technical mechanisms to detect whether ePHI has been tampered with or improperly deleted — checksums, hashes, digital signatures, or similar integrity verification tools."
+  intent: "Provide a technical means to verify that ePHI remains unaltered and intact, enabling detection of unauthorized modification or destruction."
+  applicability: "ePHI at rest in databases, file systems, and archives, as well as ePHI exchanged between systems. Particularly important for critical health records, legal hold data, and data subject to long-term retention."
+  common_gaps:
+    - "No checksums or hashing applied to stored ePHI"
+    - "Database integrity checks limited to referential integrity without change detection"
+    - "File integrity monitoring (FIM) not deployed on ePHI data stores"
+    - "No validation of data integrity after backup and restore"
+    - "Digital signatures not used for critical documents or transactions"
+  remediation_suggestions:
+    - "Implement file integrity monitoring on directories and databases containing ePHI"
+    - "Use cryptographic hashing (SHA-256+) for critical data verification"
+    - "Apply digital signatures to high-integrity documents and transactions"
+    - "Validate data integrity after backup, restore, migration, and transfer operations"
+    - "Implement database change tracking with tamper-evident audit logs"
+evidence_expectations:
+  in_repo:
+    - "Data integrity verification policy"
+    - "File integrity monitoring deployment plan"
+    - "Hashing or digital signature standards"
+  external:
+    - "FIM tool configuration and alert records"
+    - "Checksum verification logs"
+    - "Digital signature validation records"
+    - "Post-migration or post-restore integrity verification reports"
+  review_questions:
+    - "Are there electronic mechanisms to verify ePHI has not been altered or destroyed?"
+    - "Is file integrity monitoring deployed on ePHI data stores?"
+    - "Are checksums or hashes generated and verified for critical ePHI?"
+    - "Is data integrity verified after backup, restore, and migration operations?"
+    - "If not implemented, is there a documented risk-based rationale?"
+related_requirements:
+  - "164.312(c)(1)"
+  - "164.312(e)(2)(i)"
+  - "164.312(b)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(c)(2)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

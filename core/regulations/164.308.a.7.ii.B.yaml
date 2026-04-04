@@ -1,0 +1,78 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(7)(ii)(B)"
+title: "Disaster recovery plan"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.308(a)(7)"
+authoritative_text: |
+  Establish (and implement as needed) procedures to restore any loss of data.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have documented disaster recovery procedures that
+    can restore ePHI after a loss event. The plan must be established in
+    advance and must be implementable — not just a shelf document. OCR has
+    cited entities that have no disaster recovery plan, that have a plan but
+    have never tested it, or that cannot demonstrate the ability to restore
+    data after a loss event.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must have procedures for restoring ePHI after a data loss event.
+    The plan should be prepared in advance, tested, and ready to execute
+    when needed.
+  intent: >
+    Ensure that ePHI can be restored after loss events such as system
+    failures, natural disasters, or cyberattacks. Minimize downtime and
+    data loss.
+  applicability: >
+    Required for all covered entities and business associates. The scope
+    and complexity of the disaster recovery plan should be proportional
+    to the entity's systems, data volume, and criticality.
+  common_gaps:
+    - No documented disaster recovery plan.
+    - Plan exists but has never been tested.
+    - Plan does not cover all systems and data containing ePHI.
+    - Recovery time and recovery point objectives are not defined.
+    - Plan is outdated and does not reflect current systems or infrastructure.
+    - No designated personnel or roles for disaster recovery.
+    - Dependencies on third parties are not addressed.
+  remediation_suggestions:
+    - Document a disaster recovery plan covering all ePHI systems.
+    - Define recovery time objectives (RTO) and recovery point objectives (RPO).
+    - Assign roles and responsibilities for disaster recovery execution.
+    - Test the plan at least annually and after significant system changes.
+    - Address third-party and cloud provider dependencies.
+    - Update the plan when systems, infrastructure, or personnel change.
+evidence_expectations:
+  in_repo:
+    - Disaster recovery plan document.
+    - Recovery objectives (RTO/RPO) documentation.
+    - Disaster recovery roles and responsibilities.
+  external:
+    - Disaster recovery test results.
+    - Recovery exercise records.
+    - Plan update history.
+    - Third-party recovery capability documentation.
+  review_questions:
+    - Is there a documented disaster recovery plan?
+    - Does it cover all systems containing ePHI?
+    - Are recovery time and point objectives defined?
+    - Has the plan been tested? When was the last test?
+    - Is the plan current and reflective of the actual environment?
+related_requirements:
+  - "164.308(a)(7)"
+  - "164.308(a)(7)(ii)(A)"
+  - "164.308(a)(7)(ii)(C)"
+  - "164.308(a)(7)(ii)(D)"
+  - "164.310(a)(2)(i)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(7)(ii)(B)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,56 @@
+---
+schema_version: v1
+id: minimum-necessary
+title: Minimum Necessary
+rule_family: privacy_rule
+lifecycle_phase:
+  - assessment
+  - operation
+review_questions:
+  - Does the entity limit uses, disclosures, and requests for PHI to the minimum necessary?
+  - Are role-based access controls aligned with minimum necessary requirements?
+  - Are there exceptions properly handled (e.g., treatment, individual requests)?
+deep_assessment_probes:
+  - Does the system enforce minimum necessary at the field or record level?
+  - Are routine and non-routine disclosures distinguished in the access model?
+  - How are minimum necessary determinations documented?
+expected_evidence:
+  in_repo:
+    - role-based data filtering
+    - field-level access controls
+    - query scoping by role
+  external:
+    - minimum necessary policies
+    - workforce access matrices
+    - minimum necessary determination records
+common_gaps:
+  - All users can access all PHI fields regardless of role.
+  - Minimum necessary is addressed in policy but not enforced technically.
+  - No distinction between routine and non-routine disclosure access levels.
+cross_links:
+  - privacy-uses-and-disclosures
+  - administrative-safeguards
+  - technical-safeguards
+regulation_ids:
+  - "164.502(b)"
+  - "164.514(d)"
+regulation_files:
+  standards:
+    - core/regulations/164.502.b.yaml
+    - core/regulations/164.514.d.yaml
+  implementation_specifications: []
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Assuming role-based access alone satisfies minimum necessary without field-level scoping."
+    - "All users can access all PHI fields regardless of role."
+    - "Minimum necessary addressed in policy but not enforced technically."
+  escalation_triggers:
+    - "No access controls differentiate PHI access by role or function."
+    - "Entire patient records disclosed routinely when only specific fields are needed."
+  repo_only_notes: |
+    Technical enforcement of minimum necessary (role-based data filtering,
+    field-level access controls, query scoping) is directly observable in code
+    and is the strongest repo-only signal for this domain. Policy-only minimum
+    necessary with no technical controls is weaker evidence. Workforce access
+    matrices and minimum necessary determination records are external evidence.
+status: draft

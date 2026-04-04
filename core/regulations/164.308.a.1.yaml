@@ -1,0 +1,75 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(1)"
+title: "Security management process"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement policies and procedures to prevent, detect, contain, and correct security violations.
+ocr_guidance:
+  summary: >
+    OCR expects covered entities and business associates to demonstrate an
+    ongoing, enterprise-wide security management process. Investigations
+    frequently cite the absence of a comprehensive risk analysis and the lack
+    of a risk management plan as root-cause findings. OCR views this standard
+    as foundational — deficiencies here often cascade into findings across
+    other safeguard families.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must have an active, documented program for finding security risks,
+    deciding what to do about them, and following through. This is not a
+    one-time exercise — it must be ongoing.
+  intent: >
+    Establish the organizational foundation for all other Security Rule
+    safeguards. Without a functioning security management process, individual
+    controls lack context, prioritization, and accountability.
+  applicability: >
+    Applies to every covered entity and business associate that creates,
+    receives, maintains, or transmits electronic protected health information
+    (ePHI).
+  common_gaps:
+    - No documented security management process or policy exists.
+    - Risk analysis was performed once but never updated after significant changes.
+    - Security management is treated as an IT function without organizational ownership.
+    - No linkage between identified risks and remediation actions.
+    - Sanction policy exists on paper but has never been enforced or communicated.
+  remediation_suggestions:
+    - Establish a documented security management policy with defined ownership, scope, and review cadence.
+    - Implement a risk register that links identified risks to treatment decisions and remediation timelines.
+    - Assign executive accountability for the security management process.
+    - Schedule periodic reviews (at least annually) and trigger-based reviews after significant changes.
+evidence_expectations:
+  in_repo:
+    - Security management policy or charter document.
+    - Risk register or risk tracking artifact.
+    - Evidence of periodic review or update cycle.
+  external:
+    - Board or leadership approval of the security management program.
+    - Organizational chart showing security management accountability.
+    - Meeting minutes or review records from security management reviews.
+    - Insurance or audit reports referencing the security management process.
+  review_questions:
+    - Is there a documented security management process with clear ownership?
+    - Does the process address prevention, detection, containment, and correction?
+    - Is the process reviewed and updated on a defined cadence?
+    - Are identified risks tracked to resolution?
+related_requirements:
+  - "164.308(a)(1)(ii)(A)"
+  - "164.308(a)(1)(ii)(B)"
+  - "164.308(a)(1)(ii)(C)"
+  - "164.308(a)(1)(ii)(D)"
+  - "164.308(a)(8)"
+  - "164.316(a)"
+  - "164.316(b)(1)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(1)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

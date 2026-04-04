@@ -1,0 +1,67 @@
+---
+schema_version: v1
+regulation_id: "164.312(e)(2)(i)"
+title: "Integrity Controls"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.312(e)(1)"
+addressable_assessment_guidance: |
+  Assess whether the entity has evaluated the need for integrity controls on
+  ePHI transmissions based on its risk analysis. If so, evaluate whether the
+  implemented mechanisms are reasonable and appropriate given the transmission
+  channels and threat landscape. Document the disposition: implemented,
+  alternative, documented_exception, or not_evidenced.
+authoritative_text: |
+  Implement security measures to ensure that electronically transmitted
+  electronic protected health information is not improperly modified without
+  detection until disposed of.
+ocr_guidance:
+  summary: "Entities should implement mechanisms to detect unauthorized modification of ePHI during electronic transmission."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Protect ePHI from being changed in transit without detection. Use checksums, message authentication codes, or integrity-verified encryption to detect tampering during transmission."
+  intent: "Ensure that any unauthorized modification of ePHI during electronic transmission is detectable, maintaining data integrity from sender to receiver."
+  applicability: "All electronic transmissions of ePHI — HL7/FHIR messages, API payloads, file transfers, email, database replication, and backup transmission. Particularly critical for inter-organizational exchanges."
+  common_gaps:
+    - "No integrity verification on transmitted ePHI beyond transport-layer encryption"
+    - "File transfers rely on TCP checksums alone without application-level verification"
+    - "HL7 or FHIR messages not integrity-checked at the application layer"
+    - "Email with ePHI has no message-level integrity protection"
+    - "Batch data transfers not verified end-to-end"
+  remediation_suggestions:
+    - "Use TLS (which provides both encryption and integrity) for all ePHI transmissions"
+    - "Implement application-level integrity checks (checksums, HMAC) for critical data transfers"
+    - "Verify message integrity for HL7/FHIR exchanges at the application layer"
+    - "Use S/MIME or similar for email integrity protection when ePHI is transmitted via email"
+    - "Implement end-to-end hash verification for batch and bulk data transfers"
+evidence_expectations:
+  in_repo:
+    - "Transmission integrity policy"
+    - "Data exchange integrity verification procedures"
+    - "Interface specifications showing integrity controls"
+  external:
+    - "TLS configuration showing integrity cipher suites"
+    - "Application-level integrity check logs"
+    - "File transfer verification records (checksums, hash comparisons)"
+    - "Interface monitoring reports"
+  review_questions:
+    - "What mechanisms ensure ePHI is not modified during transmission?"
+    - "Is integrity protection provided at the transport layer, application layer, or both?"
+    - "Are file transfers and batch exchanges verified end-to-end?"
+    - "How would unauthorized modification during transmission be detected?"
+    - "If not implemented beyond transport layer, is there a documented risk-based rationale?"
+related_requirements:
+  - "164.312(e)(1)"
+  - "164.312(e)(2)(ii)"
+  - "164.312(c)(1)"
+  - "164.312(c)(2)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(e)(2)(i)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

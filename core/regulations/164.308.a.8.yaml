@@ -1,0 +1,77 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(8)"
+title: "Evaluation"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Perform a periodic technical and nontechnical evaluation, based initially upon the standards implemented under this rule and, subsequently, in response to environmental or operational changes affecting the security of electronic protected health information, that establishes the extent to which a covered entity's or business associate's security policies and procedures meet the requirements of this subpart.
+ocr_guidance:
+  summary: >
+    OCR expects periodic evaluations that assess whether security policies
+    and procedures meet Security Rule requirements. Evaluations should be
+    both technical and nontechnical and should be triggered by environmental
+    or operational changes as well as conducted on a periodic schedule. This
+    standard has no separate implementation specifications. OCR views this
+    as distinct from (but related to) the risk analysis requirement.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must periodically evaluate whether your security policies and
+    procedures actually meet the Security Rule requirements. This evaluation
+    should include both technical testing and policy review, and should be
+    triggered by significant changes to your environment or operations.
+  intent: >
+    Ensure ongoing compliance by requiring entities to periodically verify
+    that their security programs remain effective and aligned with Security
+    Rule requirements as environments and threats evolve.
+  applicability: >
+    Applies to every covered entity and business associate. This is a
+    standalone required standard with no implementation specifications.
+  common_gaps:
+    - No periodic security evaluation has been performed.
+    - Evaluations are only technical (penetration tests, vulnerability scans) without policy review.
+    - Evaluations are only nontechnical (policy review) without technical testing.
+    - No evaluation is triggered by environmental or operational changes.
+    - Evaluation results are not documented or acted upon.
+    - Confusion between evaluation and risk analysis — they serve different purposes.
+  remediation_suggestions:
+    - Establish a periodic evaluation schedule (at least annually).
+    - Include both technical and nontechnical components in each evaluation.
+    - Define triggers for ad hoc evaluations (significant system changes, security incidents, regulatory updates).
+    - Document evaluation methodology, findings, and remediation plans.
+    - Distinguish the evaluation from the risk analysis — both are required and serve different purposes.
+    - Consider engaging independent assessors for objectivity.
+evidence_expectations:
+  in_repo:
+    - Evaluation policy or procedure.
+    - Evaluation schedule or trigger criteria.
+    - Evaluation methodology documentation.
+  external:
+    - Completed evaluation reports.
+    - Technical assessment results (vulnerability scans, penetration test reports).
+    - Nontechnical assessment results (policy review findings).
+    - Remediation plans arising from evaluations.
+    - Evidence of evaluations triggered by environmental changes.
+  review_questions:
+    - Has a periodic security evaluation been performed?
+    - Does the evaluation cover both technical and nontechnical aspects?
+    - Are evaluations triggered by significant environmental or operational changes?
+    - Are evaluation findings documented and tracked to remediation?
+    - Is the evaluation distinct from and complementary to the risk analysis?
+related_requirements:
+  - "164.308(a)(1)"
+  - "164.308(a)(1)(ii)(A)"
+  - "164.308(a)(1)(ii)(B)"
+  - "164.316(b)(2)(iii)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(8)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

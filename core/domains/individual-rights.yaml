@@ -1,0 +1,65 @@
+---
+schema_version: v1
+id: individual-rights
+title: Individual Rights
+rule_family: privacy_rule
+lifecycle_phase:
+  - assessment
+  - operation
+review_questions:
+  - Does the system support access, amendment, and accounting of disclosures?
+  - Is there a mechanism for individuals to request restrictions?
+  - Is the Notice of Privacy Practices available and current?
+deep_assessment_probes:
+  - Can the system produce an individual's PHI in a designated record set within required timelines?
+  - Does the amendment workflow maintain original records alongside amendments?
+  - How does accounting of disclosures work for automated disclosures?
+expected_evidence:
+  in_repo:
+    - data export or access endpoints
+    - amendment workflows
+    - restriction or opt-out flags
+  external:
+    - notice of privacy practices
+    - access request logs and response timelines
+    - amendment records
+    - accounting of disclosures records
+common_gaps:
+  - No mechanism to export an individual's PHI.
+  - Amendment workflow does not preserve the original record.
+  - Accounting of disclosures not tracked for automated processes.
+cross_links:
+  - privacy-uses-and-disclosures
+  - policies-procedures-documentation
+regulation_ids:
+  - "164.501"
+  - "164.520"
+  - "164.522"
+  - "164.524"
+  - "164.526"
+  - "164.528"
+regulation_files:
+  standards:
+    - core/regulations/164.501.yaml
+    - core/regulations/164.520.yaml
+    - core/regulations/164.522.yaml
+    - core/regulations/164.524.yaml
+    - core/regulations/164.526.yaml
+    - core/regulations/164.528.yaml
+  implementation_specifications: []
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Patient portal access does not cover the full designated record set."
+    - "Amendment workflow does not preserve the original record alongside the amendment."
+    - "Accounting of disclosures not tracked for automated processes."
+  escalation_triggers:
+    - "No mechanism exists for individuals to access their PHI."
+    - "Access requests routinely exceed the 30-day response deadline."
+  repo_only_notes: |
+    Individual rights obligations differ between covered entities and business
+    associates. Check entity type before assessing. BA obligations for individual
+    rights are narrower. On repo-only evidence, data export endpoints, amendment
+    workflows, and restriction flags are the strongest signals. Notice of privacy
+    practices, access request logs, and amendment records are external evidence.
+    OCR's Right of Access Initiative makes 164.524 an enforcement priority area.
+status: draft

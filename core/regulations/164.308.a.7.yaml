@@ -1,0 +1,84 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(7)"
+title: "Contingency plan"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Establish (and implement as needed) policies and procedures for responding to an emergency or other occurrence (for example, fire, vandalism, system failure, and natural disaster) that damages systems that contain electronic protected health information.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have a comprehensive contingency plan that
+    addresses how ePHI will be protected and recovered during and after
+    emergencies. The standard has five implementation specifications: three
+    required (data backup, disaster recovery, emergency mode operation) and
+    two addressable (testing/revision, applications and data criticality
+    analysis). OCR has cited entities that lack contingency plans, that have
+    plans but have never tested them, or that cannot demonstrate data backup
+    and recovery capabilities.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must have a contingency plan for protecting and recovering ePHI when
+    emergencies occur. This includes data backup, disaster recovery, and the
+    ability to operate in emergency mode. You should test the plan and
+    analyze which systems and data are most critical.
+  intent: >
+    Ensure the availability and recoverability of ePHI during and after
+    emergencies, natural disasters, system failures, and other disruptive
+    events.
+  applicability: >
+    Applies to every covered entity and business associate. The scope of
+    contingency planning should be proportional to the entity's size,
+    complexity, and the criticality of the ePHI systems involved.
+  common_gaps:
+    - No documented contingency plan exists.
+    - A plan exists but has never been tested.
+    - Data backup procedures exist but recovery has never been verified.
+    - Emergency mode operations are not defined.
+    - No criticality analysis to prioritize recovery of systems and data.
+    - The plan does not address all relevant emergency scenarios.
+    - The plan has not been updated after significant system changes.
+  remediation_suggestions:
+    - Develop a comprehensive contingency plan covering data backup, disaster recovery, and emergency mode operations.
+    - Conduct a criticality analysis to prioritize systems and data for recovery.
+    - Test the contingency plan at least annually and after significant changes.
+    - Document test results and update the plan based on findings.
+    - Ensure backup data can actually be restored — test recovery, not just backup.
+    - Define emergency mode procedures for continuing critical operations during disruptions.
+evidence_expectations:
+  in_repo:
+    - Contingency plan policy and procedures.
+    - Data backup and recovery procedures.
+    - Disaster recovery plan.
+    - Emergency mode operation procedures.
+  external:
+    - Contingency plan test results.
+    - Data backup logs and restoration test records.
+    - Business impact or criticality analysis.
+    - Emergency mode activation and deactivation records.
+  review_questions:
+    - Is there a documented contingency plan covering data backup, disaster recovery, and emergency mode?
+    - Has the plan been tested? When was the last test?
+    - Has data restoration from backups been verified?
+    - Is there a criticality analysis identifying the most important systems and data?
+    - Has the plan been updated after significant system or organizational changes?
+related_requirements:
+  - "164.308(a)(7)(ii)(A)"
+  - "164.308(a)(7)(ii)(B)"
+  - "164.308(a)(7)(ii)(C)"
+  - "164.308(a)(7)(ii)(D)"
+  - "164.308(a)(7)(ii)(E)"
+  - "164.310(a)(2)(i)"
+  - "164.312(a)(2)(ii)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(7)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

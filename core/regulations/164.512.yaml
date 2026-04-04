@@ -1,0 +1,149 @@
+---
+schema_version: v1
+regulation_id: "164.512"
+title: "Uses and disclosures for which an authorization or opportunity to agree or object is not required"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  A covered entity may use or disclose protected health information without
+  the written authorization of the individual or the opportunity for the
+  individual to agree or object, in the following situations:
+
+  (a) Required by law. Uses and disclosures required by law, provided the
+  use or disclosure complies with and is limited to the relevant
+  requirements of such law.
+
+  (b) Public health activities. Disclosures to public health authorities
+  authorized by law to collect or receive such information for the purpose
+  of preventing or controlling disease, injury, or disability; reporting
+  child abuse or neglect; FDA-regulated product tracking, reporting, and
+  recalls; notification of persons who may have been exposed to a
+  communicable disease; and workplace medical surveillance.
+
+  (c) Victims of abuse, neglect, or domestic violence. Disclosures about
+  an individual whom the covered entity reasonably believes to be a victim
+  of abuse, neglect, or domestic violence, to the appropriate government
+  authority.
+
+  (d) Health oversight activities. Disclosures to a health oversight agency
+  for oversight activities authorized by law, including audits, civil or
+  criminal investigations, inspections, licensure, and disciplinary actions.
+
+  (e) Judicial and administrative proceedings. Disclosures in the course
+  of any judicial or administrative proceeding in response to an order of
+  a court or administrative tribunal, or in response to a subpoena,
+  discovery request, or other lawful process, with certain safeguards.
+
+  (f) Law enforcement purposes. Disclosures for law enforcement purposes,
+  including pursuant to legal process, to identify or locate a suspect,
+  regarding victims of a crime, about decedents, to avert a serious threat
+  to health or safety, and regarding crimes on the premises.
+
+  (g) Decedents. Disclosures to coroners, medical examiners, and funeral
+  directors.
+
+  (h) Cadaveric organ, eye, or tissue donation. Disclosures to facilitate
+  organ, eye, or tissue donation and transplantation.
+
+  (i) Research. Uses and disclosures for research purposes with an
+  IRB or Privacy Board waiver of authorization, with preparatory-to-
+  research approval, or involving decedent information with appropriate
+  representations.
+
+  (j) Serious threat to health or safety. Uses and disclosures necessary
+  to prevent or lessen a serious and imminent threat to the health or
+  safety of a person or the public, consistent with applicable law and
+  standards of ethical conduct.
+
+  (k) Essential government functions. Disclosures for specialized
+  government functions, including military and veterans activities,
+  national security and intelligence activities, protective services for
+  the President, medical suitability determinations, and correctional
+  institutions.
+
+  (l) Workers' compensation. Disclosures as authorized by and to the
+  extent necessary to comply with workers' compensation laws.
+ocr_guidance:
+  summary: >
+    Section 164.512 enumerates the public interest and benefit exceptions
+    to the authorization requirement. These are narrowly scoped permissions,
+    each with its own conditions. OCR guidance emphasizes that each
+    exception has specific prerequisites and that minimum necessary applies
+    to most of these disclosures. The research exception has particularly
+    detailed requirements involving IRB/Privacy Board review.
+  source_document: "HHS Guidance on Public Interest Disclosures"
+repo_interpretation:
+  plain_english_summary: >
+    The Privacy Rule permits certain disclosures without authorization
+    when there is a public interest or benefit, including: required by law,
+    public health reporting, abuse/neglect reporting, health oversight,
+    judicial proceedings, law enforcement, decedent information, organ
+    donation, research (with IRB/Privacy Board approval), averting serious
+    threats, essential government functions, and workers' compensation.
+    Each exception has specific conditions that must be satisfied.
+  intent: >
+    Balance individual privacy rights against important public health,
+    safety, law enforcement, and research needs. Each exception is
+    narrowly tailored to specific societal interests and includes
+    conditions to limit the scope of disclosure.
+  applicability: >
+    Applies to all covered entities. Systems that support public health
+    reporting, research data sharing, law enforcement requests, court
+    orders, abuse reporting, organ donation coordination, or threat
+    assessment must be designed to support these exceptions while
+    maintaining appropriate safeguards. Most health IT systems will
+    encounter at least the public health and required-by-law exceptions.
+  common_gaps:
+    - No documented process for validating that a disclosure meets the specific exception criteria.
+    - Public health reporting occurs without minimum necessary limitations.
+    - Research disclosures made without proper IRB/Privacy Board waiver documentation.
+    - Law enforcement disclosures made without verifying legal process requirements.
+    - No tracking of disclosures made under these exceptions for accounting purposes.
+    - Judicial proceeding disclosures made without required safeguards (qualified protective order).
+    - No process to verify that required-by-law disclosures are limited to what the law requires.
+  remediation_suggestions:
+    - Create a decision tree for each §164.512 exception with prerequisite validation.
+    - Implement disclosure logging for all §164.512 disclosures to support accounting of disclosures.
+    - Establish procedures for validating legal process (subpoenas, court orders) before disclosure.
+    - Ensure research disclosures are linked to IRB/Privacy Board approval documentation.
+    - Apply minimum necessary to all §164.512 disclosures where applicable.
+    - Train workforce on the specific conditions for each public interest exception.
+evidence_expectations:
+  in_repo:
+    - Public health reporting interfaces or data export configurations.
+    - Research data sharing mechanisms with approval verification.
+    - Disclosure logging tied to legal basis categories.
+    - Law enforcement request handling workflows.
+  external:
+    - Policies for each §164.512 exception category the entity uses.
+    - IRB/Privacy Board waiver documentation for research disclosures.
+    - Legal process validation procedures.
+    - Disclosure logs categorized by §164.512 exception type.
+    - Public health reporting procedures.
+    - Abuse/neglect reporting procedures.
+    - Training materials on public interest exceptions.
+  review_questions:
+    - Is there a documented process for each §164.512 exception the entity relies on?
+    - Are disclosures under these exceptions logged for accounting purposes?
+    - Is minimum necessary applied to each exception where required?
+    - Are research disclosures supported by IRB/Privacy Board documentation?
+    - Are law enforcement disclosures validated against legal process requirements?
+related_requirements:
+  - "164.502"
+  - "164.502.b"
+  - "164.508"
+  - "164.510"
+  - "164.514.d"
+  - "164.528"
+  - "164.530"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.512"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.512"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

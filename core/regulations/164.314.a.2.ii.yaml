@@ -1,0 +1,73 @@
+---
+schema_version: v1
+regulation_id: "164.314(a)(2)(ii)"
+title: "Other arrangements"
+rule_family: security_rule
+safeguard_type: organizational
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.314(a)(1)"
+authoritative_text: |
+  The covered entity is in compliance with paragraph (a)(1) of this
+  section if it has another arrangement in place that meets the
+  requirements of 164.504(e)(3). Where a covered entity and its business
+  associate are both governmental entities, the covered entity is in
+  compliance with paragraph (a)(1) of this section if: (A) It enters into
+  a memorandum of understanding with the business associate that contains
+  terms that accomplish the objectives of paragraph (a)(2)(i) of this
+  section; or (B) Other law (including regulations and court orders)
+  contains requirements applicable to the business associate that
+  accomplish the objectives of paragraph (a)(2)(i) of this section.
+ocr_guidance:
+  summary: >
+    OCR recognizes alternative arrangements for government-to-government
+    relationships. A memorandum of understanding or applicable law may
+    substitute for a traditional BAA if it accomplishes the same
+    objectives. For non-governmental entities, the arrangement must meet
+    164.504(e)(3) requirements.
+  source_document: "HIPAA Security Rule, 45 CFR Part 164 Subpart C"
+repo_interpretation:
+  plain_english_summary: >
+    When a traditional BAA is not used, alternative arrangements are
+    acceptable under certain conditions. For government entities, a
+    memorandum of understanding or applicable law can substitute if it
+    achieves the same objectives as a BAA. For other situations, the
+    arrangement must meet 164.504(e)(3) requirements.
+  intent: >
+    Provide flexibility for government and other special relationships
+    while maintaining equivalent Security Rule protections.
+  applicability: >
+    Primarily applies to government-to-government business associate
+    relationships. Also applies to arrangements that qualify under
+    164.504(e)(3). Most private-sector relationships will use
+    164.314(a)(2)(i) BAAs instead.
+  common_gaps:
+    - MOU between government entities does not contain provisions accomplishing BAA objectives.
+    - Entity relies on "other law" without documenting how it meets the BAA objectives.
+    - Non-governmental entity incorrectly uses alternative arrangement instead of a BAA.
+  remediation_suggestions:
+    - Review MOUs against 164.314(a)(2)(i) objectives to ensure equivalence.
+    - Document the legal basis when relying on "other law" as an alternative arrangement.
+    - Confirm that alternative arrangement use is limited to qualifying relationships.
+evidence_expectations:
+  in_repo: []
+  external:
+    - Memoranda of understanding with government business associates.
+    - Legal analysis documenting how other law meets BAA objectives.
+    - Documentation of qualifying relationship for alternative arrangement use.
+  review_questions:
+    - If an MOU is used, does it accomplish the objectives of 164.314(a)(2)(i)?
+    - If relying on other law, is there documented analysis of how it meets BAA objectives?
+    - Is the alternative arrangement limited to qualifying relationships?
+related_requirements:
+  - "164.314(a)(1)"
+  - "164.314(a)(2)(i)"
+  - "164.504(e)(3)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.314(a)(2)(ii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.314"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

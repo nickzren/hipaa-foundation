@@ -1,0 +1,78 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(5)(ii)(D)"
+title: "Password management"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.308(a)(5)"
+addressable_assessment_guidance: |
+  Assess whether password management procedures are reasonable and
+  appropriate given the entity's risk analysis, authentication mechanisms,
+  technical capabilities, and the sensitivity of the ePHI involved.
+  Document the disposition: implemented, alternative, documented_exception,
+  or not_evidenced.
+authoritative_text: |
+  Procedures for creating, changing, and safeguarding passwords.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have procedures for creating, changing, and
+    safeguarding passwords, and to train the workforce on those procedures.
+    This specification is about workforce awareness of password practices,
+    not the technical enforcement of password policies (which falls under
+    164.312). As an addressable specification, the entity must assess
+    reasonableness and document its decision.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    Your workforce should be trained on proper password management — how to
+    create strong passwords, when and how to change them, and how to protect
+    them from disclosure. This is the human awareness side of password
+    security.
+  intent: >
+    Reduce the risk of password compromise by ensuring the workforce
+    understands and follows secure password practices. Complement technical
+    password controls with awareness and behavioral expectations.
+  applicability: >
+    Addressable for all covered entities and business associates. Relevant
+    wherever passwords are used to authenticate access to ePHI. May also
+    encompass multi-factor authentication awareness where applicable.
+  common_gaps:
+    - No workforce training on password management.
+    - Password practices are technically enforced but not communicated or explained.
+    - Workforce shares passwords or stores them insecurely.
+    - No guidance on creating strong passwords.
+    - Training does not address password managers, multi-factor authentication, or current best practices.
+    - No addressable specification assessment was performed.
+  remediation_suggestions:
+    - Train workforce on creating strong, unique passwords.
+    - Communicate policies on password sharing, storage, and changing.
+    - Address modern password practices including password managers and MFA.
+    - Update training to reflect current NIST guidance on password management.
+    - If not fully implementing, document the rationale and alternative measures.
+evidence_expectations:
+  in_repo:
+    - Password management training materials.
+    - Password policy documentation.
+    - Addressable specification assessment documentation.
+  external:
+    - Training completion records.
+    - Evidence of password management guidance distributed to workforce.
+  review_questions:
+    - Is the workforce trained on password creation, changing, and safeguarding?
+    - Are password management procedures documented and communicated?
+    - Does training address current best practices (password managers, MFA)?
+    - Has the entity assessed whether this specification is reasonable and appropriate?
+related_requirements:
+  - "164.308(a)(5)"
+  - "164.312(d)"
+  - "164.312(a)(2)(i)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(5)(ii)(D)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

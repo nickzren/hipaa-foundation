@@ -1,0 +1,75 @@
+---
+schema_version: v1
+regulation_id: "164.314(a)(2)(i)"
+title: "Business associate contracts"
+rule_family: security_rule
+safeguard_type: organizational
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.314(a)(1)"
+authoritative_text: |
+  A contract between a covered entity and a business associate must
+  provide that the business associate will: (A) Comply with the applicable
+  requirements of this subpart. (B) In accordance with 164.308(b)(2),
+  ensure that any subcontractors that create, receive, maintain, or
+  transmit electronic protected health information on behalf of the
+  business associate agree to comply with the applicable requirements of
+  this subpart by entering into a contract or other arrangement that
+  complies with this section. (C) Report to the covered entity any
+  security incident of which it becomes aware, including breaches of
+  unsecured protected health information as required by 164.410.
+ocr_guidance:
+  summary: >
+    OCR expects BAAs to contain all three required provisions:
+    compliance with applicable Security Rule requirements, subcontractor
+    flow-down obligations, and security incident and breach reporting.
+    OCR has taken enforcement action against entities whose BAAs lacked
+    these provisions or where the BAA terms were not operationalized.
+  source_document: "HIPAA Security Rule, 45 CFR Part 164 Subpart C"
+repo_interpretation:
+  plain_english_summary: >
+    Business associate contracts must include provisions requiring the
+    BA to: (A) comply with applicable Security Rule requirements,
+    (B) ensure subcontractors also enter into compliant agreements,
+    and (C) report security incidents and breaches to the covered entity.
+  intent: >
+    Create enforceable contractual obligations that extend Security Rule
+    protections through the business associate chain.
+  applicability: >
+    Applies to all BAAs between covered entities and business associates,
+    and between business associates and their subcontractors that handle
+    ePHI.
+  common_gaps:
+    - BAA missing one or more of the three required provisions.
+    - Subcontractor flow-down clause absent or not enforced.
+    - Security incident reporting provision does not reference breach notification under 164.410.
+    - BAA template used but not reviewed for current regulatory requirements.
+  remediation_suggestions:
+    - Audit all BAAs against the three required provisions.
+    - Update BAA templates to include subcontractor flow-down and breach notification provisions.
+    - Establish a process to verify subcontractor BAAs are in place.
+evidence_expectations:
+  in_repo:
+    - References to BAA requirements in vendor or integration documentation.
+  external:
+    - Executed BAAs containing all three required provisions.
+    - BAA template or checklist covering required provisions.
+    - Subcontractor BAA tracking and verification records.
+  review_questions:
+    - Do BAAs include all three required provisions (compliance, subcontractor flow-down, incident reporting)?
+    - Are subcontractor BAAs verified and tracked?
+    - Does the incident reporting provision reference breach notification under 164.410?
+related_requirements:
+  - "164.314(a)(1)"
+  - "164.308(b)(2)"
+  - "164.410"
+  - "164.314(a)(2)(ii)"
+  - "164.314(a)(2)(iii)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.314(a)(2)(i)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.314"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

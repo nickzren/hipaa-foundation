@@ -1,0 +1,77 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(3)(ii)(B)"
+title: "Workforce clearance procedure"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.308(a)(3)"
+addressable_assessment_guidance: |
+  Assess whether workforce clearance procedures are reasonable and appropriate
+  given the entity's risk analysis, the sensitivity of the ePHI accessible,
+  the roles requiring access, and applicable legal constraints on background
+  checks. Document the disposition: implemented, alternative,
+  documented_exception, or not_evidenced.
+authoritative_text: |
+  Implement procedures to determine that the access of a workforce member to electronic protected health information is appropriate.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have procedures for determining whether a
+    workforce member's access to ePHI is appropriate. This may include
+    background checks, reference checks, or other screening procedures
+    appropriate to the role and the sensitivity of the ePHI. As an
+    addressable specification, the entity must assess reasonableness and
+    document its decision.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You should have a process for vetting workforce members before granting
+    them access to ePHI. This could be background checks, reference checks,
+    or other clearance procedures appropriate to the role and risk.
+  intent: >
+    Ensure that workforce members with access to ePHI are trustworthy and
+    appropriate for the level of access they are granted. Screen for risk
+    factors before granting access to sensitive information.
+  applicability: >
+    Addressable for all covered entities and business associates. The depth
+    and formality of clearance procedures should be proportional to the
+    sensitivity of the ePHI and the level of access involved.
+  common_gaps:
+    - No workforce clearance procedure exists.
+    - Background checks are conducted for some roles but not all with ePHI access.
+    - Clearance procedures do not consider the sensitivity of ePHI accessible to the role.
+    - No reassessment when workforce members change roles.
+    - Volunteers and temporary workers are not subject to clearance.
+    - No addressable specification assessment was performed.
+  remediation_suggestions:
+    - Implement clearance procedures proportional to the sensitivity of ePHI access.
+    - Include background checks, reference checks, or other appropriate screening.
+    - Apply clearance procedures to all workforce members with ePHI access.
+    - Reassess clearance when roles or access levels change.
+    - If not fully implementing, document the rationale and alternative measures.
+evidence_expectations:
+  in_repo:
+    - Workforce clearance procedure documentation.
+    - Addressable specification assessment documentation.
+  external:
+    - Background check records or clearance records.
+    - HR screening procedure documentation.
+    - Evidence that clearance procedures cover all relevant workforce members.
+  review_questions:
+    - Are there procedures for determining appropriateness of workforce access to ePHI?
+    - Do clearance procedures cover all workforce members with ePHI access?
+    - Are clearance procedures proportional to the sensitivity of the ePHI?
+    - Has the entity assessed whether this specification is reasonable and appropriate?
+related_requirements:
+  - "164.308(a)(3)"
+  - "164.308(a)(3)(ii)(A)"
+  - "164.308(a)(4)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(3)(ii)(B)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

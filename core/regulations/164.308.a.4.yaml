@@ -1,0 +1,75 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(4)"
+title: "Information access management"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement policies and procedures for authorizing access to electronic protected health information that are consistent with the applicable requirements of subpart E of this part.
+ocr_guidance:
+  summary: >
+    OCR expects documented access authorization policies that are consistent
+    with the minimum necessary standard from the Privacy Rule. The standard
+    has three implementation specifications: one required (isolating
+    clearinghouse functions) and two addressable (access authorization and
+    access establishment/modification). OCR has cited entities for failing
+    to establish or document access authorization procedures.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must have policies and procedures that govern who is authorized to
+    access ePHI and how that access is granted, modified, and revoked. These
+    must align with Privacy Rule requirements including minimum necessary.
+  intent: >
+    Establish formal access authorization governance so that access to ePHI
+    is granted based on documented criteria and consistent with the Privacy
+    Rule's minimum necessary standard.
+  applicability: >
+    Applies to every covered entity and business associate. The clearinghouse
+    isolation specification applies specifically to covered entities that are
+    health care clearinghouses.
+  common_gaps:
+    - No documented access authorization policy.
+    - Access is granted informally without documented approval.
+    - Access policies are inconsistent with Privacy Rule minimum necessary requirements.
+    - No process for reviewing or modifying access when roles change.
+    - Health care clearinghouse functions are not isolated from the larger organization.
+  remediation_suggestions:
+    - Document access authorization policies with defined approval workflows.
+    - Align access policies with Privacy Rule minimum necessary requirements.
+    - Implement a formal access request and approval process.
+    - Establish procedures for access modification when roles or responsibilities change.
+    - For clearinghouses, implement technical and procedural isolation of clearinghouse functions.
+evidence_expectations:
+  in_repo:
+    - Information access management policy.
+    - Access authorization procedure or workflow documentation.
+    - Role-based access control matrix.
+  external:
+    - Access request and approval records.
+    - Access modification records.
+    - Periodic access review results.
+    - Clearinghouse isolation documentation (if applicable).
+  review_questions:
+    - Are access authorization policies documented and consistent with the Privacy Rule?
+    - Is there a formal process for requesting, approving, and modifying access?
+    - Are access decisions based on role, function, and minimum necessary criteria?
+    - If the entity is a clearinghouse, are clearinghouse functions isolated?
+related_requirements:
+  - "164.308(a)(4)(ii)(A)"
+  - "164.308(a)(4)(ii)(B)"
+  - "164.308(a)(4)(ii)(C)"
+  - "164.308(a)(3)"
+  - "164.312(a)(1)"
+  - "164.514(d)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(4)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

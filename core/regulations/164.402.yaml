@@ -1,0 +1,139 @@
+---
+schema_version: v1
+regulation_id: "164.402"
+title: "Definitions"
+rule_family: breach_notification_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (1) Breach means the acquisition, access, use, or disclosure of
+  protected health information in a manner not permitted under subpart E
+  of this part which compromises the security or privacy of the protected
+  health information.
+
+  (i) Breach excludes:
+  (A) Any unintentional acquisition, access, or use of protected health
+  information by a workforce member or person acting under the authority
+  of a covered entity or a business associate, if such acquisition, access,
+  or use was made in good faith and within the scope of authority and does
+  not result in further use or disclosure in a manner not permitted under
+  subpart E of this part.
+
+  (B) Any inadvertent disclosure by a person who is authorized to access
+  protected health information at a covered entity or business associate
+  to another person authorized to access protected health information at
+  the same covered entity, business associate, or organized health care
+  arrangement in which the covered entity participates, and the information
+  received as a result of such disclosure is not further used or disclosed
+  in a manner not permitted under subpart E of this part.
+
+  (C) A disclosure of protected health information where a covered entity
+  or business associate has a good faith belief that an unauthorized
+  person to whom the disclosure was made would not reasonably have been
+  able to retain such information.
+
+  (ii) Except as provided in paragraph (1)(i) of this definition, an
+  acquisition, access, use, or disclosure of protected health information
+  in a manner not permitted under subpart E is presumed to be a breach
+  unless the covered entity or business associate, as applicable,
+  demonstrates that there is a low probability that the protected health
+  information has been compromised based on a risk assessment of at least
+  the following factors:
+
+  (A) The nature and extent of the PHI involved, including the types of
+  identifiers and the likelihood of re-identification;
+  (B) The unauthorized person who used the PHI or to whom the disclosure
+  was made;
+  (C) Whether the PHI was actually acquired or viewed;
+  (D) The extent to which the risk to the PHI has been mitigated.
+
+  (2) Unsecured protected health information means protected health
+  information that is not rendered unusable, unreadable, or indecipherable
+  to unauthorized persons through the use of a technology or methodology
+  specified by the Secretary in the guidance issued under section
+  13402(h)(2) of Public Law 111-5 on the HHS website.
+ocr_guidance:
+  summary: >
+    The Omnibus Rule replaced the prior "harm standard" with a risk
+    assessment approach. An impermissible use or disclosure is presumed
+    to be a breach unless the entity demonstrates a low probability of
+    compromise through the four-factor risk assessment. OCR has emphasized
+    that the risk assessment must be documented and must address all four
+    factors. The three narrow exceptions (good-faith workforce access,
+    inadvertent authorized-to-authorized disclosure, unable-to-retain)
+    must be specifically established.
+  source_document: "HHS Omnibus Rule Preamble; OCR Breach Notification Guidance"
+repo_interpretation:
+  plain_english_summary: >
+    A "breach" is any impermissible acquisition, access, use, or
+    disclosure of PHI that compromises its security or privacy. Three
+    narrow exceptions exist: good-faith unintentional workforce access,
+    inadvertent disclosure between authorized persons at the same entity,
+    and disclosures where the recipient could not reasonably retain the
+    information. Unless an exception applies, every impermissible use or
+    disclosure is presumed to be a breach unless a documented four-factor
+    risk assessment demonstrates low probability of compromise. The four
+    factors are: nature/extent of PHI, who received it, whether it was
+    actually viewed, and extent of mitigation.
+  intent: >
+    Establish a clear, risk-based framework for determining whether an
+    impermissible use or disclosure constitutes a breach requiring
+    notification. The presumption-of-breach approach ensures that entities
+    cannot avoid notification without a documented risk assessment.
+  applicability: >
+    Applies to all covered entities and business associates. The breach
+    definition and risk assessment framework must be operationalized in
+    incident response procedures. Every incident involving potential
+    impermissible access to PHI must be evaluated against these
+    definitions.
+  common_gaps:
+    - No formal breach risk assessment methodology documenting all four factors.
+    - Three narrow exceptions not understood or applied correctly.
+    - Risk assessment not documented or not retained.
+    - Incidents closed as "not a breach" without four-factor analysis.
+    - Breach determination delayed, affecting notification timelines.
+    - No standardized breach risk assessment form or template.
+    - Unsecured PHI definition not operationalized (no assessment of encryption status at time of incident).
+  remediation_suggestions:
+    - Develop a breach risk assessment template addressing all four factors.
+    - Train incident response team on the breach definition and exceptions.
+    - Implement a documented breach determination workflow.
+    - Ensure breach determinations are made promptly to support notification timelines.
+    - Create criteria for applying the three narrow exceptions.
+    - Document encryption status of affected PHI at the time of each incident.
+    - Retain all breach risk assessments for at least six years.
+evidence_expectations:
+  in_repo:
+    - Incident detection or alerting mechanisms.
+    - Breach risk assessment workflow or form templates.
+    - Encryption status tracking for PHI stores.
+  external:
+    - Breach risk assessment methodology and templates.
+    - Completed breach risk assessments.
+    - Breach determination procedures.
+    - Incident investigation records.
+    - Training materials on breach definitions and risk assessment.
+    - Policy defining the breach determination process.
+  review_questions:
+    - Is there a documented breach risk assessment methodology addressing all four factors?
+    - Are the three narrow exceptions understood and properly applied?
+    - Are breach determinations documented and retained?
+    - Is the encryption status of affected PHI assessed during each incident?
+    - Are breach determinations made promptly enough to support notification timelines?
+related_requirements:
+  - "164.400"
+  - "164.404"
+  - "164.406"
+  - "164.408"
+  - "164.410"
+  - "164.414"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.402"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.402"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

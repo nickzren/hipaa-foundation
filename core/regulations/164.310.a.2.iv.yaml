@@ -1,0 +1,63 @@
+---
+schema_version: v1
+regulation_id: "164.310(a)(2)(iv)"
+title: "Maintenance Records"
+rule_family: security_rule
+safeguard_type: physical
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.310(a)(1)"
+addressable_assessment_guidance: |
+  Assess whether the entity has evaluated the need to document repairs and
+  modifications to the physical components of a facility related to security
+  based on its risk analysis. If so, evaluate whether the documentation
+  practices are reasonable and appropriate. Document the disposition:
+  implemented, alternative, documented_exception, or not_evidenced.
+authoritative_text: |
+  Implement policies and procedures to document repairs and modifications to
+  the physical components of a facility which are related to security (for
+  example, hardware, walls, doors, and locks).
+ocr_guidance:
+  summary: "Entities should maintain records of repairs and modifications to physical security components such as doors, locks, walls, and hardware."
+  source_document: "HIPAA Security Series: Security Standards - Physical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Keep records when you fix or change anything that affects physical security — doors, locks, walls, badge readers, cameras, alarms, and similar components."
+  intent: "Maintain an auditable history of changes to physical security infrastructure so the entity can verify that security posture is maintained and detect unauthorized modifications."
+  applicability: "All physical security components at facilities housing ePHI systems — locks, doors, walls, badge readers, surveillance cameras, alarm systems, and structural security elements."
+  common_gaps:
+    - "No maintenance log for physical security components"
+    - "Repairs tracked in general facilities work orders but not flagged for security relevance"
+    - "Lock re-keying or badge system changes not documented"
+    - "Third-party maintenance of security systems not recorded"
+    - "No periodic review of maintenance records for anomalies"
+  remediation_suggestions:
+    - "Establish a maintenance log or tagging system for security-related repairs and modifications"
+    - "Flag security-relevant work orders in the facilities management system"
+    - "Record all lock changes, badge reader updates, and alarm modifications"
+    - "Require third-party vendors to provide maintenance documentation"
+    - "Review maintenance records periodically for unauthorized or unplanned changes"
+evidence_expectations:
+  in_repo:
+    - "Maintenance records policy for physical security components"
+    - "Procedure for logging security-related facility changes"
+  external:
+    - "Facilities maintenance logs with security-relevant entries"
+    - "Vendor maintenance and repair reports"
+    - "Lock re-keying or badge system change records"
+    - "Periodic review reports of maintenance records"
+  review_questions:
+    - "Are repairs and modifications to physical security components documented?"
+    - "Is there a process to distinguish security-related maintenance from routine facilities work?"
+    - "Are third-party maintenance activities for security systems recorded?"
+    - "How often are maintenance records reviewed?"
+related_requirements:
+  - "164.310(a)(1)"
+  - "164.310(a)(2)(ii)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.310(a)(2)(iv)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.310"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,100 @@
+---
+schema_version: v1
+regulation_id: "164.400"
+title: "Applicability"
+rule_family: breach_notification_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  The provisions of this subpart apply to covered entities and their
+  business associates, with respect to breaches of unsecured protected
+  health information.
+
+  This subpart was added to 45 CFR Part 164 by the Health Information
+  Technology for Economic and Clinical Health (HITECH) Act, enacted as
+  part of the American Recovery and Reinvestment Act of 2009. The Breach
+  Notification Rule requires covered entities and business associates to
+  provide notification following a breach of unsecured protected health
+  information.
+
+  The term "unsecured protected health information" means protected health
+  information that is not rendered unusable, unreadable, or indecipherable
+  to unauthorized persons through the use of a technology or methodology
+  specified by the Secretary in guidance. The Secretary has specified
+  encryption and destruction as the technologies and methodologies that
+  render PHI unusable, unreadable, or indecipherable.
+ocr_guidance:
+  summary: >
+    Subpart D (Breach Notification Rule) applies to all covered entities
+    and business associates. The key threshold is whether the PHI was
+    "unsecured" at the time of the breach. PHI that is encrypted to NIST
+    standards or properly destroyed is considered "secured" and is not
+    subject to the breach notification requirements. OCR has issued
+    guidance specifying encryption and destruction as the applicable
+    technologies and methodologies.
+  source_document: "HHS Guidance Specifying the Technologies and Methodologies That Render PHI Unusable, Unreadable, or Indecipherable"
+repo_interpretation:
+  plain_english_summary: >
+    The Breach Notification Rule applies to all covered entities and
+    business associates whenever there is a breach of unsecured PHI.
+    "Unsecured" means the PHI was not encrypted to NIST standards or
+    properly destroyed. If PHI is properly encrypted or destroyed, it is
+    "secured" and breach notification is not required even if the
+    encrypted data is compromised.
+  intent: >
+    Establish the scope of the Breach Notification Rule and define the
+    critical distinction between secured and unsecured PHI. By tying the
+    "secured" safe harbor to encryption and destruction, the rule
+    incentivizes covered entities to encrypt PHI.
+  applicability: >
+    Applies to all covered entities and business associates. The
+    applicability determination depends on whether the entity maintains
+    unsecured PHI. Systems that encrypt PHI at rest and in transit to
+    NIST standards may benefit from the safe harbor, but must still
+    have breach procedures for any PHI that falls outside encryption
+    coverage.
+  common_gaps:
+    - No encryption at rest, leaving all PHI as unsecured.
+    - Encryption does not meet NIST standards specified in the guidance.
+    - No documented assessment of which PHI is secured vs. unsecured.
+    - Media destruction procedures not documented or not meeting the specified methodology.
+    - Assumption that any encryption satisfies the safe harbor without verifying the standard.
+  remediation_suggestions:
+    - Assess all PHI storage and transmission for encryption status.
+    - Ensure encryption meets NIST standards specified in the HHS guidance (AES-128 or higher for data at rest; NIST-compliant encryption for data in transit).
+    - Document which PHI stores are secured and which are unsecured.
+    - Implement media destruction procedures meeting the specified methodology.
+    - Maintain encryption key management procedures that preserve the encryption safe harbor.
+evidence_expectations:
+  in_repo:
+    - Encryption configuration for PHI at rest and in transit.
+    - Documentation identifying secured vs. unsecured PHI stores.
+    - Encryption standard documentation (algorithm, key length).
+  external:
+    - Encryption assessment documentation.
+    - Media destruction procedures and certificates.
+    - Policy defining secured vs. unsecured PHI.
+    - Encryption key management procedures.
+  review_questions:
+    - Is all PHI encrypted at rest and in transit to NIST standards?
+    - Is there a documented assessment of secured vs. unsecured PHI?
+    - Do encryption implementations meet the specific standards in the HHS guidance?
+    - Are media destruction procedures in place and documented?
+related_requirements:
+  - "164.402"
+  - "164.404"
+  - "164.406"
+  - "164.408"
+  - "164.410"
+  - "164.412"
+  - "164.414"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.400"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.400"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

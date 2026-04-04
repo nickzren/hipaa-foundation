@@ -1,0 +1,94 @@
+---
+schema_version: v1
+regulation_id: "164.412"
+title: "Law enforcement delay"
+rule_family: breach_notification_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  If a law enforcement official states to a covered entity or business
+  associate that a notification, notice, or posting required under this
+  subpart would impede a criminal investigation or cause damage to
+  national security, a covered entity or business associate must:
+
+  (a) If the statement is in writing and specifies the time for which a
+  delay is required, delay such notification, notice, or posting for the
+  time period specified by the official; or
+
+  (b) If the statement is made orally, document the statement, including
+  the identity of the official making the statement, and delay the
+  notification, notice, or posting temporarily and no longer than 30 days
+  from the date of the oral statement, unless a written statement as
+  described in paragraph (a) is submitted during that time.
+
+  At the end of the delay period, the covered entity or business associate
+  must provide the notification, notice, or posting as otherwise required.
+ocr_guidance:
+  summary: >
+    Section 164.412 permits a covered entity or business associate to
+    delay breach notification if a law enforcement official states that
+    notification would impede a criminal investigation or cause damage to
+    national security. OCR guidance notes that this is a narrow exception
+    and that covered entities should document the law enforcement request
+    carefully. The delay does not eliminate the notification obligation;
+    it only postpones it.
+  source_document: "HHS Breach Notification Rule Guidance"
+repo_interpretation:
+  plain_english_summary: >
+    If law enforcement says that sending breach notifications would
+    interfere with a criminal investigation or threaten national security,
+    the entity may delay notification. A written law enforcement request
+    specifies the delay period. An oral request allows a delay of up to
+    30 days. Once the delay period ends, the entity must proceed with
+    notification. The delay must be documented.
+  intent: >
+    Balance the individual's right to breach notification with the
+    legitimate needs of law enforcement investigations and national
+    security, while ensuring that the delay is temporary, documented,
+    and does not eliminate the notification obligation.
+  applicability: >
+    Applies to all covered entities and business associates. This is a
+    narrow, situational provision. Relevant for incident response
+    procedures that should include a protocol for handling law enforcement
+    delay requests.
+  common_gaps:
+    - No procedure for handling law enforcement delay requests.
+    - Oral law enforcement requests not documented.
+    - No tracking of delay expiration dates.
+    - Notification not resumed after the delay period expires.
+    - Law enforcement delay used as an excuse for general notification delays.
+  remediation_suggestions:
+    - Include law enforcement delay procedures in the incident response plan.
+    - Create a documentation template for law enforcement delay requests (both written and oral).
+    - Implement delay expiration tracking to ensure notification resumes on time.
+    - Train incident response team on the law enforcement delay provisions.
+    - Establish a policy limiting law enforcement delay to the specific circumstances in the regulation.
+evidence_expectations:
+  in_repo:
+    - Incident response workflow supporting law enforcement delay tracking.
+    - Delay expiration tracking and notification resumption triggers.
+  external:
+    - Law enforcement delay procedures in the incident response plan.
+    - Law enforcement delay documentation template.
+    - Delay request records (if any past delays have occurred).
+    - Training materials on law enforcement delay provisions.
+  review_questions:
+    - Is there a procedure for handling law enforcement delay requests?
+    - Are oral law enforcement requests documented?
+    - Is there a mechanism to track delay expiration and resume notification?
+    - Has the incident response team been trained on law enforcement delay provisions?
+related_requirements:
+  - "164.404"
+  - "164.406"
+  - "164.408"
+  - "164.414"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.412"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.412"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

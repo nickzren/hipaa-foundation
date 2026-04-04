@@ -1,0 +1,70 @@
+---
+schema_version: v1
+regulation_id: "164.316(b)(1)"
+title: "Documentation"
+rule_family: security_rule
+safeguard_type: policies_and_documentation
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Maintain the policies and procedures implemented to comply with this
+  subpart in written (which may be electronic) form; and (ii) if an action,
+  activity or assessment is required by this subpart to be documented,
+  maintain a written (which may be electronic) record of the action,
+  activity, or assessment.
+ocr_guidance:
+  summary: >
+    OCR requires that all Security Rule policies, procedures, and required
+    documentation be maintained in written form. Electronic form is
+    acceptable. The documentation standard applies to both the policies
+    themselves and any actions, activities, or assessments required by
+    the Security Rule (such as risk analysis, addressable specification
+    decisions, and contingency plan testing).
+  source_document: "HIPAA Security Rule, 45 CFR Part 164 Subpart C"
+repo_interpretation:
+  plain_english_summary: >
+    All Security Rule policies and procedures must be maintained in
+    written form (paper or electronic). Any action, activity, or
+    assessment required by the Security Rule must also be documented
+    in writing.
+  intent: >
+    Ensure that compliance activities are documented and can be
+    demonstrated to OCR during an investigation or audit.
+  applicability: >
+    Applies to all covered entities and business associates. This
+    standard is the parent for the time limit, availability, and
+    updates implementation specifications.
+  common_gaps:
+    - Policies exist informally but are not maintained in written form.
+    - Required activities (risk analysis, contingency plan tests) are performed but not documented.
+    - Documentation is scattered across systems with no central inventory.
+  remediation_suggestions:
+    - Establish a central document management system or inventory for all Security Rule documentation.
+    - Ensure every required activity produces a written record.
+    - Maintain documentation in a format that supports the retention, availability, and update requirements.
+evidence_expectations:
+  in_repo:
+    - Version-controlled documentation or references to documentation systems.
+    - Evidence of documentation management practices.
+  external:
+    - Written policies and procedures for all applicable Security Rule requirements.
+    - Written records of required activities and assessments.
+    - Document management system or inventory.
+  review_questions:
+    - Are all Security Rule policies and procedures maintained in written form?
+    - Are required activities and assessments documented in writing?
+    - Is there a central inventory or management system for Security Rule documentation?
+related_requirements:
+  - "164.316(a)"
+  - "164.316(b)(2)(i)"
+  - "164.316(b)(2)(ii)"
+  - "164.316(b)(2)(iii)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.316(b)(1)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.316"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

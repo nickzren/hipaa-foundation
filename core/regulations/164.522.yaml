@@ -1,0 +1,141 @@
+---
+schema_version: v1
+regulation_id: "164.522"
+title: "Rights to request privacy protection for protected health information"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard: Right of an individual to request restriction of uses and
+  disclosures.
+  (1) A covered entity must permit an individual to request that the
+  covered entity restrict:
+  (i) Uses or disclosures of PHI about the individual to carry out
+      treatment, payment, or health care operations; and
+  (ii) Disclosures permitted under §164.510(b) to family members or
+       others involved in the individual's care or payment.
+
+  (2) A covered entity is not required to agree to a restriction, except
+  that a covered entity must agree to a restriction requested by an
+  individual if:
+  (i) The disclosure is to a health plan for purposes of carrying out
+      payment or health care operations (and is not for treatment); and
+  (ii) The PHI pertains solely to a health care item or service for which
+       the individual, or person other than the health plan on behalf of
+       the individual, has paid the covered entity in full.
+
+  (3) A covered entity that has agreed to a restriction may not use or
+  disclose PHI in violation of such restriction, except that the entity
+  may use the restricted PHI for treatment if needed for emergency
+  treatment. The entity must request that the treating provider not
+  further use or disclose the information.
+
+  (4) A covered entity may terminate a restriction if the individual
+  agrees to or requests the termination, or if the entity informs the
+  individual that it is terminating the restriction (which applies only
+  to PHI created or received after notification).
+
+  (b) Standard: Confidential communications requirements.
+  (1) A covered health care provider must permit individuals to request
+  and must accommodate reasonable requests to receive communications of
+  PHI by alternative means or at alternative locations.
+
+  (2) A health plan must permit individuals to request and must
+  accommodate reasonable requests to receive communications of PHI by
+  alternative means or at alternative locations, if the individual clearly
+  states that disclosure of all or part of that information could endanger
+  the individual.
+
+  (3) A covered entity may not require the individual to provide a reason
+  for the request (providers) or may require the individual to state that
+  disclosure could endanger them (health plans).
+
+  (4) A covered entity may condition the provision of the accommodation
+  on the individual providing an alternative address or method of contact
+  and information as to how payment, if applicable, will be handled.
+ocr_guidance:
+  summary: >
+    Section 164.522 establishes two individual rights: (1) the right to
+    request restrictions on uses and disclosures, and (2) the right to
+    request confidential communications. The HITECH Act added the
+    mandatory restriction for self-pay situations. OCR has emphasized
+    that covered entities must have a process for receiving and evaluating
+    restriction requests and must honor agreed-upon restrictions. For
+    confidential communications, providers must accommodate reasonable
+    requests without requiring a reason.
+  source_document: "HHS Guidance on Individual Rights"
+repo_interpretation:
+  plain_english_summary: >
+    Individuals can request that a covered entity restrict how their PHI
+    is used or disclosed for TPO or disclosures to family/friends. The
+    entity generally does not have to agree, but must agree to restrict
+    disclosures to a health plan when the individual has paid in full
+    out of pocket. Agreed restrictions must be honored. Separately,
+    individuals can request confidential communications (e.g., call my
+    cell, not my home; send mail to an alternate address). Providers must
+    accommodate reasonable confidential communication requests without
+    requiring a reason.
+  intent: >
+    Give individuals control over how their PHI is shared, particularly
+    in sensitive situations where disclosure could cause embarrassment,
+    harm, or endanger the individual. The self-pay restriction right
+    addresses situations where individuals want to keep certain care
+    private from their health plan.
+  applicability: >
+    Applies to all covered entities. Relevant for patient registration
+    systems, billing systems (self-pay restriction enforcement), EHR
+    systems (restriction flags), communication management systems
+    (confidential communication preferences), and patient portals.
+  common_gaps:
+    - No mechanism to receive or track restriction requests.
+    - Self-pay mandatory restriction not implemented in billing systems.
+    - Restriction flags not carried through to downstream disclosures.
+    - No process for confidential communication requests.
+    - Communication preferences not enforced across all channels (mail, phone, portal, text).
+    - Terminated restrictions not properly managed (PHI created after termination vs. before).
+    - No audit trail for restriction request processing.
+  remediation_suggestions:
+    - Implement a restriction request intake and tracking workflow.
+    - Build self-pay restriction enforcement into billing and claims systems.
+    - Add restriction flags to PHI records that flow through to disclosure decisions.
+    - Implement confidential communication preference capture and enforcement.
+    - Ensure all communication channels respect confidential communication preferences.
+    - Create restriction termination procedures with proper temporal scoping.
+    - Maintain audit records for all restriction and confidential communication requests.
+evidence_expectations:
+  in_repo:
+    - Restriction flag implementation in data models or access control.
+    - Self-pay restriction logic in billing or claims workflows.
+    - Confidential communication preference storage and enforcement.
+    - Communication channel configuration respecting individual preferences.
+  external:
+    - Restriction request intake forms and procedures.
+    - Restriction tracking log.
+    - Confidential communication request procedures.
+    - Self-pay restriction enforcement policy.
+    - Training materials on restriction and confidential communication rights.
+    - Restriction termination procedures.
+  review_questions:
+    - Is there a process for receiving and evaluating restriction requests?
+    - Is the mandatory self-pay restriction implemented and enforced?
+    - Are agreed-upon restrictions honored across all disclosure channels?
+    - Can individuals request confidential communications?
+    - Are confidential communication preferences enforced across all channels?
+    - Is there a restriction termination process?
+related_requirements:
+  - "164.502"
+  - "164.506"
+  - "164.510"
+  - "164.520"
+  - "164.524"
+  - "164.530"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.522"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.522"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,63 @@
+---
+schema_version: v1
+regulation_id: "164.310(d)(1)"
+title: "Device and Media Controls"
+rule_family: security_rule
+safeguard_type: physical
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement policies and procedures that govern the receipt and removal of
+  hardware and electronic media that contain electronic protected health
+  information into and out of a facility, and the movement of these items
+  within the facility.
+ocr_guidance:
+  summary: "Entities must have policies governing how hardware and electronic media containing ePHI are received, moved, removed, and disposed of."
+  source_document: "HIPAA Security Series: Security Standards - Physical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Track and control every piece of hardware and media that holds ePHI — from the moment it enters a facility, as it moves around, and when it leaves or is disposed of."
+  intent: "Ensure ePHI on physical devices and media is protected throughout the asset lifecycle — acquisition, internal transfer, off-site movement, and final disposition."
+  applicability: "All hardware (servers, workstations, mobile devices) and electronic media (hard drives, USB drives, tapes, CDs, SSDs) that contain or have contained ePHI."
+  common_gaps:
+    - "No documented media handling or device lifecycle policy"
+    - "USB drives and portable media not tracked"
+    - "No chain-of-custody process for hardware leaving facilities"
+    - "Decommissioned hardware not sanitized before disposal"
+    - "Cloud storage decommissioning not addressed"
+  remediation_suggestions:
+    - "Create a device and media controls policy covering the full asset lifecycle"
+    - "Maintain an inventory of all hardware and media containing ePHI"
+    - "Implement chain-of-custody logging for devices entering or leaving facilities"
+    - "Define media sanitization procedures aligned with NIST SP 800-88"
+    - "Address virtual/cloud media lifecycle in the policy"
+evidence_expectations:
+  in_repo:
+    - "Device and media controls policy"
+    - "Media handling procedures"
+    - "Asset lifecycle management policy"
+  external:
+    - "Hardware and media asset inventory"
+    - "Chain-of-custody logs"
+    - "Disposal and sanitization certificates"
+    - "Equipment transfer or shipping records"
+  review_questions:
+    - "Is there a policy governing hardware and media lifecycle?"
+    - "How is hardware tracked when it enters, moves within, or leaves a facility?"
+    - "What procedures exist for sanitizing or destroying media containing ePHI?"
+    - "Does the policy address cloud or virtual storage decommissioning?"
+related_requirements:
+  - "164.310(d)(2)(i)"
+  - "164.310(d)(2)(ii)"
+  - "164.310(d)(2)(iii)"
+  - "164.310(d)(2)(iv)"
+  - "164.312(a)(1)"
+  - "164.312(c)(1)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.310(d)(1)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.310"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,137 @@
+---
+schema_version: v1
+regulation_id: "164.526"
+title: "Amendment of protected health information"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard: Right to amend.
+  (1) An individual has the right to have a covered entity that is the
+  creator of the information amend protected health information or a
+  record about the individual in a designated record set for as long as
+  the PHI is maintained in the designated record set.
+
+  (2) A covered entity may deny an individual's request for amendment if
+  it determines that the PHI or record:
+  (i) Was not created by the covered entity, unless the individual
+      provides a reasonable basis to believe that the originator is no
+      longer available to act on the request;
+  (ii) Is not part of the designated record set;
+  (iii) Would not be available for access under §164.524; or
+  (iv) Is accurate and complete.
+
+  (b) Implementation specifications.
+  (1) Timely action: The covered entity must act on the request no later
+  than 60 days after receipt, with one possible 30-day extension if the
+  entity is unable to comply within 60 days (with written notice of the
+  delay).
+
+  (2) Accepting the amendment: If the amendment is accepted, the covered
+  entity must:
+  (i) Make the appropriate amendment by, at a minimum, identifying the
+      affected records and appending or otherwise providing a link to the
+      amendment;
+  (ii) Timely inform the individual that the amendment is accepted;
+  (iii) Make reasonable efforts to inform and provide the amendment to
+        relevant persons with whom the covered entity has shared the PHI
+        and who may have relied on it, and to persons identified by the
+        individual.
+
+  (3) Denying the amendment: If the amendment is denied, the covered
+  entity must provide the individual with a timely written denial, in
+  plain language, containing:
+  (i) The basis for the denial;
+  (ii) The individual's right to submit a written statement disagreeing
+       with the denial;
+  (iii) A description of how the individual may complain to the covered
+        entity or the Secretary.
+
+  The covered entity must permit the individual to submit a statement of
+  disagreement. The covered entity may prepare a written rebuttal.
+  Future disclosures of the disputed PHI must include the amendment
+  request, denial, statement of disagreement (if any), and rebuttal
+  (if any), or an accurate summary.
+ocr_guidance:
+  summary: >
+    Section 164.526 establishes the individual right to request amendment
+    of PHI in the designated record set. OCR guidance emphasizes that
+    covered entities must have a process to receive and act on amendment
+    requests within 60 days, that amendments should be appended rather
+    than replacing original entries (preserving the integrity of the
+    record), and that denied amendment requests must result in the
+    disagreement materials traveling with subsequent disclosures.
+  source_document: "HHS Guidance on Amendment Rights"
+repo_interpretation:
+  plain_english_summary: >
+    Individuals can request that a covered entity amend PHI in their
+    designated record set. The entity must act within 60 days (with one
+    possible 30-day extension). If accepted, the amendment is appended
+    to the record and the entity notifies relevant recipients of the
+    corrected information. If denied (e.g., the record is accurate, not
+    created by this entity, or not in the designated record set), the
+    entity must explain the denial and allow the individual to submit
+    a disagreement statement, which then travels with the record.
+  intent: >
+    Ensure the accuracy and integrity of health records by giving
+    individuals a mechanism to correct errors, while preserving the
+    original record's integrity through append-only amendments and
+    providing a structured disagreement process for denied requests.
+  applicability: >
+    Applies to all covered entities that maintain designated record sets.
+    Relevant for EHR systems (amendment workflows, append-only amendment
+    logic), patient portals (amendment request submission), and disclosure
+    tracking systems (ensuring amendment materials travel with disclosures).
+  common_gaps:
+    - No amendment request intake or tracking workflow.
+    - Amendments made by overwriting original records instead of appending.
+    - Amendment requests not processed within 60 days.
+    - Denial letters missing required elements (basis, disagreement rights, complaint process).
+    - No mechanism to attach disagreement statements to the record.
+    - Amendment notifications not sent to prior recipients of the PHI.
+    - Amendment materials not included in subsequent disclosures.
+  remediation_suggestions:
+    - Implement an amendment request intake, tracking, and resolution workflow.
+    - Design amendment logic as append-only to preserve record integrity.
+    - Ensure amendment workflow enforces the 60-day timeline with extension tracking.
+    - Create denial letter templates with all required elements.
+    - Build disagreement statement attachment and tracking capabilities.
+    - Implement amendment notification to prior PHI recipients.
+    - Ensure subsequent disclosures include amendment history and disagreement materials.
+evidence_expectations:
+  in_repo:
+    - Amendment request submission functionality (patient portal or intake form).
+    - Append-only amendment logic in the record system.
+    - Amendment tracking and status workflow.
+    - Disagreement statement attachment capability.
+    - Amendment propagation to prior disclosure recipients.
+  external:
+    - Amendment request intake forms and procedures.
+    - Amendment request tracking log with resolution dates.
+    - Denial letter templates.
+    - Disagreement and rebuttal procedures.
+    - Policy defining amendment rights and designated record set scope.
+    - Training materials on amendment processing.
+  review_questions:
+    - Is there a process for receiving and tracking amendment requests?
+    - Are amendments appended rather than overwriting original records?
+    - Are amendment requests resolved within 60 days?
+    - Do denial letters contain all required elements?
+    - Can individuals submit disagreement statements?
+    - Are amendment materials included in subsequent disclosures?
+related_requirements:
+  - "164.502"
+  - "164.524"
+  - "164.528"
+  - "164.504"
+  - "164.530"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.526"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.526"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

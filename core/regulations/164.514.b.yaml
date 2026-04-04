@@ -1,0 +1,134 @@
+---
+schema_version: v1
+regulation_id: "164.514(b)"
+title: "De-identification of protected health information: implementation specifications"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: requirement
+implementation_type: null
+parent_standard: "164.514(a)"
+authoritative_text: |
+  (b) Implementation specifications: Requirements for de-identification
+  of protected health information.
+
+  (1) Expert Determination. A person with appropriate knowledge of and
+  experience with generally accepted statistical and scientific principles
+  and methods for rendering information not individually identifiable:
+  (i) Applying such principles and methods, determines that the risk is
+  very small that the information could be used, alone or in combination
+  with other reasonably available information, by an anticipated recipient
+  to identify an individual who is a subject of the information; and
+  (ii) Documents the methods and results of the analysis that justify such
+  determination.
+
+  (2) Safe Harbor.
+  (i) The following identifiers of the individual or of relatives,
+  employers, or household members of the individual are removed:
+  (A) Names;
+  (B) All geographic subdivisions smaller than a state, including street
+      address, city, county, precinct, zip code (initial three digits may
+      be retained if the geographic unit contains more than 20,000 persons;
+      otherwise replaced with 000);
+  (C) All elements of dates (except year) directly related to an
+      individual, including birth date, admission date, discharge date,
+      date of death; and all ages over 89 and all elements of dates
+      (including year) indicative of such age (may be aggregated into a
+      single category of age 90 or older);
+  (D) Telephone numbers;
+  (E) Fax numbers;
+  (F) Email addresses;
+  (G) Social security numbers;
+  (H) Medical record numbers;
+  (I) Health plan beneficiary numbers;
+  (J) Account numbers;
+  (K) Certificate/license numbers;
+  (L) Vehicle identifiers and serial numbers, including license plate
+      numbers;
+  (M) Device identifiers and serial numbers;
+  (N) Web Universal Resource Locators (URLs);
+  (O) Internet Protocol (IP) address numbers;
+  (P) Biometric identifiers, including finger and voice prints;
+  (Q) Full face photographic images and any comparable images; and
+  (R) Any other unique identifying number, characteristic, or code.
+
+  (ii) The covered entity does not have actual knowledge that the
+  information could be used alone or in combination with other information
+  to identify an individual who is a subject of the information.
+ocr_guidance:
+  summary: >
+    Section 164.514(b) details the two methods for de-identification. The
+    Safe Harbor method lists 18 specific identifier types that must be
+    removed. OCR's 2012 guidance provides detailed examples for each
+    identifier type and addresses common edge cases, including geographic
+    aggregation rules and date handling. The Expert Determination method
+    requires documented statistical analysis by a qualified expert. OCR
+    has noted that the Safe Harbor method may not always produce adequate
+    de-identification in certain contexts.
+  source_document: "HHS Guidance Regarding Methods for De-identification of PHI (2012)"
+repo_interpretation:
+  plain_english_summary: >
+    Two methods for de-identifying PHI: (1) Expert Determination, where
+    a qualified statistician or data scientist certifies that
+    re-identification risk is very small and documents the analysis; or
+    (2) Safe Harbor, where all 18 specified identifier types are removed
+    and the entity has no actual knowledge that re-identification is
+    possible. The Safe Harbor method includes specific rules for
+    geographic data (3-digit zip codes for areas with 20,000+ people)
+    and dates (year allowed, but no month/day; ages over 89 aggregated).
+  intent: >
+    Provide two concrete, implementable pathways for achieving
+    de-identification, one based on expert statistical judgment and one
+    based on a prescriptive list of identifiers to remove.
+  applicability: >
+    Applies to any entity performing de-identification of PHI. Directly
+    relevant for data pipelines, ETL processes, research data extraction,
+    analytics platforms, and any system that produces de-identified data
+    sets. Critical for data engineering teams building de-identification
+    infrastructure.
+  common_gaps:
+    - Safe Harbor identifier removal incomplete (e.g., URLs, IP addresses, device identifiers overlooked).
+    - Geographic data not properly handled (full zip codes retained in small populations).
+    - Date handling does not address ages over 89.
+    - Free-text fields (clinical notes) not scrubbed for embedded identifiers.
+    - Expert Determination lacks documented methodology or qualified expert.
+    - Identifier category (R) — "any other unique identifying number" — not addressed.
+    - No validation or testing of de-identification effectiveness.
+  remediation_suggestions:
+    - Implement automated Safe Harbor compliance checking against all 18 categories.
+    - Apply NLP-based or rule-based scrubbing to free-text fields.
+    - Validate geographic aggregation against census population thresholds.
+    - Implement date generalization handling ages over 89.
+    - For Expert Determination, document expert qualifications, methods, data characteristics, and results.
+    - Address catch-all category (R) with a review process for unique identifiers.
+    - Implement automated de-identification testing and validation.
+evidence_expectations:
+  in_repo:
+    - De-identification pipeline or transformation code covering all 18 Safe Harbor categories.
+    - Free-text PHI scrubbing logic.
+    - Geographic and date generalization rules.
+    - De-identification validation tests.
+    - Configuration for identifier detection patterns.
+  external:
+    - Expert Determination report and expert credentials (if using Expert Determination).
+    - Safe Harbor compliance checklist documentation.
+    - De-identification validation results.
+    - Training materials for workforce handling de-identification.
+    - Data governance policy for de-identified data.
+  review_questions:
+    - Are all 18 Safe Harbor identifier types addressed in the de-identification process?
+    - Is free-text data scrubbed for embedded identifiers?
+    - Does geographic handling comply with the 20,000-person threshold for zip codes?
+    - Are dates generalized and ages over 89 aggregated?
+    - Is the de-identification process tested and validated?
+related_requirements:
+  - "164.514.a"
+  - "164.514.e"
+  - "164.502"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.514(b)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.514"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

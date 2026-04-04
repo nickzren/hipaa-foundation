@@ -1,0 +1,78 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(1)(ii)(B)"
+title: "Risk management"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.308(a)(1)"
+authoritative_text: |
+  Implement security measures sufficient to reduce risks and vulnerabilities to a reasonable and appropriate level to comply with § 164.306(a).
+ocr_guidance:
+  summary: >
+    OCR expects entities to act on the findings of their risk analysis by
+    implementing security measures that reduce identified risks to a
+    reasonable and appropriate level. The risk management process must
+    consider the entity's size, complexity, capabilities, technical
+    infrastructure, costs, and the probability and criticality of potential
+    risks. Accepting risk without documented justification or failing to
+    implement any measures after a risk analysis has been cited as a
+    significant deficiency.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    After you identify risks in your risk analysis, you must do something
+    about them. Implement security measures that reduce risks to a reasonable
+    and appropriate level. Document your decisions and rationale.
+  intent: >
+    Close the loop between risk identification and risk treatment. Ensure
+    that identified risks are addressed through mitigation, transfer,
+    avoidance, or documented acceptance.
+  applicability: >
+    Applies to every covered entity and business associate. Risk management
+    decisions must be informed by the risk analysis and must consider the
+    factors in 164.306(b).
+  common_gaps:
+    - Risk analysis was conducted but no risk management actions were taken.
+    - Risk treatment decisions are not documented.
+    - Risks are accepted without documented justification.
+    - Security measures are selected without reference to the risk analysis.
+    - No ongoing monitoring of implemented security measures.
+    - The entity does not consider the 164.306(b) factors when selecting measures.
+  remediation_suggestions:
+    - Develop a risk management plan that addresses each risk identified in the risk analysis.
+    - Document treatment decisions (mitigate, transfer, avoid, accept) with rationale.
+    - Implement security measures proportional to the identified risk levels.
+    - Monitor the effectiveness of implemented security measures.
+    - Update risk management decisions when the risk analysis is updated.
+    - Document consideration of 164.306(b) factors in risk management decisions.
+evidence_expectations:
+  in_repo:
+    - Risk management policy or plan.
+    - Risk treatment decisions with documented rationale.
+    - Risk register linking risks to treatment actions.
+  external:
+    - Security measure implementation records.
+    - Risk acceptance documentation with justification.
+    - Evidence of monitoring the effectiveness of implemented measures.
+    - Management approval of risk treatment decisions.
+  review_questions:
+    - Are risk management actions documented for risks identified in the risk analysis?
+    - Are treatment decisions (mitigate, transfer, avoid, accept) documented with rationale?
+    - Have security measures been implemented to address identified risks?
+    - Are the 164.306(b) factors considered in security measure selection?
+    - Is there ongoing monitoring of implemented security measures?
+related_requirements:
+  - "164.308(a)(1)"
+  - "164.308(a)(1)(ii)(A)"
+  - "164.306(a)"
+  - "164.306(b)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(1)(ii)(B)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

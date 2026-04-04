@@ -1,0 +1,59 @@
+---
+schema_version: v1
+regulation_id: "164.312(c)(1)"
+title: "Integrity"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement policies and procedures to protect electronic protected health
+  information from improper alteration or destruction.
+ocr_guidance:
+  summary: "Entities must implement protections to ensure ePHI is not improperly altered or destroyed, maintaining the integrity of health information."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Protect ePHI from being changed or deleted by unauthorized actions — whether from users, software bugs, malware, or system failures."
+  intent: "Ensure the accuracy, completeness, and reliability of ePHI by protecting it against unauthorized or unintended modification and destruction."
+  applicability: "All ePHI at rest and in processing — databases, file systems, application data stores, backups, and archives. Applies to both accidental and malicious alteration scenarios."
+  common_gaps:
+    - "No integrity controls beyond basic file system permissions"
+    - "Database changes not tracked or auditable"
+    - "No checksums or hashing for stored ePHI"
+    - "Backup integrity not verified"
+    - "No anti-malware or change detection on ePHI systems"
+  remediation_suggestions:
+    - "Implement database-level integrity controls (constraints, triggers, audit columns)"
+    - "Use checksums or cryptographic hashing for critical data stores and backups"
+    - "Deploy anti-malware and file integrity monitoring on ePHI systems"
+    - "Verify backup integrity through periodic restore testing"
+    - "Implement change control processes for ePHI data modifications"
+evidence_expectations:
+  in_repo:
+    - "Data integrity policy"
+    - "Change control procedures for ePHI"
+    - "Backup integrity verification procedures"
+  external:
+    - "File integrity monitoring (FIM) configuration and alert records"
+    - "Database audit trail exports"
+    - "Backup verification and restore test reports"
+    - "Anti-malware deployment and scan records"
+  review_questions:
+    - "What technical controls protect ePHI from unauthorized alteration?"
+    - "Is there file integrity monitoring or change detection on ePHI systems?"
+    - "Are database changes to ePHI auditable?"
+    - "How is backup data integrity verified?"
+    - "Are anti-malware controls deployed on systems housing ePHI?"
+related_requirements:
+  - "164.312(c)(2)"
+  - "164.312(e)(2)(i)"
+  - "164.308(a)(5)(ii)(B)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(c)(1)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

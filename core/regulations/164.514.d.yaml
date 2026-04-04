@@ -1,0 +1,130 @@
+---
+schema_version: v1
+regulation_id: "164.514(d)"
+title: "Other requirements relating to uses and disclosures of PHI: minimum necessary requirements"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: requirement
+implementation_type: null
+parent_standard: "164.502(b)"
+authoritative_text: |
+  (d) Implementation specifications: Minimum necessary requirements.
+
+  (1) For uses of PHI: A covered entity must identify the persons or
+  classes of persons, as appropriate, in its workforce who need access to
+  protected health information to carry out their duties, the category or
+  categories of PHI to which access is needed, and any conditions
+  appropriate to such access.
+
+  (2) For routine disclosures and requests: For any type of disclosure
+  that it makes on a routine and recurring basis, a covered entity must
+  implement policies and procedures (which may be standard protocols) that
+  limit the PHI disclosed to the amount reasonably necessary to achieve
+  the purpose of the disclosure. For any type of request for PHI that it
+  makes on a routine and recurring basis, the covered entity must implement
+  policies and procedures that limit the request to the amount reasonably
+  necessary.
+
+  (3) For non-routine disclosures and requests: For any non-routine
+  disclosure or non-routine request, the covered entity must develop
+  criteria designed to limit the PHI disclosed or requested to the
+  information reasonably necessary to accomplish the purpose, and must
+  review requests for disclosure on an individual basis in accordance with
+  such criteria.
+
+  (4) For reasonable reliance: A covered entity may rely, if such reliance
+  is reasonable under the circumstances, on a requested disclosure as the
+  minimum necessary for the stated purpose when:
+  (i) Making disclosures to public officials per §164.512, if the public
+      official represents that the information requested is the minimum
+      necessary;
+  (ii) The information is requested by another covered entity;
+  (iii) The information is requested by a professional who is a workforce
+        member or BA of the covered entity for providing professional
+        services, if the professional represents that the information is
+        the minimum necessary;
+  (iv) Documentation or representations comply with applicable requirements
+       of §164.512(i) (research with IRB/Privacy Board approval).
+
+  (5) Entire medical record: For purposes of this paragraph, a covered
+  entity may not use, disclose, or request an entire medical record except
+  when the entire medical record is specifically justified as the amount
+  that is reasonably necessary.
+ocr_guidance:
+  summary: >
+    Section 164.514(d) provides the implementation specifications for the
+    minimum necessary standard established in §164.502(b). OCR has
+    emphasized that covered entities must have specific policies for both
+    routine and non-routine disclosures and must not default to sharing
+    entire medical records. The reasonable reliance provisions allow
+    entities to accept certain representations from requestors about
+    minimum necessary without independent verification.
+  source_document: "HHS Guidance on Minimum Necessary Implementation"
+repo_interpretation:
+  plain_english_summary: >
+    This section details how to implement the minimum necessary principle.
+    For internal uses, define which workforce roles need access to which
+    PHI categories. For routine disclosures, create standard protocols
+    limiting what is shared. For non-routine disclosures, develop criteria
+    and review each request individually. Entities may reasonably rely on
+    representations from public officials, other covered entities, and
+    professionals that their request is minimum necessary. Entire medical
+    records may not be used or disclosed unless specifically justified.
+  intent: >
+    Translate the minimum necessary principle into operational requirements
+    by mandating specific implementation steps for different types of uses
+    and disclosures, while providing practical safe harbors through the
+    reasonable reliance provisions.
+  applicability: >
+    Applies to all covered entities and business associates. Directly
+    affects system design for access control, data views, API responses,
+    disclosure workflows, and data export capabilities. Any system that
+    provides PHI access to multiple workforce roles or discloses PHI
+    externally must implement these specifications.
+  common_gaps:
+    - Workforce access categories not defined (everyone has the same access level).
+    - No standard protocols for routine disclosures.
+    - Non-routine disclosures processed without individual review.
+    - Entire medical records disclosed by default without justification.
+    - Reasonable reliance used without documenting the basis.
+    - Role-based access not mapped to specific PHI categories.
+  remediation_suggestions:
+    - Create a workforce access matrix mapping roles to PHI categories.
+    - Develop standard disclosure protocols for each routine disclosure type.
+    - Implement a review workflow for non-routine disclosure requests.
+    - Configure systems to export/disclose PHI subsets rather than full records by default.
+    - Document the basis when relying on the reasonable reliance provisions.
+    - Conduct periodic audits of actual access patterns against defined access categories.
+evidence_expectations:
+  in_repo:
+    - Role-based access control configurations mapping roles to PHI data categories.
+    - API designs returning scoped data sets rather than full records.
+    - Data view definitions or query templates that limit returned fields.
+    - Export configurations that support subset extraction.
+  external:
+    - Workforce access matrix (roles to PHI categories).
+    - Standard protocols for routine disclosure types.
+    - Non-routine disclosure review criteria and procedures.
+    - Documentation of reasonable reliance instances.
+    - Policy prohibiting entire medical record disclosure without justification.
+    - Periodic access review audit records.
+  review_questions:
+    - Is there a documented workforce access matrix defining who needs what PHI?
+    - Are routine disclosures governed by standard protocols?
+    - Is there a review process for non-routine disclosure requests?
+    - Does the system default to subset disclosure rather than full records?
+    - When entire medical records are disclosed, is the justification documented?
+related_requirements:
+  - "164.502.b"
+  - "164.502"
+  - "164.506"
+  - "164.512"
+  - "164.530"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.514(d)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.514"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

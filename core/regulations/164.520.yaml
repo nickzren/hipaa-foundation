@@ -1,0 +1,152 @@
+---
+schema_version: v1
+regulation_id: "164.520"
+title: "Notice of privacy practices for protected health information"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  (a) Standard: Notice of privacy practices.
+  (1) A covered entity must provide a notice of its privacy practices
+  (NPP) that meets the content requirements of paragraph (b).
+
+  (b) Required content.
+  (1) Header: The notice must contain the following statement as a header
+  or otherwise prominently displayed: "THIS NOTICE DESCRIBES HOW MEDICAL
+  INFORMATION ABOUT YOU MAY BE USED AND DISCLOSED AND HOW YOU CAN GET
+  ACCESS TO THIS INFORMATION. PLEASE REVIEW IT CAREFULLY."
+
+  (2) Uses and disclosures: The notice must describe, with at least one
+  example, the uses and disclosures the covered entity is permitted or
+  required to make for each of the following purposes: treatment, payment,
+  health care operations, and each of the other purposes for which the
+  entity is permitted or required to use or disclose PHI without
+  authorization.
+
+  (3) Authorization: The notice must describe the types of uses and
+  disclosures that require authorization, including psychotherapy notes,
+  marketing, and sale of PHI.
+
+  (4) Individual rights: The notice must contain a statement of the
+  individual's rights, including the right to:
+  - Request restrictions on uses and disclosures;
+  - Receive confidential communications;
+  - Inspect and copy PHI;
+  - Request amendment of PHI;
+  - Receive an accounting of disclosures;
+  - Obtain a paper copy of the notice;
+  - Complain to the covered entity and to the Secretary.
+
+  (5) Covered entity's duties: The notice must contain a statement that
+  the covered entity is required by law to maintain the privacy of PHI,
+  to provide the notice, and to abide by the terms of the notice currently
+  in effect.
+
+  (6) Contact information: The notice must contain a means for individuals
+  to contact the covered entity for further information or to make
+  complaints.
+
+  (c) Implementation specifications: Provision of notice.
+  A health care provider with a direct treatment relationship must provide
+  the notice no later than the date of first service delivery and must
+  make a good faith effort to obtain a written acknowledgment of receipt.
+
+  A health plan must provide the notice at enrollment and within 60 days
+  of a material revision. A health plan that posts its notice on its
+  website must prominently post it.
+
+  (d) Electronic notice. A covered entity that maintains a website must
+  prominently post its notice on the website and must make the notice
+  available electronically upon request.
+
+  (e) A covered entity must document compliance with the notice
+  requirements by retaining copies of the notices issued and, if
+  applicable, any written acknowledgments of receipt.
+
+  Material changes to the notice require redistribution (for health plans)
+  or making the revised notice available (for providers).
+ocr_guidance:
+  summary: >
+    Section 164.520 requires covered entities to develop and distribute
+    a notice of privacy practices (NPP) that describes how PHI is used
+    and disclosed, the individual's rights, and the entity's duties. OCR
+    has emphasized that the NPP must be written in plain language, must
+    include all required content elements, and must be provided at first
+    service delivery (providers) or enrollment (health plans). The
+    Omnibus Rule added requirements to describe uses requiring
+    authorization for marketing, sale of PHI, and psychotherapy notes,
+    and to describe the breach notification obligation.
+  source_document: "HHS Guidance on Notice of Privacy Practices"
+repo_interpretation:
+  plain_english_summary: >
+    Every covered entity must have a notice of privacy practices (NPP)
+    that tells individuals how their PHI may be used and disclosed, what
+    their rights are, and how to file complaints. Providers must give the
+    NPP at the first service encounter and try to get a written
+    acknowledgment. Health plans must provide the NPP at enrollment. The
+    NPP must be posted on the entity's website. Material changes require
+    redistribution.
+  intent: >
+    Ensure transparency by informing individuals about how their health
+    information will be used, what rights they have, and how to exercise
+    those rights. The NPP is the primary vehicle for individual awareness
+    of privacy protections.
+  applicability: >
+    Applies to all covered entities. For health IT systems, relevant
+    to patient portals (electronic NPP delivery), registration systems
+    (NPP acknowledgment capture), and websites (prominent NPP posting).
+    Systems must support NPP versioning and distribution tracking.
+  common_gaps:
+    - NPP not updated after the Omnibus Rule (missing breach notification, marketing authorization, sale of PHI).
+    - No mechanism to capture or track written acknowledgments.
+    - NPP not posted prominently on the entity's website.
+    - No process to distribute revised NPP when material changes occur.
+    - NPP written in legalistic language not accessible to patients.
+    - No electronic delivery option despite maintaining a website.
+    - NPP content incomplete (missing individual rights descriptions, examples).
+  remediation_suggestions:
+    - Audit NPP content against §164.520(b) required elements checklist.
+    - Implement acknowledgment capture in registration or intake workflows.
+    - Post NPP prominently on the entity's website with electronic access.
+    - Establish a NPP revision and redistribution process.
+    - Review NPP for plain language accessibility.
+    - Implement NPP version tracking and distribution records.
+evidence_expectations:
+  in_repo:
+    - NPP electronic delivery or posting functionality.
+    - Acknowledgment capture workflow in patient registration.
+    - NPP version management and display logic.
+    - Website integration for NPP posting.
+  external:
+    - Current notice of privacy practices document.
+    - NPP acknowledgment tracking records.
+    - NPP revision history.
+    - NPP distribution procedures for providers and health plans.
+    - Website NPP posting evidence.
+    - Training materials on NPP requirements.
+  review_questions:
+    - Does the NPP contain all required content elements per §164.520(b)?
+    - Is the NPP provided at first service delivery (providers) or enrollment (health plans)?
+    - Is the NPP posted on the entity's website?
+    - Is there a process to capture and retain written acknowledgments?
+    - Has the NPP been updated for Omnibus Rule changes?
+    - Is there a process for redistributing the NPP after material changes?
+related_requirements:
+  - "164.502"
+  - "164.506"
+  - "164.508"
+  - "164.522"
+  - "164.524"
+  - "164.526"
+  - "164.528"
+  - "164.530"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.520"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.520"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,97 @@
+---
+schema_version: v1
+id: administrative-safeguards
+title: Administrative Safeguards
+rule_family: security_rule
+lifecycle_phase:
+  - assessment
+  - operation
+review_questions:
+  - Is there a security management process with assigned responsibility?
+  - Are workforce security and information access management controls in place?
+  - Is there a contingency plan?
+deep_assessment_probes:
+  - Is there a designated security official per 164.308(a)(2)?
+  - Are workforce clearance and termination procedures implemented?
+  - Does the contingency plan include data backup, disaster recovery, and emergency mode operation?
+expected_evidence:
+  in_repo:
+    - access provisioning and deprovisioning automation
+    - incident response configuration
+    - backup and recovery scripts
+  external:
+    - security officer designation
+    - workforce clearance procedures
+    - contingency plan and test results
+    - incident response plan
+common_gaps:
+  - No designated security official.
+  - Workforce termination does not include timely access revocation.
+  - Contingency plan exists but has never been tested.
+cross_links:
+  - risk-analysis-and-management
+  - training-and-sanctions
+  - technical-safeguards
+regulation_ids:
+  - "164.308(a)(2)"
+  - "164.308(a)(3)"
+  - "164.308(a)(3)(ii)(A)"
+  - "164.308(a)(3)(ii)(B)"
+  - "164.308(a)(3)(ii)(C)"
+  - "164.308(a)(4)"
+  - "164.308(a)(4)(ii)(A)"
+  - "164.308(a)(4)(ii)(B)"
+  - "164.308(a)(4)(ii)(C)"
+  - "164.308(a)(6)"
+  - "164.308(a)(6)(ii)"
+  - "164.308(a)(7)"
+  - "164.308(a)(7)(ii)(A)"
+  - "164.308(a)(7)(ii)(B)"
+  - "164.308(a)(7)(ii)(C)"
+  - "164.308(a)(7)(ii)(D)"
+  - "164.308(a)(7)(ii)(E)"
+  - "164.308(a)(8)"
+  - "164.308(b)(1)"
+  - "164.308(b)(2)"
+  - "164.308(b)(3)"
+regulation_files:
+  standards:
+    - core/regulations/164.308.a.2.yaml
+    - core/regulations/164.308.a.3.yaml
+    - core/regulations/164.308.a.4.yaml
+    - core/regulations/164.308.a.6.yaml
+    - core/regulations/164.308.a.7.yaml
+    - core/regulations/164.308.a.8.yaml
+    - core/regulations/164.308.b.1.yaml
+    - core/regulations/164.308.b.2.yaml
+  implementation_specifications:
+    - core/regulations/164.308.a.3.ii.A.yaml
+    - core/regulations/164.308.a.3.ii.B.yaml
+    - core/regulations/164.308.a.3.ii.C.yaml
+    - core/regulations/164.308.a.4.ii.A.yaml
+    - core/regulations/164.308.a.4.ii.B.yaml
+    - core/regulations/164.308.a.4.ii.C.yaml
+    - core/regulations/164.308.a.6.ii.yaml
+    - core/regulations/164.308.a.7.ii.A.yaml
+    - core/regulations/164.308.a.7.ii.B.yaml
+    - core/regulations/164.308.a.7.ii.C.yaml
+    - core/regulations/164.308.a.7.ii.D.yaml
+    - core/regulations/164.308.a.7.ii.E.yaml
+    - core/regulations/164.308.b.3.yaml
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Treating cloud IAM configuration as a complete administrative safeguard program."
+    - "No designated security official despite organizational maturity."
+    - "Contingency plan exists in documentation but has never been tested."
+  escalation_triggers:
+    - "Workforce termination does not include timely access revocation."
+    - "No contingency plan or data backup plan exists."
+    - "No incident response procedure despite handling ePHI."
+  repo_only_notes: |
+    Many administrative safeguards are organizational controls. Security officer
+    designation, workforce clearance procedures, contingency plan test results,
+    and incident response execution evidence are typically external. On repo-only
+    evidence, access provisioning automation, backup scripts, and incident alerting
+    configuration are the strongest available signals. Risk analysis is assessed
+    in its own domain — do not double-count here.
+status: draft

@@ -1,0 +1,181 @@
+---
+schema_version: v1
+triage_id: hipaa-applicability-triage-v1
+purpose: |
+  Determine HIPAA applicability before selecting assessment domains.
+  Entity type drives obligations. A business associate has different obligations
+  than a covered entity, particularly around individual rights, uses/disclosures,
+  and BAA requirements.
+
+step_1_entity_classification:
+  description: |
+    Determine the entity type. This is the first and most important triage step.
+  questions:
+    - Does the entity furnish, bill, or receive payment for health care (provider)?
+    - Does the entity provide or pay for the cost of health care (health plan)?
+    - Does the entity process nonstandard health information into standard transactions (clearinghouse)?
+    - Does the entity create, receive, maintain, or transmit PHI on behalf of a covered entity (business associate)?
+    - Is the entity a subcontractor that creates, receives, maintains, or transmits PHI on behalf of a BA?
+  fields:
+    entity_type:
+      values: [covered_entity, business_associate, ba_subcontractor, not_regulated, tbd]
+    covered_entity_type:
+      values: [provider, health_plan, clearinghouse, not_applicable, tbd]
+      notes: "Set to not_applicable for business associates and subcontractors."
+    hybrid_entity_status:
+      values: ['yes', 'no', 'tbd']
+      notes: "A hybrid entity is a CE that designates health care components under 164.105."
+    entity_type_confidence:
+      values: [low, medium, high]
+
+step_2_data_classification:
+  description: |
+    Determine what types of protected health information the system handles.
+  questions:
+    - Does the system create, receive, maintain, or transmit individually identifiable health information?
+    - Is the information in electronic form (ePHI)?
+    - Has the information been de-identified per 164.514(a)-(b)?
+    - Is the information a limited data set per 164.514(e)?
+  fields:
+    phi_types_in_scope:
+      values: [phi, ephi, deidentified, limited_data_set, non_phi, tbd]
+      notes: "List all types that apply. Each type drives different obligations."
+    phi_scope_confidence:
+      values: [low, medium, high]
+
+step_3_rule_applicability:
+  description: |
+    Determine which HIPAA rules apply based on entity type and data classification.
+  rules:
+    privacy_rule:
+      applies_when: "Entity handles PHI and is a covered entity. For business associates or BA subcontractors, assess only specified direct-liability or delegated-function Privacy obligations when the reviewed corpus shows they are actually in scope."
+      cfr_reference: "45 CFR Part 164, Subpart E"
+    security_rule:
+      applies_when: "Entity handles ePHI and is a CE, BA, or BA subcontractor."
+      cfr_reference: "45 CFR Part 164, Subpart C"
+    breach_notification_rule:
+      applies_when: "Entity handles unsecured PHI and is a CE, BA, or BA subcontractor."
+      cfr_reference: "45 CFR Part 164, Subpart D"
+    enforcement_rule:
+      applies_when: "Always applies for context. Not deeply assessed in v1."
+      cfr_reference: "45 CFR Part 160, Subparts C-E"
+    transaction_rule:
+      applies_when: "Entity conducts standard transactions."
+      cfr_reference: "45 CFR Part 162"
+  fields:
+    applicable_rules:
+      values: [privacy_rule, security_rule, breach_notification_rule, enforcement_rule, transaction_rule]
+    part_162_assessment_mode:
+      values: [not_in_scope_v1, applicability_only, full_module]
+      default: not_in_scope_v1
+    state_law_overlay_status:
+      values: [out_of_scope_v1, identified, tbd]
+      default: out_of_scope_v1
+
+step_4_evidence_and_confidence:
+  fields:
+    evidence_basis:
+      values: [repo-only, repo-plus-external-evidence, repo-plus-runtime-or-interviews]
+    assessment_confidence:
+      values: [low, medium, high]
+
+classification_guidance:
+  - If entity type cannot be determined from the reviewed corpus, use tbd with low confidence.
+  - If the system handles any individually identifiable health information, assume PHI until de-identification is confirmed per 164.514.
+  - If ePHI is in scope, the Security Rule applies in addition to the Privacy Rule.
+  - If entity type is business_associate, do not assume the full covered-entity Privacy Rule domain set applies. Limit BA Privacy assessment to specified direct-liability provisions and delegated functions evidenced in scope.
+  - Part 162 is gated in v1. If the system handles standard transactions, note applicability but do not produce findings.
+
+applicable_rules_guidance:
+  enforcement_rule: |
+    Always include enforcement_rule in applicable_rules for context.
+    It does not generate standalone findings in v1 but provides background
+    for penalty and investigation context.
+  tbd_entity_type_posture: |
+    When entity_type is tbd and ePHI is clearly in scope, the usual launch
+    posture is: security_rule, breach_notification_rule, and enforcement_rule.
+    Do not add privacy_rule unless entity status is actually confirmed from
+    the corpus. Privacy Rule applicability depends on confirmed entity type.
+    This is a conservative assessment posture pending entity confirmation,
+    not a legal determination that HIPAA definitely applies.
+
+domain_selection_rules:
+  description: |
+    Use these rules to populate in_scope_domains after completing triage.
+    Apply all matching rules. A domain appears in scope if any rule includes it.
+
+  always_in_scope:
+    - entity-and-applicability
+
+  by_applicable_rule:
+    security_rule:
+      - risk-analysis-and-management
+      - administrative-safeguards
+      - physical-safeguards
+      - technical-safeguards
+      - policies-procedures-documentation
+      - training-and-sanctions
+
+    privacy_rule:
+      - policies-procedures-documentation
+      - training-and-sanctions
+
+    breach_notification_rule:
+      - breach-notification
+
+  by_entity_type:
+    # IMPORTANT: When entity_type is tbd, only by_applicable_rule and
+    # always_in_scope domains can enter scope. The by_entity_type rules
+    # below do not fire for tbd. Do not infer entity type from system
+    # function, clinical branding, device names, or health-data content
+    # to pull additional domains. Privacy-specific domains (privacy-uses-
+    # and-disclosures, minimum-necessary, individual-rights) require a
+    # confirmed entity type to enter scope.
+    tbd:
+      note: |
+        When entity_type is tbd, only by_applicable_rule and always_in_scope
+        domains are selected. Do not infer entity type from surrounding context
+        to activate entity-gated domains.
+
+    # These rules only apply when privacy_rule is in applicable_rules.
+    # A covered entity handling only de-identified data or non-PHI will
+    # not have privacy_rule in applicable_rules and these domains will
+    # not be selected.
+    covered_entity:
+      requires: privacy_rule in applicable_rules
+      include:
+        - privacy-uses-and-disclosures
+        - minimum-necessary
+        - individual-rights
+
+    business_associate:
+      conditional:
+        - condition: |
+            privacy_rule is in applicable_rules AND BA performs delegated
+            CE functions that may affect disclosures, individual access,
+            amendment, or accounting workflows.
+          include:
+            - privacy-uses-and-disclosures
+            - minimum-necessary
+            - individual-rights
+
+    ba_subcontractor:
+      conditional:
+        - condition: |
+            privacy_rule is in applicable_rules AND subcontractor performs
+            delegated CE functions that may affect disclosures, individual
+            access, amendment, or accounting workflows.
+          include:
+            - privacy-uses-and-disclosures
+            - minimum-necessary
+            - individual-rights
+
+  conditional_domains:
+    organizational-requirements:
+      include_when: |
+        Entity is a business associate or BA subcontractor, OR
+        system involves BAA or delegated-function boundaries, OR
+        entity is a covered entity with group health plan components.
+      exclude_when: |
+        Entity is a covered entity with no BA relationships, group health
+        plan structures, or delegated-function scenarios in the reviewed corpus.

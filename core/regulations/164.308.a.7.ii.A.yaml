@@ -1,0 +1,81 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(7)(ii)(A)"
+title: "Data backup plan"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.308(a)(7)"
+authoritative_text: |
+  Establish and implement procedures to create and maintain retrievable exact copies of electronic protected health information.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have documented data backup procedures that
+    produce retrievable exact copies of ePHI. The backup must be sufficient
+    to restore ePHI to its state before a loss event. OCR has cited entities
+    that have no backup procedures, that back up data but cannot demonstrate
+    that backups are retrievable, or that do not include all systems
+    containing ePHI in the backup scope.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must have procedures for creating exact backup copies of ePHI and
+    ensuring those copies can be retrieved when needed. "Retrievable" is
+    key — backups that cannot be restored are not backups.
+  intent: >
+    Ensure that ePHI can be recovered after data loss, corruption, or
+    destruction. Provide the foundation for disaster recovery and business
+    continuity.
+  applicability: >
+    Required for all covered entities and business associates. Must cover
+    all systems that create, receive, maintain, or transmit ePHI.
+  common_gaps:
+    - No documented data backup procedures.
+    - Backups exist but retrievability has never been tested.
+    - Not all systems containing ePHI are included in backup scope.
+    - Backup frequency is insufficient for the data change rate.
+    - Backup media is stored in the same location as production systems.
+    - No encryption of backup media.
+    - Backup retention periods are not defined.
+    - Cloud-based ePHI is assumed to be backed up by the provider without verification.
+  remediation_suggestions:
+    - Document backup procedures covering all ePHI systems.
+    - Define backup frequency based on data change rates and recovery objectives.
+    - Test backup retrievability regularly (at least quarterly).
+    - Store backup copies in a separate location from production systems.
+    - Encrypt backup media in transit and at rest.
+    - Define and enforce backup retention periods.
+    - Verify that cloud providers' backup practices meet your requirements.
+evidence_expectations:
+  in_repo:
+    - Data backup policy and procedures.
+    - Backup scope inventory (systems covered).
+    - Backup frequency and retention schedule.
+  external:
+    - Backup logs demonstrating regular execution.
+    - Backup restoration test records.
+    - Backup storage location documentation.
+    - Encryption status of backup media.
+  review_questions:
+    - Are data backup procedures documented?
+    - Are backups created for all systems containing ePHI?
+    - How frequently are backups performed?
+    - Has backup retrievability been tested? When was the last successful restoration test?
+    - Are backups stored separately from production systems?
+    - Are backups encrypted?
+related_requirements:
+  - "164.308(a)(7)"
+  - "164.308(a)(7)(ii)(B)"
+  - "164.308(a)(7)(ii)(C)"
+  - "164.310(d)(2)(iv)"
+  - "164.312(a)(2)(ii)"
+  - "164.312(c)(1)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(7)(ii)(A)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

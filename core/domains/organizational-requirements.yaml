@@ -1,0 +1,73 @@
+---
+schema_version: v1
+id: organizational-requirements
+title: Organizational Requirements
+rule_family: security_rule
+lifecycle_phase:
+  - assessment
+  - operation
+review_questions:
+  - Are BAAs in place with all business associates and subcontractors?
+  - Do BAAs contain the required provisions per 164.314(a)?
+  - For group health plans, are plan document amendments in place per 164.314(b)?
+deep_assessment_probes:
+  - Do BAAs address breach notification, return or destruction of PHI, and subcontractor obligations?
+  - Are subcontractor chains properly covered by BAAs?
+  - How is BAA compliance monitored?
+expected_evidence:
+  in_repo:
+    - BAA-related configuration or references
+    - subcontractor integration boundaries
+    - data sharing architecture
+  external:
+    - executed BAAs
+    - subcontractor agreements
+    - group health plan documentation
+    - BAA compliance monitoring records
+common_gaps:
+  - BAA referenced but not executed.
+  - BAA missing required breach notification provisions.
+  - Subcontractor BAAs not in place for downstream PHI handlers.
+cross_links:
+  - entity-and-applicability
+  - breach-notification
+regulation_ids:
+  - "164.314(a)(1)"
+  - "164.314(a)(2)(i)"
+  - "164.314(a)(2)(ii)"
+  - "164.314(a)(2)(iii)"
+  - "164.314(b)(1)"
+  - "164.314(b)(2)"
+regulation_files:
+  standards:
+    - core/regulations/164.314.a.1.yaml
+    - core/regulations/164.314.b.1.yaml
+  implementation_specifications:
+    - core/regulations/164.314.a.2.i.yaml
+    - core/regulations/164.314.a.2.ii.yaml
+    - core/regulations/164.314.a.2.iii.yaml
+    - core/regulations/164.314.b.2.yaml
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Treating a vendor contract as a BAA when it lacks required provisions."
+    - "BAA exists but does not address breach notification, subcontractor flow-down, or PHI return/destruction."
+    - "Subcontractor BAAs not in place for downstream PHI handlers."
+  escalation_triggers:
+    - "No BAA exists for a confirmed business associate relationship."
+    - "Subcontractor handles ePHI with no agreement in place."
+  repo_only_notes: |
+    Executed BAAs and subcontractor agreements are organizational evidence.
+    On repo-only evidence, BAA-related configuration, subcontractor integration
+    boundaries, and data sharing architecture are the strongest signals. BAA
+    execution status that cannot be confirmed from the reviewed corpus is an
+    evidence-basis limitation, not confirmation that no BAA exists. Group health
+    plan document requirements (164.314(b)) are rarely relevant for technical
+    system assessments.
+
+    Captured external artifacts stored in the repo — such as BAA screenshots,
+    signed-agreement PDFs, or attestation documents in directories like
+    hipaa-evidence/ — are valid repo-managed evidence. They can support a
+    finding stronger than Not assessed. Assess what they show, but note
+    limitations: a screenshot is weaker than an executed agreement, and
+    artifacts may be stale relative to the current account or relationship.
+status: draft

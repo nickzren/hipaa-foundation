@@ -1,0 +1,74 @@
+---
+schema_version: v1
+regulation_id: "164.316(a)"
+title: "Policies and procedures"
+rule_family: security_rule
+safeguard_type: policies_and_documentation
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement reasonable and appropriate policies and procedures to comply
+  with the standards, implementation specifications, or other requirements
+  of this subpart, taking into account those factors specified in
+  164.306(b)(2)(i), (ii), (iii), and (iv). This standard is not to be
+  construed to permit or excuse an action that violates any other standard,
+  implementation specification, or other requirements of this subpart.
+  A covered entity or business associate may change its policies and
+  procedures at any time, provided that the changes are documented and are
+  implemented in accordance with this subpart.
+ocr_guidance:
+  summary: >
+    OCR expects documented policies and procedures that address all
+    applicable Security Rule requirements. Policies must be tailored to
+    the entity's environment using the flexibility factors in 164.306(b).
+    Lack of documented policies is a commonly cited finding in OCR
+    enforcement actions.
+  source_document: "HIPAA Security Rule, 45 CFR Part 164 Subpart C"
+repo_interpretation:
+  plain_english_summary: >
+    Covered entities and business associates must have written policies
+    and procedures for every applicable Security Rule requirement. The
+    policies must be reasonable and appropriate given the entity's size,
+    complexity, capabilities, and risk profile. Changes to policies are
+    permitted but must be documented.
+  intent: >
+    Ensure that security controls are formalized in written policies and
+    procedures rather than relying on informal practices.
+  applicability: >
+    Applies to all covered entities and business associates. Every
+    Security Rule standard and implementation specification should be
+    supported by a corresponding policy or procedure.
+  common_gaps:
+    - Policies exist in draft but are not formally approved or dated.
+    - Policies do not cover all applicable Security Rule requirements.
+    - Policy changes are made without documentation.
+    - Policies are generic templates not tailored to the entity's environment.
+  remediation_suggestions:
+    - Map each applicable Security Rule standard to a specific policy or procedure.
+    - Establish a formal policy approval and change documentation process.
+    - Tailor policies to reflect the entity's actual environment, size, and risk profile.
+evidence_expectations:
+  in_repo:
+    - Policy-as-code or configuration-driven compliance controls.
+    - Version-controlled policy documents or references.
+  external:
+    - Approved HIPAA security policy manual or equivalent.
+    - Policy approval records with dates and responsible parties.
+    - Policy change log.
+  review_questions:
+    - Are there documented policies and procedures for each applicable Security Rule requirement?
+    - Are policies approved, dated, and tailored to the entity's environment?
+    - Is there a documented process for policy changes?
+related_requirements:
+  - "164.306"
+  - "164.306(b)"
+  - "164.316(b)(1)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.316(a)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.316"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

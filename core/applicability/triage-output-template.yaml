@@ -1,0 +1,136 @@
+---
+schema_version: v1
+template_id: hipaa-triage-output-template-v1
+purpose: |
+  Machine-readable triage block required before domain selection.
+  Every assessment must produce this block as part of the output.
+
+required_enum_fields:
+  entity_type:
+    values:
+      - covered_entity
+      - business_associate
+      - ba_subcontractor
+      - not_regulated
+      - tbd
+  covered_entity_type:
+    values:
+      - provider
+      - health_plan
+      - clearinghouse
+      - not_applicable
+      - tbd
+  hybrid_entity_status:
+    values:
+      - 'yes'
+      - 'no'
+      - 'tbd'
+  entity_type_confidence:
+    values:
+      - low
+      - medium
+      - high
+  phi_scope_confidence:
+    values:
+      - low
+      - medium
+      - high
+  evidence_basis:
+    values:
+      - repo-only
+      - repo-plus-external-evidence
+      - repo-plus-runtime-or-interviews
+  assessment_confidence:
+    values:
+      - low
+      - medium
+      - high
+  part_162_assessment_mode:
+    values:
+      - not_in_scope_v1
+      - applicability_only
+      - full_module
+  state_law_overlay_status:
+    values:
+      - out_of_scope_v1
+      - identified
+      - tbd
+
+required_list_fields:
+  phi_types_in_scope:
+    values:
+      - phi
+      - ephi
+      - deidentified
+      - limited_data_set
+      - non_phi
+      - tbd
+    description: All PHI types the system handles.
+  applicable_rules:
+    values:
+      - privacy_rule
+      - security_rule
+      - breach_notification_rule
+      - enforcement_rule
+      - transaction_rule
+    description: Which HIPAA rules apply.
+  in_scope_domains:
+    description: Canonical domain IDs selected for this assessment.
+  excluded_domains:
+    description: Canonical domain IDs deliberately excluded.
+  open_decisions:
+    description: Open classification or evidence questions that affect downstream findings.
+
+canonical_domain_vocabulary:
+  - entity-and-applicability
+  - risk-analysis-and-management
+  - privacy-uses-and-disclosures
+  - minimum-necessary
+  - individual-rights
+  - administrative-safeguards
+  - physical-safeguards
+  - technical-safeguards
+  - organizational-requirements
+  - breach-notification
+  - policies-procedures-documentation
+  - training-and-sanctions
+
+propagation_rule: |
+  If entity_type is tbd, or if entity_type_confidence or phi_scope_confidence is low,
+  affected domains cannot be treated as fully governed. If the entity type is unclear
+  or conflicts with the available evidence, keep affected domains conservative and
+  preserve that uncertainty in downstream findings.
+
+example_output:
+  entity_type: business_associate
+  covered_entity_type: not_applicable
+  hybrid_entity_status: 'no'
+  entity_type_confidence: medium
+  phi_types_in_scope:
+    - ephi
+  phi_scope_confidence: medium
+  evidence_basis: repo-only
+  assessment_confidence: medium
+  applicable_rules:
+    - security_rule
+    - breach_notification_rule
+    - enforcement_rule
+  part_162_assessment_mode: not_in_scope_v1
+  state_law_overlay_status: out_of_scope_v1
+  in_scope_domains:
+    - entity-and-applicability
+    - risk-analysis-and-management
+    - technical-safeguards
+    - administrative-safeguards
+    - physical-safeguards
+    - organizational-requirements
+    - breach-notification
+    - policies-procedures-documentation
+    - training-and-sanctions
+  excluded_domains:
+    - privacy-uses-and-disclosures
+    - minimum-necessary
+    - individual-rights
+  open_decisions:
+    - Executed BAAs with covered entities were not reviewed; direct BA Privacy obligations may require additional external evidence to scope fully.
+    - Risk analysis not found in reviewed corpus.

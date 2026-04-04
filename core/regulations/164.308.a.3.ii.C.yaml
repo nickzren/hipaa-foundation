@@ -1,0 +1,86 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(3)(ii)(C)"
+title: "Termination procedures"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.308(a)(3)"
+addressable_assessment_guidance: |
+  Assess whether termination procedures are reasonable and appropriate given
+  the entity's risk analysis, workforce turnover patterns, the sensitivity
+  of the ePHI accessible, and the entity's technical capabilities for access
+  revocation. Document the disposition: implemented, alternative,
+  documented_exception, or not_evidenced.
+authoritative_text: |
+  Implement procedures for terminating access to electronic protected health information when the employment of, or other arrangement with, a workforce member ends or as required by determinations made as specified in paragraph (a)(3)(ii)(B) of this section.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have procedures for revoking access to ePHI when
+    workforce members leave the organization or when clearance determinations
+    require access modification. This includes recovering access credentials
+    (keys, badges, tokens), disabling user accounts, and changing shared
+    passwords or access codes. As an addressable specification, the entity
+    must assess reasonableness and document its decision.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    When someone leaves your organization or their access is revoked for
+    other reasons, you must have procedures to terminate their access to
+    ePHI. This includes disabling accounts, recovering credentials, and
+    changing any shared access codes.
+  intent: >
+    Prevent continued access to ePHI by former workforce members or those
+    whose access has been revoked. Close the access lifecycle loop that
+    begins with authorization and clearance.
+  applicability: >
+    Addressable for all covered entities and business associates. The
+    urgency and formality of termination procedures should reflect the
+    sensitivity of the ePHI and the risk posed by continued unauthorized
+    access.
+  common_gaps:
+    - No documented termination procedure for ePHI access.
+    - Accounts remain active after workforce members leave.
+    - Physical access credentials (badges, keys) are not recovered.
+    - Shared passwords or access codes are not changed after termination.
+    - Termination procedures exist for employees but not for volunteers, contractors, or trainees.
+    - No verification that access has actually been revoked.
+    - Delays between termination and access revocation.
+  remediation_suggestions:
+    - Implement documented termination procedures including account disabling, credential recovery, and shared code changes.
+    - Integrate access termination with HR offboarding processes.
+    - Include all workforce member types (employees, contractors, volunteers, trainees).
+    - Verify access revocation after termination procedures are executed.
+    - Define timelines for access revocation (immediate for involuntary termination, defined period for voluntary).
+    - If not fully implementing, document the rationale and alternative measures.
+evidence_expectations:
+  in_repo:
+    - Termination procedure documentation.
+    - Offboarding checklist including ePHI access revocation.
+    - Addressable specification assessment documentation.
+  external:
+    - Evidence of account disabling after workforce departures.
+    - Credential recovery records.
+    - Periodic review of active accounts against current workforce roster.
+    - HR offboarding records showing access revocation steps.
+  review_questions:
+    - Are there documented procedures for terminating ePHI access when workforce members leave?
+    - Are accounts disabled promptly upon termination?
+    - Are physical credentials recovered?
+    - Are shared passwords or access codes changed?
+    - Has the entity assessed whether this specification is reasonable and appropriate?
+related_requirements:
+  - "164.308(a)(3)"
+  - "164.308(a)(3)(ii)(A)"
+  - "164.308(a)(3)(ii)(B)"
+  - "164.310(a)(2)(iii)"
+  - "164.312(a)(2)(iii)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(3)(ii)(C)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

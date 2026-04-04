@@ -1,0 +1,116 @@
+---
+schema_version: v1
+regulation_id: "164.506"
+title: "Uses and disclosures to carry out treatment, payment, or health care operations"
+rule_family: privacy_rule
+safeguard_type: null
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Except with respect to uses or disclosures that require an authorization
+  under §164.508(a)(2) through (4) or that are prohibited under
+  §164.502(a)(5)(i):
+
+  (a) Standard: Permitted uses and disclosures. A covered entity may use
+  or disclose protected health information for its own treatment, payment,
+  or health care operations.
+
+  (b) A covered entity may disclose protected health information for
+  treatment activities of a health care provider.
+
+  (c) A covered entity may disclose protected health information to another
+  covered entity or a health care provider for the payment activities of
+  the entity that receives the information.
+
+  (d) A covered entity may disclose protected health information to another
+  covered entity for health care operations activities of the entity that
+  receives the information, if each entity either has or had a relationship
+  with the individual who is the subject of the information, the
+  information pertains to such relationship, and the disclosure is for a
+  purpose listed in paragraph (1) or (2) of the definition of health care
+  operations at §164.501.
+
+  Consent for uses and disclosures permitted under this section: A covered
+  entity may obtain consent of the individual to use or disclose protected
+  health information to carry out treatment, payment, or health care
+  operations. Consent is optional, not required.
+
+  Treatment means the provision, coordination, or management of health care
+  and related services by one or more health care providers.
+  Payment encompasses activities undertaken by a health plan or provider to
+  obtain or provide reimbursement for health care.
+  Health care operations include quality assessment, competency assurance,
+  conducting or arranging for medical review, legal services and auditing
+  functions, business planning and development, and business management and
+  general administrative activities.
+ocr_guidance:
+  summary: >
+    Section 164.506 is the primary basis for most routine uses and
+    disclosures of PHI. It permits PHI use for treatment, payment, and
+    health care operations (TPO) without individual authorization. OCR
+    guidance emphasizes that while consent is not required for TPO, the
+    minimum necessary standard still applies to payment and health care
+    operations (but not to treatment disclosures between providers).
+  source_document: "HHS Guidance on Treatment, Payment, and Health Care Operations"
+repo_interpretation:
+  plain_english_summary: >
+    Covered entities can use and share PHI for treatment, payment, and
+    health care operations without getting the patient's written
+    authorization. Treatment includes providing, coordinating, and managing
+    care. Payment includes billing, claims, and reimbursement activities.
+    Operations include quality assessment, auditing, business planning, and
+    similar administrative functions. The entity may optionally obtain
+    consent, but consent is not required for TPO.
+  intent: >
+    Enable the routine flow of PHI necessary for health care delivery and
+    administration without creating an authorization burden for every
+    clinical and administrative interaction. This is the most commonly
+    invoked permission in the Privacy Rule.
+  applicability: >
+    Applies to all covered entities and their business associates. Most
+    health IT systems that handle PHI rely on TPO as the primary legal
+    basis for data processing. Systems supporting clinical workflows,
+    billing, claims processing, care coordination, and quality reporting
+    are all governed by this section.
+  common_gaps:
+    - No documentation mapping system functions to TPO categories.
+    - System permits PHI uses that fall outside the TPO definitions without separate authorization.
+    - Health care operations uses exceed the defined scope (e.g., marketing disguised as operations).
+    - Minimum necessary not applied to payment and operations uses (even though treatment is exempt).
+    - Disclosure to other covered entities for operations without verifying the relationship requirement.
+  remediation_suggestions:
+    - Document which system functions constitute treatment, payment, and operations.
+    - Ensure non-TPO uses are routed through the authorization workflow.
+    - Apply minimum necessary to payment and operations uses.
+    - Implement controls to verify relationship requirements for inter-entity operations disclosures.
+    - Distinguish marketing and fundraising from health care operations.
+evidence_expectations:
+  in_repo:
+    - System documentation mapping features to TPO categories.
+    - Access control configurations that limit PHI access by role to TPO purposes.
+    - Data flow documentation showing treatment, payment, and operations pathways.
+  external:
+    - TPO use and disclosure policy.
+    - Notice of privacy practices describing TPO uses.
+    - Optional consent forms, if the entity chooses to obtain consent.
+    - Role-to-function mapping showing which workforce members access PHI for which TPO purpose.
+  review_questions:
+    - Can every PHI use in the system be mapped to treatment, payment, or health care operations?
+    - Are there any uses that appear to be operations but actually constitute marketing?
+    - Is minimum necessary applied to payment and operations disclosures?
+    - For inter-entity disclosures, is the relationship requirement satisfied?
+related_requirements:
+  - "164.502"
+  - "164.502.b"
+  - "164.508"
+  - "164.514.d"
+  - "164.520"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.506"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.506"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

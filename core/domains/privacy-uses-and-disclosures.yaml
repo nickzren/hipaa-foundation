@@ -1,0 +1,73 @@
+---
+schema_version: v1
+id: privacy-uses-and-disclosures
+title: Privacy Uses and Disclosures
+rule_family: privacy_rule
+lifecycle_phase:
+  - assessment
+  - operation
+review_questions:
+  - Are uses and disclosures of PHI limited to those permitted or required by the Privacy Rule?
+  - Is there a valid legal basis for each use or disclosure?
+  - Are appropriate authorizations obtained when required?
+deep_assessment_probes:
+  - Does the system enforce use/disclosure boundaries or rely entirely on policy?
+  - Are there any data sharing pathways that could constitute impermissible disclosures?
+  - How does the system handle treatment, payment, and health care operations uses?
+expected_evidence:
+  in_repo:
+    - data access patterns and disclosure endpoints
+    - consent or authorization checks in code
+    - data sharing configurations
+  external:
+    - notice of privacy practices
+    - authorization forms
+    - use and disclosure logs
+common_gaps:
+  - No mechanism to distinguish permitted from impermissible disclosures.
+  - Authorization workflows exist in policy but not enforced in the system.
+  - Data sharing pathways not documented or governed.
+cross_links:
+  - minimum-necessary
+  - individual-rights
+  - entity-and-applicability
+regulation_ids:
+  - "164.501"
+  - "164.502"
+  - "164.504"
+  - "164.506"
+  - "164.508"
+  - "164.510"
+  - "164.512"
+  - "164.514(a)"
+  - "164.514(b)"
+  - "164.514(e)"
+regulation_files:
+  standards:
+    - core/regulations/164.501.yaml
+    - core/regulations/164.502.yaml
+    - core/regulations/164.504.yaml
+    - core/regulations/164.506.yaml
+    - core/regulations/164.508.yaml
+    - core/regulations/164.510.yaml
+    - core/regulations/164.512.yaml
+    - core/regulations/164.514.a.yaml
+    - core/regulations/164.514.b.yaml
+    - core/regulations/164.514.e.yaml
+  implementation_specifications: []
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Treating a general privacy policy as a HIPAA-compliant Notice of Privacy Practices."
+    - "No mechanism to distinguish permitted from impermissible disclosures in the system."
+    - "Data sharing pathways not documented or governed."
+  escalation_triggers:
+    - "System discloses PHI to third parties with no legal basis or authorization."
+    - "De-identification claimed but neither Expert Determination nor Safe Harbor method documented."
+  repo_only_notes: |
+    Privacy Rule uses and disclosures are heavily organizational. Notice of
+    privacy practices, authorization forms, and use/disclosure logs are almost
+    always external evidence. On repo-only evidence, data access patterns,
+    disclosure endpoints, consent checks, and data sharing configurations are
+    the strongest signals. Technical use/disclosure controls in code are
+    meaningful evidence for the technical dimension of this domain.
+status: draft

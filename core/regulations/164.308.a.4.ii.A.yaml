@@ -1,0 +1,68 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(4)(ii)(A)"
+title: "Isolating health care clearinghouse functions"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.308(a)(4)"
+authoritative_text: |
+  If a health care clearinghouse is part of a larger organization, the clearinghouse must implement policies and procedures that protect the electronic protected health information of the clearinghouse from unauthorized access by the larger organization.
+ocr_guidance:
+  summary: >
+    OCR expects health care clearinghouses that are part of a larger
+    organization to implement technical and procedural safeguards that
+    isolate clearinghouse ePHI from the rest of the organization. This
+    is a required specification, though it only applies to entities that
+    operate clearinghouse functions within a larger organizational context.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    If your health care clearinghouse is part of a bigger organization,
+    you must protect clearinghouse ePHI from unauthorized access by the
+    rest of the organization. The clearinghouse function must be isolated.
+  intent: >
+    Protect clearinghouse ePHI from unauthorized access by other parts of
+    the parent organization that do not need access to that information.
+    Maintain the integrity of the clearinghouse function as a covered entity.
+  applicability: >
+    Applies only to health care clearinghouses that are part of a larger
+    organization. Not applicable to standalone clearinghouses or to covered
+    entities that are not clearinghouses. Entities should document the
+    applicability determination.
+  common_gaps:
+    - No technical or procedural isolation of clearinghouse functions.
+    - Parent organization staff have unrestricted access to clearinghouse ePHI.
+    - Network segmentation does not separate clearinghouse systems.
+    - Clearinghouse applicability determination is not documented.
+  remediation_suggestions:
+    - Implement network segmentation to isolate clearinghouse systems.
+    - Restrict access to clearinghouse ePHI to authorized clearinghouse workforce members.
+    - Document the isolation measures implemented.
+    - If not a clearinghouse or if the clearinghouse is standalone, document the non-applicability determination.
+evidence_expectations:
+  in_repo:
+    - Clearinghouse isolation policy (if applicable).
+    - Applicability determination documentation.
+  external:
+    - Network architecture diagrams showing clearinghouse isolation.
+    - Access control records demonstrating restricted access.
+    - Technical configuration evidence for isolation measures.
+  review_questions:
+    - Is the entity a health care clearinghouse that is part of a larger organization?
+    - If so, are clearinghouse functions isolated from the larger organization?
+    - Are technical and procedural measures in place to prevent unauthorized access?
+    - Is the applicability determination documented?
+related_requirements:
+  - "164.308(a)(4)"
+  - "164.312(a)(1)"
+  - "164.312(e)(1)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(4)(ii)(A)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

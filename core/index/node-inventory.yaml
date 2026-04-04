@@ -1,0 +1,686 @@
+---
+schema_version: v1
+inventory_id: hipaa-node-inventory-v1
+description: |
+  Master inventory of all regulation nodes in the hipaa-foundation repo.
+  File naming convention: core/regulations/164.308.a.1.yaml (dots for hierarchy).
+nodes:
+  # === Part 160 Definitions ===
+  - regulation_id: "160.103"
+    title: "Definitions"
+    rule_family: general
+    standard_or_spec: definitions
+    implementation_type: null
+    file: core/regulations/160.103.yaml
+
+  # === Part 164 Applicability ===
+  - regulation_id: "164.104"
+    title: "Applicability"
+    rule_family: general
+    standard_or_spec: framework
+    implementation_type: null
+    file: core/regulations/164.104.yaml
+  - regulation_id: "164.105"
+    title: "Organizational requirements — hybrid entity"
+    rule_family: general
+    standard_or_spec: framework
+    implementation_type: null
+    file: core/regulations/164.105.yaml
+
+  # === Framework ===
+  - regulation_id: "164.304"
+    title: "Security Rule definitions"
+    rule_family: security_rule
+    standard_or_spec: definitions
+    implementation_type: null
+    file: core/regulations/164.304.yaml
+  - regulation_id: "164.306"
+    title: "General rules — security standards"
+    rule_family: security_rule
+    standard_or_spec: framework
+    implementation_type: null
+    file: core/regulations/164.306.yaml
+
+  # === 164.308 Administrative Safeguards ===
+  # -- Standards --
+  - regulation_id: "164.308(a)(1)"
+    title: "Security management process"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.308.a.1.yaml
+  - regulation_id: "164.308(a)(2)"
+    title: "Assigned security responsibility"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: required
+    file: core/regulations/164.308.a.2.yaml
+  - regulation_id: "164.308(a)(3)"
+    title: "Workforce security"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.308.a.3.yaml
+  - regulation_id: "164.308(a)(4)"
+    title: "Information access management"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.308.a.4.yaml
+  - regulation_id: "164.308(a)(5)"
+    title: "Security awareness and training"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.308.a.5.yaml
+  - regulation_id: "164.308(a)(6)"
+    title: "Security incident procedures"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.308.a.6.yaml
+  - regulation_id: "164.308(a)(7)"
+    title: "Contingency plan"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.308.a.7.yaml
+  - regulation_id: "164.308(a)(8)"
+    title: "Evaluation"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: required
+    file: core/regulations/164.308.a.8.yaml
+  - regulation_id: "164.308(b)(1)"
+    title: "Business associate contracts and other arrangements"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.308.b.1.yaml
+  - regulation_id: "164.308(b)(2)"
+    title: "Business associate subcontractor arrangements"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.308.b.2.yaml
+
+  # -- Implementation specifications under 164.308(a)(1) --
+  - regulation_id: "164.308(a)(1)(ii)(A)"
+    title: "Risk analysis"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.308(a)(1)"
+    file: core/regulations/164.308.a.1.ii.A.yaml
+  - regulation_id: "164.308(a)(1)(ii)(B)"
+    title: "Risk management"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.308(a)(1)"
+    file: core/regulations/164.308.a.1.ii.B.yaml
+  - regulation_id: "164.308(a)(1)(ii)(C)"
+    title: "Sanction policy"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.308(a)(1)"
+    file: core/regulations/164.308.a.1.ii.C.yaml
+  - regulation_id: "164.308(a)(1)(ii)(D)"
+    title: "Information system activity review"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.308(a)(1)"
+    file: core/regulations/164.308.a.1.ii.D.yaml
+
+  # -- Implementation specifications under 164.308(a)(3) --
+  - regulation_id: "164.308(a)(3)(ii)(A)"
+    title: "Authorization and/or supervision"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.308(a)(3)"
+    file: core/regulations/164.308.a.3.ii.A.yaml
+  - regulation_id: "164.308(a)(3)(ii)(B)"
+    title: "Workforce clearance procedure"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.308(a)(3)"
+    file: core/regulations/164.308.a.3.ii.B.yaml
+  - regulation_id: "164.308(a)(3)(ii)(C)"
+    title: "Termination procedures"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.308(a)(3)"
+    file: core/regulations/164.308.a.3.ii.C.yaml
+
+  # -- Implementation specifications under 164.308(a)(4) --
+  - regulation_id: "164.308(a)(4)(ii)(A)"
+    title: "Isolating health care clearinghouse functions"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.308(a)(4)"
+    file: core/regulations/164.308.a.4.ii.A.yaml
+  - regulation_id: "164.308(a)(4)(ii)(B)"
+    title: "Access authorization"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.308(a)(4)"
+    file: core/regulations/164.308.a.4.ii.B.yaml
+  - regulation_id: "164.308(a)(4)(ii)(C)"
+    title: "Access establishment and modification"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.308(a)(4)"
+    file: core/regulations/164.308.a.4.ii.C.yaml
+
+  # -- Implementation specifications under 164.308(a)(5) --
+  - regulation_id: "164.308(a)(5)(ii)(A)"
+    title: "Security reminders"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.308(a)(5)"
+    file: core/regulations/164.308.a.5.ii.A.yaml
+  - regulation_id: "164.308(a)(5)(ii)(B)"
+    title: "Protection from malicious software"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.308(a)(5)"
+    file: core/regulations/164.308.a.5.ii.B.yaml
+  - regulation_id: "164.308(a)(5)(ii)(C)"
+    title: "Log-in monitoring"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.308(a)(5)"
+    file: core/regulations/164.308.a.5.ii.C.yaml
+  - regulation_id: "164.308(a)(5)(ii)(D)"
+    title: "Password management"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.308(a)(5)"
+    file: core/regulations/164.308.a.5.ii.D.yaml
+
+  # -- Implementation specification under 164.308(a)(6) --
+  - regulation_id: "164.308(a)(6)(ii)"
+    title: "Response and reporting"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.308(a)(6)"
+    file: core/regulations/164.308.a.6.ii.yaml
+
+  # -- Implementation specifications under 164.308(a)(7) --
+  - regulation_id: "164.308(a)(7)(ii)(A)"
+    title: "Data backup plan"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.308(a)(7)"
+    file: core/regulations/164.308.a.7.ii.A.yaml
+  - regulation_id: "164.308(a)(7)(ii)(B)"
+    title: "Disaster recovery plan"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.308(a)(7)"
+    file: core/regulations/164.308.a.7.ii.B.yaml
+  - regulation_id: "164.308(a)(7)(ii)(C)"
+    title: "Emergency mode operation plan"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.308(a)(7)"
+    file: core/regulations/164.308.a.7.ii.C.yaml
+  - regulation_id: "164.308(a)(7)(ii)(D)"
+    title: "Testing and revision procedures"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.308(a)(7)"
+    file: core/regulations/164.308.a.7.ii.D.yaml
+  - regulation_id: "164.308(a)(7)(ii)(E)"
+    title: "Applications and data criticality analysis"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.308(a)(7)"
+    file: core/regulations/164.308.a.7.ii.E.yaml
+
+  # -- Implementation specification under 164.308(b) --
+  - regulation_id: "164.308(b)(3)"
+    title: "Written contract or other arrangement"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.308(b)(1)"
+    file: core/regulations/164.308.b.3.yaml
+
+  # === 164.310 Physical Safeguards ===
+  # -- Standards --
+  - regulation_id: "164.310(a)(1)"
+    title: "Facility access controls"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.310.a.1.yaml
+  - regulation_id: "164.310(b)"
+    title: "Workstation use"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: required
+    file: core/regulations/164.310.b.yaml
+  - regulation_id: "164.310(c)"
+    title: "Workstation security"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: required
+    file: core/regulations/164.310.c.yaml
+  - regulation_id: "164.310(d)(1)"
+    title: "Device and media controls"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.310.d.1.yaml
+
+  # -- Implementation specifications under 164.310(a)(1) --
+  - regulation_id: "164.310(a)(2)(i)"
+    title: "Contingency operations"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.310(a)(1)"
+    file: core/regulations/164.310.a.2.i.yaml
+  - regulation_id: "164.310(a)(2)(ii)"
+    title: "Facility security plan"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.310(a)(1)"
+    file: core/regulations/164.310.a.2.ii.yaml
+  - regulation_id: "164.310(a)(2)(iii)"
+    title: "Access control and validation procedures"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.310(a)(1)"
+    file: core/regulations/164.310.a.2.iii.yaml
+  - regulation_id: "164.310(a)(2)(iv)"
+    title: "Maintenance records"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.310(a)(1)"
+    file: core/regulations/164.310.a.2.iv.yaml
+
+  # -- Implementation specifications under 164.310(d)(1) --
+  - regulation_id: "164.310(d)(2)(i)"
+    title: "Disposal"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.310(d)(1)"
+    file: core/regulations/164.310.d.2.i.yaml
+  - regulation_id: "164.310(d)(2)(ii)"
+    title: "Media re-use"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.310(d)(1)"
+    file: core/regulations/164.310.d.2.ii.yaml
+  - regulation_id: "164.310(d)(2)(iii)"
+    title: "Accountability"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.310(d)(1)"
+    file: core/regulations/164.310.d.2.iii.yaml
+  - regulation_id: "164.310(d)(2)(iv)"
+    title: "Data backup and storage"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.310(d)(1)"
+    file: core/regulations/164.310.d.2.iv.yaml
+
+  # === 164.312 Technical Safeguards ===
+  # -- Standards --
+  - regulation_id: "164.312(a)(1)"
+    title: "Access control"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.312.a.1.yaml
+  - regulation_id: "164.312(b)"
+    title: "Audit controls"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: required
+    file: core/regulations/164.312.b.yaml
+  - regulation_id: "164.312(c)(1)"
+    title: "Integrity"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.312.c.1.yaml
+  - regulation_id: "164.312(d)"
+    title: "Person or entity authentication"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: required
+    file: core/regulations/164.312.d.yaml
+  - regulation_id: "164.312(e)(1)"
+    title: "Transmission security"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.312.e.1.yaml
+
+  # -- Implementation specifications under 164.312(a)(1) --
+  - regulation_id: "164.312(a)(2)(i)"
+    title: "Unique user identification"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.312(a)(1)"
+    file: core/regulations/164.312.a.2.i.yaml
+  - regulation_id: "164.312(a)(2)(ii)"
+    title: "Emergency access procedure"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.312(a)(1)"
+    file: core/regulations/164.312.a.2.ii.yaml
+  - regulation_id: "164.312(a)(2)(iii)"
+    title: "Automatic logoff"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.312(a)(1)"
+    file: core/regulations/164.312.a.2.iii.yaml
+  - regulation_id: "164.312(a)(2)(iv)"
+    title: "Encryption and decryption"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.312(a)(1)"
+    file: core/regulations/164.312.a.2.iv.yaml
+
+  # -- Implementation specification under 164.312(c)(1) --
+  - regulation_id: "164.312(c)(2)"
+    title: "Mechanism to authenticate electronic protected health information"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.312(c)(1)"
+    file: core/regulations/164.312.c.2.yaml
+
+  # -- Implementation specifications under 164.312(e)(1) --
+  - regulation_id: "164.312(e)(2)(i)"
+    title: "Integrity controls"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.312(e)(1)"
+    file: core/regulations/164.312.e.2.i.yaml
+  - regulation_id: "164.312(e)(2)(ii)"
+    title: "Encryption"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: addressable
+    parent_standard: "164.312(e)(1)"
+    file: core/regulations/164.312.e.2.ii.yaml
+
+  # === 164.316 Policies, Procedures, and Documentation ===
+  # -- Standards --
+  - regulation_id: "164.316(a)"
+    title: "Policies and procedures"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: required
+    file: core/regulations/164.316.a.yaml
+  - regulation_id: "164.316(b)(1)"
+    title: "Documentation"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.316.b.1.yaml
+
+  # -- Implementation specifications under 164.316(b)(1) --
+  - regulation_id: "164.316(b)(2)(i)"
+    title: "Time limit"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.316(b)(1)"
+    file: core/regulations/164.316.b.2.i.yaml
+  - regulation_id: "164.316(b)(2)(ii)"
+    title: "Availability"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.316(b)(1)"
+    file: core/regulations/164.316.b.2.ii.yaml
+  - regulation_id: "164.316(b)(2)(iii)"
+    title: "Updates"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.316(b)(1)"
+    file: core/regulations/164.316.b.2.iii.yaml
+
+  # === 164.314 Organizational Requirements ===
+  # -- Standards --
+  - regulation_id: "164.314(a)(1)"
+    title: "Business associate contracts or other arrangements"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.314.a.1.yaml
+  - regulation_id: "164.314(b)(1)"
+    title: "Requirements for group health plans"
+    rule_family: security_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.314.b.1.yaml
+
+  # -- Implementation specifications under 164.314(a)(1) --
+  - regulation_id: "164.314(a)(2)(i)"
+    title: "Business associate contracts"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.314(a)(1)"
+    file: core/regulations/164.314.a.2.i.yaml
+  - regulation_id: "164.314(a)(2)(ii)"
+    title: "Other arrangements"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.314(a)(1)"
+    file: core/regulations/164.314.a.2.ii.yaml
+  - regulation_id: "164.314(a)(2)(iii)"
+    title: "Business associate contracts with subcontractors"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.314(a)(1)"
+    file: core/regulations/164.314.a.2.iii.yaml
+
+  # -- Implementation specification under 164.314(b)(1) --
+  - regulation_id: "164.314(b)(2)"
+    title: "Implementation specifications for group health plan requirements"
+    rule_family: security_rule
+    standard_or_spec: implementation_specification
+    implementation_type: required
+    parent_standard: "164.314(b)(1)"
+    file: core/regulations/164.314.b.2.yaml
+
+  # === Privacy Rule ===
+  - regulation_id: "164.501"
+    title: "Definitions"
+    rule_family: privacy_rule
+    standard_or_spec: definitions
+    implementation_type: null
+    file: core/regulations/164.501.yaml
+  - regulation_id: "164.502"
+    title: "Uses and disclosures of protected health information — general rules"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.502.yaml
+  - regulation_id: "164.502(b)"
+    title: "Minimum necessary"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.502.b.yaml
+  - regulation_id: "164.504"
+    title: "Uses and disclosures — organizational requirements"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.504.yaml
+  - regulation_id: "164.506"
+    title: "Uses and disclosures for treatment, payment, and health care operations"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.506.yaml
+  - regulation_id: "164.508"
+    title: "Uses and disclosures for which an authorization is required"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.508.yaml
+  - regulation_id: "164.510"
+    title: "Uses and disclosures requiring an opportunity for the individual to agree or to object"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.510.yaml
+  - regulation_id: "164.512"
+    title: "Uses and disclosures for which an authorization or opportunity to agree or object is not required"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.512.yaml
+  - regulation_id: "164.514(a)"
+    title: "De-identification of protected health information — standard"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.514.a.yaml
+  - regulation_id: "164.514(b)"
+    title: "De-identification — implementation specifications"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.514.b.yaml
+  - regulation_id: "164.514(d)"
+    title: "Minimum necessary requirements"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.514.d.yaml
+  - regulation_id: "164.514(e)"
+    title: "Limited data set"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.514.e.yaml
+  - regulation_id: "164.520"
+    title: "Notice of privacy practices"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.520.yaml
+  - regulation_id: "164.522"
+    title: "Rights to request privacy protection for protected health information"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.522.yaml
+  - regulation_id: "164.524"
+    title: "Access of individuals to protected health information"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.524.yaml
+  - regulation_id: "164.526"
+    title: "Amendment of protected health information"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.526.yaml
+  - regulation_id: "164.528"
+    title: "Accounting of disclosures of protected health information"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.528.yaml
+  - regulation_id: "164.530"
+    title: "Administrative requirements"
+    rule_family: privacy_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.530.yaml
+
+  # === Breach Notification Rule ===
+  - regulation_id: "164.400"
+    title: "Breach notification — applicability"
+    rule_family: breach_notification_rule
+    standard_or_spec: framework
+    implementation_type: null
+    file: core/regulations/164.400.yaml
+  - regulation_id: "164.402"
+    title: "Definitions — breach"
+    rule_family: breach_notification_rule
+    standard_or_spec: definitions
+    implementation_type: null
+    file: core/regulations/164.402.yaml
+  - regulation_id: "164.404"
+    title: "Notification to individuals"
+    rule_family: breach_notification_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.404.yaml
+  - regulation_id: "164.406"
+    title: "Notification to the media"
+    rule_family: breach_notification_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.406.yaml
+  - regulation_id: "164.408"
+    title: "Notification to the Secretary"
+    rule_family: breach_notification_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.408.yaml
+  - regulation_id: "164.410"
+    title: "Notification by a business associate"
+    rule_family: breach_notification_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.410.yaml
+  - regulation_id: "164.412"
+    title: "Law enforcement delay"
+    rule_family: breach_notification_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.412.yaml
+  - regulation_id: "164.414"
+    title: "Administrative requirements and burden of proof"
+    rule_family: breach_notification_rule
+    standard_or_spec: standard
+    implementation_type: null
+    file: core/regulations/164.414.yaml

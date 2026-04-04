@@ -1,0 +1,61 @@
+---
+schema_version: v1
+regulation_id: "164.312(e)(1)"
+title: "Transmission Security"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement technical security measures to guard against unauthorized access
+  to electronic protected health information that is being transmitted over
+  an electronic communications network.
+ocr_guidance:
+  summary: "Entities must implement technical measures to protect ePHI during electronic transmission from unauthorized access."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Protect ePHI while it travels across networks — whether internal, internet, wireless, or any other electronic communication path. Prevent eavesdropping and tampering in transit."
+  intent: "Ensure confidentiality and integrity of ePHI during electronic transmission by implementing appropriate technical safeguards against interception and unauthorized access."
+  applicability: "All electronic transmissions of ePHI — email, API calls, file transfers, HL7/FHIR interfaces, remote access sessions, database replication, backup transmission, and any network communication carrying ePHI."
+  common_gaps:
+    - "ePHI transmitted over unencrypted channels (HTTP, FTP, unencrypted email)"
+    - "Internal network traffic carrying ePHI not encrypted"
+    - "Legacy interfaces using unencrypted protocols (HL7 over MLLP without TLS)"
+    - "TLS configurations using outdated versions or weak cipher suites"
+    - "No monitoring for unauthorized transmission of ePHI"
+  remediation_suggestions:
+    - "Require TLS 1.2+ for all network transmissions of ePHI"
+    - "Encrypt email containing ePHI or use secure messaging platforms"
+    - "Upgrade legacy interfaces to encrypted protocols"
+    - "Disable weak TLS versions and cipher suites"
+    - "Implement DLP or network monitoring for unauthorized ePHI transmission"
+evidence_expectations:
+  in_repo:
+    - "Transmission security policy"
+    - "Encryption standards for data in transit"
+    - "Network architecture documentation showing encryption points"
+  external:
+    - "TLS configuration scan results"
+    - "Network diagram showing encrypted communication paths"
+    - "Email encryption or secure messaging platform configuration"
+    - "DLP policy and alert records"
+  review_questions:
+    - "Are all transmissions of ePHI encrypted?"
+    - "What TLS versions and cipher suites are in use?"
+    - "Are legacy unencrypted protocols still in use for ePHI transmission?"
+    - "How is email containing ePHI protected?"
+    - "Is there monitoring for unauthorized ePHI transmission?"
+related_requirements:
+  - "164.312(e)(2)(i)"
+  - "164.312(e)(2)(ii)"
+  - "164.312(a)(2)(iv)"
+  - "164.312(c)(1)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(e)(1)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

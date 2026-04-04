@@ -1,0 +1,79 @@
+---
+schema_version: v1
+manifest_id: hipaa-foundation-source-manifest-v1
+primary_sources:
+  - id: ecfr-part-160
+    title: "45 CFR Part 160 — General Administrative Requirements"
+    authority: "HHS / Office for Civil Rights"
+    url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-160"
+    type: regulation
+    status: effective
+    source_role: baseline_legal_text
+    last_verified_on: "2026-04-03"
+    refresh_cadence: annual
+    notes: "General provisions, definitions, enforcement, penalties."
+
+  - id: ecfr-part-162
+    title: "45 CFR Part 162 — Administrative Requirements (Transactions and Code Sets)"
+    authority: "CMS"
+    url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-162"
+    type: regulation
+    status: effective
+    source_role: baseline_legal_text
+    last_verified_on: "2026-04-03"
+    refresh_cadence: annual
+    notes: "Included in applicability triage but not deeply assessed in v1."
+
+  - id: ecfr-part-164
+    title: "45 CFR Part 164 — Security and Privacy"
+    authority: "HHS / Office for Civil Rights"
+    url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164"
+    type: regulation
+    status: effective
+    source_role: baseline_legal_text
+    last_verified_on: "2026-04-03"
+    refresh_cadence: annual
+    preferred_over: hhs-combined-pdf
+    notes: "Privacy Rule, Security Rule, Breach Notification Rule."
+
+reference_sources:
+  - id: hhs-hipaa-professionals
+    title: "HHS HIPAA for Professionals"
+    authority: "HHS / Office for Civil Rights"
+    url: "https://www.hhs.gov/hipaa/for-professionals/"
+    type: guidance
+    status: current
+    source_role: interpretive_guidance
+    last_verified_on: "2026-04-03"
+    refresh_cadence: quarterly
+    notes: "Enforcement posture and interpretive context."
+
+pending_changes:
+  - id: security-rule-nprm
+    title: "HIPAA Security Rule NPRM"
+    authority: "HHS / Office for Civil Rights"
+    url: "https://www.hhs.gov/hipaa/for-professionals/security/hipaa-security-rule-nprm/index.html"
+    type: proposed_rule
+    status: pending
+    source_role: pending_change_tracking
+    last_verified_on: "2026-04-03"
+    refresh_cadence: quarterly
+    notes: "Not effective. Tracked for awareness only. Do not treat as current requirements."
+
+  - id: cms-part-162-final-rule
+    title: "CMS Claims Attachments / Electronic Signatures Final Rule"
+    authority: "CMS"
+    url: "https://www.cms.gov/newsroom/fact-sheets/administrative-simplification-adoption-standards-health-care-claims-attachments-transactions"
+    type: final_rule
+    status: effective_may_26_2026
+    source_role: pending_change_tracking
+    last_verified_on: "2026-04-03"
+    refresh_cadence: quarterly
+    compliance_deadline: "24 months after effective date"
+    notes: "Published March 20, 2026. Effective May 26, 2026. Compliance 24 months later. Makes Part 162 a moving target. Gated until a CMS-aware transaction module is built."
+
+source_exclusions:
+  - id: hhs-combined-pdf
+    reason: "HHS labels the combined regulation text PDF as unofficial. Use eCFR as the pinned baseline."
+  - id: security-rule-nprm-as-baseline
+    reason: "The NPRM is proposed, not effective. Do not use as assessed baseline."

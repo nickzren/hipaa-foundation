@@ -1,0 +1,56 @@
+---
+schema_version: v1
+regulation_id: "164.310(c)"
+title: "Workstation Security"
+rule_family: security_rule
+safeguard_type: physical
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement physical safeguards for all workstations that access electronic
+  protected health information, to restrict access to authorized users.
+ocr_guidance:
+  summary: "Physical safeguards must be in place for every workstation that can access ePHI, ensuring only authorized users can reach the device."
+  source_document: "HIPAA Security Series: Security Standards - Physical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Physically secure every workstation that touches ePHI so unauthorized people cannot use it. This includes cable locks, secured rooms, and restricting physical access to the device itself."
+  intent: "Prevent unauthorized physical access to workstations capable of accessing ePHI, complementing the logical access controls in the Technical Safeguards."
+  applicability: "All workstations — fixed and portable — that can access ePHI. Includes desktops in offices, laptops taken off-site, clinical workstations, and mobile devices."
+  common_gaps:
+    - "Laptops not physically secured when unattended"
+    - "No cable locks or locked cabinets for portable devices"
+    - "Clinical workstations in open areas without physical access restrictions"
+    - "No asset tracking for portable workstations"
+    - "Server-room workstations not treated as workstations in policy"
+  remediation_suggestions:
+    - "Deploy cable locks or locked docking stations for laptops in offices"
+    - "Require encrypted storage and physical lock-up for portable devices when not in use"
+    - "Place clinical workstations in areas with controlled physical access"
+    - "Implement asset tracking tags and periodic physical inventory"
+    - "Include server-room consoles in the workstation security scope"
+evidence_expectations:
+  in_repo:
+    - "Workstation security policy or physical security standard"
+    - "Portable device security requirements"
+  external:
+    - "Physical asset inventory and tracking records"
+    - "Cable lock or secure storage deployment records"
+    - "Physical security walk-through reports"
+  review_questions:
+    - "How are workstations physically secured against unauthorized access?"
+    - "Are portable devices locked or stored securely when not in use?"
+    - "Is there a physical inventory process for workstations accessing ePHI?"
+    - "Are clinical or public-area workstations physically restricted to authorized users?"
+related_requirements:
+  - "164.310(b)"
+  - "164.310(a)(1)"
+  - "164.312(a)(1)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.310(c)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.310"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

@@ -1,0 +1,60 @@
+---
+schema_version: v1
+regulation_id: "164.312(a)(2)(ii)"
+title: "Emergency Access Procedure"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.312(a)(1)"
+authoritative_text: |
+  Establish (and implement as needed) procedures for obtaining necessary
+  electronic protected health information during an emergency.
+ocr_guidance:
+  summary: "Entities must have documented procedures that enable authorized access to ePHI during an emergency, even when normal access controls may be unavailable."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Have a plan for how authorized people can get to ePHI when normal systems or access methods are down due to an emergency."
+  intent: "Ensure continuity of access to ePHI for treatment and operations during emergencies, while maintaining appropriate accountability for emergency access."
+  applicability: "All systems containing ePHI that could become inaccessible during an emergency — system failures, natural disasters, cyber incidents, or facility disruptions."
+  common_gaps:
+    - "No documented emergency access procedure"
+    - "Break-glass accounts exist but are not monitored or audited"
+    - "Emergency access credentials stored in inaccessible locations"
+    - "Emergency access not tested during DR exercises"
+    - "No post-emergency review of emergency access usage"
+  remediation_suggestions:
+    - "Document an emergency access procedure covering various emergency scenarios"
+    - "Implement break-glass accounts with automated alerting and post-use review"
+    - "Store emergency credentials securely but accessibly (sealed envelopes, secure vaults)"
+    - "Test emergency access procedures during disaster recovery exercises"
+    - "Require post-incident review of all emergency access events"
+evidence_expectations:
+  in_repo:
+    - "Emergency access procedure"
+    - "Break-glass account policy"
+    - "Emergency credential management procedure"
+  external:
+    - "Break-glass account usage logs and review records"
+    - "DR exercise reports showing emergency access testing"
+    - "Emergency credential storage verification records"
+    - "Post-incident emergency access review reports"
+  review_questions:
+    - "Is there a documented procedure for obtaining ePHI access during an emergency?"
+    - "Are break-glass or emergency accounts implemented and monitored?"
+    - "Where are emergency credentials stored, and are they accessible when needed?"
+    - "Has emergency access been tested in a drill?"
+    - "Is there a process to review emergency access after the event?"
+related_requirements:
+  - "164.312(a)(1)"
+  - "164.308(a)(7)(i)"
+  - "164.308(a)(7)(ii)(C)"
+  - "164.310(a)(2)(i)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(a)(2)(ii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

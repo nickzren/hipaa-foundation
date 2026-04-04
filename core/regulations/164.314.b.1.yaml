@@ -1,0 +1,68 @@
+---
+schema_version: v1
+regulation_id: "164.314(b)(1)"
+title: "Requirements for group health plans"
+rule_family: security_rule
+safeguard_type: organizational
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Except when the only electronic protected health information disclosed
+  to a plan sponsor is disclosed pursuant to 164.504(f)(1)(ii) or (iii),
+  or as authorized under 164.508, a group health plan must ensure that
+  its plan documents provide that the plan sponsor will reasonably and
+  appropriately safeguard electronic protected health information created,
+  received, maintained, or transmitted to or by the plan sponsor on behalf
+  of the group health plan.
+ocr_guidance:
+  summary: >
+    OCR requires group health plans to amend their plan documents to
+    include provisions ensuring the plan sponsor will appropriately
+    safeguard ePHI. This requirement does not apply when the only
+    disclosures to the plan sponsor are summary health information
+    for plan administration or enrollment/disenrollment information.
+  source_document: "HIPAA Security Rule, 45 CFR Part 164 Subpart C"
+repo_interpretation:
+  plain_english_summary: >
+    Group health plans must include provisions in their plan documents
+    requiring the plan sponsor to safeguard ePHI, unless the only
+    information shared with the sponsor is summary health information
+    or enrollment/disenrollment data.
+  intent: >
+    Extend Security Rule protections to the plan sponsor relationship
+    in group health plan arrangements.
+  applicability: >
+    Applies to group health plans that disclose ePHI to plan sponsors
+    beyond the limited exceptions in 164.504(f)(1)(ii)/(iii) and
+    164.508 authorizations. Not applicable to covered entities that
+    are not group health plans.
+  common_gaps:
+    - Plan documents do not address ePHI safeguards for the plan sponsor.
+    - Plan sponsor receives ePHI beyond the permitted exceptions without plan document amendments.
+    - Plan document amendments exist but do not meet 164.314(b)(2) requirements.
+  remediation_suggestions:
+    - Review plan documents for required ePHI safeguard provisions.
+    - Amend plan documents to meet 164.314(b)(2) implementation specifications.
+    - Determine whether the limited disclosure exceptions apply before concluding this is not applicable.
+evidence_expectations:
+  in_repo: []
+  external:
+    - Group health plan documents with ePHI safeguard provisions.
+    - Plan document amendments addressing Security Rule requirements.
+    - Documentation of applicable disclosure exceptions if claiming not applicable.
+  review_questions:
+    - Do plan documents include provisions for safeguarding ePHI by the plan sponsor?
+    - Do plan document amendments meet the 164.314(b)(2) implementation specifications?
+    - If claiming an exception, is there documentation supporting the limited disclosure basis?
+related_requirements:
+  - "164.314(b)(2)"
+  - "164.504(f)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.314(b)(1)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.314"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

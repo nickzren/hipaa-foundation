@@ -1,0 +1,60 @@
+---
+schema_version: v1
+regulation_id: "164.308(b)(2)"
+title: "Business associate subcontractor arrangements"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  A business associate may permit a business associate that is a subcontractor to create, receive, maintain, or transmit electronic protected health information on its behalf only if the business associate obtains satisfactory assurances, in accordance with § 164.314(a), that the subcontractor will appropriately safeguard the information.
+ocr_guidance:
+  summary: >
+    OCR expects a business associate to obtain satisfactory assurances from
+    subcontractors that handle ePHI, not just from covered entities to direct
+    business associates. This is the core subcontractor flow-down rule.
+  source_document: "HIPAA Security Rule, 45 CFR Part 164 Subpart C"
+repo_interpretation:
+  plain_english_summary: >
+    If a business associate uses a subcontractor to handle ePHI, the business
+    associate must obtain satisfactory assurances that the subcontractor will
+    safeguard the information.
+  intent: >
+    Extend Security Rule protections through the subcontractor chain so ePHI
+    remains protected when downstream vendors handle it.
+  applicability: >
+    Applies to business associates that use subcontractors creating, receiving,
+    maintaining, or transmitting ePHI on their behalf.
+  common_gaps:
+    - Subcontractors handle ePHI but no subcontractor agreement exists.
+    - The entity treats cloud or support vendors as ordinary vendors instead of subcontractors handling ePHI.
+    - No process exists to track subcontractor assurance status.
+  remediation_suggestions:
+    - Identify all subcontractors that handle ePHI on behalf of a business associate.
+    - Execute subcontractor agreements that satisfy 164.314(a).
+    - Track subcontractor assurance status and renewals.
+evidence_expectations:
+  in_repo:
+    - Documentation of subcontractor data flows or vendor boundaries.
+    - References to subcontractor handling of ePHI.
+  external:
+    - Executed subcontractor BAAs or equivalent arrangements.
+    - Subcontractor inventory and tracking records.
+  review_questions:
+    - Does any subcontractor create, receive, maintain, or transmit ePHI on the BA's behalf?
+    - Has the BA obtained satisfactory assurances from each such subcontractor?
+    - Are subcontractor arrangements tracked and reviewed?
+related_requirements:
+  - "164.308(b)(3)"
+  - "164.314(a)"
+  - "164.314(a)(2)(iii)"
+  - "164.502(e)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(b)(2)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

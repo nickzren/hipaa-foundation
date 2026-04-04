@@ -1,0 +1,64 @@
+---
+schema_version: v1
+id: policies-procedures-documentation
+title: Policies, Procedures, and Documentation
+rule_family: both
+lifecycle_phase:
+  - assessment
+  - operation
+review_questions:
+  - Are HIPAA policies and procedures documented per 164.316 and 164.530?
+  - Is documentation retained for the required period (6 years)?
+  - Are policies reviewed and updated periodically?
+deep_assessment_probes:
+  - Do policies cover all applicable Security Rule and Privacy Rule requirements?
+  - Is there a formal document management process with version control?
+  - Are policy changes documented with effective dates?
+expected_evidence:
+  in_repo:
+    - policy-as-code or configuration-driven compliance controls
+    - documentation management automation
+    - version-controlled policy files
+  external:
+    - approved HIPAA policy documents
+    - retention schedule evidence
+    - periodic review records
+common_gaps:
+  - Policies exist in draft but are not approved or dated.
+  - Retention period not met or not tracked.
+  - No evidence of periodic review or updates.
+cross_links:
+  - administrative-safeguards
+  - training-and-sanctions
+regulation_ids:
+  - "164.316(a)"
+  - "164.316(b)(1)"
+  - "164.316(b)(2)(i)"
+  - "164.316(b)(2)(ii)"
+  - "164.316(b)(2)(iii)"
+  - "164.530"
+regulation_files:
+  standards:
+    - core/regulations/164.316.a.yaml
+    - core/regulations/164.316.b.1.yaml
+    - core/regulations/164.530.yaml
+  implementation_specifications:
+    - core/regulations/164.316.b.2.i.yaml
+    - core/regulations/164.316.b.2.ii.yaml
+    - core/regulations/164.316.b.2.iii.yaml
+assessment_guidance:
+  domain_specific_pitfalls:
+    - "Treating README files or wiki pages as formal HIPAA policies."
+    - "Policies exist in draft but are not approved, dated, or version-controlled."
+    - "Retention period not met or not tracked for policy documentation."
+  escalation_triggers:
+    - "No HIPAA policies or procedures exist in any form."
+    - "Policies have not been reviewed or updated in over two years."
+  repo_only_notes: |
+    Documentation requirements apply to both Security Rule (164.316) and Privacy
+    Rule (164.530). On repo-only evidence, version-controlled policy files are
+    meaningful evidence but lack approval context. Approval signatures, retention
+    schedule execution, and periodic review records are external evidence.
+    Policy-as-code and configuration-driven compliance controls are the strongest
+    repo-only signals.
+status: draft

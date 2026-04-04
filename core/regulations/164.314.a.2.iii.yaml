@@ -1,0 +1,61 @@
+---
+schema_version: v1
+regulation_id: "164.314(a)(2)(iii)"
+title: "Business associate contracts with subcontractors"
+rule_family: security_rule
+safeguard_type: organizational
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.314(a)(1)"
+authoritative_text: |
+  The requirements of paragraphs (a)(2)(i) and (a)(2)(ii) of this section apply to the contract or other arrangement between a business associate and a subcontractor required by § 164.308(b)(4) in the same manner as such requirements apply to contracts or other arrangements between a covered entity and business associate.
+ocr_guidance:
+  summary: >
+    OCR expects subcontractor arrangements to carry forward the same core
+    protections required in covered-entity-to-business-associate agreements.
+    This is the organizational counterpart to the subcontractor assurance rule.
+  source_document: "HIPAA Security Rule, 45 CFR Part 164 Subpart C"
+repo_interpretation:
+  plain_english_summary: >
+    A business associate's contract with a subcontractor has to satisfy the
+    same essential requirements that apply to a covered entity's contract with
+    a business associate.
+  intent: >
+    Make the subcontractor contract chain enforce the same security obligations
+    that Part 164 requires at the covered-entity/business-associate boundary.
+  applicability: >
+    Applies when a business associate uses a subcontractor that creates,
+    receives, maintains, or transmits ePHI on the business associate's behalf.
+  common_gaps:
+    - Subcontractor agreement exists but does not mirror the required BAA terms.
+    - The business associate relies on a vendor agreement that lacks HIPAA-specific subcontractor protections.
+    - No review process exists to confirm subcontractor contract terms remain current.
+  remediation_suggestions:
+    - Review subcontractor agreements against 164.314(a)(2)(i) and (ii) requirements.
+    - Align subcontractor contract language with required reporting, safeguard, and flow-down terms.
+    - Track subcontractor agreement status and updates.
+evidence_expectations:
+  in_repo:
+    - References to subcontractor handling of ePHI.
+    - Vendor integration or architecture records showing subcontractor roles.
+  external:
+    - Executed subcontractor agreements.
+    - Contract review checklists or legal review records.
+  review_questions:
+    - Does each subcontractor agreement carry forward the required 164.314(a)(2) protections?
+    - Are reporting and safeguard obligations clearly stated for subcontractors?
+    - Is subcontractor contract compliance monitored?
+related_requirements:
+  - "164.308(b)(2)"
+  - "164.308(b)(3)"
+  - "164.314(a)(1)"
+  - "164.314(a)(2)(i)"
+  - "164.314(a)(2)(ii)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.314(a)(2)(iii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.314"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

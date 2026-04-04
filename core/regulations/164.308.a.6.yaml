@@ -1,0 +1,77 @@
+---
+schema_version: v1
+regulation_id: "164.308(a)(6)"
+title: "Security incident procedures"
+rule_family: security_rule
+safeguard_type: administrative
+standard_or_spec: standard
+implementation_type: null
+parent_standard: null
+authoritative_text: |
+  Implement policies and procedures to address security incidents.
+ocr_guidance:
+  summary: >
+    OCR expects entities to have documented incident response procedures that
+    cover identification, response, mitigation, and documentation of security
+    incidents. The single implementation specification (response and reporting)
+    is required. OCR has noted that entities must address both successful and
+    attempted security incidents, though the depth of documentation may differ.
+  source_document: "HHS Guidance on Risk Analysis Requirements under the HIPAA Security Rule"
+repo_interpretation:
+  plain_english_summary: >
+    You must have procedures for identifying, responding to, mitigating, and
+    documenting security incidents. This includes both successful breaches
+    and attempted unauthorized access.
+  intent: >
+    Ensure that security incidents are detected promptly, handled
+    consistently, mitigated effectively, and documented for analysis and
+    regulatory reporting.
+  applicability: >
+    Applies to every covered entity and business associate. The definition
+    of security incident is broad — it includes attempted as well as
+    successful unauthorized access.
+  common_gaps:
+    - No documented security incident response procedure.
+    - Procedures address only successful breaches but not attempted incidents.
+    - No defined roles and responsibilities for incident response.
+    - Incident documentation is incomplete or inconsistent.
+    - No post-incident review or lessons-learned process.
+    - Confusion between Security Rule incident procedures and Breach Notification Rule requirements.
+  remediation_suggestions:
+    - Document a security incident response procedure covering identification, response, mitigation, and documentation.
+    - Define roles and responsibilities for incident response.
+    - Include both successful and attempted security incidents in the scope.
+    - Implement a post-incident review and lessons-learned process.
+    - Coordinate security incident procedures with Breach Notification Rule requirements.
+    - Test incident response procedures periodically through tabletop exercises or simulations.
+evidence_expectations:
+  in_repo:
+    - Security incident response policy and procedures.
+    - Incident classification or severity definitions.
+    - Incident response team roles and responsibilities.
+  external:
+    - Incident response logs and documentation.
+    - Post-incident review records.
+    - Tabletop exercise or simulation records.
+    - Breach notification records (if applicable).
+  review_questions:
+    - Are security incident response procedures documented?
+    - Do the procedures cover identification, response, mitigation, and documentation?
+    - Are roles and responsibilities for incident response defined?
+    - Does the scope include both successful and attempted incidents?
+    - Is there a post-incident review process?
+related_requirements:
+  - "164.308(a)(6)(ii)"
+  - "164.308(a)(1)(ii)(D)"
+  - "164.314(a)(2)(i)(C)"
+  - "164.410"
+  - "164.412"
+  - "164.414"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.308(a)(6)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

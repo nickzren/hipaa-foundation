@@ -1,0 +1,68 @@
+---
+schema_version: v1
+regulation_id: "164.312(e)(2)(ii)"
+title: "Encryption"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.312(e)(1)"
+addressable_assessment_guidance: |
+  Assess whether the entity has evaluated the need for encryption of ePHI
+  in transit based on its risk analysis. If so, evaluate whether the
+  encryption mechanisms are reasonable and appropriate given the transmission
+  channels and threat environment. Document the disposition: implemented,
+  alternative, documented_exception, or not_evidenced.
+authoritative_text: |
+  Implement a mechanism to encrypt electronic protected health information
+  whenever deemed appropriate.
+ocr_guidance:
+  summary: "Entities should implement encryption for ePHI during electronic transmission when the risk analysis indicates it is appropriate. OCR guidance and breach notification safe harbor strongly favor encryption."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Encrypt ePHI when transmitting it electronically. While technically addressable, encryption in transit is the de facto standard and its absence requires strong documented justification."
+  intent: "Protect ePHI confidentiality during electronic transmission by rendering the data unreadable to unauthorized parties who may intercept the communication."
+  applicability: "All electronic transmissions of ePHI — internet, email, wireless, VPN, API calls, file transfers, HL7/FHIR interfaces, and any network path. Note: the HHS Breach Notification Rule safe harbor explicitly references NIST-validated encryption, making unencrypted transmission a high-risk posture."
+  common_gaps:
+    - "ePHI transmitted over unencrypted email"
+    - "Legacy interfaces (HL7v2, FTP) without TLS wrapping"
+    - "Internal network transmissions assumed safe without encryption"
+    - "Outdated TLS versions (1.0, 1.1) still in use"
+    - "Wireless networks carrying ePHI using weak encryption (WEP, open WiFi)"
+    - "No documented risk assessment for unencrypted transmission channels"
+  remediation_suggestions:
+    - "Implement TLS 1.2+ on all ePHI transmission channels"
+    - "Encrypt email containing ePHI using S/MIME, TLS-enforced gateways, or secure messaging"
+    - "Upgrade legacy interfaces to encrypted protocols"
+    - "Disable TLS 1.0 and 1.1; remove weak cipher suites"
+    - "Require WPA3 or WPA2-Enterprise for wireless networks carrying ePHI"
+    - "If encryption is not used on any channel, document a risk-based rationale with alternative safeguards"
+evidence_expectations:
+  in_repo:
+    - "Encryption in transit policy"
+    - "Approved TLS versions and cipher suites standard"
+    - "Network transmission encryption architecture"
+  external:
+    - "TLS configuration scan results (e.g., Qualys SSL Labs)"
+    - "Email encryption gateway configuration"
+    - "Wireless encryption configuration"
+    - "Legacy interface encryption migration plan or risk acceptance"
+  review_questions:
+    - "Is ePHI encrypted for all electronic transmissions?"
+    - "What TLS versions and cipher suites are approved and enforced?"
+    - "Are there any transmission channels where ePHI is sent unencrypted?"
+    - "If unencrypted channels exist, is there a documented risk-based rationale and alternative safeguards?"
+    - "Is wireless network encryption adequate (WPA2-Enterprise or WPA3)?"
+related_requirements:
+  - "164.312(e)(1)"
+  - "164.312(e)(2)(i)"
+  - "164.312(a)(2)(iv)"
+  - "164.314(b)(2)(iv)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(e)(2)(ii)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

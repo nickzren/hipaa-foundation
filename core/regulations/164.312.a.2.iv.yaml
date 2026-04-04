@@ -1,0 +1,67 @@
+---
+schema_version: v1
+regulation_id: "164.312(a)(2)(iv)"
+title: "Encryption and Decryption"
+rule_family: security_rule
+safeguard_type: technical
+standard_or_spec: implementation_specification
+implementation_type: addressable
+parent_standard: "164.312(a)(1)"
+addressable_assessment_guidance: |
+  Assess whether the entity has evaluated the need for encryption of ePHI at
+  rest based on its risk analysis. If so, evaluate whether the encryption
+  mechanisms are reasonable and appropriate given the data sensitivity and
+  threat landscape. Document the disposition: implemented, alternative,
+  documented_exception, or not_evidenced.
+authoritative_text: |
+  Implement a mechanism to encrypt and decrypt electronic protected health
+  information.
+ocr_guidance:
+  summary: "Entities should implement encryption and decryption mechanisms for ePHI, particularly for data at rest, as a method of access control."
+  source_document: "HIPAA Security Series: Security Standards - Technical Safeguards"
+repo_interpretation:
+  plain_english_summary: "Encrypt ePHI so that even if someone gains unauthorized access to the storage medium, they cannot read the data without the decryption key."
+  intent: "Protect ePHI confidentiality at rest by rendering data unreadable to unauthorized parties who may gain access to the storage medium, operating as an additional access control layer."
+  applicability: "All storage locations containing ePHI — databases, file systems, cloud storage, portable devices, backup media, and removable storage. This spec addresses encryption at rest; transmission encryption is covered under 164.312(e)(2)(ii)."
+  common_gaps:
+    - "ePHI stored unencrypted on servers or in databases"
+    - "Full-disk encryption on workstations but no application or database-level encryption"
+    - "Portable devices and removable media not encrypted"
+    - "Cloud storage encryption not verified or not under entity key management"
+    - "Encryption key management practices undocumented"
+    - "Backup media not encrypted"
+  remediation_suggestions:
+    - "Implement full-disk encryption on all workstations and portable devices"
+    - "Enable database-level or storage-level encryption for ePHI data stores"
+    - "Encrypt backup media and removable storage"
+    - "Verify cloud storage encryption and key management arrangements"
+    - "Document encryption key management procedures (generation, storage, rotation, destruction)"
+    - "Use NIST-validated encryption algorithms (AES-256)"
+evidence_expectations:
+  in_repo:
+    - "Encryption policy for data at rest"
+    - "Encryption key management procedures"
+    - "Encryption standards specifying approved algorithms and key lengths"
+  external:
+    - "Full-disk encryption deployment reports (BitLocker, FileVault, LUKS)"
+    - "Database encryption configuration documentation"
+    - "Cloud storage encryption settings and key management evidence"
+    - "Encryption compliance scan results"
+  review_questions:
+    - "Is ePHI encrypted at rest across all storage locations?"
+    - "What encryption algorithms and key lengths are used?"
+    - "How are encryption keys managed (generation, storage, rotation, destruction)?"
+    - "Are portable devices and removable media encrypted?"
+    - "If encryption is not implemented in certain areas, is there a documented risk-based rationale?"
+related_requirements:
+  - "164.312(a)(1)"
+  - "164.312(e)(2)(ii)"
+  - "164.310(d)(2)(iv)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.312(a)(2)(iv)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.312"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft

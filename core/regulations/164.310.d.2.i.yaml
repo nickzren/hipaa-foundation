@@ -1,0 +1,59 @@
+---
+schema_version: v1
+regulation_id: "164.310(d)(2)(i)"
+title: "Disposal"
+rule_family: security_rule
+safeguard_type: physical
+standard_or_spec: implementation_specification
+implementation_type: required
+parent_standard: "164.310(d)(1)"
+authoritative_text: |
+  Implement policies and procedures to address the final disposition of
+  electronic protected health information, and/or the hardware or electronic
+  media on which it is stored.
+ocr_guidance:
+  summary: "Entities must have policies and procedures for securely disposing of ePHI and the hardware or media on which it resides."
+  source_document: "HIPAA Security Series: Security Standards - Physical Safeguards"
+repo_interpretation:
+  plain_english_summary: "When hardware or media containing ePHI reaches end of life, securely destroy the data or the device. Degauss, shred, wipe, or physically destroy — and document it."
+  intent: "Prevent ePHI exposure through discarded or decommissioned hardware and media by ensuring data is irrecoverably removed or the media is physically destroyed."
+  applicability: "All hardware and electronic media that contain or have contained ePHI — hard drives, SSDs, USB drives, tapes, CDs/DVDs, mobile devices, copiers with internal storage, and virtual/cloud storage volumes."
+  common_gaps:
+    - "No documented disposal procedure"
+    - "Media disposed of without sanitization or destruction verification"
+    - "Third-party disposal vendor not under BAA or not providing certificates"
+    - "Copiers and printers with internal storage overlooked during disposal"
+    - "Cloud storage volume deletion not verified or documented"
+  remediation_suggestions:
+    - "Document a media disposal policy referencing NIST SP 800-88 sanitization guidelines"
+    - "Require certificates of destruction from internal or third-party disposal"
+    - "Ensure disposal vendors are under BAA and provide verified destruction records"
+    - "Include copiers, printers, and embedded storage devices in disposal scope"
+    - "Define cloud storage deletion procedures and verify cryptographic erasure where applicable"
+evidence_expectations:
+  in_repo:
+    - "Media disposal policy"
+    - "Sanitization and destruction procedures"
+    - "Disposal vendor management requirements"
+  external:
+    - "Certificates of destruction or sanitization"
+    - "Disposal vendor BAAs"
+    - "Media sanitization logs"
+    - "Asset decommission records"
+  review_questions:
+    - "Is there a documented policy for disposing of ePHI and associated hardware/media?"
+    - "Are certificates of destruction obtained and retained?"
+    - "Are disposal vendors under BAA and providing verified destruction?"
+    - "Does the disposal scope include all device types (copiers, embedded storage, cloud volumes)?"
+related_requirements:
+  - "164.310(d)(1)"
+  - "164.310(d)(2)(ii)"
+  - "164.530(j)"
+source_reference:
+  source_authority: "HHS / Office for Civil Rights"
+  regulation: "45 CFR Part 164"
+  section: "164.310(d)(2)(i)"
+  source_url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.310"
+  edition_date: "2026-04-02"
+  retrieved_on: "2026-04-03"
+status: draft
