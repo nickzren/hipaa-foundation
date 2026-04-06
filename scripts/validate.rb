@@ -26,9 +26,20 @@ def load_yaml(relative)
   YAML.safe_load(File.read(File.join(ROOT, relative)))
 end
 
+def load_text(relative)
+  File.read(File.join(ROOT, relative))
+end
+
 def require_schema_v1(data, label)
   raise "#{label} missing schema_version" unless data["schema_version"]
   raise "#{label} schema_version must be v1" unless data["schema_version"] == "v1"
+end
+
+def ensure_includes(relative, snippets)
+  text = load_text(relative)
+  snippets.each do |snippet|
+    raise "#{relative} missing required text #{snippet.inspect}" unless text.include?(snippet)
+  end
 end
 
 puts "hipaa-foundation validator"
@@ -67,13 +78,25 @@ check("#{checks.length} required files", errors) do
     docs/example-assessment.md
     docs/example-assessment-ba.md
     docs/example-assessment-entity-tbd.md
+    docs/manual-acceptance-harness.md
     docs/skill-install-and-use.md
     scripts/validate.rb
     scripts/validate.sh
     scripts/install-codex-skill.sh
     scripts/install-claude-skill.sh
+    scripts/smoke-test-resolver.sh
+    scripts/smoke-test-install.sh
     scripts/generate_foundation.rb
     .github/workflows/validate.yml
+    test/fixtures/README.md
+    test/fixtures/minimal-target/README.md
+    test/fixtures/minimal-target/docs/architecture.md
+    test/fixtures/minimal-target/src/service.py
+    test/fixtures/rich-target/README.md
+    test/fixtures/rich-target/docs/architecture.md
+    test/fixtures/rich-target/docs/data-flow.md
+    test/fixtures/rich-target/infra/storage.tf
+    test/fixtures/rich-target/src/pipeline.py
   ]
   missing = required.reject { |f| File.exist?(File.join(ROOT, f)) }
   raise "missing files: #{missing.join(', ')}" unless missing.empty?
@@ -146,7 +169,38 @@ check("#{checks.length} rubric states", errors) do
   raise "missing repo_only_realism_rule" unless data["repo_only_realism_rule"]
 end
 
-# Check 6: Evidence map structure
+# Check 6: Skill enum consistency
+checks << "skill enum consistency"
+check("#{checks.length} skill enum consistency", errors) do
+  triage = load_yaml("core/applicability/triage-output-template.yaml")
+  rubric = load_yaml("core/checklists/assessment-rubric.yaml")
+  skill_text = load_text("skills/hipaa-assessor/SKILL.md")
+
+  %w[
+    entity_type covered_entity_type hybrid_entity_status
+    entity_type_confidence phi_scope_confidence
+    evidence_basis assessment_confidence
+    part_162_assessment_mode state_law_overlay_status
+  ].each do |field|
+    values = triage.dig("required_enum_fields", field, "values")
+    raise "missing enum values for #{field}" unless values.is_a?(Array)
+
+    values.each do |value|
+      raise "skills/hipaa-assessor/SKILL.md missing enum value #{field}=#{value}" unless skill_text.include?("`#{value}`")
+    end
+  end
+
+  rubric["finding_states"].each do |entry|
+    state = entry["state"]
+    raise "skills/hipaa-assessor/SKILL.md missing finding state #{state}" unless skill_text.include?("`#{state}`")
+  end
+
+  %w[implemented alternative documented_exception not_evidenced].each do |value|
+    raise "skills/hipaa-assessor/SKILL.md missing addressable disposition #{value}" unless skill_text.include?("`#{value}`")
+  end
+end
+
+# Check 7: Evidence map structure
 checks << "evidence map structure"
 check("#{checks.length} evidence map structure", errors) do
   data = load_yaml("core/checklists/evidence-map.yaml")
@@ -160,7 +214,7 @@ check("#{checks.length} evidence map structure", errors) do
   end
 end
 
-# Check 7: Domain inventory and files
+# Check 8: Domain inventory and files
 checks << "domain inventory and files"
 check("#{checks.length} domain inventory and files", errors) do
   data = load_yaml("core/index/domain-inventory.yaml")
@@ -193,13 +247,31 @@ check("#{checks.length} domain inventory and files", errors) do
   raise "domains missing from evidence map: #{missing_in_evidence.join(', ')}" unless missing_in_evidence.empty?
 end
 
-# Check 8: Reference index
+# Check 9: Reference index
 checks << "reference index"
 check("#{checks.length} reference index", errors) do
   data = load_yaml("skills/hipaa-assessor/references/index.yaml")
   require_schema_v1(data, "reference index")
   raise "missing read_order" unless data["read_order"].is_a?(Array)
   raise "missing references" unless data["references"].is_a?(Array)
+
+  required_hierarchy_ids = %w[cfr_text ocr_guidance repo_interpretation target_system_evidence]
+  hierarchy_ids = data["source_hierarchy"].map { |entry| entry["id"] }
+  missing_hierarchy_ids = required_hierarchy_ids - hierarchy_ids
+  raise "missing source_hierarchy IDs: #{missing_hierarchy_ids.join(', ')}" unless missing_hierarchy_ids.empty?
+
+  required_reference_paths = %w[
+    core/applicability/triage-output-template.yaml
+    core/checklists/assessment-rubric.yaml
+    core/checklists/evidence-map.yaml
+    docs/assessment-output-template.md
+    docs/example-assessment.md
+    docs/example-assessment-ba.md
+    docs/example-assessment-entity-tbd.md
+  ]
+  reference_paths = data["references"].map { |ref| ref["path"] }
+  missing_reference_paths = required_reference_paths - reference_paths
+  raise "missing reference paths: #{missing_reference_paths.join(', ')}" unless missing_reference_paths.empty?
 
   data["references"].each do |ref|
     %w[path role].each do |key|
@@ -209,7 +281,36 @@ check("#{checks.length} reference index", errors) do
   end
 end
 
-# Check 9: Schema version consistency
+# Check 10: Operator surface alignment
+checks << "operator surface alignment"
+check("#{checks.length} operator surface alignment", errors) do
+  ensure_includes("docs/skill-install-and-use.md", [
+    "HIPAA_FOUNDATION_ROOT",
+    '${XDG_CONFIG_HOME:-$HOME/.config}/hipaa-assessor/config',
+    '$HOME/github/hipaa-foundation'
+  ])
+  ensure_includes("README.md", [
+    "docs/skill-install-and-use.md"
+  ])
+  ensure_includes("AGENTS.md", [
+    "docs/skill-install-and-use.md"
+  ])
+  ensure_includes("CLAUDE.md", [
+    "docs/skill-install-and-use.md"
+  ])
+  ensure_includes("skills/SKILL.md", ["skills/hipaa-assessor/SKILL.md"])
+  ensure_includes("skills/codex/SKILL.md", ["../hipaa-assessor/SKILL.md"])
+  ensure_includes("skills/claude-code/SKILL.md", ["../hipaa-assessor/SKILL.md"])
+  ensure_includes("skills/hipaa-assessor/START-HERE.md", [
+    "references/index.yaml"
+  ])
+  ensure_includes("docs/manual-acceptance-harness.md", [
+    "test/fixtures/minimal-target",
+    "test/fixtures/rich-target"
+  ])
+end
+
+# Check 11: Schema version consistency
 checks << "schema version consistency"
 check("#{checks.length} schema version consistency", errors) do
   yaml_files = Dir.glob(File.join(ROOT, "core/**/*.yaml")) +
@@ -222,7 +323,7 @@ check("#{checks.length} schema version consistency", errors) do
   end
 end
 
-# Check 10: Source manifest
+# Check 12: Source manifest
 checks << "source manifest"
 check("#{checks.length} source manifest", errors) do
   data = load_yaml("core/provenance/source-manifest.yaml")
@@ -246,7 +347,7 @@ check("#{checks.length} source manifest", errors) do
   raise "missing security-rule-nprm in pending" unless pending_ids.include?("security-rule-nprm")
 end
 
-# Check 11: Node inventory and regulation files
+# Check 13: Node inventory and regulation files
 checks << "node inventory and regulation files"
 check("#{checks.length} node inventory and regulation files", errors) do
   data = load_yaml("core/index/node-inventory.yaml")
@@ -275,7 +376,7 @@ check("#{checks.length} node inventory and regulation files", errors) do
   end
 end
 
-# Check 12: Regulation file schema
+# Check 14: Regulation file schema
 checks << "regulation file schema"
 check("#{checks.length} regulation file schema", errors) do
   Dir.glob(File.join(ROOT, "core/regulations/*.yaml")).each do |file|
@@ -304,7 +405,7 @@ check("#{checks.length} regulation file schema", errors) do
   end
 end
 
-# Check 13: Guidance files
+# Check 15: Guidance files
 checks << "guidance files"
 check("#{checks.length} guidance files", errors) do
   guidance_dir = File.join(ROOT, "core/guidance")
@@ -318,7 +419,7 @@ check("#{checks.length} guidance files", errors) do
   end
 end
 
-# Check 14: Domain regulation_files existence
+# Check 16: Domain regulation_files existence
 checks << "domain regulation_files existence"
 check("#{checks.length} domain regulation_files existence", errors) do
   inventory = load_yaml("core/index/domain-inventory.yaml")
@@ -338,7 +439,7 @@ check("#{checks.length} domain regulation_files existence", errors) do
   end
 end
 
-# Check 15: Domain regulation_files rule_family consistency
+# Check 17: Domain regulation_files rule_family consistency
 checks << "domain regulation_files rule_family consistency"
 check("#{checks.length} domain regulation_files rule_family", errors) do
   allowed_families = {
@@ -375,7 +476,7 @@ check("#{checks.length} domain regulation_files rule_family", errors) do
   end
 end
 
-# Check 16: Domain regulation_files completeness (bidirectional)
+# Check 18: Domain regulation_files completeness (bidirectional)
 checks << "domain regulation_files completeness"
 check("#{checks.length} domain regulation_files completeness", errors) do
   inventory = load_yaml("core/index/domain-inventory.yaml")
@@ -409,7 +510,7 @@ check("#{checks.length} domain regulation_files completeness", errors) do
   raise "individual-rights missing 164.501" unless rights_domain["regulation_ids"].include?("164.501")
 end
 
-# Check 17: Domain files must not contain rating_guidance
+# Check 19: Domain files must not contain rating_guidance
 checks << "no rating_guidance in domain files"
 check("#{checks.length} no rating_guidance in domain files", errors) do
   inventory = load_yaml("core/index/domain-inventory.yaml")

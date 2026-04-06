@@ -2,7 +2,7 @@ This is a draft assessment for human compliance review. It is not a compliance d
 
 # Example Assessment: Meridian Health Data Pipeline (Entity Type TBD)
 
-This is a synthetic worked example showing a completed HIPAA draft assessment when entity type cannot be determined from the reviewed corpus. The target system is fictional. Meridian Health Data Pipeline is a serverless AWS pipeline that collects health data from wearable devices (heart rate, SpO2, sleep, activity) and stores it alongside user-provided demographic identifiers.
+This is a synthetic worked example showing a completed HIPAA draft assessment when entity type cannot be determined from the reviewed corpus. The target system is fictional. Meridian Health Data Pipeline is a serverless AWS pipeline that collects health data from wearable devices (heart rate, SpO2, sleep, activity) and stores it alongside user-provided demographic identifiers. It assumes the assessment was derived directly from repo evidence, without any target-repo-specific HIPAA metadata file.
 
 **Teaching purpose:** This example demonstrates how an assessment correctly handles `entity_type: tbd`. Privacy-specific domains are excluded per domain_selection_rules, the entity classification is not overclaimed, strong technical findings are still captured, and organizational gaps are noted as evidence limitations rather than control gaps.
 

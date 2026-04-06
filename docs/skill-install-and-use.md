@@ -1,38 +1,188 @@
-# Skill Install and Use
+# Skill Install And Use
 
-## Install into Claude Code
+## Fast path
 
-```sh
-./scripts/install-claude-skill.sh
-```
+For most users and fresh AI sessions, use this path:
 
-## Install into Codex
+1. Keep the repo at:
+
+   ```text
+   $HOME/github/hipaa-foundation
+   ```
+
+2. Install the skill:
+
+   For Codex:
+
+   ```sh
+   ./scripts/install-codex-skill.sh
+   ```
+
+   For Claude Code:
+
+   ```sh
+   ./scripts/install-claude-skill.sh
+   ```
+
+3. From any target repo, ask:
+
+   ```text
+   Do a full HIPAA draft assessment of this repo using the installed hipaa-assessor skill.
+   ```
+
+That path needs no env var and no config file. The installed resolver will find `$HOME/github/hipaa-foundation` automatically.
+
+## What gets installed
+
+The install scripts copy only the reusable `hipaa-assessor` skill package.
+
+They do not copy the full `hipaa-foundation` corpus under `core/`.
+
+That means the installed skill is not self-contained. You still need a separate accessible `hipaa-foundation` checkout.
+
+Inside the installed skill package, use `START-HERE.md` and `references/index.yaml` as navigation surfaces only. The canonical corpus still lives in the resolved `hipaa-foundation` checkout.
+
+## Install locations
+
+### Codex
 
 ```sh
 ./scripts/install-codex-skill.sh
 ```
 
-## Important
+Install target:
 
-The installed skill is not self-contained.
+- `$CODEX_HOME/skills/hipaa-assessor` when `CODEX_HOME` is set
+- otherwise `~/.codex/skills/hipaa-assessor`
 
-Keep a separate accessible `hipaa-foundation` checkout and prefer:
+### Claude Code
+
+```sh
+./scripts/install-claude-skill.sh
+```
+
+Install target:
+
+- `~/.claude/skills/hipaa-assessor`
+
+## Upgrade the installed skill
+
+If you update `hipaa-foundation`, rerun the same install script.
+
+The install scripts replace the existing installed `hipaa-assessor` directory with the current copy from this repo, so the same command is both install and upgrade.
+
+## If you do not use the fast path
+
+Use one of these alternatives:
+
+- set `HIPAA_FOUNDATION_ROOT`
+- write a single-line absolute path to `${XDG_CONFIG_HOME:-$HOME/.config}/hipaa-assessor/config`
+- keep `hipaa-foundation` next to the target repo
+
+## Foundation-root resolution details
+
+The installed resolver checks, in order:
+
+1. `HIPAA_FOUNDATION_ROOT`
+2. `${XDG_CONFIG_HOME:-$HOME/.config}/hipaa-assessor/config`
+3. `$HOME/github/hipaa-foundation`
+4. the current working directory if it is the foundation repo
+5. a sibling `hipaa-foundation` checkout next to the target repo root
+6. a sibling `hipaa-foundation` checkout next to the current working directory
+
+If no valid root is found, the assessment should stop and ask for the correct path.
+
+## Advanced setup options
+
+### Option 1: environment variable
 
 ```sh
 export HIPAA_FOUNDATION_ROOT=/absolute/path/to/hipaa-foundation
 ```
 
-Or place `hipaa-foundation` adjacent to the target repo.
+This is the highest-priority override and fails closed if the path is invalid.
 
-## Cross-repo use
+### Option 2: cross-tool config file
 
-When both `hipaa-foundation` and `part11-foundation` are available:
-- use `hipaa-foundation` for HIPAA Privacy/Security/Breach assessment
-- use `part11-foundation` for Part 11 electronic record/signature assessment
-- systems handling ePHI under FDA predicate rules may need both
-- keep factual evidence aligned, findings separate
+Write the absolute path to a single-line config file:
 
-When both `hipaa-foundation` and `gamp5-foundation` are available:
-- use `gamp5-foundation` for lifecycle / validation / supplier / maintained-state review
-- use `hipaa-foundation` for HIPAA rule-specific control assessment
-- HIPAA risk analysis and GAMP risk assessment are related but answer different questions
+```sh
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/hipaa-assessor"
+printf '%s\n' "/absolute/path/to/hipaa-foundation" > "${XDG_CONFIG_HOME:-$HOME/.config}/hipaa-assessor/config"
+```
+
+Rules:
+
+- single line only
+- absolute path only
+- no surrounding quotes
+
+### Option 3: well-known path
+
+Place the checkout at:
+
+```text
+$HOME/github/hipaa-foundation
+```
+
+This is the default zero-config convention and the preferred install location for simple setup.
+
+### Option 4: adjacent clone
+
+Place `hipaa-foundation` next to the target repo:
+
+```text
+~/github/hipaa-foundation/
+~/github/your-target-system/
+```
+
+## Optional resolver check
+
+From the installed skill directory, run:
+
+For Codex:
+
+```sh
+${CODEX_HOME:-$HOME/.codex}/skills/hipaa-assessor/scripts/resolve-foundation-root.sh
+```
+
+For Claude Code:
+
+```sh
+~/.claude/skills/hipaa-assessor/scripts/resolve-foundation-root.sh
+```
+
+The command should print the resolved absolute path to the `hipaa-foundation` checkout.
+
+## Target repo expectations
+
+No target-repo-specific HIPAA metadata file is required.
+
+The skill should inspect the target repo directly, including code, docs, infrastructure config, tests, and any architecture or procedure material present in the repo.
+
+If the target repo does not contain enough evidence for a domain or implementation specification, the assessment should continue and use `Not assessed` or `Partial` instead of guessing.
+
+## Prompt to use
+
+From a target system repository, ask:
+
+```text
+Do a full HIPAA draft assessment of this repo using the installed hipaa-assessor skill.
+```
+
+If you want to be more explicit:
+
+```text
+Do a full HIPAA draft assessment of this repo using the installed hipaa-assessor skill. Follow the canonical workflow, produce the triage block before findings, and preserve unresolved evidence as Not assessed or Partial where required.
+```
+
+## Output expectations
+
+Use these files from the resolved `hipaa-foundation` repository:
+
+- `skills/hipaa-assessor/START-HERE.md`
+- `skills/hipaa-assessor/references/index.yaml`
+- `docs/assessment-output-template.md`
+- `docs/example-assessment.md`
+- `docs/example-assessment-ba.md`
+- `docs/example-assessment-entity-tbd.md`

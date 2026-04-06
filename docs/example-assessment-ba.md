@@ -2,7 +2,7 @@ This is a draft assessment for human compliance review. It is not a compliance d
 
 # Example Assessment: Meridian Analytics Platform (Business Associate)
 
-This is a synthetic worked example showing a completed HIPAA draft assessment of a business associate's ePHI system. The target system is fictional. Meridian Analytics is a SaaS analytics company that processes claims data on behalf of health plan clients.
+This is a synthetic worked example showing a completed HIPAA draft assessment of a business associate's ePHI system. The target system is fictional. Meridian Analytics is a SaaS analytics company that processes claims data on behalf of health plan clients. It assumes the assessment was derived directly from repo and external evidence, without any target-repo-specific HIPAA metadata file.
 
 ---
 

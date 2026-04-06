@@ -8,38 +8,54 @@ origin: hipaa-foundation
 
 Use this skill to produce conservative draft HIPAA assessments of software systems.
 
-This skill is the workflow layer only. The canonical corpus stays under `core/`.
+This skill is the workflow layer only. It is not the knowledge base itself. The canonical corpus stays in the `hipaa-foundation` repository under `core/`.
 
-Start with:
-- `START-HERE.md`
-- `references/index.yaml`
+For fast navigation inside this skill package, start with `START-HERE.md` and `references/index.yaml`. They point back to canonical files under the resolved foundation repo. They do not replace them.
 
 ## Source hierarchy
 
-1. 45 CFR text (eCFR) -- binding regulatory text
-2. HHS/OCR guidance and FAQ -- enforcement posture and interpretive context
-3. Repo interpretation -- non-authoritative assessment guidance
-4. Target-system evidence -- determines the actual finding
+- `FOUNDATION_ROOT/core/regulations/*.yaml` `authoritative_text` — binding regulatory text
+- `FOUNDATION_ROOT/core/guidance/*.yaml` — OCR guidance and interpretive context
+- `FOUNDATION_ROOT/core/domains/*.yaml` and checklist files — non-authoritative assessment guidance
+- target-system evidence — determines the actual finding
+
+## When to use
+
+Use this skill when:
+
+- the user asks to assess, review, or evaluate a system against HIPAA
+- the `hipaa-foundation` repository is available directly or through a separate checkout
 
 ## Prerequisites
 
-You need:
-- a target system to assess
-- a resolvable `hipaa-foundation` checkout
-- enough context to determine entity type and PHI scope
+Before starting, you need:
 
-If the foundation root or target system cannot be identified, stop and ask for the missing path or context.
+- a target system to assess
+- enough repo-local evidence to begin answering the triage questions
+- a resolvable `hipaa-foundation` repository
+
+If the target system or foundation root cannot be identified, stop and ask for the missing path. Otherwise inspect the target repo first and ask follow-up questions only if the assessment is still blocked.
 
 ## Locate the foundation repo
 
-Preferred order:
-1. `HIPAA_FOUNDATION_ROOT`
-2. current working directory if it is the foundation repo
-3. an adjacent `hipaa-foundation` clone next to the target repo or current working directory
+Resolve the foundation root before reading any `core/` files.
 
-If available, run `scripts/resolve-foundation-root.sh`.
+Resolution order (implemented in `scripts/resolve-foundation-root.sh`):
+
+1. `HIPAA_FOUNDATION_ROOT` environment variable (fail closed if set but invalid)
+2. Cross-tool config file: `${XDG_CONFIG_HOME:-$HOME/.config}/hipaa-assessor/config` (single line, absolute path)
+3. Well-known path: `$HOME/github/hipaa-foundation`
+4. Current working directory if it is the foundation repo
+5. Sibling of the target repo root (walk up to `.git`, check sibling)
+6. Sibling of cwd (fallback if not inside a git repo)
+
+Run `scripts/resolve-foundation-root.sh` from this skill package. Once resolved, treat that absolute path as `FOUNDATION_ROOT` and read all referenced files from there.
 
 ## Workflow
+
+Before triage, explore the target repo directly. Use code, docs, infrastructure config, tests, and any in-repo architecture or procedural material as assessment evidence.
+
+Ask follow-up questions only when a required decision cannot be derived from the reviewed corpus and the assessment would otherwise be blocked.
 
 ### Step 0 -- Check content policy
 
@@ -55,27 +71,27 @@ Read:
 - `FOUNDATION_ROOT/core/applicability/triage.yaml`
 - `FOUNDATION_ROOT/core/applicability/triage-output-template.yaml`
 
-Entity type must be determined from evidence in the reviewed corpus -- governance documents, BAAs, formal scope statements, or explicit entity classification records. Do not infer entity type from system function, clinical branding, device names, or health-data content. If the corpus does not confirm entity type, use `tbd` with `low` confidence.
+Entity type must be determined from evidence in the reviewed corpus: governance documents, BAAs, formal scope statements, or explicit entity classification records. Do not infer entity type from system function, clinical branding, device names, or health-data content. If the corpus does not confirm entity type, use `tbd` with `low` confidence.
 
 When `entity_type` is `tbd` and ePHI is clearly in scope, the usual `applicable_rules` posture is `security_rule`, `breach_notification_rule`, and `enforcement_rule`. Do not add `privacy_rule` unless entity status is confirmed from the corpus. Always include `enforcement_rule` for context.
 
 Before selecting domains, produce a structured triage block.
 
 At minimum include:
-- entity type (covered entity, business associate, BA subcontractor, not regulated, tbd)
-- covered entity type (provider, health plan, clearinghouse, not applicable, tbd)
-- hybrid entity status
-- entity type confidence
-- PHI types in scope
-- PHI scope confidence
-- evidence basis
-- assessment confidence
-- applicable rules
-- Part 162 assessment mode
-- state law overlay status
-- in-scope domains
-- excluded domains
-- open decisions
+- `entity_type` (`covered_entity`, `business_associate`, `ba_subcontractor`, `not_regulated`, `tbd`)
+- `covered_entity_type` (`provider`, `health_plan`, `clearinghouse`, `not_applicable`, `tbd`)
+- `hybrid_entity_status` (`yes`, `no`, `tbd`)
+- `entity_type_confidence` (`low`, `medium`, `high`)
+- `phi_types_in_scope`
+- `phi_scope_confidence` (`low`, `medium`, `high`)
+- `evidence_basis` (`repo-only`, `repo-plus-external-evidence`, `repo-plus-runtime-or-interviews`)
+- `assessment_confidence` (`low`, `medium`, `high`)
+- `applicable_rules`
+- `part_162_assessment_mode` (`not_in_scope_v1`, `applicability_only`, `full_module`)
+- `state_law_overlay_status` (`out_of_scope_v1`, `identified`, `tbd`)
+- `in_scope_domains`
+- `excluded_domains`
+- `open_decisions`
 
 After producing the triage block:
 - Apply `domain_selection_rules` from `triage.yaml` to populate `in_scope_domains`.
@@ -84,6 +100,8 @@ After producing the triage block:
 - If `entity_type` is `tbd`, read `FOUNDATION_ROOT/docs/example-assessment-entity-tbd.md` for patterns on handling unconfirmed entity type, excluded Privacy domains, and evidence-basis limitations.
 - If `entity_type` is `business_associate` or `ba_subcontractor`, read `FOUNDATION_ROOT/docs/example-assessment-ba.md` for BA-specific assessment patterns.
 - If `entity_type` is `covered_entity`, read `FOUNDATION_ROOT/docs/example-assessment.md` for covered-entity assessment patterns.
+
+If `entity_type` is `not_regulated`, state why and stop.
 
 ### Step 2 -- Select domains
 
@@ -104,7 +122,7 @@ Use the evidence map while exploring:
 - external governance evidence
 
 Evidence basis branching:
-- If `evidence_basis` is `repo-only`, read the `repo_only_notes` in each in-scope domain file's `assessment_guidance` before scanning. These notes identify which controls are typically organizational and should not be rated Gap on repo-only evidence alone.
+- If `evidence_basis` is `repo-only`, read the `repo_only_notes` in each in-scope domain file's `assessment_guidance` before scanning. These notes identify which controls are typically organizational and should not be rated `Gap` on repo-only evidence alone.
 - If `evidence_basis` includes external evidence, also consult the `external` evidence expectations in each domain's regulation files.
 
 ### Step 4 -- Assess each domain
@@ -117,25 +135,25 @@ For each in-scope domain:
 2. Read the domain's `regulation_files/standards` for orientation.
 3. Read the domain's `regulation_files/implementation_specifications` for detail on each standard's required and addressable specs.
 
-Read all listed regulation files for the current domain before moving to the next domain. Do not front-load regulation files for all domains at once -- work domain by domain.
+Read all listed regulation files for the current domain before moving to the next domain. Do not front-load regulation files for all domains at once. Work domain by domain.
 
 For every in-scope domain:
 - compare expected evidence to reviewed evidence
 - separate missing evidence from observed gaps
-- for Security Rule addressable specs, capture the disposition: implemented, alternative, documented_exception, or not_evidenced
-- a documented exception backed by a risk analysis is Adequate, not a gap
+- for Security Rule addressable specs, capture the disposition: `implemented`, `alternative`, `documented_exception`, or `not_evidenced`
+- a documented exception backed by a risk analysis is `Adequate`, not a gap
 - keep conclusions proportional to the evidence basis
 
 Addressable-spec handling:
-- `required` + implemented -> Adequate
-- `required` + not implemented -> Gap
-- `addressable` + `implemented` -> Adequate
-- `addressable` + `alternative` (documented) -> Adequate
-- `addressable` + `documented_exception` (documented risk basis) -> Adequate
-- `addressable` + `not_evidenced` -> Partial or Gap depending on evidence basis
+- `required` + implemented -> `Adequate`
+- `required` + not implemented -> `Gap`
+- `addressable` + `implemented` -> `Adequate`
+- `addressable` + `alternative` (documented) -> `Adequate`
+- `addressable` + `documented_exception` (documented risk basis) -> `Adequate`
+- `addressable` + `not_evidenced` -> `Partial` or `Not assessed` depending on evidence basis
 
 Repo-only realism rule:
-Many HIPAA obligations are organizational. On repo-only evidence, the following should typically be Not assessed or Partial, not Gap:
+Many HIPAA obligations are organizational. On repo-only evidence, the following should typically be `Not assessed` or `Partial`, not `Gap`:
 - notices of privacy practices
 - authorizations
 - accounting of disclosures
@@ -145,7 +163,7 @@ Many HIPAA obligations are organizational. On repo-only evidence, the following 
 - breach investigation and notification workflow execution evidence
 
 Domain severity anchors:
-- For systems with strong technical controls but weak governance, default to Minor or Observation
+- For systems with strong technical controls but weak governance, default to `Minor` or `Observation`
 - Escalate only with explicit rationale
 - State the escalation rationale if overriding the domain default
 
@@ -155,10 +173,10 @@ Use:
 - `FOUNDATION_ROOT/docs/assessment-output-template.md`
 
 Every output must:
-- **begin with the exact disclaimer** as the very first content: "This is a draft assessment for human compliance review. It is not a compliance determination and not a substitute for legal counsel."
-- **end with the same exact disclaimer** as the very last content
+- begin with the exact disclaimer as the very first content: `This is a draft assessment for human compliance review. It is not a compliance determination and not a substitute for legal counsel.`
+- end with the same exact disclaimer as the very last content
 - include the triage block before findings
-- include a domain ratings summary table with `addressable_disposition` column for Security Rule specs
+- include a domain ratings summary table with an `addressable_disposition` column for Security Rule specs
 - include a detailed finding section for every row that is not `Adequate` or `Not applicable`
 - show `basis_type` for each non-trivial finding
 
@@ -187,3 +205,12 @@ If any check fails, go back and correct the assessment.
 - never collapse missing evidence and actual control gaps into one vague finding
 - never produce findings for Part 162 in v1
 - always keep the assessment usable as a draft review artifact for human compliance reviewers
+
+## When information is insufficient
+
+If the available information is not enough to answer a triage question or assess a domain:
+
+- do not guess
+- use `Not assessed` or `Partial`, whichever the rubric supports
+- state what information is needed
+- continue on assessable domains

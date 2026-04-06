@@ -10,6 +10,8 @@ This is a draft assessment for human compliance review. It is not a compliance d
 
 The opening disclaimer must be the very first content in the output file, before the header or title. The closing disclaimer must be the very last content.
 
+No target-repo-specific HIPAA metadata file is required. Derive the assessment from direct review of the target repo plus any external evidence actually reviewed.
+
 ## Header
 
 | Field | Value |
@@ -51,6 +53,8 @@ open_decisions: []
 If `entity_type` is `tbd`, include a short scope note after the triage block explaining:
 - why Privacy-specific domains are excluded
 - what evidence would bring them into scope (e.g., confirmed entity type from governance documentation)
+
+The triage block should be derived from target-repo evidence first. If the repo leaves scope unresolved, preserve that uncertainty in the triage output instead of asking avoidable setup questions.
 
 ## Domain Ratings Summary
 

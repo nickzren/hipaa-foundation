@@ -25,6 +25,7 @@ find_repo_root() {
   return 1
 }
 
+# Priority 1: explicit override (fail closed if set but invalid)
 if [ "${HIPAA_FOUNDATION_ROOT:-}" ]; then
   if is_foundation_root "$HIPAA_FOUNDATION_ROOT"; then
     print_resolved "$HIPAA_FOUNDATION_ROOT"
@@ -34,11 +35,38 @@ if [ "${HIPAA_FOUNDATION_ROOT:-}" ]; then
   fi
 fi
 
+# Priority 2: cross-tool config file
+config_file="${XDG_CONFIG_HOME:-$HOME/.config}/hipaa-assessor/config"
+if [ -f "$config_file" ]; then
+  config_path=$(sed -n '1{s/\r$//;p;}' "$config_file")
+  case "$config_path" in
+    /*)
+      if is_foundation_root "$config_path"; then
+        print_resolved "$config_path"
+      fi
+      ;;
+    "")
+      ;;
+    *)
+      echo "Config file $config_file must contain a single-line absolute path to a hipaa-foundation checkout." >&2
+      exit 1
+      ;;
+  esac
+fi
+
+# Priority 3: well-known path convention
+well_known="$HOME/github/hipaa-foundation"
+if [ -d "$well_known" ] && is_foundation_root "$well_known"; then
+  print_resolved "$well_known"
+fi
+
+# Priority 4: current working directory
 cwd=$(pwd -P)
 if is_foundation_root "$cwd"; then
   print_resolved "$cwd"
 fi
 
+# Priority 5: sibling of the target repo root (walk up to .git, then check sibling)
 if repo_root=$(find_repo_root "$cwd"); then
   sibling_dir="$(dirname "$repo_root")/hipaa-foundation"
   if [ -d "$sibling_dir" ] && is_foundation_root "$sibling_dir"; then
@@ -46,11 +74,17 @@ if repo_root=$(find_repo_root "$cwd"); then
   fi
 fi
 
+# Priority 6: immediate sibling of cwd (fallback if not inside a git repo)
 parent_dir=$(dirname "$cwd")
 sibling_dir="$parent_dir/hipaa-foundation"
 if [ -d "$sibling_dir" ] && is_foundation_root "$sibling_dir"; then
   print_resolved "$sibling_dir"
 fi
 
-echo "Could not resolve hipaa-foundation. Set HIPAA_FOUNDATION_ROOT to an accessible checkout or place a hipaa-foundation clone next to the target repo." >&2
+echo "Could not resolve hipaa-foundation." >&2
+echo "Options:" >&2
+echo "  1. Set HIPAA_FOUNDATION_ROOT env var" >&2
+echo "  2. Write the path to ${XDG_CONFIG_HOME:-$HOME/.config}/hipaa-assessor/config" >&2
+echo "  3. Clone to $HOME/github/hipaa-foundation" >&2
+echo "  4. Clone next to your target repo" >&2
 exit 1
