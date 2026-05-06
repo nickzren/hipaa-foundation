@@ -13,10 +13,10 @@ This is not a legal opinion and not a compliance oracle.
 
 ## Quick start
 
-1. Keep this repo at:
+1. Keep this repo in a durable checkout, not `/tmp`.
 
    ```
-   $HOME/github/hipaa-foundation
+   ${XDG_DATA_HOME:-$HOME/.local/share}/agent-skills/hipaa-foundation
    ```
 
 2. Install the skill once:
@@ -71,11 +71,26 @@ For fast navigation inside the skill package, agents use `skills/hipaa-assessor/
 ## Install as a portable skill
 
 ```sh
-./scripts/install-claude-skill.sh   # -> ~/.claude/skills/hipaa-assessor/
-./scripts/install-codex-skill.sh    # -> $CODEX_HOME/skills/hipaa-assessor/
+./install.sh
 ```
 
 The installed skill is **not self-contained**. It still needs an accessible `hipaa-foundation` checkout.
+
+Copy this into a new Codex or Claude Code session:
+
+```text
+Set up hipaa-assessor, the HIPAA draft assessment skill for agents.
+
+If npm is available:
+npx skills add nickzren/hipaa-foundation --skill hipaa-assessor -y -g
+
+Otherwise:
+dir="${XDG_DATA_HOME:-$HOME/.local/share}/agent-skills"
+repo="$dir/hipaa-foundation"
+mkdir -p "$dir"
+test -d "$repo" || gh repo clone nickzren/hipaa-foundation "$repo"
+"$repo/install.sh"
+```
 
 Use `docs/skill-install-and-use.md` as the canonical install and root-resolution guide. It documents:
 

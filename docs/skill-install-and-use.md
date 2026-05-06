@@ -4,24 +4,16 @@
 
 For most users and fresh AI sessions, use this path:
 
-1. Keep the repo at:
+1. Keep the repo in a durable checkout, not `/tmp`.
 
    ```text
-   $HOME/github/hipaa-foundation
+   ${XDG_DATA_HOME:-$HOME/.local/share}/agent-skills/hipaa-foundation
    ```
 
 2. Install the skill:
 
-   For Codex:
-
    ```sh
-   ./scripts/install-codex-skill.sh
-   ```
-
-   For Claude Code:
-
-   ```sh
-   ./scripts/install-claude-skill.sh
+   ./install.sh
    ```
 
 3. From any target repo, ask:
@@ -30,13 +22,13 @@ For most users and fresh AI sessions, use this path:
    Do a full HIPAA draft assessment of this repo using the installed hipaa-assessor skill.
    ```
 
-That path needs no env var and no config file. The installed resolver will find `$HOME/github/hipaa-foundation` automatically.
+The installer writes the resolver config file, so agents can find this checkout from other repos.
 
 ## What gets installed
 
-The install scripts copy only the reusable `hipaa-assessor` skill package.
+The root installer links only the reusable `hipaa-assessor` skill package and writes the resolver config path.
 
-They do not copy the full `hipaa-foundation` corpus under `core/`.
+It does not copy the full `hipaa-foundation` corpus under `core/`.
 
 That means the installed skill is not self-contained. You still need a separate accessible `hipaa-foundation` checkout.
 
@@ -44,32 +36,19 @@ Inside the installed skill package, use `START-HERE.md` and `references/index.ya
 
 ## Install locations
 
-### Codex
-
 ```sh
-./scripts/install-codex-skill.sh
+./install.sh
 ```
 
-Install target:
+Install targets:
 
 - `$CODEX_HOME/skills/hipaa-assessor` when `CODEX_HOME` is set
 - otherwise `~/.codex/skills/hipaa-assessor`
-
-### Claude Code
-
-```sh
-./scripts/install-claude-skill.sh
-```
-
-Install target:
-
 - `~/.claude/skills/hipaa-assessor`
 
 ## Upgrade the installed skill
 
-If you update `hipaa-foundation`, rerun the same install script.
-
-The install scripts replace the existing installed `hipaa-assessor` directory with the current copy from this repo, so the same command is both install and upgrade.
+If you update `hipaa-foundation`, rerun `./install.sh`.
 
 ## If you do not use the fast path
 
@@ -125,15 +104,15 @@ Place the checkout at:
 $HOME/github/hipaa-foundation
 ```
 
-This is the default zero-config convention and the preferred install location for simple setup.
+This is a legacy zero-config convention. Prefer the fast path above.
 
 ### Option 4: adjacent clone
 
 Place `hipaa-foundation` next to the target repo:
 
 ```text
-~/github/hipaa-foundation/
-~/github/your-target-system/
+~/code/github.com/nickzren/hipaa-foundation/
+~/code/github.com/nickzren/your-target-system/
 ```
 
 ## Optional resolver check
